@@ -1,11 +1,11 @@
 ---
 layout: default
 modal-id: 3
-date: 2014-07-16
+date: 2021-04-16
 img: circus.png
 alt: image-alt
-project-date: April 2014
-client: Start Bootstrap
-category: Web Development
-description: Use this area of the page to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.
+project-date: April 2021
+client: AIE
+category: AI Development
+description: For a complex systems assessment I created a node graph generator that can take any number of meshes and will output a generated node graph for the ai agent to use for pathfinding. This node graph is then saved to a scriptable object to avoid generating a live node graph
 ---
