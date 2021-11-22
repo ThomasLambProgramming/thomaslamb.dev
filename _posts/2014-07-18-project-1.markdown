@@ -1,11 +1,11 @@
 ---
 layout: default
 modal-id: 1
-date: 2014-07-18
+date: 2021-07-18
 img: cabin.png
 alt: image-alt
-project-date: April 2014
-client: Start Bootstrap
-category: Web Development
-description: Use this area of the page to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.
+project-date: July 2021
+client: AIE
+category: Game Development
+description: As part of Vision Quest studios, I created the hacking system, this is a base class for the moveable object, flying enemy, ground enemy and wire mechanics. As the programmer for the team I also programmed the player movement, UI, Ai and bug fixed.
 ---
