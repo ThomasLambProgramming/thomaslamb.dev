@@ -54,25 +54,30 @@
 
 							<img src="images/RapidDelivery/RapidDeliverySceneView.gif" class="alignImg"></img>
 							<br>
-							<p>To create this game we split the game into three sections.</p>
 							<ul>
 								<li>Road generation and obstacles</li>
-								<p class="listText">The road object is split into ten meter chunks that are instantiated at set intervals, this road object covers all three lanes and is not seperated.</p>
-								<p class="listText">The obstacles are all based off one</p>
-							</ul>
-							<hr>
-
-							<img src="images/RapidDelivery/TemplatedEnvironment.png" class="alignImg"></img>
-							<br>
-							<p>One of the first problems that I ran into with this system was filtering out the vertices of objects that were not needed. The solution to this was a dot product check against that
-								objects other vertices to make sure that they were not underneath another vertex within a set distance. If they were then they are ignored. after this is done on all objects in the environment
-								they are then collected into a single list container where they are filtered by distance, and heights to remove overlaps, placed into a node class and given connections then all the node 
-								objects are then collected into a single array to be used as a node graph. 
-								<br><br> After this whole process is done, the array is also loaded into a NodeGraphContainer scriptable object to be saved so the generation process only needs to occur once
+								<br>
+								<p class="listText">The road object is split into ten meter chunks that are instantiated at set intervals, this road object covers all three lanes and is not seperated.
+									<br>
+									For the spawning of obstacles, we have six different prefabs that are instantiated into the game beyond what the player can see and are deleted when they collide
+									with a trigger box
+									<br>
+									Npc customers will spawn along the sidewalk at random intervals, when the player is in range the cannon will aim at the closest customer allowing the player to shoot tea at them
+								</p>
+								
 								<hr>
-								<br><br>The Final result is a fully ready node graph that can be generated from many different models or environments that AI can then traverse. The Ai in this example use simple steering
-								behaviours
-							</p>
+								
+								<img src="images/RapidDelivery/TemplatedEnvironment.png" class="alignImg"></img>
+								<br>
+								<li>Tileset Envionment</li>
+								<p class="listText">
+									<br>
+									Due to our limited time of six weeks and the fact that we only had two artists, we made all of our environment tiled. They all have a base of a set size, and our designers 
+									worked with the artists to create small environment prefabs of the same size to allow for the constant spawning of environment without them being in the wrong position.
+									<hr>
+									<br><br>Our final game was fully playable with a nice and simple UI. We managed to get small details in such as the falling and raising ! mark for customers and etc.
+								</p>
+							</ul>
 							<img src="images/RapidDelivery/FirstYearMajorTwo.gif" class="alignImg"></img>
 						</div>
 					</div>
