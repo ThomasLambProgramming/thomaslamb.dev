@@ -3317,6 +3317,14 @@ input, select, textarea {
 		margin-right: auto;
 	}
 
+	.listText {
+		display: block;
+		width: 100%;
+		height: 40%;
+		margin-left: 5%;
+		margin-right: auto;
+	}
+
 /* Wrapper */
 
 	#wrapper > * > .inner {

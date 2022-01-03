@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Generic - Phantom by HTML5 UP</title>
+		<title>Rapid Delivery</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -19,19 +19,11 @@
 				<!-- Header -->
 					<header id="header">
 						<div class="inner">
-
-							<!-- Logo -->
-								<a href="index.html" class="logo">
-									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Phantom</span>
-								</a>
-
-							<!-- Nav -->
 								<nav>
 									<ul>
 										<li><a href="#menu">Menu</a></li>
 									</ul>
 								</nav>
-
 						</div>
 					</header>
 
@@ -51,11 +43,37 @@
 				<!-- Main -->
 					<div id="main">
 						<div class="inner">
-							<h1>Project2</h1>
-							<span class="image main"><img src="images/pic13.jpg" alt="" /></span>
-							<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique.</p>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel venenatis mauris vehicula hendrerit.</p>
-							<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+							<h1>Rapid Delivery</h1>
+							<hr>
+							<img src="images/RapidDelivery/RapidDeliveryGameplay.gif" class="alignImg"></img>
+							<br>
+							<p>As part of my diploma of games development, I was put into a small team of six developers over six weeks and we created an endless runner game where the player must maneuver their car around
+								obstacles while delivering tea to customers from their cannon on the top of the car. 
+							</p>
+							<hr>
+
+							<img src="images/RapidDelivery/RapidDeliverySceneView.gif" class="alignImg"></img>
+							<br>
+							<p>To create this game we split the game into three sections.</p>
+							<ul>
+								<li>Road generation and obstacles</li>
+								<p class="listText">The road object is split into ten meter chunks that are instantiated at set intervals, this road object covers all three lanes and is not seperated.</p>
+								<p class="listText"></p>
+							</ul>
+							<hr>
+
+							<img src="images/RapidDelivery/.gif" class="alignImg"></img>
+							<br>
+							<p>One of the first problems that I ran into with this system was filtering out the vertices of objects that were not needed. The solution to this was a dot product check against that
+								objects other vertices to make sure that they were not underneath another vertex within a set distance. If they were then they are ignored. after this is done on all objects in the environment
+								they are then collected into a single list container where they are filtered by distance, and heights to remove overlaps, placed into a node class and given connections then all the node 
+								objects are then collected into a single array to be used as a node graph. 
+								<br><br> After this whole process is done, the array is also loaded into a NodeGraphContainer scriptable object to be saved so the generation process only needs to occur once
+								<hr>
+								<br><br>The Final result is a fully ready node graph that can be generated from many different models or environments that AI can then traverse. The Ai in this example use simple steering
+								behaviours
+							</p>
+							<img src="images/RapidDelivery/RapidDeliveryGameplay.gif" class="alignImg"></img>
 						</div>
 					</div>
 
@@ -95,7 +113,6 @@
 						</section>
 					</div>
 				</footer>
-
 			</div>
 
 		<!-- Scripts -->
