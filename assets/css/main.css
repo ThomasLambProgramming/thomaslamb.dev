@@ -3326,6 +3326,20 @@ input, select, textarea {
 		margin-right: auto;
 	}
 
+	.gridRow{
+		display: flex;
+		flex-wrap: wrap;
+		padding: 0 4px;
+	}
+	.gridColumn{
+		flex: 50%;
+		padding: 0 4px;
+	}
+	.gridColumn img{
+		margin-top: 8px;
+		width: 45%;
+		vertical-align: middle;
+	}
 /* Wrapper */
 
 	#wrapper > * > .inner {
