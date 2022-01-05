@@ -49,7 +49,10 @@
 					<div id="main">
 						<div class="inner">
 							<h1>Malicious</h1>
-							
+							<img src="images/Malicious/MaliciousTitle.png" class="alignImg"></img>
+							<br>
+							<br>
+							<hr>
 							<p>For the final project of my advanced diploma of games development, I was placed into a group of 7 developers with 3 artists, 3 designers and myself as the sole programmer
 								the game that we developed is a 3D Puzzle Platformer where you play as a virus that must escape from its creator. 
 								<br>
@@ -57,43 +60,58 @@
 							</p>
 							
 							<img src="images/Malicious/Malicious1.gif" class="alignImg"></img>
-							<br>
-
-
+							
+							
 							<ul>
+								<br>
 								<li>Hacking Mechanic</li>
 								<br>
-								<p class="listText">The road object is split into ten meter chunks that are instantiated at set intervals, this road object covers all three lanes and is not seperated.
-									<br>
-									For the spawning of obstacles, we have six different prefabs that are instantiated into the game beyond what the player can see and are deleted when they collide
-									with a trigger box
-									<br>
-									Npc customers will spawn along the sidewalk at random intervals, when the player is in range the cannon will aim at the closest customer allowing the player to shoot tea at them
+								<p class="listText">
+									One of the biggest challenges that this project brought was the hacking mechanic. This mechanic was challanging for me as it requried me to learn how to develop
+									more modular and reuseable code as this hacking mechanic had to work alongside the enemy, blocks, drone, spring and wire mechanics. I solved this issue by making a
+									base class of hackable that was then inherited by all mechanics that needed it. allowing the player to enter and exit without affecting any of the code for that specific mechanic itself
 								</p>
 								<hr>
 								
 								<img src="images/Malicious/Malicious2.gif" class="alignImg"></img>
 								<br>
-								<li>Tileset Envionment</li>
+								<li>Wire Mechanic</li>
+								<br>
 								<p class="listText">
-									<br>
-									Due to our limited time of six weeks and the fact that we only had two artists, we made all of our environment tiled. They all have a base of a set size, and our designers 
-									worked with the artists to create small environment prefabs of the same size to allow for the constant spawning of environment without them being in the wrong position.
+									To add verticality to the platforming without directly allowing the player to jump up all the blocks, the designers came up with the wire mechanic.
+									This mechanic allows the player to enter into a wire and using the wasd, space and ctrl keys to place wires and move along them. The wire does raycasts
+									to check if a wire can be placed and is checked against a layermask to give the designers more options. the player also has a limit on the amount of moves they can do.
+									At any time the player can launch themselves out of the wire in the direction they are facing.
 								</p>
 								<hr>
 								
 								<img src="images/Malicious/Malicious3.gif" class="alignImg"></img>
 								<br>
-								<li>Tileset Envionment</li>
+								<li>Fan Mechanic</li>
 								<p class="listText">
 									<br>
-									Due to our limited time of six weeks and the fact that we only had two artists, we made all of our environment tiled. They all have a base of a set size, and our designers 
-									worked with the artists to create small environment prefabs of the same size to allow for the constant spawning of environment without them being in the wrong position.
+									This fan mechanic taught me the most about games development in a team. This mechanic had a few smaller features to make it a better fan then just applying force in a direction
+									such as a dot product check for the current objects velocity and applied extra force accordingly (this was done to allow for smoother fan pushing when the fan was horizontally pushing), 
+									the fan also used a different force to push based on the distance away from the object it was pushing. I implemented this because I wanted a smarter fan then just pushing. This however led me to 
+									learn quite alot as when explaining the fan to my other team members they didn't understand what I was trying to add to the fan, and it caused alot of communication issues. 
+									<br>
+									<br>
+									I learn't alot from this experience as it taught me how to communicate with less technically literate team members, the need for tooling and variable limit setting, good descriptions (in unity's case tooltips),
+									and most importantly knowing when something actually adds to the game rather than wasting time adding extra features that will not be noticed by the general player base and to spend time refining what will be noticed.
 									<hr>
-									<br><br>Our final game was fully playable with a nice and simple UI. We managed to get small details in such as the falling and raising ! mark for customers and etc.
+									
+									
+								</p>
+								<p class="listCentertext">This ground enemy shown below just had simple seek behaviours with a limited turning speed. It acts as one of the main dangers to the player</p>
+								
+								<img src="images/Malicious/Malicious4.gif" class="alignImg"></img>	
+								<p class="listText">
+									<br>
+									<br>
+									Our final game was fully playable with a full sprint schedule of alpha, beta and gold. Our end result had very few bugs and none of them were game breaking.
+									<br>The final build is avaiable on <a href="https://haydencarterdesign.itch.io/malicious" target="_blank">itch here.</a>
 								</p>
 							</ul>
-							<img src="images/Malicious/Malicious4.gif" class="alignImg"></img>	
 						</div>
 					</div>
 
