@@ -1,7 +1,7 @@
 function Header()
 {
     return (
-      <div className="mb-32 ml-32 w-3/5 p-10">
+      <div className="mb-6 ml-32 w-3/5 p-10">
         <div className="">
           <div className="text-4xl">
             <h1 className="">Thomas Lamb</h1>
