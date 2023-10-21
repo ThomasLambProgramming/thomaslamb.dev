@@ -8,26 +8,26 @@ function App() {
   const UnrealProjects: string[] = [
     "Bezier",
     "Complex",
-    "GameJam",
+    "Game Jam",
     "Malicious",
-    "RapidDelivery",
-    "VrProject"
+    "Rapid Delivery",
+    "Vr Project"
   ];
    const EngineProjects: string[] = [
     "Bezier",
     "Complex",
-    "GameJam",
+    "Game Jam",
     "Malicious",
-    "RapidDelivery",
-    "VrProject"
+    "Rapid Delivery",
+    "Vr Project"
   ];
    const UnityProjects: string[] = [
     "Bezier",
     "Complex",
-    "GameJam",
+    "Game Jam",
     "Malicious",
-    "RapidDelivery",
-    "VrProject"
+    "Rapid Delivery",
+    "Vr Project"
   ];
 
   return (
