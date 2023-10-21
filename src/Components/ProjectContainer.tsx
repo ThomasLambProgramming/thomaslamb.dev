@@ -6,36 +6,14 @@ const ProjectContainer: React.FC<{projects: string[], typeTitle: string}> = ({pr
 {
     return (
       <div className="mb-14 ml-24">
-
-<section className="tiles">
-
-
-<article className="style1">
-  <span className="image">
-    <img src="ProjectAssets/Malicious/MaliciousSmall.gif" alt="" />
-  </span>
-  <a href="Malicious.html">
-    <h2>Malicious</h2>
-    <div className="content">
-      <p>For my major project at AIE I worked with a team of 6 other people to produce 
-        this puzzle platformer.
-      </p>
-    </div>
-  </a>
-</article>
-
-<ProjectPreview projectName="" />
-
-
-</section>
-
         <h2>
           {typeTitle}
         </h2>
+        <div className='grid grid-cols-2 md:grid-cols-3 gap-4 h-auto w-auto mr-14'>
         {projects.map((project: string) => (
-          <li>{project}</li>
-        ))}
-        <image></image>
+          <li className='list-none'>{<ProjectPreview projectName={project} />}</li>
+          ))}
+          </div>
       </div>
     );
 }
