@@ -1,7 +1,7 @@
 function Header()
 {
     return (
-      <div className="mb-6 w-[95%] p-10 ml-auto">
+      <div className="mb-14 ml-24 pt-20 mr-24 block">
         <div className="">
           <div className="text-4xl">
             <h1 className="">Thomas Lamb</h1>
@@ -13,7 +13,7 @@ function Header()
           <div>
             Currently working on a project in UE5 with C++ and acustom engine in C++
           </div>
-          <hr className="h-px w-[80%] my-8 bg-slate-900 border-0 dark:bg-slate-900" />
+          <hr className="h-px w-[100%] my-8 bg-slate-900 border-0 dark:bg-slate-900" />
         </div>
       </div>
     );

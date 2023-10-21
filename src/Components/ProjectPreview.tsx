@@ -9,7 +9,7 @@ const ProjectPreview: React.FC<{projectName: string, projectFolder: string}> = (
         <img className="relative inset-0 object-cover w-full rounded h-full group-hover:opacity-50 "
           src="ProjectAssets\Complex\ComplexExample.gif"/>
 
-        <div className="text-truncate overflow-hidden transition-all absolute opacity-100 group-hover:opacity-100 w-full align-middle max-h-[75%] top-[10%] text-center">
+        <div className="text-truncate overflow-hidden transition-all absolute opacity-100 group-hover:opacity-100 w-full align-middle max-h-[75%] bottom-[0%] text-center">
           <h3 className="text-3xl text-white mb-4 translate-y-2/3 group-hover:-translate-y-[130%] duration-300">
             {projectName}  
           </h3>

@@ -5,8 +5,8 @@ import ProjectPreview from './ProjectPreview';
 const ProjectContainer: React.FC<{projects: string[], typeTitle: string}> = ({projects, typeTitle}) =>
 {
     return (
-      <div className="mb-14 ml-24 align mr-24">
-        <h2 className='ml-auto w-5/6'>
+      <div className="mb-14 ml-24 align mr-24 block">
+        <h2 className=''>
           {typeTitle}
         </h2>
         <div className='grid grid-cols-3 md:grid-cols-3 min-w-full h-auto gap-4 w-auto m-auto max-w-screen-xl justify-center object-fill'>
