@@ -27,7 +27,6 @@ const ProjectModal: React.FC<ModalProps> = ({isShown, hide, projectName}) => {
         .catch(err => console.log(err));
     });
 
-
     const modal = (
         <React.Fragment>
             {/* This is just the background so if the user clicks away it will go back to the main page */}

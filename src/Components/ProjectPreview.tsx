@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 
 const ProjectPreview: React.FC<{projectName: string, onClickFunction: (name: string) => void}> = ({projectName, onClickFunction}) =>
 {
-    let projectNameWithoutSpace = projectName.replace(/ /g, '');
-    let filePath = '../ProjectAssets/' + projectName + "/" + projectName + "PreviewDescription" + ".md";
+    let projectNameWithoutSpace = projectName.replace(/\s/g, '');
+    let filePath = '../ProjectAssets/' + projectNameWithoutSpace + "/" + projectNameWithoutSpace + "PreviewDescription" + ".md";
     
     const [previewDescription, setPreviewDescription] = useState('');
 
@@ -47,22 +47,3 @@ const ProjectPreview: React.FC<{projectName: string, onClickFunction: (name: str
 }
 
 export default ProjectPreview;
-
-// <div>
-//   <div>
-//     <img
-//       className="rounded-lg h-auto max-w-full"
-//       src="ProjectAssets\Complex\ComplexExample.gif"
-//       alt=""
-//     />
-//   </div>
-//   <a href="">
-//     <h2>{projectName}</h2>
-//     <div className="content">
-//       <p>
-//         I created a node generation system to take in an environment mesh
-//         and produce a node graph for Ai agents.
-//       </p>
-//     </div>
-//   </a>
-// </div>
