@@ -43,7 +43,7 @@ const App: FC = () => {
   ];
 
   return (
-    <div className="bg-slate-100 w-full h-full min-h-screen">
+    <div className="bg-slate-100 w-full h-full min-h-screen overflow-y-clip">
     <ProjectModal isShown={isShown} hide={ModalToggled}></ProjectModal>
     <button onClick={ModalToggled}>Press Me!</button>
     
