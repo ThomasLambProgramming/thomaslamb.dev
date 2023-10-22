@@ -2,6 +2,10 @@ import React from 'react';
 
 const ProjectPreview: React.FC<{projectName: string, projectFolder: string}> = ({projectName, projectFolder}) =>
 {
+
+  // Yeah the css here is fucking terrible, i was forced to add this because im 99.9% sure that
+  // The css for the grid was wrong and doing the text popup was then screwed up because of it
+  // it got it roughly to were i wanted but there is probably some bad / unused / pointless classes added to elements.
   return (
     <div className="flex flex-col items-center justify-center mt-12 relative bg-slate-900 group min-w-[200px] rounded">
       <button className="" onClick={() => {alert("Message")}}>
@@ -18,7 +22,6 @@ const ProjectPreview: React.FC<{projectName: string, projectFolder: string}> = (
             This is some default text to represent what would be a regular discription of a project
             This is so i can get some sizing correct.
           </p>
-
         </div>
       </button>
     </div>

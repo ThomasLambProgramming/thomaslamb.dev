@@ -11,7 +11,7 @@ function Header()
             Game developer with an interest in a wide variety of programming disciplines. 
           </div>
           <div>
-            Currently working on a project in UE5 with C++ and acustom engine in C++
+            Currently working on a project in UE5 with C++ and a custom engine in C++
           </div>
           <hr className="h-px w-[100%] my-8 bg-slate-900 border-0 dark:bg-slate-900" />
         </div>
