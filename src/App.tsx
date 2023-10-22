@@ -26,9 +26,10 @@ const App: FC = () => {
   );
   
   const [projectName, setProjectName] = useState<string>("");
-  const ProjectNameChanged = (name: string) => setProjectName(name);
-
-
+  const ProjectNameChanged = (name: string) => {
+    setProjectName(name);
+    ModalToggled();
+  }
 
   //Each project name will be used as a folder path eg Assets/ComplexGames/...
   //String gets spaces removed but will need the name to show as the title
@@ -64,12 +65,11 @@ const App: FC = () => {
 
   return (
     <div className={containerClasses}>
-      <ProjectModal isShown={isShown} hide={ModalToggled}></ProjectModal>
-      <button onClick={ModalToggled}>Press Me!</button>
+      <ProjectModal isShown={isShown} hide={ModalToggled} projectName={projectName}></ProjectModal>
       <Header /> 
-      <ProjectContainer projects={UnrealProjects} typeTitle="Unreal Projects"/>
-      <ProjectContainer projects={EngineProjects} typeTitle="Engine Projects"/>
-      <ProjectContainer projects={UnityProjects} typeTitle="Unity Projects"/>
+      <ProjectContainer projects={UnrealProjects} typeTitle="Unreal Projects" projectNameChange={ProjectNameChanged}/>
+      <ProjectContainer projects={EngineProjects} typeTitle="Engine Projects" projectNameChange={ProjectNameChanged}/>
+      <ProjectContainer projects={UnityProjects} typeTitle="Unity Projects" projectNameChange={ProjectNameChanged}/>
       <GithubCommitDisplay /> 
       <Footer /> 
     </div>
