@@ -10,17 +10,25 @@ const App: FC = () => {
   const [isShown, setIsShown] = useState<boolean>(false);
   const ModalToggled = () => {
     setIsShown(!isShown);
+
+    //Set fixed on the opposite value since the setIsShown hasnt actually flipped the value yet.
     if (isShown == true)
     {
-      document.body.classList.add("overflow:hidden")
+      setContainerClasses("bg-slate-100 w-full h-full overflow-hidden no-scrollbar ");
     }
     else
     {
-      document.body.classList.remove("no-scroll")
+      setContainerClasses("bg-slate-100 w-full h-full overflow-hidden no-scrollbar fixed");
     }
   }
+  const [containerClasses, setContainerClasses] = useState<string>(
+    "bg-slate-100 w-full h-full overflow-hidden no-scrollbar"
+  );
+  
   const [projectName, setProjectName] = useState<string>("");
   const ProjectNameChanged = (name: string) => setProjectName(name);
+
+
 
   //Each project name will be used as a folder path eg Assets/ComplexGames/...
   //String gets spaces removed but will need the name to show as the title
@@ -51,8 +59,11 @@ const App: FC = () => {
     "Vr Project"
   ];
 
+  //Remove scrollbar so when modal opens it doesnt move everything and it looks cleaner without anyway.
+  document.body.classList.add("no-scrollbar");
+
   return (
-    <div className="bg-slate-100 w-full h-full min-h-screen overflow-y-clip">
+    <div className={containerClasses}>
       <ProjectModal isShown={isShown} hide={ModalToggled}></ProjectModal>
       <button onClick={ModalToggled}>Press Me!</button>
       <Header /> 
