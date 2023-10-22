@@ -14,11 +14,11 @@ const App: FC = () => {
     //Set fixed on the opposite value since the setIsShown hasnt actually flipped the value yet.
     if (isShown == true)
     {
-      setContainerClasses("bg-slate-100 w-full h-full overflow-hidden no-scrollbar ");
+      setContainerClasses(containerClasses.replace("fixed",''));
     }
     else
     {
-      setContainerClasses("bg-slate-100 w-full h-full overflow-hidden no-scrollbar fixed");
+      setContainerClasses(containerClasses + "fixed");
     }
   }
   const [containerClasses, setContainerClasses] = useState<string>(
