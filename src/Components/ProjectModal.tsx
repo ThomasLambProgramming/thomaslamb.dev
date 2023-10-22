@@ -1,8 +1,5 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
-import Markdown from 'markdown-to-jsx';
-
-
 
 export interface ModalProps {
   isShown: boolean;
@@ -12,11 +9,24 @@ export interface ModalProps {
 
 const ProjectModal: React.FC<ModalProps> = ({isShown, hide, projectName}) => {
     
+    let filePath = '../ProjectAssets/' + projectName + "/" + projectName + ".md";
     
-    alert('.../public/ProjectAssets/' + projectName + "/" + projectName + ".md");
-    import('../public/ProjectAssets/' + projectName + "/" + projectName + ".md").then(value =>{
-        alert(value);
+    const [post, setPost] = useState('');
+
+    useEffect(() => {
+        import(
+            /* @vite-ignore */                    
+            filePath).then(res => {
+            fetch(res.default)
+            .then(res => res.text())
+            .then(res => {
+                setPost(res);
+            })
+            .catch(err => console.log(err));
+        })
+        .catch(err => console.log(err));
     });
+
 
     const modal = (
         <React.Fragment>
@@ -24,31 +34,12 @@ const ProjectModal: React.FC<ModalProps> = ({isShown, hide, projectName}) => {
             
             <div className="block overflow-y-scroll">
                 <div className='fixed inset-0 flex items-center overflow-y-hidden z-20 opacity-30 w-full h-full align-middle text-center bg-slate-700 justify-center' onClick={hide} />
-
                 <div className="fixed block inset-0 overflow-y-auto items-center z-30 rounded-lg opacity-90 w-[90%] mt-8 center h-full center m-auto align-middle text-center bg-slate-950 justify-center no-scrollbar">
-                    
-                    
-                    
-                    <div className='text-center text-white mt-20'>Bottom</div>
-                    <div className='text-center text-white mt-20'>Bottom</div>
-                    <div className='text-center text-white mt-20'>Bottom</div>
-                    <div className='text-center text-white mt-20'>Bottom</div>
-                    <div className='text-center text-white mt-20'>Bottom</div>
-                    <div className='text-center text-white mt-20'>Bottom</div>
-                    <div className='text-center text-white mt-20'>Bottom</div>
-                    <div className='text-center text-white mt-20'>Bottom</div>
-                    <div className='text-center text-white mt-20'>Bottom</div>
-                    <div className='text-center text-white mt-20'>Bottom</div>
-                    <div className='text-center text-white mt-20'>Bottom</div>
-                    <div className='text-center text-white mt-20'>Bottom</div>
-                    <div className='text-center text-white mt-20'>Bottom</div>
-                    <div className='text-center text-white mt-20'>Bottom</div>
-                    <div className='text-center text-white mt-20'>Bottom</div>
-                    <div className='text-center text-white mt-20'>Bottom</div>
+                    <div className="text-white">
+                            {post}
+                    </div>
                 </div>
             </div>
-                
-            
         </React.Fragment>
     );
         
