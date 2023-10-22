@@ -1,1 +1,0 @@
-This was a small 1.5 day game jam that I created with a small team that involved some particle effects.

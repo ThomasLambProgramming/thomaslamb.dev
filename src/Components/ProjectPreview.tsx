@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-const ProjectPreview: React.FC<{projectName: string, onClickFunction: (name: string) => void}> = ({projectName, onClickFunction}) =>
+const ProjectPreview: React.FC<{projectName: string, showTitle: boolean, onClickFunction: (name: string) => void}> = ({projectName, showTitle, onClickFunction}) =>
 {
     let projectNameWithoutSpace = projectName.replace(/\s/g, '');
     let filePath = '../ProjectAssets/' + projectNameWithoutSpace + "/" + projectNameWithoutSpace + "PreviewDescription" + ".md";
@@ -35,10 +35,10 @@ const ProjectPreview: React.FC<{projectName: string, onClickFunction: (name: str
 
         <div className="text-truncate overflow-hidden transition-all absolute opacity-100 group-hover:opacity-100 w-full align-middle max-h-[75%] bottom-[0%] text-center">
           <h3 className="text-3xl text-white mb-4 group-hover:opacity-0 translate-y-2/3 group-hover:-translate-y-[130%] duration-100">
-            {projectName}  
+            {showTitle == true ? projectName : ""}  
           </h3>
-          <p className=" text-base text-white mr-4 ml-4 h-40 opacity-0 group-hover:opacity-100 mt-20 group-hover:-translate-y-[60%] duration-300">
-            {previewDescription}
+          <p className={"text-base text-white mr-4 ml-4 h-40 opacity-0 group-hover:opacity-100 mt-20 duration-300 " + (showTitle == true ? "group-hover:-translate-y-[60%]" : "group-hover:-translate-y-[50%]")}>
+              {previewDescription}
           </p>
         </div>
       </button>

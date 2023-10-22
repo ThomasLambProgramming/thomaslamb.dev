@@ -26,6 +26,7 @@ const App: FC = () => {
   
   useEffect(() => {
     window.scrollTo(0, previousYValue);
+    document.body.style.top = '-${window.scrollY}px';
   })
 
   const [containerClasses, setContainerClasses] = useState<string>(
@@ -43,30 +44,26 @@ const App: FC = () => {
   //String gets spaces removed but will need the name to show as the title
   //there will be a markdown of the same name as title eg ComplexGames.md
   //that will give the text and where to place the images.
+  const ShippedGames: string[] = [
+    "Vlad Circus"
+  ];
+
   const UnrealProjects: string[] = [
-    "Bezier",
-    "Complex",
-    "Game Jam",
-    "Malicious",
-    "Rapid Delivery",
-    "Vr Project"
+    "Maniac Cab",
   ];
    const EngineProjects: string[] = [
-    "Bezier",
-    "Complex",
-    "Game Jam",
-    "Malicious",
-    "Rapid Delivery",
-    "Vr Project"
+    "Custom Vulkan Engine"
   ];
    const UnityProjects: string[] = [
-    "Bezier",
-    "Complex",
-    "Game Jam",
+    "Bezier Curves",
+    "Node Graph Generator",
+    "Isolator",
     "Malicious",
     "Rapid Delivery",
-    "Vr Project"
+    "Carnival Carnage"
   ];
+
+  document.title = "ThomasLamb.dev"
 
   //Remove scrollbar so when modal opens it doesnt move everything and it looks cleaner without anyway.
   document.body.classList.add("no-scrollbar");
@@ -75,9 +72,10 @@ const App: FC = () => {
     <div className={containerClasses}>
       <ProjectModal isShown={isShown} hide={ModalToggled} projectName={projectName}></ProjectModal>
       <Header /> 
-      <ProjectContainer projects={UnrealProjects} typeTitle="Unreal Projects" projectNameChange={ProjectNameChanged}/>
-      <ProjectContainer projects={EngineProjects} typeTitle="Engine Projects" projectNameChange={ProjectNameChanged}/>
-      <ProjectContainer projects={UnityProjects} typeTitle="Unity Projects" projectNameChange={ProjectNameChanged}/>
+      <ProjectContainer projects={ShippedGames} typeTitle="Shipped Games" projectNameChange={ProjectNameChanged} showTitle={false}/>
+      {/* <ProjectContainer projects={UnrealProjects} typeTitle="Unreal Projects" projectNameChange={ProjectNameChanged}/> */}
+      {/* <ProjectContainer projects={EngineProjects} typeTitle="Engine Projects" projectNameChange={ProjectNameChanged}/> */}
+      <ProjectContainer projects={UnityProjects} typeTitle="Unity Projects" projectNameChange={ProjectNameChanged} showTitle={true}/>
       <GithubCommitDisplay /> 
       <Footer /> 
     </div>

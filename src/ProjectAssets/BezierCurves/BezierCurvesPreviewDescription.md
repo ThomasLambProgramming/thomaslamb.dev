@@ -1,0 +1,1 @@
+I was interested in making more fluid motion and started to learn bezier curves.

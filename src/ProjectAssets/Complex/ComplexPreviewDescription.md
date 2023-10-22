@@ -1,1 +1,0 @@
-I created a node generation system to take in an environment mesh and produce a node graph for Ai agents

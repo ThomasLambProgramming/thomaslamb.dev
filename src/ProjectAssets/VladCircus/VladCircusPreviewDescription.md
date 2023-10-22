@@ -1,0 +1,1 @@
+This was my first shipped title. I was the programmer in charge of porting the game to Xbox Series/X, Switch, Playstation 4/5, Gog and Epic Games.

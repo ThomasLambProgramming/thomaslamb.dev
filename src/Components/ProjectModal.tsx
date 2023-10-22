@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
+import Markdown from 'react-markdown';
 
 export interface ModalProps {
   isShown: boolean;
@@ -9,8 +10,7 @@ export interface ModalProps {
 
 const ProjectModal: React.FC<ModalProps> = ({isShown, hide, projectName}) => {
     
-    let filePath = '../ProjectAssets/' + projectName + "/" + projectName + ".md";
-    
+    const filePath = ('../ProjectAssets/' + projectName + "/" + projectName + ".md");
     const [post, setPost] = useState('');
 
     useEffect(() => {
@@ -25,6 +25,7 @@ const ProjectModal: React.FC<ModalProps> = ({isShown, hide, projectName}) => {
             .catch(err => console.log(err));
         })
         .catch(err => console.log(err));
+
     });
 
     const modal = (
@@ -32,9 +33,15 @@ const ProjectModal: React.FC<ModalProps> = ({isShown, hide, projectName}) => {
             {/* This is just the background so if the user clicks away it will go back to the main page */}
             <div className="block overflow-y-scroll">
                 <div className='fixed overscroll-none inset-0 flex items-center overflow-y-hidden z-20 opacity-30 w-full h-full align-middle text-center bg-slate-700 justify-center' onClick={hide} />
-                <div className="fixed block inset-0 overflow-y-auto items-center z-30 rounded-lg opacity-[100%] w-[90%] mt-8 center h-full center m-auto align-middle text-center bg-slate-950 justify-center no-scrollbar">
-                    <div className="text-white">
+                <div className="fixed block inset-0 overflow-y-auto items-center z-30 rounded-lg opacity-[100%] w-[90%] mt-8 h-full m-auto align-middle text-center bg-slate-950 justify-center no-scrollbar">
+                    <div className="text-white space-y-12 mt-12 max-w-screen-lg block items-center m-auto">
+                        <Markdown components={{
+                            em() {
+                                return <div className="mt-12 text-black" />        
+                            }
+                            }}>
                             {post}
+                        </Markdown>
                     </div>
                 </div>
             </div>
