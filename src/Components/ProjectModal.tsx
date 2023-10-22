@@ -13,9 +13,9 @@ const ProjectModal: React.FC<ModalProps> = ({isShown, hide}) => {
             {/* This is just the background so if the user clicks away it will go back to the main page */}
             
             <div className="block overflow-y-scroll">
-                <div className='fixed inset-0 flex items-center z-20 opacity-10 w-full h-full align-middle text-center bg-slate-700 justify-center' onClick={hide} />
+                <div className='fixed inset-0 flex items-center overflow-y-hidden z-20 opacity-30 w-full h-full align-middle text-center bg-slate-700 justify-center' onClick={hide} />
 
-                <div className="fixed block inset-0 overflow-y-auto items-center z-30 rounded-lg opacity-100 w-3/5 h-[95%] m-auto align-middle text-center bg-slate-950 justify-center">
+                <div className="fixed block inset-0 overflow-y-auto items-center z-30 rounded-lg opacity-90 w-[90%] mt-8 h-full m-auto align-middle text-center bg-slate-950 justify-center no-scrollbar">
                     <div className='text-center text-white mt-20'>Bottom</div>
                     <div className='text-center text-white mt-20'>Bottom</div>
                     <div className='text-center text-white mt-20'>Bottom</div>
