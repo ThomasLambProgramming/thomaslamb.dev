@@ -5,11 +5,11 @@ import ProjectPreview from './ProjectPreview';
 const ProjectContainer: React.FC<{projects: string[], typeTitle: string, projectNameChange: (name: string) => void}> = ({projects, typeTitle, projectNameChange}) =>
 {
     return (
-      <div className="mb-14 ml-24 align mr-24 block">
-        <h2 className=''>
-          {typeTitle}
+      <div className="mb-14 ml-24 mr-24 block">
+        <h2 className='justify-center object-fill h-auto w-auto max-w-screen-xl text-3xl text-neutral-900'>
+          {typeTitle}:
         </h2>
-        <div className='grid grid-cols-3 md:grid-cols-3 min-w-full h-auto gap-4 w-auto m-auto max-w-screen-xl justify-center object-fill'>
+        <div className='grid grid-cols-3 md:grid-cols-3 h-auto gap-4 w-auto m-auto max-w-screen-xl justify-center object-fill'>
         {projects.map((project: string) => (
           <li className='list-none rounded-lg'>{<ProjectPreview projectName={project} onClickFunction={projectNameChange}/>}</li>
           ))}

@@ -3,7 +3,9 @@ import GithubCommitDisplay from "./Components/GithubCommitDisplay";
 import Header from "./Components/Header";
 import ProjectContainer from "./Components/ProjectContainer";
 import ProjectModal from "./Components/ProjectModal";
-import {FC, useState} from "react";
+import {FC, useState, useEffect} from "react";
+
+let previousYValue: number = 0;
 
 const App: FC = () => {
 
@@ -21,12 +23,18 @@ const App: FC = () => {
       setContainerClasses(containerClasses + " fixed");
     }
   }
+  
+  useEffect(() => {
+    window.scrollTo(0, previousYValue);
+  })
+
   const [containerClasses, setContainerClasses] = useState<string>(
-    "bg-slate-100 w-full h-full overflow-hidden no-scrollbar"
+    "bg-slate-100 w-full h-full no-scrollbar overflow-y-clip"
   );
   
   const [projectName, setProjectName] = useState<string>("");
   const ProjectNameChanged = (name: string) => {
+    previousYValue = window.scrollY;
     setProjectName(name);
     ModalToggled();
   }

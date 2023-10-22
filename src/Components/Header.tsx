@@ -15,8 +15,11 @@ function Header()
               <div>
                 Currently working on a project in UE5 with C++ and a custom engine in C++
               </div>
+              <div className="mt-6 text-sm">
+                To view projects, click on the preview gif. To exit the project showcase click the sides.
+              </div>
             </div>
-            <div className="ml-40 mt-6">
+            <div className="ml-36 mt-6">
               <SocialLinks />
             </div>
           </div>
