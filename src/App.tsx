@@ -14,11 +14,11 @@ const App: FC = () => {
     //Set fixed on the opposite value since the setIsShown hasnt actually flipped the value yet.
     if (isShown == true)
     {
-      setContainerClasses(containerClasses.replace("fixed",''));
+      setContainerClasses(containerClasses.replace(" fixed",''));
     }
     else
     {
-      setContainerClasses(containerClasses + "fixed");
+      setContainerClasses(containerClasses + " fixed");
     }
   }
   const [containerClasses, setContainerClasses] = useState<string>(
