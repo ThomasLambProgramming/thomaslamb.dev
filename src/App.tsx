@@ -10,18 +10,15 @@ let previousYValue: number = 0;
 const App: FC = () => {
 
   const [isShown, setIsShown] = useState<boolean>(false);
+  
   const ModalToggled = () => {
     setIsShown(!isShown);
 
     //Set fixed on the opposite value since the setIsShown hasnt actually flipped the value yet.
     if (isShown == true)
-    {
       setContainerClasses(containerClasses.replace(" fixed",''));
-    }
     else
-    {
       setContainerClasses(containerClasses + " fixed");
-    }
   }
   
   useEffect(() => {

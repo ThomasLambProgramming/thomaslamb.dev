@@ -14,25 +14,10 @@ const ProjectModal: React.FC<ModalProps> = ({isShown, hide, projectName}) => {
     const [post, setPost] = useState('');
 
     useEffect(() => {
-        
-        const mrk = new Request(filePath);
-        
         //Clear the current post so images arent remaining.
         setPost("");
+        const mrk = new Request(filePath);
         fetch(mrk).then(data => data.text()).then(text => setPost(text));
-
-        // import(
-        //     /* @vite-ignore */                    
-        //     filePath).then(res => {
-        //     fetch(res.default)
-        //     .then(res => res.text())
-        //     .then(res => {
-        //         setPost(res);
-        //     })
-        //     .catch(err => console.log(err));
-        // })
-        // .catch(err => console.log(err));
-
     });
 
     const modal = (
