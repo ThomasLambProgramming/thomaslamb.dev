@@ -10,7 +10,7 @@ export interface ModalProps {
 
 const ProjectModal: React.FC<ModalProps> = ({isShown, hide, projectName}) => {
     
-    const filePath = ('../ProjectAssets/' + projectName + "/" + projectName + ".md");
+    const filePath = ('/ProjectAssets/' + projectName + "/" + projectName + ".md");
     const [post, setPost] = useState('');
 
     useEffect(() => {
