@@ -1,6 +1,6 @@
 # Isolator
 
-![FailedToLoadImage](public/ProjectAssets/Isolator/IsolatorPreview.gif)
+![FailedToLoadImage](/ProjectAssets/Isolator/IsolatorPreview.gif)
 
 This was a small puzzle game that I created with 6 other developers over the course of roughly 12 hours. This project was an exercise to see group dynamics within the team before going into the full development cycle of over 2 months at AIE for our second year project.
 

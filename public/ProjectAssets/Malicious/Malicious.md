@@ -1,25 +1,25 @@
 # Malicious
 
-![FailedToLoadImage](src/ProjectAssets/Malicious/MaliciousTitle.png)
+![FailedToLoadImage](/ProjectAssets/Malicious/MaliciousTitle.png)
 
 For the final project of my advanced diploma of games development, I was placed into a group of 7 developers with 3 artists, 3 designers, and myself as the sole programmer. The game that we developed is a 3D Puzzle Platformer where you play as a virus that must escape from its creator.
 
 This game brought alot of challenges and I learned alot about developing as a team.
 
-![FailedToLoadImage](src/ProjectAssets/Malicious/Malicious1.gif)
+![FailedToLoadImage](/ProjectAssets/Malicious/Malicious1.gif)
 
 ## Hacking Mechanic
 
 One of the biggest challenges that this project brought was the hacking mechanic. This mechanic was challenging for me as it required me to learn how to develop more modular and reusable code as this hacking mechanic had to work alongside the enemy, blocks, drone, spring and wire mechanics. I solved this issue by making a base class of hackable that was then inherited by all the mechanics that needed it. allowing the player to enter and exit without affecting any of the code for that specific mechanic itself.
 
-![FailedToLoadImage](src/ProjectAssets/Malicious/Malicious2.gif)
+![FailedToLoadImage](/ProjectAssets/Malicious/Malicious2.gif)
 
 ## Wire Mechanic 
 
 To add verticality to the platforming without directly allowing the player to jump up all the blocks, the designers came up with the wire mechanic. This mechanic allows the player to enter into a wire and use the wasd, space and ctrl keys to place wires and move along them. The wire does raycasts to check if a wire can be placed and is checked against a layer mask to give the designers more options. The player also has a limit on the amount of moves they can do.
 At any time the player can launch themselves out of the wire in the direction they are facing.
 
-![FailedToLoadImage](src/ProjectAssets/Malicious/Malicious3.gif)
+![FailedToLoadImage](/ProjectAssets/Malicious/Malicious3.gif)
 
 ## Fan Mechanic
 
@@ -29,7 +29,7 @@ I learned a lot from this experience as it taught me how to communicate with les
 
 This ground enemy shown below just had simple seek behaviors with a limited turning speed. It acts as one of the main dangers to the player.
 
-![FailedToLoadImage](src/ProjectAssets/Malicious/Malicious4.gif)
+![FailedToLoadImage](/ProjectAssets/Malicious/Malicious4.gif)
 
 Our final game was fully playable with a full sprint schedule of alpha, beta, and gold. Our end result had very few bugs and none of them were game breaking.
 
