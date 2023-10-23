@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 const ProjectPreview: React.FC<{projectName: string, showTitle: boolean, onClickFunction: (name: string) => void}> = ({projectName, showTitle, onClickFunction}) =>
 {
     let projectNameWithoutSpace = projectName.replace(/\s/g, '');
-    let filePath = 'public/ProjectAssets/' + projectNameWithoutSpace + "/" + projectNameWithoutSpace + "PreviewDescription" + ".md";
+    let filePath = '/ProjectAssets/' + projectNameWithoutSpace + "/" + projectNameWithoutSpace + "PreviewDescription" + ".md";
     
     const [previewDescription, setPreviewDescription] = useState('');
 
@@ -31,7 +31,7 @@ const ProjectPreview: React.FC<{projectName: string, showTitle: boolean, onClick
       <button className="" onClick={() => {onClickFunction(projectNameWithoutSpace)}}>
 
         <img className="relative inset-0 object-cover w-full rounded h-full group-hover:opacity-50 "
-          src={"public/ProjectAssets/" + projectNameWithoutSpace + "/" + projectNameWithoutSpace + "Preview.gif"}/>
+          src={"/ProjectAssets/" + projectNameWithoutSpace + "/" + projectNameWithoutSpace + "Preview.gif"}/>
 
         <div className="text-truncate overflow-hidden transition-all absolute opacity-100 group-hover:opacity-100 w-full align-middle max-h-[75%] bottom-[0%] text-center">
           <h3 className="text-3xl text-white mb-4 group-hover:opacity-0 translate-y-2/3 group-hover:-translate-y-[130%] duration-100">
