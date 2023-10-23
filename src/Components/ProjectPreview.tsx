@@ -8,17 +8,22 @@ const ProjectPreview: React.FC<{projectName: string, showTitle: boolean, onClick
     const [previewDescription, setPreviewDescription] = useState('');
 
     useEffect(() => {
-        import(
-            /* @vite-ignore */                    
-            filePath).then(res => {
-            fetch(res.default)
-            .then(res => res.text())
-            .then(res => {
-                setPreviewDescription(res);
-            })
-            .catch(err => console.log(err));
-        })
-        .catch(err => console.log(err));
+
+      const mrk = new Request(filePath);
+
+      fetch(mrk).then(data => data.text()).then(text => setPreviewDescription(text));
+
+        // import(
+        //     /* @vite-ignore */                    
+        //     filePath).then(res => {
+        //     fetch(res.default)
+        //     .then(res => res.text())
+        //     .then(res => {
+        //         setPreviewDescription(res);
+        //     })
+        //     .catch(err => console.log(err));
+        // })
+        // .catch(err => console.log(err));
     });
   
   
