@@ -1,9 +1,9 @@
 # Rapid Delivery
 
-![FailedToLoadImage](src/ProjectAssets/RapidDelivery/RapidDeliveryGameplay.gif)
+![FailedToLoadImage](public/ProjectAssets/RapidDelivery/RapidDeliveryGameplay.gif)
 As part of my diploma of games development, I was put into a small team of six developers over six weeks and we created an endless runner game where the player must maneuver their car around obstacles while delivering tea to customers from their cannon on the top of the car. 
 
-![FailedToLoadImage](src/ProjectAssets/RapidDelivery/RapidDeliverySceneView.gif)
+![FailedToLoadImage](public/ProjectAssets/RapidDelivery/RapidDeliverySceneView.gif)
 
 ## Road generation and obstacles
 
@@ -13,7 +13,7 @@ For the spawning of obstacles, we have six different prefabs that are instantiat
 
 Npc customers will spawn along the sidewalk at random intervals; when the player is in range the cannon will aim at the closest customer allowing the player to shoot tea at them.
 
-![FailedToLoadImage](src/ProjectAssets/RapidDelivery/TemplatedEnvironment.png)
+![FailedToLoadImage](public/ProjectAssets/RapidDelivery/TemplatedEnvironment.png)
 
 ## Tileset Envionment
 
@@ -23,4 +23,4 @@ worked with the artists to create small environment prefabs of the same size to 
 
 Our final game was fully playable with a nice and simple UI. We managed to get small details in such as the falling and raising ! mark for customers and etc.
 
-![FailedToLoadImage](src/ProjectAssets/RapidDelivery/FirstYearMajorTwo.gif)
+![FailedToLoadImage](public/ProjectAssets/RapidDelivery/FirstYearMajorTwo.gif)

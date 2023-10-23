@@ -1,6 +1,6 @@
 # Carnival Carnage
 
-![FailedToLoadImage](src/ProjectAssets/CarnivalCarnage/CarnivalCarnage.gif)
+![FailedToLoadImage](public/ProjectAssets/CarnivalCarnage/CarnivalCarnage.gif)
 
 During my advanced diploma of games development, we were placed into a team of three designers, three programmers, and three artists that would act as though they were contracted to only produce the assets to a given brief. Small note: I currently do not have images associated with the project, as unfortunately I no longer am in possession of a virtual reality headset that is compatible with the project.
 
