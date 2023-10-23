@@ -16,7 +16,9 @@ const ProjectModal: React.FC<ModalProps> = ({isShown, hide, projectName}) => {
     useEffect(() => {
         
         const mrk = new Request(filePath);
-
+        
+        //Clear the current post so images arent remaining.
+        setPost("");
         fetch(mrk).then(data => data.text()).then(text => setPost(text));
 
         // import(
