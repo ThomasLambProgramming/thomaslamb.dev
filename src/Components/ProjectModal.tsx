@@ -10,15 +10,20 @@ export interface ModalProps {
 
 const ProjectModal: React.FC<ModalProps> = ({isShown, hide, projectName}) => {
     
-    const filePath = ('/ProjectAssets/' + projectName + "/" + projectName + ".md");
+    const [filePath, setFilePath] = useState('/ProjectAssets/' + projectName + "/" + projectName + ".md");
     const [post, setPost] = useState('');
 
-    useEffect(() => {
-        //Clear the current post so images arent remaining.
+    if (filePath.includes(projectName) == false)
+    {
+        //Clear current post
         setPost("");
+        setFilePath('/ProjectAssets/' + projectName + "/" + projectName + ".md");
+    }
+
+    useEffect(() => {
         const mrk = new Request(filePath);
         fetch(mrk).then(data => data.text()).then(text => setPost(text));
-    });
+    }, [filePath]);
 
     const modal = (
         <React.Fragment>
