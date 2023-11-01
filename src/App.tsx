@@ -45,13 +45,13 @@ const App: FC = () => {
     "Vlad Circus"
   ];
 
-  // const UnrealProjects: string[] = [
-  //   "Maniac Cab",
-  // ];
-  //  const EngineProjects: string[] = [
-  //   "Custom Vulkan Engine"
-  // ];
-   const UnityProjects: string[] = [
+  const UnrealProjects: string[] = [
+    "Maniac Cab",
+    //"OpenGL",
+    //"Alchemist"
+  ];
+
+  const UnityProjects: string[] = [
     "Bezier Curves",
     "Node Graph Generator",
     "Isolator",
@@ -70,9 +70,8 @@ const App: FC = () => {
       <ProjectModal isShown={isShown} hide={ModalToggled} projectName={projectName}></ProjectModal>
       <Header /> 
       <ProjectContainer projects={ShippedGames} typeTitle="Shipped Games" projectNameChange={ProjectNameChanged} showTitle={false}/>
-      {/* <ProjectContainer projects={UnrealProjects} typeTitle="Unreal Projects" projectNameChange={ProjectNameChanged}/> */}
-      {/* <ProjectContainer projects={EngineProjects} typeTitle="Engine Projects" projectNameChange={ProjectNameChanged}/> */}
-      <ProjectContainer projects={UnityProjects} typeTitle="Unity Projects" projectNameChange={ProjectNameChanged} showTitle={true}/>
+      <ProjectContainer projects={UnrealProjects} typeTitle="Unreal and C++ Projects" projectNameChange={ProjectNameChanged} showTitle={true}/>
+      <ProjectContainer projects={UnityProjects} typeTitle="Unity Projects / University Projects" projectNameChange={ProjectNameChanged} showTitle={true}/>
       <GithubCommitDisplay /> 
       <Footer /> 
     </div>
