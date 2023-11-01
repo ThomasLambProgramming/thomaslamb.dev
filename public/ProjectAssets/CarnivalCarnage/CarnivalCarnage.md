@@ -2,7 +2,7 @@
 
 ![FailedToLoadImage](/ProjectAssets/CarnivalCarnage/CarnivalCarnage.gif)
 
-During my advanced diploma of games development, we were placed into a team of three designers, three programmers, and three artists that would act as though they were contracted to only produce the assets to a given brief. Small note: I currently do not have images associated with the project, as unfortunately I no longer am in possession of a virtual reality headset that is compatible with the project.
+During my advanced diploma of games development, we were placed into a team of three designers, three programmers, and three artists that would act as though they were contracted to only produce the assets to a given brief. Small note: I currently do not have images associated with the project, as unfortunately I no longer am in possession of a virtual reality headset that is compatible with the project since the project only works for the Oculus Quest 1/2.
 
 Carnival Carnage is a vr arcade game in which the player must smash clown heads within a time limit with a hammer that can return to them.
 

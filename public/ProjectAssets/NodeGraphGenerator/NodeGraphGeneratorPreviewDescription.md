@@ -1,1 +1,1 @@
-I created a node generation system to take in an environment mesh and produce a node graph for Ai agents
+Node graph generator that takes in a environment and creates a navigation mesh based off all meshes contained in the environment

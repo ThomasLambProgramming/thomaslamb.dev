@@ -1,1 +1,1 @@
-I was interested in making more fluid motion and started to learn bezier curves.
+Small Bezier curve example to learn tooling and how bezier curves work for future projects

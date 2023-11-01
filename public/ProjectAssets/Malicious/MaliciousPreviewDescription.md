@@ -1,1 +1,1 @@
-For my major project at AIE I worked with a team of 6 other people to produce this puzzle platformer.
+For my 2nd year major project at AIE I worked with a team of 6 other people to produce this robot puzzle platformer.

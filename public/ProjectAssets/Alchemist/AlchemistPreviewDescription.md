@@ -1,0 +1,1 @@
+This is a small personal project of mine to work on modelling, texturing, rpg system programming (Inventory, Character stats etc.).
