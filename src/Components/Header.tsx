@@ -24,7 +24,7 @@ function Header()
             </div>
           </div>
         </div>
-          <hr className="h-px w-[100%] my-8  border-0 dark:bg-slate-900" />
+          <hr className="h-px w-[100%] my-8 bg-slate-900 border-0 dark:bg-slate-900" />
       </div>
     );
 }
