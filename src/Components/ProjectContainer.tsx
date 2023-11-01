@@ -4,13 +4,13 @@ import ProjectPreview from './ProjectPreview';
 
 const ProjectContainer: React.FC<{projects: string[], typeTitle: string, projectNameChange: (name: string) => void, showTitle: boolean}> = ({projects, typeTitle, projectNameChange, showTitle}) =>
 (
-  <div className="mb-14 ">
+  <div className="mb-14 flex flex-col justify-center align-middle items-center ">
     <div className=''>
       <h2 className='text-3xl text-neutral-900 text-left max-w-xl'>
         {typeTitle}:
       </h2>
     </div>
-    <div className='grid grid-cols-3 items-center md:grid-cols-3 h-auto gap-4 w-auto m-auto max-w-screen-xl justify-center object-fill'>
+    <div className='grid lg:grid-cols-3 content-center items-center max-w-sm md:grid-cols-2 h-auto gap-4 md:w-auto md:m-auto md:max-w-screen-xl lg:max-w-screen-xl justify-center object-fill'>
       {projects.map((project: string) => (
         <li className='list-none rounded-lg'>{<ProjectPreview projectName={project} showTitle={showTitle} onClickFunction={projectNameChange} />}</li>
       ))}

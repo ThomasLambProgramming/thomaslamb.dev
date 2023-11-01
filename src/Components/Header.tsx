@@ -9,8 +9,8 @@ function Header()
             <h1 className="text-2xl">Unreal Engine 5 Programmer</h1>
           </div>
 
-          <div className="flex flex-row text-left">
-            <div className="mt-6">
+          <div className="flex flex-row text-left ">
+            <div className="mt-6 ">
               Game developer with an interest in a wide variety of programming disciplines. 
               <div>
                 Currently working on a project in UE5 with C++ and a custom engine in C++
@@ -19,12 +19,12 @@ function Header()
                 To view projects, click on the preview gif. To exit the project showcase click the sides.
               </div>
             </div>
-            <div className="ml-36 mt-6">
+            <div className="lg:ml-36 md:ml-24 flex flex-row-reverse justify-end items-center sm:ml-2 ml-2 mt-6 ">
               <SocialLinks />
             </div>
           </div>
         </div>
-          <hr className="h-px w-[100%] my-8 bg-slate-900 border-0 dark:bg-slate-900" />
+          <hr className="h-px w-[100%] my-8  border-0 dark:bg-slate-900" />
       </div>
     );
 }
