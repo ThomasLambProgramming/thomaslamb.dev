@@ -69,9 +69,11 @@ const App: FC = () => {
     <div className={containerClasses}>
       <ProjectModal isShown={isShown} hide={ModalToggled} projectName={projectName}></ProjectModal>
       <Header /> 
-      <ProjectContainer projects={ShippedGames} typeTitle="Shipped Games" projectNameChange={ProjectNameChanged} showTitle={false}/>
-      <ProjectContainer projects={UnrealProjects} typeTitle="Unreal and C++ Projects" projectNameChange={ProjectNameChanged} showTitle={true}/>
-      <ProjectContainer projects={UnityProjects} typeTitle="Unity Projects / University Projects" projectNameChange={ProjectNameChanged} showTitle={true}/>
+      <div className="ml-24 mr-24 flex flex-col justify-center align-middle content-center items-center">
+        <ProjectContainer projects={ShippedGames} typeTitle="Shipped Games" projectNameChange={ProjectNameChanged} showTitle={false}/>
+        <ProjectContainer projects={UnrealProjects} typeTitle="Unreal and C++ Projects" projectNameChange={ProjectNameChanged} showTitle={true}/>
+        <ProjectContainer projects={UnityProjects} typeTitle="Unity Projects / University Projects" projectNameChange={ProjectNameChanged} showTitle={true}/>
+      </div>
       <GithubCommitDisplay /> 
       <Footer /> 
     </div>

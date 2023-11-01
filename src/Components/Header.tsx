@@ -2,14 +2,14 @@ import SocialLinks from "./SocialLinks";
 function Header()
 {
     return (
-      <div className="mb-14 ml-24 pt-20 mr-24 block">
+      <div className="mb-14 ml-24 pt-20 mr-24 flex flex-col text-center items-center">
         <div className="">
           <div className="text-4xl">
             <h1 className="">Thomas Lamb</h1>
             <h1 className="text-2xl">Unreal Engine 5 Programmer</h1>
           </div>
 
-          <div className="flex flex-row">
+          <div className="flex flex-row text-left">
             <div className="mt-6">
               Game developer with an interest in a wide variety of programming disciplines. 
               <div>
