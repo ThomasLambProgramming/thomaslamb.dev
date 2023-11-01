@@ -5,6 +5,7 @@
 I have been interested in learning how to make smoother movement and animations with code and have started learning bezier curves and splines.
 
 ![FailedToLoadImage](/ProjectAssets/BezierCurves/Spline1.gif)
+
 I started with making simple bezier curves using Unity's Vector3.lerp function. I made a cubic and quadratic curve quite simply, and found it more efficent.
 
 equations. With these equations I learned that the derivatives could be used to find movement direction and acceleration (shown with the direction marked green above).
