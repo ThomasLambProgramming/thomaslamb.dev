@@ -18,7 +18,7 @@ const ProjectPreview: React.FC<{projectName: string, showTitle: boolean, onClick
   // The css for the grid was wrong and doing the text popup was then screwed up because of it
   // it got it roughly to were i wanted but there is probably some bad / unused / pointless classes added to elements.
   return (
-    <div className="flex flex-col items-center justify-center mt-12 relative bg-slate-900 group min-w-[200px] rounded">
+    <div className="flex flex-col items-center justify-center mt-8 relative bg-slate-900 group min-w-[200px] rounded">
       <button className="" onClick={() => {onClickFunction(projectNameWithoutSpace)}}>
 
         <img className="relative inset-0 object-cover w-full rounded h-full group-hover:opacity-50 "

@@ -49,7 +49,7 @@ const App: FC = () => {
   document.body.classList.add("no-scrollbar");
 
   return (
-    <div className=" bg-pewter-lighter w-full h-full no-scrollbar overflow-y-clip">
+    <div className=" bg-pewter-lighter w-full h-full no-scrollbar overflow-y-hidden">
       <ProjectModal isShown={isShown} hide={ModalToggled} projectName={projectName}></ProjectModal>
       <Header /> 
       <div className="ml-24 mr-24 flex flex-col justify-center align-middle content-center items-center">
