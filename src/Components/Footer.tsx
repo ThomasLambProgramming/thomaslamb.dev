@@ -2,7 +2,7 @@ import SocialLinks from "./SocialLinks";
 function Footer() {
   return (
     <div>
-      <footer className=" bg-slate-100 shadow mt-8 dark:bg-gray-800 ">
+      <footer className="bg-slate-100 shadow mt-8 dark:bg-gray-800 min-h-[400px] ">
         <div className="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
           <span className="text-sm text-gray-500  dark:text-gray-400 w-6/12">
             <div className="text-center">Get in touch</div>
