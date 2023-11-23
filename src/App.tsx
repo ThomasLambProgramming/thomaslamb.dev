@@ -3,9 +3,7 @@ import GithubCommitDisplay from "./Components/GithubCommitDisplay";
 import Header from "./Components/Header";
 import ProjectContainer from "./Components/ProjectContainer";
 import ProjectModal from "./Components/ProjectModal";
-import {FC, useState, useEffect} from "react";
-
-let previousYValue: number = 0;
+import {FC, useState} from "react";
 
 const App: FC = () => {
 
@@ -13,26 +11,11 @@ const App: FC = () => {
   
   const ModalToggled = () => {
     setIsShown(!isShown);
-
-    //Set fixed on the opposite value since the setIsShown hasnt actually flipped the value yet.
-    if (isShown == true)
-      setContainerClasses(containerClasses.replace(" fixed",''));
-    else
-      setContainerClasses(containerClasses + " fixed");
   }
-  
-  useEffect(() => {
-    window.scrollTo(0, previousYValue);
-    document.body.style.top = '-${window.scrollY}px';
-  })
 
-  const [containerClasses, setContainerClasses] = useState<string>(
-    "bg-slate-100 w-full h-full no-scrollbar overflow-y-clip"
-  );
-  
   const [projectName, setProjectName] = useState<string>("");
   const ProjectNameChanged = (name: string) => {
-    previousYValue = window.scrollY;
+    //previousYValue = window.scrollY;
     setProjectName(name);
     ModalToggled();
   }
@@ -66,7 +49,7 @@ const App: FC = () => {
   document.body.classList.add("no-scrollbar");
 
   return (
-    <div className={containerClasses}>
+    <div className=" bg-pewter-lighter w-full h-full no-scrollbar overflow-y-clip">
       <ProjectModal isShown={isShown} hide={ModalToggled} projectName={projectName}></ProjectModal>
       <Header /> 
       <div className="ml-24 mr-24 flex flex-col justify-center align-middle content-center items-center">
