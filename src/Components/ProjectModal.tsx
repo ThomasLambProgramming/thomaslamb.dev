@@ -14,8 +14,6 @@ const ProjectModal: React.FC<ModalProps> = ({isShown, hide, projectName}) => {
     const [filePath, setFilePath] = useState('/ProjectAssets/' + projectName + "/" + projectName + ".md");
     const [post, setPost] = useState('');
 
-    const ref = useRef(0);
-
     if (filePath.includes(projectName) == false)
     {
         //Clear current post
