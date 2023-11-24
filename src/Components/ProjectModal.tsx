@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState} from 'react';
 import ReactDOM from 'react-dom';
 import Markdown from 'react-markdown';
 import closeButton from '../close-button.png'
