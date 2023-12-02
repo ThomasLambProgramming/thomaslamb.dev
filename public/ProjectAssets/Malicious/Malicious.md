@@ -8,20 +8,20 @@ This game brought alot of challenges and I learned alot about developing as a te
 
 ![FailedToLoadImage](/ProjectAssets/Malicious/Malicious1.gif)
 
-## Hacking Mechanic
+# Hacking Mechanic
 
 One of the biggest challenges that this project brought was the hacking mechanic. This mechanic was challenging for me as it required me to learn how to develop more modular and reusable code as this hacking mechanic had to work alongside the enemy, blocks, drone, spring and wire mechanics. I solved this issue by making a base class of hackable that was then inherited by all the mechanics that needed it. allowing the player to enter and exit without affecting any of the code for that specific mechanic itself.
 
 ![FailedToLoadImage](/ProjectAssets/Malicious/Malicious2.gif)
 
-## Wire Mechanic 
+# Wire Mechanic 
 
 To add verticality to the platforming without directly allowing the player to jump up all the blocks, the designers came up with the wire mechanic. This mechanic allows the player to enter into a wire and use the wasd, space and ctrl keys to place wires and move along them. The wire does raycasts to check if a wire can be placed and is checked against a layer mask to give the designers more options. The player also has a limit on the amount of moves they can do.
 At any time the player can launch themselves out of the wire in the direction they are facing.
 
 ![FailedToLoadImage](/ProjectAssets/Malicious/Malicious3.gif)
 
-## Fan Mechanic
+# Fan Mechanic
 
 This fan mechanic taught me the most about games development in a team. This mechanic had a few smaller features to make it a better fan then just applying force in a direction such as a dot product check for the current objects velocity and apply extra force accordingly (this was done to allow for smoother fan pushing when the fan was horizontally pushing), the fan also used a different force to push based on the distance away from the object it was pushing. I implemented this because I wanted a smarter fan then just pushing it. This however led me to learn quite alot, as when explaining the fan to my other team members, they didn't understand what I was trying to add to the fan, and it caused a lot of communication issues.
 
@@ -33,4 +33,4 @@ This ground enemy shown below just had simple seek behaviors with a limited turn
 
 Our final game was fully playable with a full sprint schedule of alpha, beta, and gold. Our end result had very few bugs and none of them were game breaking.
 
-The final build is avaiable on [Itch IO Here](https://haydencarterdesign.itch.io/malicious)
+The final build is avaiable on at https://haydencarterdesign.itch.io/malicious

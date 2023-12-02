@@ -24,11 +24,15 @@ const ProjectModal: React.FC<ModalProps> = ({isShown, hide, projectName}) => {
                 let stringArray : string[];
                 stringArray = text.split("\n");
                 
-                const defaultClasses = " bg-pewter-darker";
+                const defaultClasses = " bg-pewter-darker min-w-[100%]";
+                const defaultClassesText = " p-12";
+                const defaultClassesImage = " p-12";
+                const defaultClassesHeader = " text-5xl bg-pewter-default/95 pb-16 pt-16 w-full text-4xl";
                 
                 let newHtml : JSX.Element[];
-                newHtml = stringArray.map(splitText => {
-            
+                newHtml = [];
+                stringArray.map(splitText => {
+                    
                     //Header 
                     if (splitText.charAt(0) == "#") {
                         
@@ -37,7 +41,7 @@ const ProjectModal: React.FC<ModalProps> = ({isShown, hide, projectName}) => {
                         convertedStrings[1] = convertedStrings[1].replace("#", '');
                         convertedStrings[1] = convertedStrings[1].trim();
 
-                        return <p className={convertedStrings[0] + defaultClasses}>{convertedStrings[1]}</p>;                            
+                        newHtml.push(<p className={convertedStrings[0] + defaultClasses + defaultClassesText + defaultClassesHeader}>{convertedStrings[1]}</p>);                            
                     }
                     //Link or image
                     else if (splitText.charAt(0) == "!") {
@@ -51,16 +55,16 @@ const ProjectModal: React.FC<ModalProps> = ({isShown, hide, projectName}) => {
                         convertedStrings = GetInsideAndRemoveString('<', splitText);
                         let className = convertedStrings[0];
 
-                        return <img className={className + defaultClasses} src={imgSrc} alt={altText}></img>; 
+                        newHtml.push(<img className={className + defaultClasses + defaultClassesImage} src={imgSrc} alt={altText}></img>); 
                     }
                     //Regular Text with css information
                     else if (splitText.includes('<')) {
                         let convertedStrings = GetInsideAndRemoveString("<", splitText);
-                        return <p className={convertedStrings[0] + defaultClasses}>{convertedStrings[1]}</p>;
+                        newHtml.push(<p className={convertedStrings[0] + defaultClasses + defaultClassesText}>{convertedStrings[1]}</p>);
                     }
                     //basic text with standard formatting.
-                    else {
-                        return <p className={defaultClasses}>{splitText}</p>;
+                    else if (splitText.length > 2) {
+                        newHtml.push(<p className={defaultClasses + defaultClassesText}>{splitText}</p>);
                     }
                 });
 
@@ -82,8 +86,8 @@ const ProjectModal: React.FC<ModalProps> = ({isShown, hide, projectName}) => {
                         <img src={closeButton} alt="X" className="min-h-[40px] max-h-[40px] min-w-[40px] max-w-[60px] w-auto h-auto"/>
                     </div>
                 </div>
-                <div className="fixed inset-0 overflow-y-auto z-30 rounded-lg align-middle w-[95%] h-full mt-8 m-auto text-center bg-pewter-default/95">
-                    <div className="text-gray-950 space-y-12 max-w-screen-lg w-full flex justify-center flex-col items-center m-auto scroll-smooth opacity-[100%]">
+                <div className="fixed inset-0 overflow-y-auto z-30 rounded-lg align-middle w-[95%] h-full m-auto text-center bg-pewter-default/95">
+                    <div className="text-gray-950 max-w-screen-lg w-full flex justify-center flex-col items-center m-auto scroll-smooth opacity-[100%]">
                         {htmlToRender}
                     </div>
                 <div className="opacity-0 text-opacity-0 h-[10%]">
@@ -109,7 +113,8 @@ function GetInsideAndRemoveString(statementToCheck: string, text: string) : stri
         regex = /\[(.*?)\]/g;
     else
     {
-        return [];
+        //Returning a double so that regardless of what is used it just returns the same text.
+        return [text, text];
     }
 
     let inBracketStringArray = text.match(regex);
