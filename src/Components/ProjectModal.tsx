@@ -24,7 +24,8 @@ const ProjectModal: React.FC<ModalProps> = ({isShown, hide, projectName}) => {
                 let stringArray : string[];
                 stringArray = text.split("\n");
                 
-
+                const defaultClasses = " bg-pewter-darker";
+                
                 let newHtml : JSX.Element[];
                 newHtml = stringArray.map(splitText => {
             
@@ -36,7 +37,7 @@ const ProjectModal: React.FC<ModalProps> = ({isShown, hide, projectName}) => {
                         convertedStrings[1] = convertedStrings[1].replace("#", '');
                         convertedStrings[1] = convertedStrings[1].trim();
 
-                        return <p className={convertedStrings[0]}>{convertedStrings[1]}</p>;                            
+                        return <p className={convertedStrings[0] + defaultClasses}>{convertedStrings[1]}</p>;                            
                     }
                     //Link or image
                     else if (splitText.charAt(0) == "!") {
@@ -50,16 +51,16 @@ const ProjectModal: React.FC<ModalProps> = ({isShown, hide, projectName}) => {
                         convertedStrings = GetInsideAndRemoveString('<', splitText);
                         let className = convertedStrings[0];
 
-                        return <img className={className} src={imgSrc} alt={altText}></img>; 
+                        return <img className={className + defaultClasses} src={imgSrc} alt={altText}></img>; 
                     }
                     //Regular Text with css information
                     else if (splitText.includes('<')) {
                         let convertedStrings = GetInsideAndRemoveString("<", splitText);
-                        return <p className={convertedStrings[0]}>{convertedStrings[1]}</p>;
+                        return <p className={convertedStrings[0] + defaultClasses}>{convertedStrings[1]}</p>;
                     }
                     //basic text with standard formatting.
                     else {
-                        return <p className=''>{splitText}</p>;
+                        return <p className={defaultClasses}>{splitText}</p>;
                     }
                 });
 
@@ -82,7 +83,7 @@ const ProjectModal: React.FC<ModalProps> = ({isShown, hide, projectName}) => {
                     </div>
                 </div>
                 <div className="fixed inset-0 overflow-y-auto z-30 rounded-lg align-middle w-[95%] h-full mt-8 m-auto text-center bg-pewter-default/95">
-                    <div className="text-gray-950 space-y-12 mt-8 max-w-screen-lg w-full flex justify-center flex-col items-center m-auto scroll-smooth opacity-[100%]">
+                    <div className="text-gray-950 space-y-12 max-w-screen-lg w-full flex justify-center flex-col items-center m-auto scroll-smooth opacity-[100%]">
                         {htmlToRender}
                     </div>
                 <div className="opacity-0 text-opacity-0 h-[10%]">
@@ -99,7 +100,6 @@ const ProjectModal: React.FC<ModalProps> = ({isShown, hide, projectName}) => {
 
 /** Output Array = First index is the inside of brackets, Second index is the rest of the string with the string from opening to ending statement removed. **/
 function GetInsideAndRemoveString(statementToCheck: string, text: string) : string[] {
-    //splitText.match();
     let regex: RegExp;
     if (statementToCheck.includes("<"))
         regex = /\<(.*?)\>/g;
