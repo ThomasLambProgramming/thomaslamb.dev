@@ -33,4 +33,4 @@ This ground enemy shown below just had simple seek behaviors with a limited turn
 
 Our final game was fully playable with a full sprint schedule of alpha, beta, and gold. Our end result had very few bugs and none of them were game breaking.
 
-The final build is avaiable on at https://haydencarterdesign.itch.io/malicious
+<text-blue-500 hover:underline pt-0>[The build is avaliable on Itch.io here](https://haydencarterdesign.itch.io/malicious)

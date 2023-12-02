@@ -24,10 +24,10 @@ const ProjectModal: React.FC<ModalProps> = ({isShown, hide, projectName}) => {
                 let stringArray : string[];
                 stringArray = text.split("\n");
                 
-                const defaultClasses = " bg-pewter-darker min-w-[100%]";
-                const defaultClassesText = " p-12";
-                const defaultClassesImage = " p-12";
-                const defaultClassesHeader = " text-5xl bg-pewter-default/95 pb-16 pt-16 w-full text-4xl";
+                const defaultClasses = " bg-pewter-darker min-w-[100%] pt-10";
+                const defaultClassesText = " pr-12 pl-12 pt-4 pb-4";
+                const defaultClassesImage = " pr-12 pl-12";
+                const defaultClassesHeader = " pt-40 pb-20 text-5xl bg-pewter-default/95 w-full text-4xl";
                 
                 let newHtml : JSX.Element[];
                 newHtml = [];
@@ -41,7 +41,7 @@ const ProjectModal: React.FC<ModalProps> = ({isShown, hide, projectName}) => {
                         convertedStrings[1] = convertedStrings[1].replace("#", '');
                         convertedStrings[1] = convertedStrings[1].trim();
 
-                        newHtml.push(<p className={convertedStrings[0] + defaultClasses + defaultClassesText + defaultClassesHeader}>{convertedStrings[1]}</p>);                            
+                        newHtml.push(<p className={defaultClasses + defaultClassesText + defaultClassesHeader + " " + convertedStrings[0]}>{convertedStrings[1]}</p>);                            
                     }
                     //Link or image
                     else if (splitText.charAt(0) == "!") {
@@ -58,13 +58,46 @@ const ProjectModal: React.FC<ModalProps> = ({isShown, hide, projectName}) => {
                         newHtml.push(<img className={className + defaultClasses + defaultClassesImage} src={imgSrc} alt={altText}></img>); 
                     }
                     //Regular Text with css information
-                    else if (splitText.includes('<')) {
-                        let convertedStrings = GetInsideAndRemoveString("<", splitText);
-                        newHtml.push(<p className={convertedStrings[0] + defaultClasses + defaultClassesText}>{convertedStrings[1]}</p>);
+                    else if (splitText.charAt(0) == "<") {
+                        let convertedStringsH = GetInsideAndRemoveString("<", splitText);
+                        
+                        if (splitText.includes('['))
+                        {
+                            let convertedStrings = GetInsideAndRemoveString("[", convertedStringsH[1]);    
+                            let linkOutwardText = convertedStrings[0];
+                            convertedStrings = GetInsideAndRemoveString("(", convertedStrings[1]);
+                            let link = convertedStrings[0];
+                            let indexOfLink = splitText.indexOf('[');     
+                            
+                            let firstHalfOfString = convertedStrings[1].slice(0, indexOfLink);
+                            let secondHalfOfString = convertedStrings[1].slice(indexOfLink + 1);
+
+                            newHtml.push(<p className={convertedStringsH[0] + defaultClasses + defaultClassesText}>{firstHalfOfString}<a target="_blank" href={link}>{linkOutwardText}</a>{secondHalfOfString}</p>)
+                            
+                        }
+                        else
+                            newHtml.push(<p className={convertedStringsH[0] + defaultClasses + defaultClassesText}>{convertedStringsH[1]}</p>);
                     }
                     //basic text with standard formatting.
-                    else if (splitText.length > 2) {
-                        newHtml.push(<p className={defaultClasses + defaultClassesText}>{splitText}</p>);
+                    else if (splitText.trim().length > 1) {
+                        
+                        let outputText = splitText;
+                        if (splitText.includes('['))
+                        {
+                            let convertedStrings = GetInsideAndRemoveString("[", splitText);    
+                            let linkOutwardText = convertedStrings[0];
+                            convertedStrings = GetInsideAndRemoveString("(", convertedStrings[1]);
+                            let link = convertedStrings[0];
+                            let indexOfLink = splitText.indexOf('[');     
+                            
+                            let firstHalfOfString = convertedStrings[1].slice(0, indexOfLink);
+                            let secondHalfOfString = convertedStrings[1].slice(indexOfLink + 1);
+
+                            newHtml.push(<p className={defaultClasses + defaultClassesText}>{firstHalfOfString}<a target="_blank" href={link}>{linkOutwardText}</a>{secondHalfOfString}</p>)
+                            
+                        }
+                        else
+                            newHtml.push(<p className={defaultClasses + defaultClassesText}>{outputText}</p>);
                     }
                 });
 

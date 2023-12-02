@@ -1,4 +1,4 @@
-# Bezier Curves
+# <pt-40 pb-20> Bezier Curves
 
 ![FailedToLoadImage](/ProjectAssets/BezierCurves/NothingToCurve3.gif)
 

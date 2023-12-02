@@ -1,6 +1,5 @@
 # Vlad Circus
-
-![FailedToLoadImage](/ProjectAssets/VladCircus/VladCircusCombat1.gif)
+!<pt-20>[FailedToLoadImage](/ProjectAssets/VladCircus/VladCircusCombat1.gif)
 
 Vlad Circus is a Psychological Horror Puzzle game about a clown named Oliver Mills getting over his anxiety and trumatic stress of his circus burning down. The game was made by a small indie team named Indiesruption in Monogame using C# and was then ported by myself. Using the development kits at Blowfish Studios I ported the game to Xbox Series/X, Playstation 4/5, Switch and Epic games store and Gog Galaxy for pc, the steam version was already ported to steam by Diego the lead developer at Indiesruption.
 
@@ -10,4 +9,6 @@ Porting the game to consoles was a massive undertaking and taught me alot about 
 
 Build systems became a very important part of the development as the build times for consoles was quite long (5-10 minutes for debug builds) and led me to learn how to leverage msbuild scripts to automate the whole build process and uploading to the required consoles. The long build times also taught me how to debug more effectively as I had to setup multiple tests for each build otherwise testing 3 solutions could take over 45 minutes to test just in build and upload times to the consoles.
 
-I am very proud of the end result as no features had to be cut and no half measures and fixes were needed, the game runs at a perfect framerate on all consoles and mimics the pc version completely. The Steam page link is: https://store.steampowered.com/app/1702430/Vlad_Circus_Descend_Into_Madness
+I am very proud of the end result as no features had to be cut and no half measures and fixes were needed, the game runs at a perfect framerate on all consoles and mimics the pc version completely. 
+
+<text-blue-500 hover:underline pt-0>[Steam Link](https://store.steampowered.com/app/1702430/Vlad_Circus_Descend_Into_Madness)
