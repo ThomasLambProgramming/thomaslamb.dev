@@ -1,6 +1,5 @@
 import React, { useEffect, useState} from 'react';
 import ReactDOM from 'react-dom';
-import Markdown from 'react-markdown';
 import closeButton from '../close-button.png'
 
 export interface ModalProps {
@@ -12,18 +11,62 @@ export interface ModalProps {
 const ProjectModal: React.FC<ModalProps> = ({isShown, hide, projectName}) => {
     
     const [filePath, setFilePath] = useState('/ProjectAssets/' + projectName + "/" + projectName + ".md");
-    const [post, setPost] = useState('');
+    const [htmlToRender, setHtmlToRender] = useState<(JSX.Element)[]>([]);
 
     if (filePath.includes(projectName) == false)
-    {
-        //Clear current post
-        setPost("");
         setFilePath('/ProjectAssets/' + projectName + "/" + projectName + ".md");
-    }
 
     useEffect(() => {
         const mrk = new Request(filePath);
-        fetch(mrk).then(data => data.text()).then(text => setPost(text));
+        fetch(mrk).then(data => data.text()).then(
+            text => {
+                
+                let stringArray : string[];
+                stringArray = text.split("\n");
+                
+
+                let newHtml : JSX.Element[];
+                newHtml = stringArray.map(splitText => {
+            
+                    //Header 
+                    if (splitText.charAt(0) == "#") {
+                        
+                        let convertedStrings = GetInsideAndRemoveString("<", splitText);
+                
+                        convertedStrings[1] = convertedStrings[1].replace("#", '');
+                        convertedStrings[1] = convertedStrings[1].trim();
+
+                        return <p className={convertedStrings[0]}>{convertedStrings[1]}</p>;                            
+                    }
+                    //Link or image
+                    else if (splitText.charAt(0) == "!") {
+
+                        let convertedStrings = GetInsideAndRemoveString("[", splitText);
+                        let altText = convertedStrings[0];
+                        
+                        convertedStrings = GetInsideAndRemoveString('(', splitText);
+                        let imgSrc = convertedStrings[0];
+
+                        convertedStrings = GetInsideAndRemoveString('<', splitText);
+                        let className = convertedStrings[0];
+
+                        return <img className={className} src={imgSrc} alt={altText}></img>; 
+                    }
+                    //Regular Text with css information
+                    else if (splitText.includes('<')) {
+                        let convertedStrings = GetInsideAndRemoveString("<", splitText);
+                        return <p className={convertedStrings[0]}>{convertedStrings[1]}</p>;
+                    }
+                    //basic text with standard formatting.
+                    else {
+                        return <p className=''>{splitText}</p>;
+                    }
+                });
+
+                setHtmlToRender(newHtml);
+
+                // setPost(text);
+            });
     }, [filePath]);
 
     const modal = (
@@ -40,9 +83,7 @@ const ProjectModal: React.FC<ModalProps> = ({isShown, hide, projectName}) => {
                 </div>
                 <div className="fixed inset-0 overflow-y-auto z-30 rounded-lg align-middle w-[95%] h-full mt-8 m-auto text-center bg-pewter-default/95">
                     <div className="text-gray-950 space-y-12 mt-8 max-w-screen-lg w-full flex justify-center flex-col items-center m-auto scroll-smooth opacity-[100%]">
-                        <Markdown>
-                            {post}
-                        </Markdown>
+                        {htmlToRender}
                     </div>
                 <div className="opacity-0 text-opacity-0 h-[10%]">
                     Adding height here so scroll doesnt cut off end of modal text
@@ -55,6 +96,35 @@ const ProjectModal: React.FC<ModalProps> = ({isShown, hide, projectName}) => {
     // Do markdown file reading here.
     return isShown ? ReactDOM.createPortal(modal, document.body) : null;
 };
+
+/** Output Array = First index is the inside of brackets, Second index is the rest of the string with the string from opening to ending statement removed. **/
+function GetInsideAndRemoveString(statementToCheck: string, text: string) : string[] {
+    //splitText.match();
+    let regex: RegExp;
+    if (statementToCheck.includes("<"))
+        regex = /\<(.*?)\>/g;
+    else if (statementToCheck.includes("("))
+        regex = /\((.*?)\)/g;
+    else if (statementToCheck.includes("["))
+        regex = /\[(.*?)\]/g;
+    else
+    {
+        return [];
+    }
+
+    let inBracketStringArray = text.match(regex);
+                        
+    let outsideBracketString = text.replace(regex, '');
+    outsideBracketString = outsideBracketString.trim();
+
+    let inBracketString: string;
+    if (inBracketStringArray != null)
+        inBracketString = inBracketStringArray[0].substring(1, inBracketStringArray[0].length - 1);
+    else
+        inBracketString = "";
+
+    return [inBracketString, outsideBracketString];
+}
 
 export default ProjectModal;
 
