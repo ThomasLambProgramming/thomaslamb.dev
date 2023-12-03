@@ -14,7 +14,10 @@ const ProjectModal: React.FC<ModalProps> = ({isShown, hide, projectName}) => {
     const [htmlToRender, setHtmlToRender] = useState<(JSX.Element)[]>([]);
 
     if (filePath.includes(projectName) == false)
+    {
         setFilePath('/ProjectAssets/' + projectName + "/" + projectName + ".md");
+        setHtmlToRender([]);
+    }
 
     useEffect(() => {
         const mrk = new Request(filePath);
