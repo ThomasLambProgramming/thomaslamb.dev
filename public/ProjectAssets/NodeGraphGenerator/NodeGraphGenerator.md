@@ -18,4 +18,4 @@ The final result is a fully ready node graph that can be generated from many dif
 
 ![FailedToLoadImage](/ProjectAssets/NodeGraphGenerator/ComplexAssessment.gif)
 
-The unity package if you wish to use it is https://github.com/ThomasLambProgramming/NodeGraph
+<text-blue-500 hover:underline pt-0>[The unity package if you wish to use it is avaliable Here](https://github.com/ThomasLambProgramming/NodeGraph)

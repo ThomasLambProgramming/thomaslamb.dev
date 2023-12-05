@@ -9,9 +9,9 @@ export default {
     extend: {
       colors: {
         pewter: {
-          default: "#999da0",
-          darker: "#989898",
-          lighter: "#A2A2A2",
+          default: "#BDC3C7",
+          darker: "#CCD1D1",
+          lighter: "#faf9f6",
         }
       }
     },
