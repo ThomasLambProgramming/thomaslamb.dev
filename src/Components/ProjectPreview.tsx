@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import DelayedImage from './DelayedImage';
 
 const ProjectPreview: React.FC<{projectName: string, showTitle: boolean, onClickFunction: (name: string) => void}> = ({projectName, showTitle, onClickFunction}) =>
 {
@@ -21,8 +22,7 @@ const ProjectPreview: React.FC<{projectName: string, showTitle: boolean, onClick
     <div className="flex flex-col items-center justify-center mt-8 relative bg-slate-900 group min-w-[200px] rounded">
       <button className="" onClick={() => {onClickFunction(projectNameWithoutSpace)}}>
 
-        <img className="relative inset-0 object-cover w-full rounded h-full group-hover:opacity-50 "
-          src={"/ProjectAssets/" + projectNameWithoutSpace + "/" + projectNameWithoutSpace + "Preview.gif"}/>
+        <DelayedImage projectName={projectNameWithoutSpace} className="relative inset-0 object-cover w-full rounded h-full group-hover:opacity-50" ></DelayedImage>
 
         <div className="text-truncate overflow-hidden transition-all absolute opacity-100 group-hover:opacity-100 w-full align-middle max-h-[75%] bottom-[0%] text-center">
           <h3 className="text-3xl text-white mb-4 group-hover:opacity-0 translate-y-2/3 group-hover:-translate-y-[130%] duration-100">
