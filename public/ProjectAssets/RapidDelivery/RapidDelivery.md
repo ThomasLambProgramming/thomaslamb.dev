@@ -16,4 +16,4 @@ The road object is split into ten meter chunks that are instantiated at set inte
 
 Due to our limited time of six weeks and the fact that we only had two artists, we made all of our environment tiled. They all have a base of a set size, and our designers worked with the artists to create small environment prefabs of the same size to allow for the constant spawning of environment without them being in the wrong position. Our final game was fully playable with a nice and simple UI. We managed to get small details in such as the falling and raising ! mark for customers and etc.
 
-![FailedToLoadImage](/ProjectAssets/RapidDelivery/FirstYearMajorTwo.gif)
+!<pb-12>[FailedToLoadImage](/ProjectAssets/RapidDelivery/FirstYearMajorTwo.gif)

@@ -13,4 +13,4 @@ I started with making simple bezier curves using Unity's Vector3.lerp function. 
 
 This tutorial showed me the great usage of unity editor functions and tools, alongside how they can be made to increase working speeds and clarity of code. The above image shows some of the code that I made to place unity handles for each spline point.
 
-![FailedToLoadImage](/ProjectAssets/BezierCurves/Baseball.gif)
+!<pb-12>[FailedToLoadImage](/ProjectAssets/BezierCurves/Baseball.gif)

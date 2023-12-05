@@ -123,10 +123,10 @@ const ProjectModal: React.FC<ModalProps> = ({isShown, hide, projectName}) => {
                     </div>
                 </div>
                 <div className="fixed inset-0 overflow-y-auto z-30 rounded-lg align-middle w-[95%] h-full m-auto text-center bg-pewter-default/95">
-                    <div className="text-gray-950 max-w-screen-lg w-full flex justify-center flex-col items-center m-auto scroll-smooth opacity-[100%]">
+                    <div className="text-gray-950 max-w-screen-lg w-full flex justify-center flex-col items-center m-auto scroll-smooth opacity-[100%] pb-12">
                         {htmlToRender}
                     </div>
-                <div className="opacity-0 text-opacity-0 h-[10%]">
+                <div className="opacity-0 text-opacity-0 h-[30%]">
                     Adding height here so scroll doesnt cut off end of modal text
                 </div>
                 </div>
