@@ -4,9 +4,9 @@ function Header()
     return (
       <div className="ml-24 pt-16 mr-24 flex flex-col text-center items-center">
         <div className="">
-          <div className="text-4xl">
+          <div className="text-6xl">
             <h1 className="">Thomas Lamb</h1>
-            <h1 className="text-2xl">Unreal Engine 5 Programmer</h1>
+            <h1 className="text-4xl mb-10">Unreal Engine 5 Programmer</h1>
           </div>
 
           <div className="flex flex-row text-left ">

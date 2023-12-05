@@ -6,6 +6,9 @@ export default {
     "./public/**/*.md"
   ],
   theme: {
+    fontFamily: {
+        'sans': ['Hedvig Letters Sans']
+    },
     extend: {
       colors: {
         pewter: {
