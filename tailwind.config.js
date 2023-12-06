@@ -15,6 +15,7 @@ export default {
           default: "#BDC3C7",
           darker: "#CCD1D1",
           lighter: "#faf9f6",
+          fakeInvisible :'rgb (0,0,0,0%)'
         }
       }
     },
