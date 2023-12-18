@@ -8,14 +8,14 @@ import {FC, useState} from "react";
 const App: FC = () => {
 
   const [isShown, setIsShown] = useState<boolean>(false);
-  const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
+  // const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
 
   const ModalToggled = () => {
     setIsShown(!isShown);
   }
-  const DarkModeToggled = () => {
-    setIsDarkMode(!isDarkMode);
-  }
+  // const DarkModeToggled = () => {
+  //   setIsDarkMode(!isDarkMode);
+  // }
 
   const [projectName, setProjectName] = useState<string>("");
   const ProjectNameChanged = (name: string) => {
@@ -53,7 +53,7 @@ const App: FC = () => {
   document.body.classList.add("no-scrollbar");
 
   return (
-    <div className={isDarkMode ? "dark" : ""}>
+    //<div className={isDarkMode ? "dark" : ""}>
       <div className=" bg-light_theme-lighter dark:bg-dark_theme-default w-full h-full no-scrollbar overflow-y-hidden">
         <ProjectModal isShown={isShown} hide={ModalToggled} projectName={projectName}></ProjectModal>
         {/* <button
@@ -70,10 +70,10 @@ const App: FC = () => {
           {/* <ProjectContainer projects={UnrealProjects} typeTitle="Unreal and C++ Projects" projectNameChange={ProjectNameChanged} showTitle={true}/> */}
           <ProjectContainer projects={UnityProjects} typeTitle="Unity Projects" projectNameChange={ProjectNameChanged}/>
         </div>
-        <GithubCommitDisplay isDarkMode={isDarkMode}/> 
+        <GithubCommitDisplay isDarkMode={false}/> 
         <Footer /> 
       </div>
-    </div>
+    //</div>
   );
 }
 
