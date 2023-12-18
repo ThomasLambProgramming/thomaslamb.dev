@@ -8,9 +8,13 @@ import {FC, useState} from "react";
 const App: FC = () => {
 
   const [isShown, setIsShown] = useState<boolean>(false);
-  
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
+
   const ModalToggled = () => {
     setIsShown(!isShown);
+  }
+  const DarkModeToggled = () => {
+    setIsDarkMode(!isDarkMode);
   }
 
   const [projectName, setProjectName] = useState<string>("");
@@ -30,7 +34,7 @@ const App: FC = () => {
   ];
 
   //const UnrealProjects: string[] = [
-    //"OpenGL",
+    //"Direct X Renderer",
     //"Alchemist"
   //];
 
@@ -49,16 +53,26 @@ const App: FC = () => {
   document.body.classList.add("no-scrollbar");
 
   return (
-    <div className=" bg-pewter-lighter w-full h-full no-scrollbar overflow-y-hidden">
-      <ProjectModal isShown={isShown} hide={ModalToggled} projectName={projectName}></ProjectModal>
-      <Header /> 
-      <div className="ml-24 mr-24 flex flex-col justify-center align-middle content-center items-center">
-        <ProjectContainer projects={ShippedGames} typeTitle="Shipped Games / Current Projects" projectNameChange={ProjectNameChanged}/>
-        {/* <ProjectContainer projects={UnrealProjects} typeTitle="Unreal and C++ Projects" projectNameChange={ProjectNameChanged} showTitle={true}/> */}
-        <ProjectContainer projects={UnityProjects} typeTitle="Unity Projects" projectNameChange={ProjectNameChanged}/>
+    <div className={isDarkMode ? "dark" : ""}>
+      <div className=" bg-light_theme-lighter dark:bg-dark_theme-default w-full h-full no-scrollbar overflow-y-hidden">
+        <ProjectModal isShown={isShown} hide={ModalToggled} projectName={projectName}></ProjectModal>
+        {/* <button
+                  onClick={DarkModeToggled}
+                  className="text-white bg-gray-700 hover:bg-gray-800 
+                  focus:ring-4 focus:outline-none focus:ring-gray-300 
+                  font-medium rounded-lg text-sm w-10% max-w-xl px-5 py-2.5 text-center 
+                  dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+                  Toggle Dark Mode
+                </button> */}
+        <Header /> 
+        <div className="ml-24 mr-24 flex flex-col justify-center align-middle content-center items-center">
+          <ProjectContainer projects={ShippedGames} typeTitle="Shipped Games / Current Projects" projectNameChange={ProjectNameChanged}/>
+          {/* <ProjectContainer projects={UnrealProjects} typeTitle="Unreal and C++ Projects" projectNameChange={ProjectNameChanged} showTitle={true}/> */}
+          <ProjectContainer projects={UnityProjects} typeTitle="Unity Projects" projectNameChange={ProjectNameChanged}/>
+        </div>
+        <GithubCommitDisplay isDarkMode={isDarkMode}/> 
+        <Footer /> 
       </div>
-      <GithubCommitDisplay /> 
-      <Footer /> 
     </div>
   );
 }
