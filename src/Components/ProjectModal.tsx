@@ -122,7 +122,7 @@ const ProjectModal: React.FC<ModalProps> = ({isShown, hide, projectName}) => {
                         <img src={closeButton} alt="X" className="min-h-[40px] max-h-[40px] min-w-[40px] max-w-[60px] w-auto opacity-100 h-auto"/>
                     </div>
                 </div>
-                <div className="fixed bg-light_theme-default inset-0 overflow-y-auto z-30 rounded-lg align-middle w-[95%] h-full m-auto text-center bg-pewter-default/95">
+                <div className="fixed bg-light_theme-default/95 inset-0 overflow-y-auto z-30 rounded-lg align-middle w-[95%] h-full m-auto text-center">
                     <div className="text-gray-950 max-w-screen-lg w-full flex justify-center flex-col items-center m-auto scroll-smooth opacity-[100%] pb-12">
                         {htmlToRender}
                     </div>
