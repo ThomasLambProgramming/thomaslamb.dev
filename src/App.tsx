@@ -3,6 +3,7 @@ import GithubCommitDisplay from "./Components/GithubCommitDisplay";
 import Header from "./Components/Header";
 import ProjectContainer from "./Components/ProjectContainer";
 import ProjectModal from "./Components/ProjectModal";
+import ProjectDescription from "./Components/ProjectDescription";
 import {FC, useState} from "react";
 
 const App: FC = () => {
@@ -65,13 +66,37 @@ const App: FC = () => {
                   Toggle Dark Mode
                 </button> */}
         <Header /> 
-        <div className="ml-24 mr-24 flex flex-col justify-center align-middle content-center items-center">
-          <ProjectContainer projects={ShippedGames} typeTitle="Shipped Games / Current Projects" projectNameChange={ProjectNameChanged}/>
-          {/* <ProjectContainer projects={UnrealProjects} typeTitle="Unreal and C++ Projects" projectNameChange={ProjectNameChanged} showTitle={true}/> */}
-          <ProjectContainer projects={UnityProjects} typeTitle="Unity Projects" projectNameChange={ProjectNameChanged}/>
+
+        <div className="flex flex-row align-middle justify-center content-center items-start max-w-[1800px] bg-gray-400">
+            <div className="flex flex-col items-center align-top max-w-[20%] justify-end mt-10">
+              <h3 className="">Link1</h3>
+              <h3 className="">Link2</h3>
+              <h3 className="">Link3</h3>
+              <h3 className="">Link4</h3>
+              <h3 className="">Link5</h3>
+              <h3 className="">Link6</h3>
+              <h3 className="">Link7</h3>
+              <h3 className="">Link8</h3>
+              <h3 className="">Link9</h3>
+              <h3 className="">Link10</h3>
+              <h3 className="">Link11</h3>
+              <h3 className="">Link12</h3>
+              <GithubCommitDisplay isDarkMode={false}/>
+            </div>
+            <div className="w-[80%]">
+              <ProjectDescription projectName="Vlad Circus" showTitle={false} onClickFunction={ProjectNameChanged}></ProjectDescription>
+              <ProjectDescription projectName="Vlad Circus" showTitle={false} onClickFunction={ProjectNameChanged}></ProjectDescription>
+              <ProjectDescription projectName="Vlad Circus" showTitle={false} onClickFunction={ProjectNameChanged}></ProjectDescription>
+            </div>
         </div>
-        <GithubCommitDisplay isDarkMode={false}/> 
-        <Footer /> 
+
+        {/* <div className="ml-24 mr-24 flex flex-col justify-center align-middle content-center items-center">
+          <ProjectContainer projects={ShippedGames} typeTitle="Shipped Games / Current Projects" projectNameChange={ProjectNameChanged}/> */}
+          {/* <ProjectContainer projects={UnrealProjects} typeTitle="Unreal and C++ Projects" projectNameChange={ProjectNameChanged} showTitle={true}/> */}
+          {/* <ProjectContainer projects={UnityProjects} typeTitle="Unity Projects" projectNameChange={ProjectNameChanged}/>
+        </div> */}
+         
+        {/* <Footer />  */}
       </div>
     //</div>
   );
