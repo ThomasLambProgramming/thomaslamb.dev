@@ -67,6 +67,7 @@ const App: FC = () => {
                 </button> */}
         <Header /> 
 
+
         <div className="flex flex-row align-middle justify-center content-center items-start max-w-[1800px] bg-gray-400">
             <div className="flex flex-col items-center align-top max-w-[20%] justify-end mt-10">
               <h3 className="">Link1</h3>
