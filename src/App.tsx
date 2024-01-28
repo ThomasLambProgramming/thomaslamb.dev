@@ -67,26 +67,41 @@ const App: FC = () => {
                 </button> */}
         <Header /> 
 
-        <div className="flex flex-row align-middle justify-center content-center items-start max-w-[1800px] bg-gray-400">
-            <div className="flex flex-col items-center align-top max-w-[20%] justify-end mt-10">
-              <h3 className="">Link1</h3>
-              <h3 className="">Link2</h3>
-              <h3 className="">Link3</h3>
-              <h3 className="">Link4</h3>
-              <h3 className="">Link5</h3>
-              <h3 className="">Link6</h3>
-              <h3 className="">Link7</h3>
-              <h3 className="">Link8</h3>
-              <h3 className="">Link9</h3>
-              <h3 className="">Link10</h3>
-              <h3 className="">Link11</h3>
-              <h3 className="">Link12</h3>
+        <div className="flex flex-row align-middle justify-center content-center items-start w-[100%] bg-gray-400">
+            <div className="flex flex-col items-center align-top w-[20%] justify-end mt-10">
+              <div className="items-left">
+                <h2 className="mt-4 text-lg text-gray-600">Professional Experience</h2>
+                <h3 className="">Vlad Circus</h3>
+                <h3 className="">Aradena</h3>
+                <h3 className="">Biospheres</h3>
+                <h3 className="">Homebase</h3>
+
+                <h2 className="mt-4 text-lg text-gray-600">Personal Projects</h2>
+                <h3 className="">DirectX 11 Rendering Engine</h3>
+                <h3 className="">Maniac Cab</h3>
+
+                <h2 className="mt-4 text-lg text-gray-600">University Projects</h2>
+                <h3 className="">Node Graph Generator</h3>
+                <h3 className="">Malicious</h3>
+                <h3 className="">Rapid Delivery</h3>
+                <h3 className="mb-4">Carnival Carnage</h3>
+              </div>
               <GithubCommitDisplay isDarkMode={false}/>
             </div>
-            <div className="w-[80%]">
+            <div className="w-[80%] max-w-[1000px]">
               <ProjectDescription projectName="Vlad Circus" showTitle={false} onClickFunction={ProjectNameChanged}></ProjectDescription>
               <ProjectDescription projectName="Vlad Circus" showTitle={false} onClickFunction={ProjectNameChanged}></ProjectDescription>
               <ProjectDescription projectName="Vlad Circus" showTitle={false} onClickFunction={ProjectNameChanged}></ProjectDescription>
+              <ProjectDescription projectName="Vlad Circus" showTitle={false} onClickFunction={ProjectNameChanged}></ProjectDescription>
+              <ProjectDescription projectName="Vlad Circus" showTitle={false} onClickFunction={ProjectNameChanged}></ProjectDescription>
+              <ProjectDescription projectName="Vlad Circus" showTitle={false} onClickFunction={ProjectNameChanged}></ProjectDescription>
+              <ProjectDescription projectName="Vlad Circus" showTitle={false} onClickFunction={ProjectNameChanged}></ProjectDescription>
+              <ProjectDescription projectName="Vlad Circus" showTitle={false} onClickFunction={ProjectNameChanged}></ProjectDescription>
+              <ProjectDescription projectName="Vlad Circus" showTitle={false} onClickFunction={ProjectNameChanged}></ProjectDescription>
+              <ProjectDescription projectName="Vlad Circus" showTitle={false} onClickFunction={ProjectNameChanged}></ProjectDescription>
+              <ProjectDescription projectName="Vlad Circus" showTitle={false} onClickFunction={ProjectNameChanged}></ProjectDescription>
+              <ProjectDescription projectName="Vlad Circus" showTitle={false} onClickFunction={ProjectNameChanged}></ProjectDescription>
+              <ProjectDescription projectName="Vlad Circus" showTitle={false} onClickFunction={ProjectNameChanged}></ProjectDescription>  
             </div>
         </div>
 

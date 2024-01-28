@@ -15,7 +15,8 @@ const ProjectDescription: React.FC<{projectName: string, showTitle: boolean, onC
   
   return (
     <div className=" min-h-[400px] min-w-[400px] bg-black mt-4">
-      <button className="" onClick={() => {onClickFunction(projectNameWithoutSpace)}}>
+      {/* <button className="" onClick={() => {onClickFunction(projectNameWithoutSpace)}}> */}
+      {/* </button> */}
 
         {/* <DelayedImage projectName={projectNameWithoutSpace} className="relative inset-0 object-cover w-full rounded h-full opacity-90 group-hover:opacity-50" ></DelayedImage> */}
 
@@ -27,7 +28,6 @@ const ProjectDescription: React.FC<{projectName: string, showTitle: boolean, onC
               {previewDescription}
           </p>
         </div>
-      </button>
     </div>
   );
 }
