@@ -1,12 +1,13 @@
 import React from 'react';
 import DelayedImage from './DelayedImage';
 
-const ProjectDescription: React.FC<{projectName: string, technologiesList: string[], projectDescriptions: string[], onClickFunction: (name: string) => void}> = ({projectName, technologiesList, projectDescriptions, onClickFunction}) =>
+const ProjectDescription: React.FC<{isDarkMode: boolean, projectName: string, technologiesList: string[], projectDescriptions: string[], onClickFunction: (name: string) => void}> = ({isDarkMode, projectName, technologiesList, projectDescriptions, onClickFunction}) =>
 {
   let projectNameWithoutSpace = projectName.replace(/\s/g, '');
   
   return (
-    <div className="min-h-[400px] min-w-[400px] bg-slate-500 mt-4 rounded-md flex flex-row w-full">
+    <div className={"min-h-[400px] min-w-[400px] mt-4 rounded-md flex flex-row w-full " + (isDarkMode ?
+    "dark:bg-DarkNeutral-300" : "bg-Neutral-400")}>
       {/* Project Description + skills and etc. */}
       <div className="flex flex-col items-start pt-6 ml-6 w-full h-[90%]">
         <div className="min-w-[90%] w-[30%]">
@@ -20,7 +21,7 @@ const ProjectDescription: React.FC<{projectName: string, technologiesList: strin
 
           {projectDescriptions.map((projDesc: string) => (
               <p className="mb-4">{projDesc}</p>
-            ))}  
+            ))}   
 
         </div>
       </div>

@@ -1,8 +1,11 @@
+import React from 'react';
 import SocialLinks from "./SocialLinks";
-function Header()
+
+const Header: React.FC<{isDarkMode: boolean}> = ({isDarkMode}) =>
 {
     return (
-      <div className="ml-24 pt-16 mr-24 flex flex-col text-center items-center">
+      <div className={isDarkMode ? "ml-24 pt-16 mr-24 flex flex-col text-center items-center text-Neutral-100" :
+                                   "ml-24 pt-16 mr-24 flex flex-col text-center items-center text-DarkNeutral-100"}>
         <div className="">
           <div className="text-6xl">
             <h1 className="">Thomas Lamb</h1>

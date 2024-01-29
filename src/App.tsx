@@ -36,6 +36,17 @@ const App: FC = () => {
   ]
 
 
+  const motogpTech: string[] = 
+  [
+    "Unity",
+    "C#",
+  ]
+  const motogpDesc: string[] = 
+  [
+    "A online blockchain deterministic simulation made for the lovers of motogp and fantasy football",
+  ]
+
+
   const rapidDeliveryTech: string[] = 
   [
     "Unity",
@@ -131,20 +142,20 @@ const App: FC = () => {
 
   return (
     <div className={isDarkMode ? "dark" : ""}>
-      <div className=" bg-light_theme-lighter dark:bg-dark_theme-default w-full h-full no-scrollbar overflow-y-hidden">
+      <div className=" bg-Neutral-100 dark:bg-DarkNeutral-100 w-full h-full no-scrollbar overflow-y-hidden">
         <ProjectModal isShown={isShown} hide={ModalToggled} projectName={projectName}></ProjectModal>
         <button
                   onClick={DarkModeToggled}
-                  className="text-white bg-gray-700 hover:bg-gray-800 
+                  className=" text-DarkNeutralN-100 dark:text-Neutral-100 bg-DarkNeutral-400  hover:bg-DarkNeutral-200 
                   focus:ring-4 focus:outline-none focus:ring-gray-300 
                   font-medium rounded-lg text-sm w-10% max-w-xl px-5 py-2.5 text-center 
-                  dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+                  dark:bg-Neutral-400 dark:hover:bg-Neutral-200 dark:focus:ring-gray-800">
                   Toggle Dark Mode = {String(isDarkMode)}
                 </button>
-        <Header /> 
+        <Header isDarkMode={isDarkMode} /> 
 
-        <div className="flex flex-row align-middle justify-center content-center items-start w-[100%] bg-gray-400">
-            <div className="flex flex-col items-center align-top w-[20%] justify-end mt-10">
+        <div className="text-DarkNeutralN-100 dark:text-Neutral-0 flex flex-row align-middle justify-center content-center items-start w-[100%] bg-gray-400">
+            <div className="flex flex-col items-center align-top w-[20%] justify-end mt-10 ">
               <div className="items-left">
                 <h2 className="mt-4 text-lg text-gray-600">Professional Experience</h2>
                 <h3 className="">Vlad Circus</h3>
@@ -162,20 +173,21 @@ const App: FC = () => {
                 <h3 className="">Rapid Delivery</h3>
                 <h3 className="mb-4">Carnival Carnage</h3>
               </div>
-              <GithubCommitDisplay isDarkMode={false}/>
+              <GithubCommitDisplay isDarkMode={isDarkMode}/>
             </div>
             <div className="w-[80%] max-w-[1000px] mb-8">
-              <ProjectDescription projectName="Vlad Circus" technologiesList={vladTechnologies} projectDescriptions={vladDescription} onClickFunction={ProjectNameChanged}></ProjectDescription>
+              <ProjectDescription isDarkMode={isDarkMode} projectName="Vlad Circus" technologiesList={vladTechnologies} projectDescriptions={vladDescription} onClickFunction={ProjectNameChanged}></ProjectDescription>
               {/* <ProjectDescription projectName="Aradena" technologiesList={vladTechnologies} projectDescriptions={vladDescription} onClickFunction={ProjectNameChanged}></ProjectDescription> */}
               {/* <ProjectDescription projectName="Biospheres" technologiesList={vladTechnologies} projectDescriptions={vladDescription} onClickFunction={ProjectNameChanged}></ProjectDescription> */}
-              {/* <ProjectDescription projectName="Motogp Manager" technologiesList={vladTechnologies} projectDescriptions={vladDescription} onClickFunction={ProjectNameChanged}></ProjectDescription> */}
-              <ProjectDescription projectName="DirectX Renderer" technologiesList={directXTech} projectDescriptions={directXDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
-              <ProjectDescription projectName="Maniac Cab" technologiesList={maniacCabTech} projectDescriptions={maniacCabDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
-              <ProjectDescription projectName="Node Graph Generator" technologiesList={nodeGraphGenTech} projectDescriptions={nodeGraphGenDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
-              <ProjectDescription projectName="Rapid Delivery" technologiesList={rapidDeliveryTech} projectDescriptions={rapidDeliveryDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
-              <ProjectDescription projectName="Carnival Carnage" technologiesList={carnivalCarnageTech} projectDescriptions={carnivalCarnageDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
-              <ProjectDescription projectName="Isolator" technologiesList={isolatorTech} projectDescriptions={isolatorDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
-              <ProjectDescription projectName="Bezier Curves" technologiesList={bezierCurvesTech} projectDescriptions={bezierCurvesDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
+              <ProjectDescription isDarkMode={isDarkMode} projectName="Motogp Ignition" technologiesList={motogpTech} projectDescriptions={motogpDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
+              <ProjectDescription isDarkMode={isDarkMode} projectName="DirectX Renderer" technologiesList={directXTech} projectDescriptions={directXDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
+              <ProjectDescription isDarkMode={isDarkMode} projectName="Maniac Cab" technologiesList={maniacCabTech} projectDescriptions={maniacCabDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
+              <ProjectDescription isDarkMode={isDarkMode} projectName="Node Graph Generator" technologiesList={nodeGraphGenTech} projectDescriptions={nodeGraphGenDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
+              <ProjectDescription isDarkMode={isDarkMode} projectName="Malicious" technologiesList={maliciousTech} projectDescriptions={maliciousDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
+              <ProjectDescription isDarkMode={isDarkMode} projectName="Rapid Delivery" technologiesList={rapidDeliveryTech} projectDescriptions={rapidDeliveryDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
+              <ProjectDescription isDarkMode={isDarkMode} projectName="Carnival Carnage" technologiesList={carnivalCarnageTech} projectDescriptions={carnivalCarnageDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
+              <ProjectDescription isDarkMode={isDarkMode} projectName="Isolator" technologiesList={isolatorTech} projectDescriptions={isolatorDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
+              <ProjectDescription isDarkMode={isDarkMode} projectName="Bezier Curves" technologiesList={bezierCurvesTech} projectDescriptions={bezierCurvesDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
             </div>
         </div>
          
