@@ -1,32 +1,32 @@
 import React, { useEffect, useState } from 'react';
 import DelayedImage from './DelayedImage';
-// import DelayedImage from './DelayedImage';
 
-const ProjectDescription: React.FC<{projectName: string, showTitle: boolean, onClickFunction: (name: string) => void}> = ({projectName, showTitle, onClickFunction}) =>
+const ProjectDescription: React.FC<{projectName: string, technologiesList: string[], projectDescriptions: string[], onClickFunction: (name: string) => void}> = ({projectName, technologiesList, projectDescriptions, onClickFunction}) =>
 {
-    let projectNameWithoutSpace = projectName.replace(/\s/g, '');
-    let filePath = '/ProjectAssets/' + projectNameWithoutSpace + "/" + projectNameWithoutSpace + "PreviewDescription" + ".md";
-    
-    const [previewDescription, setPreviewDescription] = useState('');
+  let projectNameWithoutSpace = projectName.replace(/\s/g, '');
+  let filePath = '/ProjectAssets/' + projectNameWithoutSpace + "/" + projectNameWithoutSpace + "PreviewDescription" + ".md";
+  
+  const [previewDescription, setPreviewDescription] = useState('');
 
-    useEffect(() => {
-      const mrk = new Request(filePath);
-      fetch(mrk).then(data => data.text()).then(text => setPreviewDescription(text));
-    });
+  useEffect(() => {
+    const mrk = new Request(filePath);
+    fetch(mrk).then(data => data.text()).then(text => setPreviewDescription(text));
+  });
   
   return (
     <div className="min-h-[400px] min-w-[400px] bg-slate-500 mt-4 rounded-md flex flex-row w-full">
       {/* Project Description + skills and etc. */}
       <div className="flex flex-col items-start pt-6 ml-6 w-full h-[90%]">
         <div className="min-w-[90%] w-[30%]">
-          <h3 className='text-xl font-semibold mb-2'>{projectName}</h3>
-          <div className='flex flex-row w-full justify-center space-x-3'>
-            <p className="bg-slate-600 rounded-lg text-lg pt-1 w-[30%] text-center h-10 align-middle justify-center">Playstation4</p>
-            <p className="bg-slate-600 rounded-lg text-lg pt-1 w-[30%] text-center h-10 align-middle justify-center">Playstation4</p>
-            <p className="bg-slate-600 rounded-lg text-lg pt-1 w-[30%] text-center h-10 align-middle justify-center">Playstation4</p>
-          </div>
-          <h3 className=" mb-4">{previewDescription}</h3>
-          <h3>Test Text</h3>
+          <h3 className='text-xl font-semibold mb-4'>{projectName}</h3>
+          <div className='flex flex-row w-full justify-start space-x-3 mb-4'>
+            {technologiesList.map((techString: string) => (
+              <p className="bg-slate-600 rounded-lg text-lg pl-6 pr-6 pt-1 pb-1 text-center align-middle justify-center">{techString}</p>
+            ))}
+          </div> 
+          {projectDescriptions.map((projDesc: string) => (
+              <p className="mb-4">{projDesc}</p>
+            ))}         
         </div>
       </div>
       {/* Project image and details button */}
