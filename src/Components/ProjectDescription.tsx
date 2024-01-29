@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import DelayedImage from './DelayedImage';
 // import DelayedImage from './DelayedImage';
 
 const ProjectDescription: React.FC<{projectName: string, showTitle: boolean, onClickFunction: (name: string) => void}> = ({projectName, showTitle, onClickFunction}) =>
@@ -14,20 +15,25 @@ const ProjectDescription: React.FC<{projectName: string, showTitle: boolean, onC
     });
   
   return (
-    <div className=" min-h-[400px] min-w-[400px] bg-black mt-4">
-      {/* <button className="" onClick={() => {onClickFunction(projectNameWithoutSpace)}}> */}
-      {/* </button> */}
-
-        {/* <DelayedImage projectName={projectNameWithoutSpace} className="relative inset-0 object-cover w-full rounded h-full opacity-90 group-hover:opacity-50" ></DelayedImage> */}
-
-        <div className="text-truncate overflow-hidden transition-all absolute opacity-100 group-hover:opacity-100 w-full align-middle max-h-[75%] bottom-[0%] text-center">
-          <h3 className="text-3xl text-white dark:text-dark_text-defaultWhite mb-4 group-hover:opacity-0 translate-y-2/3 group-hover:-translate-y-[130%] duration-100">
-            {showTitle == true ? projectName : ""}  
-          </h3>
-          <p className={"text-base text-light_text-defaultWhite dark:text-dark_text-defaultWhite mr-4 ml-4 h-40 opacity-0 group-hover:opacity-100 mt-20 duration-300 " + (showTitle == true ? "group-hover:-translate-y-[60%]" : "group-hover:-translate-y-[50%]")}>
-              {previewDescription}
-          </p>
+    <div className="min-h-[400px] min-w-[400px] bg-slate-500 mt-4 rounded-md flex flex-row w-full">
+      {/* Project Description + skills and etc. */}
+      <div className="flex flex-col items-start pt-6 ml-6 w-full h-[90%]">
+        <div className="min-w-[90%] w-[30%]">
+          <h3 className='text-xl font-semibold mb-2'>{projectName}</h3>
+          <div className='flex flex-row w-full justify-center space-x-3'>
+            <p className="bg-slate-600 rounded-lg text-lg pt-1 w-[30%] text-center h-10 align-middle justify-center">Playstation4</p>
+            <p className="bg-slate-600 rounded-lg text-lg pt-1 w-[30%] text-center h-10 align-middle justify-center">Playstation4</p>
+            <p className="bg-slate-600 rounded-lg text-lg pt-1 w-[30%] text-center h-10 align-middle justify-center">Playstation4</p>
+          </div>
+          <h3 className=" mb-4">{previewDescription}</h3>
+          <h3>Test Text</h3>
         </div>
+      </div>
+      {/* Project image and details button */}
+      <div className='max-w-[40%] min-w-[40%] flex flex-col items-center'>
+        <DelayedImage projectName={projectNameWithoutSpace} className=''></DelayedImage>
+        <button className='w-[90%] rounded-sm bg-slate-500 border-slate-600 border-2 mt-4'>Project Details</button>
+      </div>
     </div>
   );
 }

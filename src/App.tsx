@@ -90,8 +90,8 @@ const App: FC = () => {
             </div>
             <div className="w-[80%] max-w-[1000px]">
               <ProjectDescription projectName="Vlad Circus" showTitle={false} onClickFunction={ProjectNameChanged}></ProjectDescription>
-              <ProjectDescription projectName="Vlad Circus" showTitle={false} onClickFunction={ProjectNameChanged}></ProjectDescription>
-              <ProjectDescription projectName="Vlad Circus" showTitle={false} onClickFunction={ProjectNameChanged}></ProjectDescription>
+              <ProjectDescription projectName="Maniac Cab" showTitle={false} onClickFunction={ProjectNameChanged}></ProjectDescription>
+              <ProjectDescription projectName="Node Graph Generator" showTitle={false} onClickFunction={ProjectNameChanged}></ProjectDescription>
               <ProjectDescription projectName="Vlad Circus" showTitle={false} onClickFunction={ProjectNameChanged}></ProjectDescription>
               <ProjectDescription projectName="Vlad Circus" showTitle={false} onClickFunction={ProjectNameChanged}></ProjectDescription>
               <ProjectDescription projectName="Vlad Circus" showTitle={false} onClickFunction={ProjectNameChanged}></ProjectDescription>

@@ -6,7 +6,7 @@ function Header()
         <div className="">
           <div className="text-6xl">
             <h1 className="">Thomas Lamb</h1>
-            <h1 className="text-4xl mb-10">Unreal Engine 5 Programmer</h1>
+            <h1 className="text-4xl mb-10">Game Programmer</h1>
           </div>
 
           <div className="flex flex-row text-left ">
