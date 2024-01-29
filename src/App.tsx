@@ -35,6 +35,11 @@ const App: FC = () => {
     "This was my first professional shipped title. I was the programmer in charge of porting the game to Xbox Series/X, Switch, Playstation 4/5, Gog and Epic Games.",
   ]
 
+  const testDescriptions: string[] = 
+  [
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  ]
+
 
   const motogpTech: string[] = 
   [
@@ -157,17 +162,20 @@ const App: FC = () => {
         <div className="text-DarkNeutralN-100 dark:text-Neutral-0 flex flex-row align-middle justify-center content-center items-start w-[100%] bg-gray-400">
             <div className="flex flex-col items-center align-top w-[20%] justify-end mt-10 ">
               <div className="items-left">
-                <h2 className="mt-4 text-lg text-gray-600">Professional Experience</h2>
+                <h2 className={"mt-4 text-lg text-gray-600 "+ (isDarkMode ?
+              "text-Neutral-400" : "text-DarkNeutral-200")}>Professional Experience</h2>
                 <h3 className="">Vlad Circus</h3>
                 <h3 className="">Aradena</h3>
                 <h3 className="">Biospheres</h3>
                 <h3 className="">Homebase</h3>
 
-                <h2 className="mt-4 text-lg text-gray-600">Personal Projects</h2>
+                <h2 className={"mt-4 text-lg text-gray-600 " + (isDarkMode ?
+              "text-Neutral-400" : "text-DarkNeutral-200")}>Personal Projects</h2>
                 <h3 className="">DirectX 11 Rendering Engine</h3>
                 <h3 className="">Maniac Cab</h3>
 
-                <h2 className="mt-4 text-lg text-gray-600">University Projects</h2>
+                <h2 className={"mt-4 text-lg text-gray-600 "+ (isDarkMode ?
+              "text-Neutral-400" : "text-DarkNeutral-200")}>University Projects</h2>
                 <h3 className="">Node Graph Generator</h3>
                 <h3 className="">Malicious</h3>
                 <h3 className="">Rapid Delivery</h3>
@@ -176,10 +184,15 @@ const App: FC = () => {
               <GithubCommitDisplay isDarkMode={isDarkMode}/>
             </div>
             <div className="w-[80%] max-w-[1000px] mb-8">
-              <ProjectDescription isDarkMode={isDarkMode} projectName="Vlad Circus" technologiesList={vladTechnologies} projectDescriptions={vladDescription} onClickFunction={ProjectNameChanged}></ProjectDescription>
+              <ProjectDescription isDarkMode={isDarkMode} projectName="Vlad Circus" technologiesList={vladTechnologies} projectDescriptions={testDescriptions} onClickFunction={ProjectNameChanged}></ProjectDescription>
+              <ProjectDescription isDarkMode={isDarkMode} projectName="Motogp Ignition" technologiesList={vladTechnologies} projectDescriptions={testDescriptions} onClickFunction={ProjectNameChanged}></ProjectDescription>
+              <ProjectDescription isDarkMode={isDarkMode} projectName="Maniac Cab" technologiesList={vladTechnologies} projectDescriptions={testDescriptions} onClickFunction={ProjectNameChanged}></ProjectDescription>
+              <ProjectDescription isDarkMode={isDarkMode} projectName="Node Graph Generator" technologiesList={vladTechnologies} projectDescriptions={testDescriptions} onClickFunction={ProjectNameChanged}></ProjectDescription>
+              <ProjectDescription isDarkMode={isDarkMode} projectName="Rapid Delivery" technologiesList={vladTechnologies} projectDescriptions={testDescriptions} onClickFunction={ProjectNameChanged}></ProjectDescription>
+              {/* <ProjectDescription isDarkMode={isDarkMode} projectName="Vlad Circus" technologiesList={vladTechnologies} projectDescriptions={vladDescription} onClickFunction={ProjectNameChanged}></ProjectDescription> */}
               {/* <ProjectDescription projectName="Aradena" technologiesList={vladTechnologies} projectDescriptions={vladDescription} onClickFunction={ProjectNameChanged}></ProjectDescription> */}
               {/* <ProjectDescription projectName="Biospheres" technologiesList={vladTechnologies} projectDescriptions={vladDescription} onClickFunction={ProjectNameChanged}></ProjectDescription> */}
-              <ProjectDescription isDarkMode={isDarkMode} projectName="Motogp Ignition" technologiesList={motogpTech} projectDescriptions={motogpDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
+              {/* <ProjectDescription isDarkMode={isDarkMode} projectName="Motogp Ignition" technologiesList={motogpTech} projectDescriptions={motogpDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
               <ProjectDescription isDarkMode={isDarkMode} projectName="DirectX Renderer" technologiesList={directXTech} projectDescriptions={directXDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
               <ProjectDescription isDarkMode={isDarkMode} projectName="Maniac Cab" technologiesList={maniacCabTech} projectDescriptions={maniacCabDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
               <ProjectDescription isDarkMode={isDarkMode} projectName="Node Graph Generator" technologiesList={nodeGraphGenTech} projectDescriptions={nodeGraphGenDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
@@ -187,7 +200,7 @@ const App: FC = () => {
               <ProjectDescription isDarkMode={isDarkMode} projectName="Rapid Delivery" technologiesList={rapidDeliveryTech} projectDescriptions={rapidDeliveryDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
               <ProjectDescription isDarkMode={isDarkMode} projectName="Carnival Carnage" technologiesList={carnivalCarnageTech} projectDescriptions={carnivalCarnageDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
               <ProjectDescription isDarkMode={isDarkMode} projectName="Isolator" technologiesList={isolatorTech} projectDescriptions={isolatorDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
-              <ProjectDescription isDarkMode={isDarkMode} projectName="Bezier Curves" technologiesList={bezierCurvesTech} projectDescriptions={bezierCurvesDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
+              <ProjectDescription isDarkMode={isDarkMode} projectName="Bezier Curves" technologiesList={bezierCurvesTech} projectDescriptions={bezierCurvesDesc} onClickFunction={ProjectNameChanged}></ProjectDescription> */}
             </div>
         </div>
          

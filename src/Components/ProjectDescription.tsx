@@ -7,15 +7,17 @@ const ProjectDescription: React.FC<{isDarkMode: boolean, projectName: string, te
   
   return (
     <div className={"min-h-[400px] min-w-[400px] mt-4 rounded-md flex flex-row w-full " + (isDarkMode ?
-    "dark:bg-DarkNeutral-300" : "bg-Neutral-400")}>
+    "dark:bg-DarkNeutral-200" : "bg-Neutral-400")}>
       {/* Project Description + skills and etc. */}
       <div className="flex flex-col items-start pt-6 ml-6 w-full h-[90%]">
         <div className="min-w-[90%] w-[30%]">
-          <h3 className='text-xl font-semibold mb-4'>{projectName}</h3>
+          <h3 className={'text-4xl font-medium mb-4 '+ (isDarkMode ?
+              "text-Neutral-400" : "text-DarkNeutral-200")}>{projectName}</h3>
           
           <div className='flex flex-row w-full justify-start space-x-3 mb-4'>
             {technologiesList.map((techString: string) => (
-              <p className="bg-slate-600 rounded-lg text-lg pl-6 pr-6 pt-1 pb-1 text-center align-middle justify-center">{techString}</p>
+              <p className={"bg-slate-600 rounded-lg text-lg pl-6 pr-6 pt-1 pb-1 text-center align-middle justify-center "+ (isDarkMode ?
+                "dark:bg-Neutral-200 text-DarkNeutral-200" : "bg-Neutral-400")}>{techString}</p>
             ))}
           </div> 
 
