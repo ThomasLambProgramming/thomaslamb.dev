@@ -1,1 +1,0 @@
-This was a small 12 hour game jam that I created with a team that involved some particle effects and interesting design.

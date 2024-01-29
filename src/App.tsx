@@ -1,7 +1,6 @@
 import Footer from "./Components/Footer";
 import GithubCommitDisplay from "./Components/GithubCommitDisplay";
 import Header from "./Components/Header";
-import ProjectContainer from "./Components/ProjectContainer";
 import ProjectModal from "./Components/ProjectModal";
 import ProjectDescription from "./Components/ProjectDescription";
 import {FC, useState} from "react";
@@ -20,20 +19,109 @@ const App: FC = () => {
 
   const [projectName, setProjectName] = useState<string>("");
   const ProjectNameChanged = (name: string) => {
-    //previousYValue = window.scrollY;
     setProjectName(name);
     ModalToggled();
   }
 
-  const vladTechnologies: string[] = [
+  const vladTechnologies: string[] = 
+  [
     "Console",
     "Monogame",
     "C++",
     "C#"
   ]
-
-  const VladDescription: string[] = [
+  const vladDescription: string[] = 
+  [
     "This was my first professional shipped title. I was the programmer in charge of porting the game to Xbox Series/X, Switch, Playstation 4/5, Gog and Epic Games.",
+  ]
+
+
+  const rapidDeliveryTech: string[] = 
+  [
+    "Unity",
+    "C#",
+  ]
+  const rapidDeliveryDesc: string[] = 
+  [
+    "For my first major project at AIE we created an endless runner where the player must avoid obstacles and fire tea from a cannon to customers.",
+  ]
+
+
+  const directXTech: string[] = 
+  [
+    "C++",
+    "Imgui",
+    "Graphics"
+  ]
+  const directXDesc: string[] = [
+    "To learn more about graphics programming and shaders I have been working on a DirectX Renderer with dear Imgui.",
+  ]
+
+
+  const nodeGraphGenTech: string[] = 
+  [
+    "Unity",
+    "C#",
+  ]
+  const nodeGraphGenDesc: string[] = 
+  [
+    "Node graph generator that takes in a environment and creates a navigation mesh based off all meshes contained in the environment.",
+  ]
+
+
+  const maniacCabTech: string[] = 
+  [
+    "Unreal Engine",
+    "C++",
+  ]
+  const maniacCabDesc: string[] = 
+  [
+    "A Small arcade game that I am currently developing with friends where your character must deliver as many passengers as possible in the shortest amount of time.",
+  ]
+
+
+  const maliciousTech: string[] = 
+  [
+    "Unity",
+    "C#",
+  ]
+  const maliciousDesc: string[] = 
+  [
+    "For my 2nd year major project at AIE I worked with a team of 6 other people to produce this robot puzzle platformer.",
+  ]
+
+
+  const isolatorTech: string[] = 
+  [
+    "Unity",
+    "C#",
+  ]
+  const isolatorDesc: string[] = 
+  [
+    "This was a small 12 hour game jam that I created with a team that involved some particle effects and interesting design.",
+  ]
+
+
+  const carnivalCarnageTech: string[] = 
+  [
+    "Unity",
+    "C#",
+    "VR",
+  ]
+  const carnivalCarnageDesc: string[] = 
+  [
+    "I worked with a team of 9 in a small time frame to create this VR arcade game where you smash clown heads with a hammer that can be thrown and recalled like thors hammer.",
+  ]
+
+
+  const bezierCurvesTech: string[] = 
+  [
+    "Unity",
+    "C#",
+  ]
+  const bezierCurvesDesc: string[] = 
+  [
+    "Small Bezier curve example to learn tooling and how bezier curves work for future projects",
   ]
 
   document.title = "ThomasLamb.dev"
@@ -42,7 +130,7 @@ const App: FC = () => {
   document.body.classList.add("no-scrollbar");
 
   return (
-    //<div className={isDarkMode ? "dark" : ""}>
+    <div className={isDarkMode ? "dark" : ""}>
       <div className=" bg-light_theme-lighter dark:bg-dark_theme-default w-full h-full no-scrollbar overflow-y-hidden">
         <ProjectModal isShown={isShown} hide={ModalToggled} projectName={projectName}></ProjectModal>
         <button
@@ -76,25 +164,24 @@ const App: FC = () => {
               </div>
               <GithubCommitDisplay isDarkMode={false}/>
             </div>
-            <div className="w-[80%] max-w-[1000px]">
-              <ProjectDescription projectName="Vlad Circus" technologiesList={vladTechnologies} projectDescriptions={VladDescription} onClickFunction={ProjectNameChanged}></ProjectDescription>
-              <ProjectDescription projectName="Maniac Cab" technologiesList={vladTechnologies} projectDescriptions={VladDescription} onClickFunction={ProjectNameChanged}></ProjectDescription>
-              <ProjectDescription projectName="Node Graph Generator" technologiesList={vladTechnologies} projectDescriptions={VladDescription} onClickFunction={ProjectNameChanged}></ProjectDescription>
-              <ProjectDescription projectName="Vlad Circus" technologiesList={vladTechnologies} projectDescriptions={VladDescription} onClickFunction={ProjectNameChanged}></ProjectDescription>
-              <ProjectDescription projectName="Vlad Circus" technologiesList={vladTechnologies} projectDescriptions={VladDescription} onClickFunction={ProjectNameChanged}></ProjectDescription>
-              <ProjectDescription projectName="Vlad Circus" technologiesList={vladTechnologies} projectDescriptions={VladDescription} onClickFunction={ProjectNameChanged}></ProjectDescription>
+            <div className="w-[80%] max-w-[1000px] mb-8">
+              <ProjectDescription projectName="Vlad Circus" technologiesList={vladTechnologies} projectDescriptions={vladDescription} onClickFunction={ProjectNameChanged}></ProjectDescription>
+              {/* <ProjectDescription projectName="Aradena" technologiesList={vladTechnologies} projectDescriptions={vladDescription} onClickFunction={ProjectNameChanged}></ProjectDescription> */}
+              {/* <ProjectDescription projectName="Biospheres" technologiesList={vladTechnologies} projectDescriptions={vladDescription} onClickFunction={ProjectNameChanged}></ProjectDescription> */}
+              {/* <ProjectDescription projectName="Motogp Manager" technologiesList={vladTechnologies} projectDescriptions={vladDescription} onClickFunction={ProjectNameChanged}></ProjectDescription> */}
+              <ProjectDescription projectName="DirectX Renderer" technologiesList={directXTech} projectDescriptions={directXDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
+              <ProjectDescription projectName="Maniac Cab" technologiesList={maniacCabTech} projectDescriptions={maniacCabDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
+              <ProjectDescription projectName="Node Graph Generator" technologiesList={nodeGraphGenTech} projectDescriptions={nodeGraphGenDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
+              <ProjectDescription projectName="Rapid Delivery" technologiesList={rapidDeliveryTech} projectDescriptions={rapidDeliveryDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
+              <ProjectDescription projectName="Carnival Carnage" technologiesList={carnivalCarnageTech} projectDescriptions={carnivalCarnageDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
+              <ProjectDescription projectName="Isolator" technologiesList={isolatorTech} projectDescriptions={isolatorDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
+              <ProjectDescription projectName="Bezier Curves" technologiesList={bezierCurvesTech} projectDescriptions={bezierCurvesDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
             </div>
         </div>
-
-        {/* <div className="ml-24 mr-24 flex flex-col justify-center align-middle content-center items-center">
-          <ProjectContainer projects={ShippedGames} typeTitle="Shipped Games / Current Projects" projectNameChange={ProjectNameChanged}/> */}
-          {/* <ProjectContainer projects={UnrealProjects} typeTitle="Unreal and C++ Projects" projectNameChange={ProjectNameChanged} showTitle={true}/> */}
-          {/* <ProjectContainer projects={UnityProjects} typeTitle="Unity Projects" projectNameChange={ProjectNameChanged}/>
-        </div> */}
          
-        {/* <Footer />  */}
+        <Footer /> 
       </div>
-    //</div>
+    </div>
   );
 }
 

@@ -3,7 +3,7 @@ import React from 'react';
 const GithubCommitDisplay: React.FC<{isDarkMode: boolean}> = ({isDarkMode}) =>
 {
     return (
-    <div className="">
+    <div className="mr-6 mt-8">
         {/* Possibly change the commit history text to be the github logo */}
         <h3 className="align-middle justify-center flex text-lg pb-[370px]">Commit History</h3>
         {/* Image must always be larger than 660px as that is the raw size and if it gets scaled down it is unreadable */}

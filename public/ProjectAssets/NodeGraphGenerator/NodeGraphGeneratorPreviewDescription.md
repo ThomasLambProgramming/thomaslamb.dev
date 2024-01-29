@@ -1,1 +1,0 @@
-Node graph generator that takes in a environment and creates a navigation mesh based off all meshes contained in the environment
