@@ -36,10 +36,6 @@ const App: FC = () => {
     "Experience the chilling story of a 1920s freak circus that burned to the ground, and the grotesque quest to found the circus anew. Follow the tormented Oliver Mills as he struggles to survive and escape.",
   ]
 
-  const testDescriptions: string[] = 
-  [
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  ]
   const aradenaTech: string[] = 
   [
     "Unity",
@@ -165,7 +161,7 @@ const App: FC = () => {
   document.body.classList.add("no-scrollbar");
 
   return (
-    <div className={isDarkMode ? "dark" : ""}>
+    <div className={isDarkMode ? "dark " : ""}>
       <div className=" bg-Neutral-100 dark:bg-DarkNeutral-100 w-full h-full no-scrollbar overflow-y-hidden">
         <ProjectModal isShown={isShown} hide={ModalToggled} projectName={projectName}></ProjectModal>
         <button
@@ -175,54 +171,87 @@ const App: FC = () => {
                 </button>
         <Header isDarkMode={isDarkMode} /> 
 
-        <div className="text-DarkNeutralN-100 dark:text-Neutral-0 flex flex-col lg:flex-row align-middle justify-center content-center items-start w-[100%] bg-gray-400">
-            <div className="flex flex-col items-center align-top lg:w-[20%] justify-start lg:justify-end mt-10 ">
+        <div className="text-DarkNeutralN-100  dark:text-Neutral-0 flex flex-col lg:flex-row align-middle justify-center content-center items-center lg:items-start w-[100%] bg-gray-400">
+            <div className="flex flex-col items-center align-top lg:w-[20%] lg:justify-end justify-center mt-10 ">
               <div className="items-left flex flex-row lg:flex-col space-x-5 lg:space-x-0">
                 
-                <div>
-                  <h2 className={"mt-4 text-lg text-gray-600 "+ (isDarkMode ? "text-Neutral-400" : "text-DarkNeutral-200")}>Professional Experience</h2>
-                  <h3 className="">Vlad Circus</h3>
-                  <h3 className="">Aradena</h3>
-                  <h3 className="">Biospheres</h3>
-                  <h3 className="">Homebase</h3>
+                <div className="flex flex-col">
+                  <h2 className={"mt-4 text-md text-gray-600 "+ (isDarkMode ? "text-Neutral-400" : "text-DarkNeutral-200")}>Professional Experience</h2>
+                  <a href="#Vlad" className="text-sm">Vlad Circus</a>
+                  <a href="#Aradena" className="text-sm">Aradena</a>
+                  <a href="#Homebase" className="text-sm">Homebase</a>
+                  <a href="#Motogp" className="text-sm">Motogp: Ignition</a>
                 </div>
 
-                <div>
-                  <h2 className={"mt-4 text-lg text-gray-600 " + (isDarkMode ? "text-Neutral-400" : "text-DarkNeutral-200")}>Personal Projects</h2>
-                  <h3 className="">DirectX 11 Rendering Engine</h3>
-                  <h3 className="">Maniac Cab</h3>
+                <div className="flex flex-col">
+                  <h2 className={"mt-4 text-md text-gray-600 " + (isDarkMode ? "text-Neutral-400" : "text-DarkNeutral-200")}>Personal Projects</h2>
+                  <a href="#DirectX" className="text-sm">DirectX 11 Renderer</a>
+                  <a href="#Maniac" className="text-sm">Maniac Cab</a>
                 </div>
 
-                <div>
-                  <h2 className={"mt-4 text-lg text-gray-600 "+ (isDarkMode ? "text-Neutral-400" : "text-DarkNeutral-200")}>University Projects</h2>
-                  <h3 className="">Node Graph Generator</h3>
-                  <h3 className="">Malicious</h3>
-                  <h3 className="">Rapid Delivery</h3>
-                  <h3 className="mb-4">Carnival Carnage</h3>
+                <div className="flex flex-col">
+                  <h2 className={"mt-4 text-md text-gray-600 "+ (isDarkMode ? "text-Neutral-400" : "text-DarkNeutral-200")}>University Projects</h2>
+                  <a href="#Node" className="text-sm">Node Graph Generator</a>
+                  <a href="#Malicious" className="text-sm">Malicious</a>
+                  <a href="#Rapid" className="text-sm">Rapid Delivery</a>
+                  <a href="#Carnival" className="mb-4 text-sm">Carnival Carnage</a>
                 </div>
 
               </div>
               <GithubCommitDisplay isDarkMode={isDarkMode}/>
             </div>
 
-            <div className="w-[100%] max-w-[1200px] mb-8">
+            <div className="w-[80%] max-w-[800px] mb-8">
               <h1>Game Work</h1>
               <h3>These are the projects that I have worked on under a professional capacity</h3>
-              <ProjectDescription isDarkMode={isDarkMode} projectName="Vlad Circus" technologiesList={vladTechnologies} projectDescriptions={vladDescription} onClickFunction={ProjectNameChanged}></ProjectDescription>
-              <ProjectDescription isDarkMode={isDarkMode} projectName="Aradena" technologiesList={aradenaTech} projectDescriptions={aradenaDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
-              <ProjectDescription isDarkMode={isDarkMode} projectName="Homebase" technologiesList={homebaseTech} projectDescriptions={homebaseDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
-              <ProjectDescription isDarkMode={isDarkMode} projectName="Motogp Ignition" technologiesList={motogpTech} projectDescriptions={motogpDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
-              <ProjectDescription isDarkMode={isDarkMode} projectName="Maniac Cab" technologiesList={vladTechnologies} projectDescriptions={testDescriptions} onClickFunction={ProjectNameChanged}></ProjectDescription>
-              <ProjectDescription isDarkMode={isDarkMode} projectName="Node Graph Generator" technologiesList={vladTechnologies} projectDescriptions={testDescriptions} onClickFunction={ProjectNameChanged}></ProjectDescription>
-              <ProjectDescription isDarkMode={isDarkMode} projectName="Rapid Delivery" technologiesList={vladTechnologies} projectDescriptions={testDescriptions} onClickFunction={ProjectNameChanged}></ProjectDescription>
-              <ProjectDescription isDarkMode={isDarkMode} projectName="DirectX Renderer" technologiesList={directXTech} projectDescriptions={directXDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
-              <ProjectDescription isDarkMode={isDarkMode} projectName="Maniac Cab" technologiesList={maniacCabTech} projectDescriptions={maniacCabDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
-              <ProjectDescription isDarkMode={isDarkMode} projectName="Node Graph Generator" technologiesList={nodeGraphGenTech} projectDescriptions={nodeGraphGenDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
-              <ProjectDescription isDarkMode={isDarkMode} projectName="Malicious" technologiesList={maliciousTech} projectDescriptions={maliciousDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
-              <ProjectDescription isDarkMode={isDarkMode} projectName="Rapid Delivery" technologiesList={rapidDeliveryTech} projectDescriptions={rapidDeliveryDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
-              <ProjectDescription isDarkMode={isDarkMode} projectName="Carnival Carnage" technologiesList={carnivalCarnageTech} projectDescriptions={carnivalCarnageDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
-              <ProjectDescription isDarkMode={isDarkMode} projectName="Isolator" technologiesList={isolatorTech} projectDescriptions={isolatorDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
-              <ProjectDescription isDarkMode={isDarkMode} projectName="Bezier Curves" technologiesList={bezierCurvesTech} projectDescriptions={bezierCurvesDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
+              
+              <div id="Vlad">
+                <ProjectDescription isDarkMode={isDarkMode}  projectName="Vlad Circus" technologiesList={vladTechnologies} projectDescriptions={vladDescription} onClickFunction={ProjectNameChanged}></ProjectDescription>
+              </div>
+
+              <div id="Aradena">
+                <ProjectDescription isDarkMode={isDarkMode} projectName="Aradena" technologiesList={aradenaTech} projectDescriptions={aradenaDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
+              </div>
+      
+              <div id="Homebase">
+                <ProjectDescription isDarkMode={isDarkMode} projectName="Homebase" technologiesList={homebaseTech} projectDescriptions={homebaseDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
+              </div>
+
+              <div id="Motogp">
+                <ProjectDescription isDarkMode={isDarkMode} projectName="Motogp Ignition" technologiesList={motogpTech} projectDescriptions={motogpDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
+              </div>
+
+              <div id="Maniac">
+                <ProjectDescription isDarkMode={isDarkMode} projectName="Maniac Cab" technologiesList={maniacCabTech} projectDescriptions={maniacCabDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
+              </div>
+
+              <div id="DirectX">
+                <ProjectDescription isDarkMode={isDarkMode} projectName="DirectX Renderer" technologiesList={directXTech} projectDescriptions={directXDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
+              </div>
+
+              <div id="Node">
+                <ProjectDescription isDarkMode={isDarkMode} projectName="Node Graph Generator" technologiesList={nodeGraphGenTech} projectDescriptions={nodeGraphGenDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
+              </div>
+
+              <div id="Malicious">
+                <ProjectDescription isDarkMode={isDarkMode} projectName="Malicious" technologiesList={maliciousTech} projectDescriptions={maliciousDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
+              </div>
+
+              <div id="Rapid">
+                <ProjectDescription isDarkMode={isDarkMode} projectName="Rapid Delivery" technologiesList={rapidDeliveryTech} projectDescriptions={rapidDeliveryDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
+              </div>
+
+              <div id="Carnival">
+                <ProjectDescription isDarkMode={isDarkMode} projectName="Carnival Carnage" technologiesList={carnivalCarnageTech} projectDescriptions={carnivalCarnageDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
+              </div>
+
+              <div id="#Isolator">
+                <ProjectDescription isDarkMode={isDarkMode} projectName="Isolator" technologiesList={isolatorTech} projectDescriptions={isolatorDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
+              </div>
+
+              <div id="Bezier">
+                <ProjectDescription isDarkMode={isDarkMode} projectName="Bezier Curves" technologiesList={bezierCurvesTech} projectDescriptions={bezierCurvesDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
+              </div>                
             </div>
         </div>
          
