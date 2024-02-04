@@ -1,9 +1,9 @@
-import Footer from "./Components/Footer";
 import GithubCommitDisplay from "./Components/GithubCommitDisplay";
 import Header from "./Components/Header";
 import ProjectModal from "./Components/ProjectModal";
 import ProjectDescription from "./Components/ProjectDescription";
 import {FC, useState} from "react";
+import HeaderBar from "./Components/HeaderBar";
 
 const App: FC = () => {
 
@@ -163,20 +163,17 @@ const App: FC = () => {
   return (
     <div className={isDarkMode ? "dark " : ""}>
       <div className=" bg-Neutral-100 dark:bg-DarkNeutral-100 w-full h-full no-scrollbar overflow-y-hidden">
-        <ProjectModal isShown={isShown} hide={ModalToggled} projectName={projectName}></ProjectModal>
-        <button
-                  onClick={DarkModeToggled}
-                  className="w-[90%] rounded-sm bg-slate-500 border-slate-600 border-2 mt-4 dark:text-Neutral-0 text-DarkNeutralN-100">
-                  Toggle Dark Mode = {String(isDarkMode)}
-                </button>
-        <Header isDarkMode={isDarkMode} /> 
+        {/* <ProjectModal isShown={isShown} hide={ModalToggled} projectName={projectName}></ProjectModal> */}
+        
+        <HeaderBar isDarkMode={isDarkMode} DarkModeToggledFunc={DarkModeToggled}></HeaderBar>
+        {/* <Header isDarkMode={isDarkMode} />  */}
 
         <div className="text-DarkNeutralN-100  dark:text-Neutral-0 flex flex-col lg:flex-row align-middle justify-center content-center items-center lg:items-start w-[100%] bg-gray-400">
             <div className="flex flex-col items-center align-top lg:w-[20%] lg:justify-end justify-center mt-10 ">
               <div className="items-left flex flex-row lg:flex-col space-x-5 lg:space-x-0">
                 
                 <div className="flex flex-col">
-                  <h2 className={"mt-4 text-md text-gray-600 "+ (isDarkMode ? "text-Neutral-400" : "text-DarkNeutral-200")}>Professional Experience</h2>
+                  <h2 className={"mt-4 text-lg text-gray-600 "+ (isDarkMode ? "text-Neutral-600" : "text-DarkNeutral-400 font-bold")}>Professional Experience</h2>
                   <a href="#Vlad" className="text-sm">Vlad Circus</a>
                   <a href="#Aradena" className="text-sm">Aradena</a>
                   <a href="#Homebase" className="text-sm">Homebase</a>
@@ -184,13 +181,13 @@ const App: FC = () => {
                 </div>
 
                 <div className="flex flex-col">
-                  <h2 className={"mt-4 text-md text-gray-600 " + (isDarkMode ? "text-Neutral-400" : "text-DarkNeutral-200")}>Personal Projects</h2>
+                  <h2 className={"mt-4 text-md text-gray-600 " + (isDarkMode ? "text-Neutral-600" : "text-DarkNeutral-400 font-bold")}>Personal Projects</h2>
                   <a href="#DirectX" className="text-sm">DirectX 11 Renderer</a>
                   <a href="#Maniac" className="text-sm">Maniac Cab</a>
                 </div>
 
                 <div className="flex flex-col">
-                  <h2 className={"mt-4 text-md text-gray-600 "+ (isDarkMode ? "text-Neutral-400" : "text-DarkNeutral-200")}>University Projects</h2>
+                  <h2 className={"mt-4 text-md text-gray-600 "+ (isDarkMode ? "text-Neutral-600" : "text-DarkNeutral-400 font-bold")}>University Projects</h2>
                   <a href="#Node" className="text-sm">Node Graph Generator</a>
                   <a href="#Malicious" className="text-sm">Malicious</a>
                   <a href="#Rapid" className="text-sm">Rapid Delivery</a>
@@ -254,8 +251,6 @@ const App: FC = () => {
               </div>                
             </div>
         </div>
-         
-        <Footer /> 
       </div>
     </div>
   );
