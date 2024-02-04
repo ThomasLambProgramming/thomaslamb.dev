@@ -1,9 +1,9 @@
 import GithubCommitDisplay from "./Components/GithubCommitDisplay";
-import Header from "./Components/Header";
 import ProjectModal from "./Components/ProjectModal";
 import ProjectDescription from "./Components/ProjectDescription";
 import {FC, useState} from "react";
 import HeaderBar from "./Components/HeaderBar";
+import AboutSection from "./Components/AboutSection";
 
 const App: FC = () => {
 
@@ -22,6 +22,11 @@ const App: FC = () => {
     setProjectName(name);
     ModalToggled();
   }
+  const testText: string[] =
+  [
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  ]
 
   const vladTechnologies: string[] = 
   [
@@ -168,12 +173,17 @@ const App: FC = () => {
         <HeaderBar isDarkMode={isDarkMode} DarkModeToggledFunc={DarkModeToggled}></HeaderBar>
         {/* <Header isDarkMode={isDarkMode} />  */}
 
-        <div className="text-DarkNeutralN-100  dark:text-Neutral-0 flex flex-col lg:flex-row align-middle justify-center content-center items-center lg:items-start w-[100%] bg-gray-400">
-            <div className="flex flex-col items-center align-top lg:w-[20%] lg:justify-end justify-center mt-10 ">
-              <div className="items-left flex flex-row lg:flex-col space-x-5 lg:space-x-0">
+        <div className="flex flex-col justify-center align-middle content-center items-center w-full">
+          <div className="bg-Neutral-400 dark:bg-DarkNeutral-200 rounded-md flex flex-col justify-center align-middle content-center items-center w-full max-w-[1100px] mt-10 text-DarkNeutralN-100  dark:text-Neutral-0">
+            <AboutSection isDarkMode={isDarkMode} defaultText={testText}></AboutSection>
+          </div>
+        
+        <div className="text-DarkNeutralN-100 max-w-[2200px]  dark:text-Neutral-0 flex flex-col lg:flex-row align-middle justify-center content-center items-center lg:items-start w-[100%] bg-gray-400">
+            <div className="flex flex-col items-start align-top lg:w-[20%] lg:max-w-[220px] lg:justify-end justify-center mt-10 ">
+              <div className="items-left flex flex-row lg:flex-col space-x-5 w-full lg:space-x-0  lg:justify-normal lg:align-start justify-center align-middle">
                 
                 <div className="flex flex-col">
-                  <h2 className={"mt-4 text-lg text-gray-600 "+ (isDarkMode ? "text-Neutral-600" : "text-DarkNeutral-400 font-bold")}>Professional Experience</h2>
+                  <h2 className={"mt-4 text-md text-gray-600 "+ (isDarkMode ? "text-Neutral-600" : "text-DarkNeutral-400 font-bold")}>Professional Experience</h2>
                   <a href="#Vlad" className="text-sm">Vlad Circus</a>
                   <a href="#Aradena" className="text-sm">Aradena</a>
                   <a href="#Homebase" className="text-sm">Homebase</a>
@@ -198,59 +208,60 @@ const App: FC = () => {
               <GithubCommitDisplay isDarkMode={isDarkMode}/>
             </div>
 
-            <div className="w-[80%] max-w-[800px] mb-8">
+            <div className="w-[80%] max-w-[880px] mb-8 mt-16">
               <h1>Game Work</h1>
               <h3>These are the projects that I have worked on under a professional capacity</h3>
               
               <div id="Vlad">
-                <ProjectDescription isDarkMode={isDarkMode}  projectName="Vlad Circus" technologiesList={vladTechnologies} projectDescriptions={vladDescription} onClickFunction={ProjectNameChanged}></ProjectDescription>
+                <ProjectDescription hideProjectDetails={true} isDarkMode={isDarkMode} projectName="Vlad Circus" technologiesList={vladTechnologies} projectDescriptions={vladDescription} onClickFunction={ProjectNameChanged}></ProjectDescription>
               </div>
 
               <div id="Aradena">
-                <ProjectDescription isDarkMode={isDarkMode} projectName="Aradena" technologiesList={aradenaTech} projectDescriptions={aradenaDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
+                <ProjectDescription hideProjectDetails={true} isDarkMode={isDarkMode} projectName="Aradena" technologiesList={aradenaTech} projectDescriptions={aradenaDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
               </div>
       
               <div id="Homebase">
-                <ProjectDescription isDarkMode={isDarkMode} projectName="Homebase" technologiesList={homebaseTech} projectDescriptions={homebaseDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
+                <ProjectDescription hideProjectDetails={true} isDarkMode={isDarkMode} projectName="Homebase" technologiesList={homebaseTech} projectDescriptions={homebaseDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
               </div>
 
               <div id="Motogp">
-                <ProjectDescription isDarkMode={isDarkMode} projectName="Motogp Ignition" technologiesList={motogpTech} projectDescriptions={motogpDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
+                <ProjectDescription hideProjectDetails={true} isDarkMode={isDarkMode} projectName="Motogp Ignition" technologiesList={motogpTech} projectDescriptions={motogpDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
               </div>
 
               <div id="Maniac">
-                <ProjectDescription isDarkMode={isDarkMode} projectName="Maniac Cab" technologiesList={maniacCabTech} projectDescriptions={maniacCabDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
+                <ProjectDescription hideProjectDetails={false} isDarkMode={isDarkMode} projectName="Maniac Cab" technologiesList={maniacCabTech} projectDescriptions={maniacCabDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
               </div>
 
               <div id="DirectX">
-                <ProjectDescription isDarkMode={isDarkMode} projectName="DirectX Renderer" technologiesList={directXTech} projectDescriptions={directXDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
+                <ProjectDescription hideProjectDetails={false} isDarkMode={isDarkMode} projectName="DirectX Renderer" technologiesList={directXTech} projectDescriptions={directXDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
               </div>
 
               <div id="Node">
-                <ProjectDescription isDarkMode={isDarkMode} projectName="Node Graph Generator" technologiesList={nodeGraphGenTech} projectDescriptions={nodeGraphGenDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
+                <ProjectDescription hideProjectDetails={false} isDarkMode={isDarkMode} projectName="Node Graph Generator" technologiesList={nodeGraphGenTech} projectDescriptions={nodeGraphGenDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
               </div>
 
               <div id="Malicious">
-                <ProjectDescription isDarkMode={isDarkMode} projectName="Malicious" technologiesList={maliciousTech} projectDescriptions={maliciousDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
+                <ProjectDescription hideProjectDetails={false} isDarkMode={isDarkMode} projectName="Malicious" technologiesList={maliciousTech} projectDescriptions={maliciousDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
               </div>
 
               <div id="Rapid">
-                <ProjectDescription isDarkMode={isDarkMode} projectName="Rapid Delivery" technologiesList={rapidDeliveryTech} projectDescriptions={rapidDeliveryDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
+                <ProjectDescription hideProjectDetails={false} isDarkMode={isDarkMode} projectName="Rapid Delivery" technologiesList={rapidDeliveryTech} projectDescriptions={rapidDeliveryDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
               </div>
 
               <div id="Carnival">
-                <ProjectDescription isDarkMode={isDarkMode} projectName="Carnival Carnage" technologiesList={carnivalCarnageTech} projectDescriptions={carnivalCarnageDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
+                <ProjectDescription hideProjectDetails={false} isDarkMode={isDarkMode} projectName="Carnival Carnage" technologiesList={carnivalCarnageTech} projectDescriptions={carnivalCarnageDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
               </div>
 
               <div id="#Isolator">
-                <ProjectDescription isDarkMode={isDarkMode} projectName="Isolator" technologiesList={isolatorTech} projectDescriptions={isolatorDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
+                <ProjectDescription hideProjectDetails={false} isDarkMode={isDarkMode} projectName="Isolator" technologiesList={isolatorTech} projectDescriptions={isolatorDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
               </div>
 
               <div id="Bezier">
-                <ProjectDescription isDarkMode={isDarkMode} projectName="Bezier Curves" technologiesList={bezierCurvesTech} projectDescriptions={bezierCurvesDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
+                <ProjectDescription hideProjectDetails={false} isDarkMode={isDarkMode} projectName="Bezier Curves" technologiesList={bezierCurvesTech} projectDescriptions={bezierCurvesDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
               </div>                
             </div>
         </div>
+      </div>
       </div>
     </div>
   );

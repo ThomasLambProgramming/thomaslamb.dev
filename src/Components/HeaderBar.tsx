@@ -15,9 +15,11 @@ const HeaderBar: React.FC<{isDarkMode: boolean, DarkModeToggledFunc : () => void
             <SocialLinks />
         </div>
 
-        <button onClick={DarkModeToggled} className="w-28 h-[50px] rounded-sm bg-slate-500 border-slate-600 border-2  dark:text-Neutral-0 text-DarkNeutralN-100">
-                  {isDarkMode ? "Dark Mode" : "Light Mode"}
-        </button>
+        <div className=''>
+            <button onClick={DarkModeToggled} className="w-28 h-[40px] rounded-md border-DarkNeutral-600 border dark:text-Neutral-0 text-DarkNeutralN-100">
+                {isDarkMode ? "Dark Mode" : "Light Mode"}
+            </button>
+        </div>
       </div>
     );
 }

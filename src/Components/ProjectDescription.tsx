@@ -1,7 +1,7 @@
 import React from 'react';
 import DelayedImage from './DelayedImage';
 
-const ProjectDescription: React.FC<{isDarkMode: boolean, projectName: string, technologiesList: string[], projectDescriptions: string[], onClickFunction: (name: string) => void}> = ({isDarkMode, projectName, technologiesList, projectDescriptions, onClickFunction}) =>
+const ProjectDescription: React.FC<{isDarkMode: boolean, hideProjectDetails: boolean, projectName: string, technologiesList: string[], projectDescriptions: string[], onClickFunction: (name: string) => void}> = ({isDarkMode, hideProjectDetails, projectName, technologiesList, projectDescriptions, onClickFunction}) =>
 {
   let projectNameWithoutSpace = projectName.replace(/\s/g, '');
   
@@ -30,7 +30,8 @@ const ProjectDescription: React.FC<{isDarkMode: boolean, projectName: string, te
       {/* Project image and details button */}
       <div className='max-w-[40%] min-w-[40%] flex flex-col items-center justify-center'>
         <DelayedImage projectName={projectNameWithoutSpace} className='min-h-[70%] h-[100%] items-center'></DelayedImage>
-        <button className='w-[90%] rounded-sm bg-slate-500 text-sm border-slate-600 border-2 mt-4'>Project Details</button>
+        
+        {hideProjectDetails ? <p className="pb-4"></p> : <button className='w-[90%] rounded-sm bg-slate-500 text-sm border-slate-600 border-2 mt-4'>Project Details</button>}
       </div>
     </div>
   );
