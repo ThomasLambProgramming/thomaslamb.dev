@@ -220,10 +220,11 @@ const App: FC = () => {
               <GithubCommitDisplay isDarkMode={isDarkMode}/>
             </div>
 
-            <div className="w-[80%] max-w-[880px] mb-8 mt-16">
-              <h1>Game Work</h1>
-              <h3>These are the projects that I have worked on under a professional capacity</h3>
+            <div className="w-[80%] max-w-[880px] mb-8 mt-14">
               
+              <h1 className="text-2xl">Professional Projects</h1>
+              <h3 className="text-2xl">These are the projects that I have worked on under a professional capacity</h3>
+
               <div id="Vlad">
                 <ProjectDescription linksLinks={vladLink} linksText={vladLinkText} copyrightText="All rights to Blowfish studios and Diego" hideProjectDetails={true} isDarkMode={isDarkMode} projectName="Vlad Circus" technologiesList={vladTech} projectDescriptions={vladDescription} onClickFunction={ProjectNameChanged}></ProjectDescription>
               </div>
@@ -240,6 +241,9 @@ const App: FC = () => {
                 <ProjectDescription linksLinks={vladLink} linksText={vladLinkText} copyrightText="All rights to motogp"hideProjectDetails={true} isDarkMode={isDarkMode} projectName="Motogp Ignition" technologiesList={motogpTech} projectDescriptions={motogpDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
               </div>
 
+              <h1 className="mt-12 text-2xl">Personal Projects</h1>
+              <h3 className="text-2xl">These are the projects that I am currently working on</h3>
+
               <div id="Maniac">
                 <ProjectDescription linksLinks={vladLink} linksText={vladLinkText} copyrightText="" hideProjectDetails={false} isDarkMode={isDarkMode} projectName="Maniac Cab" technologiesList={maniacCabTech} projectDescriptions={maniacCabDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
               </div>
@@ -247,6 +251,9 @@ const App: FC = () => {
               <div id="DirectX">
                 <ProjectDescription linksLinks={vladLink} linksText={vladLinkText} copyrightText="" hideProjectDetails={false} isDarkMode={isDarkMode} projectName="DirectX Renderer" technologiesList={directXTech} projectDescriptions={directXDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
               </div>
+
+              <h1 className="mt-12 text-2xl">University/Gamejam Projects</h1>
+              <h3 className="text-2xl">Projects that I made during my time at aie</h3>
 
               <div id="Node">
                 <ProjectDescription linksLinks={vladLink} linksText={vladLinkText} copyrightText="" hideProjectDetails={false} isDarkMode={isDarkMode} projectName="Node Graph Generator" technologiesList={nodeGraphGenTech} projectDescriptions={nodeGraphGenDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
