@@ -175,27 +175,32 @@ const App: FC = () => {
                 </button>
         <Header isDarkMode={isDarkMode} /> 
 
-        <div className="text-DarkNeutralN-100 dark:text-Neutral-0 flex flex-row align-middle justify-center content-center items-start w-[100%] bg-gray-400">
-            <div className="flex flex-col items-center align-top w-[20%] justify-end mt-10 ">
-              <div className="items-left">
-                <h2 className={"mt-4 text-lg text-gray-600 "+ (isDarkMode ?
-              "text-Neutral-400" : "text-DarkNeutral-200")}>Professional Experience</h2>
-                <h3 className="">Vlad Circus</h3>
-                <h3 className="">Aradena</h3>
-                <h3 className="">Biospheres</h3>
-                <h3 className="">Homebase</h3>
+        <div className="text-DarkNeutralN-100 dark:text-Neutral-0 flex flex-col lg:flex-row align-middle justify-center content-center items-start w-[100%] bg-gray-400">
+            <div className="flex flex-col items-center align-top lg:w-[20%] justify-start lg:justify-end mt-10 ">
+              <div className="items-left flex flex-row lg:flex-col space-x-5 lg:space-x-0">
+                
+                <div>
+                  <h2 className={"mt-4 text-lg text-gray-600 "+ (isDarkMode ? "text-Neutral-400" : "text-DarkNeutral-200")}>Professional Experience</h2>
+                  <h3 className="">Vlad Circus</h3>
+                  <h3 className="">Aradena</h3>
+                  <h3 className="">Biospheres</h3>
+                  <h3 className="">Homebase</h3>
+                </div>
 
-                <h2 className={"mt-4 text-lg text-gray-600 " + (isDarkMode ?
-              "text-Neutral-400" : "text-DarkNeutral-200")}>Personal Projects</h2>
-                <h3 className="">DirectX 11 Rendering Engine</h3>
-                <h3 className="">Maniac Cab</h3>
+                <div>
+                  <h2 className={"mt-4 text-lg text-gray-600 " + (isDarkMode ? "text-Neutral-400" : "text-DarkNeutral-200")}>Personal Projects</h2>
+                  <h3 className="">DirectX 11 Rendering Engine</h3>
+                  <h3 className="">Maniac Cab</h3>
+                </div>
 
-                <h2 className={"mt-4 text-lg text-gray-600 "+ (isDarkMode ?
-              "text-Neutral-400" : "text-DarkNeutral-200")}>University Projects</h2>
-                <h3 className="">Node Graph Generator</h3>
-                <h3 className="">Malicious</h3>
-                <h3 className="">Rapid Delivery</h3>
-                <h3 className="mb-4">Carnival Carnage</h3>
+                <div>
+                  <h2 className={"mt-4 text-lg text-gray-600 "+ (isDarkMode ? "text-Neutral-400" : "text-DarkNeutral-200")}>University Projects</h2>
+                  <h3 className="">Node Graph Generator</h3>
+                  <h3 className="">Malicious</h3>
+                  <h3 className="">Rapid Delivery</h3>
+                  <h3 className="mb-4">Carnival Carnage</h3>
+                </div>
+
               </div>
               <GithubCommitDisplay isDarkMode={isDarkMode}/>
             </div>
@@ -217,7 +222,7 @@ const App: FC = () => {
               <ProjectDescription isDarkMode={isDarkMode} projectName="Rapid Delivery" technologiesList={rapidDeliveryTech} projectDescriptions={rapidDeliveryDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
               <ProjectDescription isDarkMode={isDarkMode} projectName="Carnival Carnage" technologiesList={carnivalCarnageTech} projectDescriptions={carnivalCarnageDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
               <ProjectDescription isDarkMode={isDarkMode} projectName="Isolator" technologiesList={isolatorTech} projectDescriptions={isolatorDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
-              <ProjectDescription isDarkMode={isDarkMode} projectName="Bezier Curves" technologiesList={bezierCurvesTech} projectDescriptions={bezierCurvesDesc} onClickFunction={ProjectNameChanged}></ProjectDescription> */}
+              <ProjectDescription isDarkMode={isDarkMode} projectName="Bezier Curves" technologiesList={bezierCurvesTech} projectDescriptions={bezierCurvesDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
             </div>
         </div>
          
