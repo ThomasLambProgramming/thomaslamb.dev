@@ -22,14 +22,14 @@ const ProjectDescription: React.FC<{isDarkMode: boolean, projectName: string, te
           </div> 
 
           {projectDescriptions.map((projDesc: string) => (
-              <p className="mb-4">{projDesc}</p>
+              <p className="mb-4 text-lg">{projDesc}</p>
             ))}   
 
         </div>
       </div>
       {/* Project image and details button */}
-      <div className='max-w-[40%] min-w-[40%] flex flex-col items-center'>
-        <DelayedImage projectName={projectNameWithoutSpace} className=''></DelayedImage>
+      <div className='max-w-[40%] min-w-[40%] flex flex-col items-center justify-center'>
+        <DelayedImage projectName={projectNameWithoutSpace} className='min-h-[70%] h-[100%] items-center'></DelayedImage>
         <button className='w-[90%] rounded-sm bg-slate-500 border-slate-600 border-2 mt-4'>Project Details</button>
       </div>
     </div>

@@ -32,14 +32,33 @@ const App: FC = () => {
   ]
   const vladDescription: string[] = 
   [
-    "This was my first professional shipped title. I was the programmer in charge of porting the game to Xbox Series/X, Switch, Playstation 4/5, Gog and Epic Games.",
+    "In Vlad Circus: Descend into Madness, discover a story full of mystery and pain where every shadow hides a twisted secret or vicious threat, and no one is safe from tragedy.",
+    "Experience the chilling story of a 1920s freak circus that burned to the ground, and the grotesque quest to found the circus anew. Follow the tormented Oliver Mills as he struggles to survive and escape.",
   ]
 
   const testDescriptions: string[] = 
   [
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   ]
+  const aradenaTech: string[] = 
+  [
+    "Unity",
+    "C#",
+  ]
+  const aradenaDesc: string[] = 
+  [
+    "Aradena is a free-to-play, Tactical TCG where collectable cards come to life in strategic, 3D gameplay. As a warrior, you'll join a faction and battle other players in the medieval fantasy kingdom.",
+  ] 
 
+  const homebaseTech: string[] = 
+  [
+    "Unity",
+    "C#",
+  ]
+  const homebaseDesc: string[] = 
+  [
+    "Scholastic Home Base is a safe, free, 3D interactive world that celebrates favorite stories through book-based games, live author events, and a large community of readers.",
+  ] 
 
   const motogpTech: string[] = 
   [
@@ -48,7 +67,7 @@ const App: FC = () => {
   ]
   const motogpDesc: string[] = 
   [
-    "A online blockchain deterministic simulation made for the lovers of motogp and fantasy football",
+    "MotoGP Ignition is a play-to-earn blockchain-based racing management and collectibles game that utilizes the Flow network with its NFT assets and cryptocurrency, REVV.",
   ]
 
 
@@ -183,16 +202,17 @@ const App: FC = () => {
               </div>
               <GithubCommitDisplay isDarkMode={isDarkMode}/>
             </div>
-            <div className="w-[80%] max-w-[1000px] mb-8">
-              <ProjectDescription isDarkMode={isDarkMode} projectName="Vlad Circus" technologiesList={vladTechnologies} projectDescriptions={testDescriptions} onClickFunction={ProjectNameChanged}></ProjectDescription>
-              <ProjectDescription isDarkMode={isDarkMode} projectName="Motogp Ignition" technologiesList={vladTechnologies} projectDescriptions={testDescriptions} onClickFunction={ProjectNameChanged}></ProjectDescription>
+
+            <div className="w-[100%] max-w-[1200px] mb-8">
+              <h1>Game Work</h1>
+              <h3>These are the projects that I have worked on under a professional capacity</h3>
+              <ProjectDescription isDarkMode={isDarkMode} projectName="Vlad Circus" technologiesList={vladTechnologies} projectDescriptions={vladDescription} onClickFunction={ProjectNameChanged}></ProjectDescription>
+              <ProjectDescription isDarkMode={isDarkMode} projectName="Aradena" technologiesList={aradenaTech} projectDescriptions={aradenaDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
+              <ProjectDescription isDarkMode={isDarkMode} projectName="Homebase" technologiesList={homebaseTech} projectDescriptions={homebaseDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
+              <ProjectDescription isDarkMode={isDarkMode} projectName="Motogp Ignition" technologiesList={motogpTech} projectDescriptions={motogpDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
               <ProjectDescription isDarkMode={isDarkMode} projectName="Maniac Cab" technologiesList={vladTechnologies} projectDescriptions={testDescriptions} onClickFunction={ProjectNameChanged}></ProjectDescription>
               <ProjectDescription isDarkMode={isDarkMode} projectName="Node Graph Generator" technologiesList={vladTechnologies} projectDescriptions={testDescriptions} onClickFunction={ProjectNameChanged}></ProjectDescription>
               <ProjectDescription isDarkMode={isDarkMode} projectName="Rapid Delivery" technologiesList={vladTechnologies} projectDescriptions={testDescriptions} onClickFunction={ProjectNameChanged}></ProjectDescription>
-              {/* <ProjectDescription isDarkMode={isDarkMode} projectName="Vlad Circus" technologiesList={vladTechnologies} projectDescriptions={vladDescription} onClickFunction={ProjectNameChanged}></ProjectDescription> */}
-              {/* <ProjectDescription projectName="Aradena" technologiesList={vladTechnologies} projectDescriptions={vladDescription} onClickFunction={ProjectNameChanged}></ProjectDescription> */}
-              {/* <ProjectDescription projectName="Biospheres" technologiesList={vladTechnologies} projectDescriptions={vladDescription} onClickFunction={ProjectNameChanged}></ProjectDescription> */}
-              {/* <ProjectDescription isDarkMode={isDarkMode} projectName="Motogp Ignition" technologiesList={motogpTech} projectDescriptions={motogpDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
               <ProjectDescription isDarkMode={isDarkMode} projectName="DirectX Renderer" technologiesList={directXTech} projectDescriptions={directXDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
               <ProjectDescription isDarkMode={isDarkMode} projectName="Maniac Cab" technologiesList={maniacCabTech} projectDescriptions={maniacCabDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
               <ProjectDescription isDarkMode={isDarkMode} projectName="Node Graph Generator" technologiesList={nodeGraphGenTech} projectDescriptions={nodeGraphGenDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
