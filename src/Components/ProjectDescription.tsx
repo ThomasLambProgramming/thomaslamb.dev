@@ -1,7 +1,7 @@
 import React from 'react';
 import DelayedImage from './DelayedImage';
 
-const ProjectDescription: React.FC<{isDarkMode: boolean, hideProjectDetails: boolean, projectName: string, technologiesList: string[], projectDescriptions: string[], onClickFunction: (name: string) => void}> = ({isDarkMode, hideProjectDetails, projectName, technologiesList, projectDescriptions, onClickFunction}) =>
+const ProjectDescription: React.FC<{isDarkMode: boolean, hideProjectDetails: boolean, projectName: string, copyrightText: string, linksText: string[], linksLinks: string[], technologiesList: string[], projectDescriptions: string[], onClickFunction: (name: string) => void}> = ({isDarkMode, hideProjectDetails, copyrightText, linksLinks, linksText, projectName, technologiesList, projectDescriptions, onClickFunction}) =>
 {
   let projectNameWithoutSpace = projectName.replace(/\s/g, '');
   
@@ -9,7 +9,7 @@ const ProjectDescription: React.FC<{isDarkMode: boolean, hideProjectDetails: boo
     <div className={"min-h-[300px] min-w-[400px] mt-4 rounded-md flex flex-col lg:items-start items-center lg:flex-row w-full " + (isDarkMode ?
     "dark:bg-DarkNeutral-200 " : "bg-Neutral-400 ")}>
       {/* Project Description + skills and etc. */}
-      <div className="flex flex-col items-start pt-6 ml-6 w-full h-[90%]">
+      <div className="flex flex-col items-start pt-3 ml-6 w-full h-[90%]">
         <div className="min-w-[90%] w-[30%]">
           <h3 className={'text-2xl font-medium mb-4 '+ (isDarkMode ?
               "text-Neutral-400" : "text-DarkNeutral-200")}>{projectName}</h3>
@@ -20,10 +20,17 @@ const ProjectDescription: React.FC<{isDarkMode: boolean, hideProjectDetails: boo
                 "dark:bg-Neutral-200 text-DarkNeutral-200" : "bg-Neutral-400")}>{techString}</p>
             ))}
           </div> 
-
-          {projectDescriptions.map((projDesc: string) => (
+          
+          <div className="flex flex-col">
+            {projectDescriptions.map((projDesc: string) => (
               <p className="mb-4 text-sm">{projDesc}</p>
-            ))}   
+              ))}
+            {
+              linksLinks.map((linkHref: string, index: number) => (
+                <a href={linkHref} target="_blank" className="mb-1 text-sm">{linksText[index]}</a>
+                ))}
+          </div>
+          <p className='text-Neutral-100 dark:text-DarkNeutral-400 mt-3'>{copyrightText}</p>
 
         </div>
       </div>

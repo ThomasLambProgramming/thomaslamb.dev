@@ -28,7 +28,7 @@ const App: FC = () => {
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   ]
 
-  const vladTechnologies: string[] = 
+  const vladTech: string[] = 
   [
     "Console",
     "Monogame",
@@ -39,6 +39,18 @@ const App: FC = () => {
   [
     "In Vlad Circus: Descend into Madness, discover a story full of mystery and pain where every shadow hides a twisted secret or vicious threat, and no one is safe from tragedy.",
     "Experience the chilling story of a 1920s freak circus that burned to the ground, and the grotesque quest to found the circus anew. Follow the tormented Oliver Mills as he struggles to survive and escape.",
+  ]
+  const vladLink: string[] = 
+  [
+    "https://store.steampowered.com/app/1702430/Vlad_Circus_Descend_Into_Madness/",
+    "https://store.steampowered.com/app/1702430/Vlad_Circus_Descend_Into_Madness/",
+    "https://store.steampowered.com/app/1702430/Vlad_Circus_Descend_Into_Madness/",
+  ]
+  const vladLinkText: string[] = 
+  [
+    "Steam: ",
+    "Steam: ",
+    "Steam: ",
   ]
 
   const aradenaTech: string[] = 
@@ -180,7 +192,7 @@ const App: FC = () => {
         
         <div className="text-DarkNeutralN-100 max-w-[2200px]  dark:text-Neutral-0 flex flex-col lg:flex-row align-middle justify-center content-center items-center lg:items-start w-[100%] bg-gray-400">
             <div className="flex flex-col items-start align-top lg:w-[20%] lg:max-w-[220px] lg:justify-end justify-center mt-10 ">
-              <div className="items-left flex flex-row lg:flex-col space-x-5 w-full lg:space-x-0  lg:justify-normal lg:align-start justify-center align-middle">
+              <div className="items-left flex flex-row lg:flex-col space-x-5 w-full lg:space-x-0 ml-2 lg:justify-normal lg:align-start justify-center align-middle">
                 
                 <div className="flex flex-col">
                   <h2 className={"mt-4 text-md text-gray-600 "+ (isDarkMode ? "text-Neutral-600" : "text-DarkNeutral-400 font-bold")}>Professional Experience</h2>
@@ -213,51 +225,51 @@ const App: FC = () => {
               <h3>These are the projects that I have worked on under a professional capacity</h3>
               
               <div id="Vlad">
-                <ProjectDescription hideProjectDetails={true} isDarkMode={isDarkMode} projectName="Vlad Circus" technologiesList={vladTechnologies} projectDescriptions={vladDescription} onClickFunction={ProjectNameChanged}></ProjectDescription>
+                <ProjectDescription linksLinks={vladLink} linksText={vladLinkText} copyrightText="All rights to Blowfish studios and Diego" hideProjectDetails={true} isDarkMode={isDarkMode} projectName="Vlad Circus" technologiesList={vladTech} projectDescriptions={vladDescription} onClickFunction={ProjectNameChanged}></ProjectDescription>
               </div>
 
               <div id="Aradena">
-                <ProjectDescription hideProjectDetails={true} isDarkMode={isDarkMode} projectName="Aradena" technologiesList={aradenaTech} projectDescriptions={aradenaDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
+                <ProjectDescription linksLinks={vladLink} linksText={vladLinkText} copyrightText="All rights to Aradena.io" hideProjectDetails={true} isDarkMode={isDarkMode} projectName="Aradena" technologiesList={aradenaTech} projectDescriptions={aradenaDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
               </div>
       
               <div id="Homebase">
-                <ProjectDescription hideProjectDetails={true} isDarkMode={isDarkMode} projectName="Homebase" technologiesList={homebaseTech} projectDescriptions={homebaseDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
+                <ProjectDescription linksLinks={vladLink} linksText={vladLinkText} copyrightText="All rights to scholastic"hideProjectDetails={true} isDarkMode={isDarkMode} projectName="Homebase" technologiesList={homebaseTech} projectDescriptions={homebaseDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
               </div>
 
               <div id="Motogp">
-                <ProjectDescription hideProjectDetails={true} isDarkMode={isDarkMode} projectName="Motogp Ignition" technologiesList={motogpTech} projectDescriptions={motogpDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
+                <ProjectDescription linksLinks={vladLink} linksText={vladLinkText} copyrightText="All rights to motogp"hideProjectDetails={true} isDarkMode={isDarkMode} projectName="Motogp Ignition" technologiesList={motogpTech} projectDescriptions={motogpDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
               </div>
 
               <div id="Maniac">
-                <ProjectDescription hideProjectDetails={false} isDarkMode={isDarkMode} projectName="Maniac Cab" technologiesList={maniacCabTech} projectDescriptions={maniacCabDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
+                <ProjectDescription linksLinks={vladLink} linksText={vladLinkText} copyrightText="" hideProjectDetails={false} isDarkMode={isDarkMode} projectName="Maniac Cab" technologiesList={maniacCabTech} projectDescriptions={maniacCabDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
               </div>
 
               <div id="DirectX">
-                <ProjectDescription hideProjectDetails={false} isDarkMode={isDarkMode} projectName="DirectX Renderer" technologiesList={directXTech} projectDescriptions={directXDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
+                <ProjectDescription linksLinks={vladLink} linksText={vladLinkText} copyrightText="" hideProjectDetails={false} isDarkMode={isDarkMode} projectName="DirectX Renderer" technologiesList={directXTech} projectDescriptions={directXDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
               </div>
 
               <div id="Node">
-                <ProjectDescription hideProjectDetails={false} isDarkMode={isDarkMode} projectName="Node Graph Generator" technologiesList={nodeGraphGenTech} projectDescriptions={nodeGraphGenDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
+                <ProjectDescription linksLinks={vladLink} linksText={vladLinkText} copyrightText="" hideProjectDetails={false} isDarkMode={isDarkMode} projectName="Node Graph Generator" technologiesList={nodeGraphGenTech} projectDescriptions={nodeGraphGenDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
               </div>
 
               <div id="Malicious">
-                <ProjectDescription hideProjectDetails={false} isDarkMode={isDarkMode} projectName="Malicious" technologiesList={maliciousTech} projectDescriptions={maliciousDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
+                <ProjectDescription linksLinks={vladLink} linksText={vladLinkText} copyrightText="" hideProjectDetails={false} isDarkMode={isDarkMode} projectName="Malicious" technologiesList={maliciousTech} projectDescriptions={maliciousDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
               </div>
 
               <div id="Rapid">
-                <ProjectDescription hideProjectDetails={false} isDarkMode={isDarkMode} projectName="Rapid Delivery" technologiesList={rapidDeliveryTech} projectDescriptions={rapidDeliveryDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
+                <ProjectDescription linksLinks={vladLink} linksText={vladLinkText} copyrightText="" hideProjectDetails={false} isDarkMode={isDarkMode} projectName="Rapid Delivery" technologiesList={rapidDeliveryTech} projectDescriptions={rapidDeliveryDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
               </div>
 
               <div id="Carnival">
-                <ProjectDescription hideProjectDetails={false} isDarkMode={isDarkMode} projectName="Carnival Carnage" technologiesList={carnivalCarnageTech} projectDescriptions={carnivalCarnageDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
+                <ProjectDescription linksLinks={vladLink} linksText={vladLinkText} copyrightText="" hideProjectDetails={false} isDarkMode={isDarkMode} projectName="Carnival Carnage" technologiesList={carnivalCarnageTech} projectDescriptions={carnivalCarnageDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
               </div>
 
               <div id="#Isolator">
-                <ProjectDescription hideProjectDetails={false} isDarkMode={isDarkMode} projectName="Isolator" technologiesList={isolatorTech} projectDescriptions={isolatorDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
+                <ProjectDescription linksLinks={vladLink} linksText={vladLinkText} copyrightText="" hideProjectDetails={false} isDarkMode={isDarkMode} projectName="Isolator" technologiesList={isolatorTech} projectDescriptions={isolatorDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
               </div>
 
               <div id="Bezier">
-                <ProjectDescription hideProjectDetails={false} isDarkMode={isDarkMode} projectName="Bezier Curves" technologiesList={bezierCurvesTech} projectDescriptions={bezierCurvesDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
+                <ProjectDescription linksLinks={vladLink} linksText={vladLinkText} copyrightText="" hideProjectDetails={false} isDarkMode={isDarkMode} projectName="Bezier Curves" technologiesList={bezierCurvesTech} projectDescriptions={bezierCurvesDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
               </div>                
             </div>
         </div>
