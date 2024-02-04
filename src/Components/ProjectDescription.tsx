@@ -6,7 +6,7 @@ const ProjectDescription: React.FC<{isDarkMode: boolean, projectName: string, te
   let projectNameWithoutSpace = projectName.replace(/\s/g, '');
   
   return (
-    <div className={"min-h-[400px] min-w-[400px] mt-4 rounded-md flex flex-row w-full " + (isDarkMode ?
+    <div className={"min-h-[400px] min-w-[400px] mt-4 rounded-md flex flex-col lg:items-start items-center lg:flex-row w-full " + (isDarkMode ?
     "dark:bg-DarkNeutral-200" : "bg-Neutral-400")}>
       {/* Project Description + skills and etc. */}
       <div className="flex flex-col items-start pt-6 ml-6 w-full h-[90%]">

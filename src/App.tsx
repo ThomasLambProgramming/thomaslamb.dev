@@ -170,10 +170,7 @@ const App: FC = () => {
         <ProjectModal isShown={isShown} hide={ModalToggled} projectName={projectName}></ProjectModal>
         <button
                   onClick={DarkModeToggled}
-                  className=" text-DarkNeutralN-100 dark:text-Neutral-100 bg-DarkNeutral-400  hover:bg-DarkNeutral-200 
-                  focus:ring-4 focus:outline-none focus:ring-gray-300 
-                  font-medium rounded-lg text-sm w-10% max-w-xl px-5 py-2.5 text-center 
-                  dark:bg-Neutral-400 dark:hover:bg-Neutral-200 dark:focus:ring-gray-800">
+                  className="w-[90%] rounded-sm bg-slate-500 border-slate-600 border-2 mt-4 dark:text-Neutral-0 text-DarkNeutralN-100">
                   Toggle Dark Mode = {String(isDarkMode)}
                 </button>
         <Header isDarkMode={isDarkMode} /> 
