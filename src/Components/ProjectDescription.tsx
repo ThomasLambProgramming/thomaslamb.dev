@@ -16,18 +16,18 @@ const ProjectDescription: React.FC<{isDarkMode: boolean, hideProjectDetails: boo
           
           <div className='flex flex-row w-full justify-start space-x-3 mb-4'>
             {technologiesList.map((techString: string) => (
-              <p className={"bg-slate-600 rounded-lg text-md pl-4 pr-4 pt-1 pb-1 text-center align-middle justify-center "+ (isDarkMode ?
+              <p key={projectNameWithoutSpace + techString} className={"bg-slate-600 rounded-lg text-md pl-4 pr-4 pt-1 pb-1 text-center align-middle justify-center "+ (isDarkMode ?
                 "dark:bg-Neutral-200 text-DarkNeutral-200" : "bg-Neutral-400")}>{techString}</p>
             ))}
           </div> 
           
           <div className="flex flex-col">
             {projectDescriptions.map((projDesc: string) => (
-              <p className="mb-4 text-sm">{projDesc}</p>
+              <p className="mb-4 text-sm" key={projDesc.substring(0, projDesc.length > 10 ? 10 : projDesc.length)}>{projDesc}</p>
               ))}
             {
               linksLinks.map((linkHref: string, index: number) => (
-                <a href={linkHref} target="_blank" className="mb-1 text-sm">{linksText[index]}</a>
+                <a href={linkHref} target="_blank" className="mb-1 text-sm" key={projectNameWithoutSpace.substring(0,4) + linkHref.substring(0, linkHref.length > 20 ? 20 : linkHref.length)}>{linksText[index]}</a>
                 ))}
           </div>
           <p className='text-Neutral-100 dark:text-DarkNeutral-400 mt-3'>{copyrightText}</p>

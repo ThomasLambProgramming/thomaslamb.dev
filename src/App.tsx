@@ -1,7 +1,7 @@
 import GithubCommitDisplay from "./Components/GithubCommitDisplay";
 import ProjectModal from "./Components/ProjectModal";
 import ProjectDescription from "./Components/ProjectDescription";
-import {FC, useState} from "react";
+import {FC, useState, useEffect} from "react";
 import HeaderBar from "./Components/HeaderBar";
 import AboutSection from "./Components/AboutSection";
 
@@ -25,7 +25,7 @@ const App: FC = () => {
   const testText: string[] =
   [
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    "Loraem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   ]
 
   const vladTech: string[] = 
@@ -43,14 +43,14 @@ const App: FC = () => {
   const vladLink: string[] = 
   [
     "https://store.steampowered.com/app/1702430/Vlad_Circus_Descend_Into_Madness/",
-    "https://store.steampowered.com/app/1702430/Vlad_Circus_Descend_Into_Madness/",
-    "https://store.steampowered.com/app/1702430/Vlad_Circus_Descend_Into_Madness/",
+    "https://store.epicgames.com/en-US/p/vlad-circus-descend-into-madness-9d1ed2",
+    "m/app/1702430/Vlad_Circus_Descend_Into_Madness/",
   ]
   const vladLinkText: string[] = 
   [
     "Steam: ",
-    "Steam: ",
-    "Steam: ",
+    "Epic Games: ",
+    "Switch: ",
   ]
 
   const aradenaTech: string[] = 
@@ -177,9 +177,24 @@ const App: FC = () => {
   //Remove scrollbar so when modal opens it doesnt move everything and it looks cleaner without anyway.
   document.body.classList.add("no-scrollbar");
 
+  // const [scrollPosition, setScrollPosition] = useState(0);
+  // const handleScroll = () => {
+  //     const position = window.scrollY;
+  //     setScrollPosition(position);
+  //     console.log(position);
+  // };
+
+  // useEffect(() => {
+  //     handleScroll();
+  //     window.addEventListener('scroll', handleScroll);
+  //     return () => {
+  //         window.removeEventListener('scroll', handleScroll);
+  //     };
+  // }, []);onScroll={handleScroll}
+
   return (
     <div className={isDarkMode ? "dark " : ""}>
-      <div id="Vlad" className=" bg-Neutral-100 dark:bg-DarkNeutral-100 w-full h-full no-scrollbar overflow-y-hidden">
+      <div id="Vlad" className=" bg-Neutral-100 dark:bg-DarkNeutral-100 w-full h-full no-scrollbar overflow-y-hidden" >
         {/* <ProjectModal isShown={isShown} hide={ModalToggled} projectName={projectName}></ProjectModal> */}
         
         <HeaderBar isDarkMode={isDarkMode} DarkModeToggledFunc={DarkModeToggled}></HeaderBar>
@@ -191,10 +206,11 @@ const App: FC = () => {
           </div>
         
         <div className="text-DarkNeutralN-100 max-w-[2200px]  dark:text-Neutral-0 flex flex-col lg:flex-row align-middle justify-center content-center items-center lg:items-start w-[100%] bg-gray-400">
+            
             <div className="flex flex-col items-start align-top lg:w-[20%] lg:max-w-[220px] lg:justify-end justify-center mt-10 ">
               <div className="items-left flex flex-row lg:flex-col space-x-5 w-full lg:space-x-0 ml-2 lg:justify-normal lg:align-start justify-center align-middle">
                 
-                <div className="flex flex-col">
+                <div className={`flex flex-col`}>
                   <h2 className={"mt-4 text-md text-gray-600 "+ (isDarkMode ? "text-Neutral-600" : "text-DarkNeutral-400 font-bold")}>Professional Experience</h2>
                   <a href="#Vlad" className="text-sm">Vlad Circus</a>
                   <a href="#Aradena" className="text-sm">Aradena</a>
@@ -223,7 +239,6 @@ const App: FC = () => {
             <div className="w-[80%] max-w-[880px] mb-8 mt-14">
               
               <h1 className="text-2xl">Professional Projects</h1>
-              <h3 className="text-2xl">These are the projects that I have worked on under a professional capacity</h3>
 
               <div id="Aradena">
                 <ProjectDescription linksLinks={vladLink} linksText={vladLinkText} copyrightText="All rights to Blowfish studios and Diego" hideProjectDetails={true} isDarkMode={isDarkMode} projectName="Vlad Circus" technologiesList={vladTech} projectDescriptions={vladDescription} onClickFunction={ProjectNameChanged}></ProjectDescription>
@@ -241,8 +256,8 @@ const App: FC = () => {
                 <ProjectDescription linksLinks={vladLink} linksText={vladLinkText} copyrightText="All rights to motogp"hideProjectDetails={true} isDarkMode={isDarkMode} projectName="Motogp Ignition" technologiesList={motogpTech} projectDescriptions={motogpDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
               </div>
 
-              <h1 className="mt-12 text-2xl">Personal Projects</h1>
-              <h3 className="text-2xl">These are the projects that I am currently working on</h3>
+              <h1 className="mt-20 text-2xl">Personal Projects</h1>
+              <h3 className="text-lg">In Development Projects</h3>
 
               <div id="DirectX">
                 <ProjectDescription linksLinks={vladLink} linksText={vladLinkText} copyrightText="" hideProjectDetails={false} isDarkMode={isDarkMode} projectName="Maniac Cab" technologiesList={maniacCabTech} projectDescriptions={maniacCabDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
@@ -252,8 +267,7 @@ const App: FC = () => {
                 <ProjectDescription linksLinks={vladLink} linksText={vladLinkText} copyrightText="" hideProjectDetails={false} isDarkMode={isDarkMode} projectName="DirectX Renderer" technologiesList={directXTech} projectDescriptions={directXDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
               </div>
 
-              <h1 className="mt-12 text-2xl">University/Gamejam Projects</h1>
-              <h3 className="text-2xl">Projects that I made during my time at aie</h3>
+              <h1 className="mt-20 text-2xl">University/Gamejam Projects</h1>
 
               <div id="Malicious">
                 <ProjectDescription linksLinks={vladLink} linksText={vladLinkText} copyrightText="" hideProjectDetails={false} isDarkMode={isDarkMode} projectName="Node Graph Generator" technologiesList={nodeGraphGenTech} projectDescriptions={nodeGraphGenDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
