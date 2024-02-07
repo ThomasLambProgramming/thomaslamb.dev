@@ -27,8 +27,8 @@ const ProjectDescription: React.FC<{
   return (
     <div
       className={
-        "z-30 relative min-h-[300px] min-w-[400px] mt-4 rounded-md flex flex-col lg:items-start items-center lg:flex-row w-full " +
-        (isDarkMode ? "dark:bg-DarkNeutral-200 " : "bg-Neutral-400 ")
+        "z-30 relative min-h-[300px] min-w-[400px] mt-4 rounded-md flex flex-col lg:items-start items-center lg:flex-row w-full shadow-lg " +
+        (isDarkMode ? "dark:bg-DarkNeutral-200 " : "bg-DarkNeutral-1100 ")
       }
     >
       {/* Project Description + skills and etc. */}
@@ -91,7 +91,7 @@ const ProjectDescription: React.FC<{
             </div>
           </div>
 
-          <p className="text-Neutral-100 lg:text-start text-center dark:text-DarkNeutral-400 lg:mt-3 lg:mb-0 mb-2 mt-2">
+          <p className="text-Neutral-500 lg:text-start text-center dark:text-DarkNeutral-600 lg:mt-3 lg:mb-0 mb-2 mt-2">
             {copyrightText}
           </p>
         </div>
@@ -106,7 +106,7 @@ const ProjectDescription: React.FC<{
         {hideProjectDetails ? (
           <p className="pb-4"></p>
         ) : (
-          <button onClick={() => {onClickFunction(projectName);}} className="w-[90%] rounded-sm bg-slate-500 text-sm border-slate-600 border-2 mt-4">
+          <button onClick={() => {onClickFunction(projectName);}} className="w-[90%] rounded-sm bg-slate-500 text-sm border-slate-600 border-2 mt-4 mb-4">
             Project Details
           </button>
         )}

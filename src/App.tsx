@@ -4,6 +4,7 @@ import ProjectDescription from "./Components/ProjectDescription";
 import { FC, useState, useEffect } from "react";
 import HeaderBar from "./Components/HeaderBar";
 import AboutSection from "./Components/AboutSection";
+import DynamicHeight from "./Components/DynamicHeight";
 
 const App: FC = () => {
   const [isShown, setIsShown] = useState<boolean>(false);
@@ -32,26 +33,27 @@ const App: FC = () => {
   //Remove scrollbar so when modal opens it doesnt move everything and it looks cleaner without anyway.
   document.body.classList.add("no-scrollbar");
 
-  const [scrollPosition, setScrollPosition] = useState(0);
+  
   const handleScroll = () => {
       let position = window.scrollY;
-      position -= 300;
+      position -= 270;
       //Limiting so the scroll doesnt just go on forever.
-      if (position > 3200)
-        position = 3200;
+      if (window.innerWidth < 1024)
+        position = 0;
+      
+      if (position < 0)
+      {
+        position = 0;
+        if (position != heightOffset)
+          setHeightOffset(position);
+        return;
+      }
 
       
-      let tempArray: number[];
-      tempArray = [];
-      for (let i = 0; i < position; i++)
-      {
-        tempArray.push(1);
-      }
-      setPixelOffset(tempArray);
-      setScrollPosition(position);
+      setHeightOffset(position);
   };
 
-  const [pixelOffset, setPixelOffset] = useState<Number[]>([]);
+  const [heightOffset, setHeightOffset] = useState<Number>(0);
 
   useEffect(() => {
       handleScroll();
@@ -59,26 +61,19 @@ const App: FC = () => {
       return () => {
           window.removeEventListener('scroll', handleScroll);
       };
-  }, [scrollPosition]);
+  }, [heightOffset]);
 
   return (
     <div className={isDarkMode ? "dark " : ""}>
-      <div id="TopOfPage" className=" bg-Neutral-100 dark:bg-DarkNeutral-100 w-full h-full no-scrollbar overflow-y-hidden">
-        <ProjectModal isShown={isShown} hide={ModalToggled} projectName={projectName}></ProjectModal>
-
+      <div id="TopOfPage" className=" bg-Neutral-100 lg dark:bg-DarkNeutral-100 w-full h-full no-scrollbar overflow-y-hidden">
+        {/* <ProjectModal isShown={isShown} hide={ModalToggled} projectName={projectName}></ProjectModal> */}
         <HeaderBar isDarkMode={isDarkMode} DarkModeToggledFunc={DarkModeToggled}></HeaderBar>
+        
         {/* This px div is about to be used for some horrifically cursed things. */}
-        <div className="h-[1px] absolute"></div>
-        <div className="h-[2px] absolute"></div>
-        <div className="h-[5px] absolute"></div>
-        <div className="h-[10px] absolute"></div>
-        <div className="h-[50px] absolute"></div>
-        <div className="h-[100px] absolute"></div>
-        <div className="h-[250px] absolute"></div>
-        <div className="h-[500px] absolute"></div>
-        <div className="h-[1000px] absolute"></div>
+        
+        
         <div className="flex flex-col justify-center align-middle content-center items-center w-full">
-          <div className="bg-Neutral-400 dark:bg-DarkNeutral-200 rounded-md flex flex-col justify-center align-middle content-center items-center w-full max-w-[1100px] mt-10 text-DarkNeutralN-100  dark:text-Neutral-0">
+          <div className="bg-DarkNeutral-1100 dark:bg-DarkNeutral-200 rounded-md flex flex-col justify-center align-middle content-center items-center w-full max-w-[1100px] mt-10 text-DarkNeutralN-100  dark:text-Neutral-0">
             <AboutSection
               isDarkMode={isDarkMode}
               defaultText={testText}
@@ -90,9 +85,8 @@ const App: FC = () => {
               <div className="items-left flex flex-row lg:flex-col space-x-5 w-full lg:space-x-0 ml-2 lg:justify-normal lg:align-start justify-center align-middle">
                 
                 <div className={`flex flex-col`}>
-                  {
-                    pixelOffset.map((number) => <div className={`h-[${number}px] opacity-0`}></div>) 
-                  }
+                  {/* {pixelOffset.map((number: Number, index: number) => <div key={`${number} ${index}`} style={{height:`${400}px`}}className={`opacity-0`}></div>) } */}
+                  <div style={{height:`${heightOffset}px`}}></div>
                   <h2 className={"mt-4 text-md text-gray-600 " + (isDarkMode ? "text-Neutral-600" : "text-DarkNeutral-400 font-bold")}>
                     Professional Experience
                   </h2>
