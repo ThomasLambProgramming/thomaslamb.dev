@@ -73,19 +73,10 @@ const ProjectDescription: React.FC<{
             ))}
             <div className="flex flex-col lg:text-start text-center w-full">
               {linksLinks.map((linkHref: string, index: number) => (
-                <a
-                  href={linkHref}
-                  target="_blank"
-                  className="mb-1 text-sm lg:align-bottom lg:items-end "
-                  key={
-                    projectNameWithoutSpace +
-                    linkHref.substring(
-                      0,
-                      linkHref.length > 20 ? 20 : linkHref.length
-                    )
-                  }
-                >
-                  {linksText[index]}
+                
+                // let filePath = '/ProjectAssets/' + projectName + "/" + projectName + "Preview";
+                <a href={linkHref} target="_blank" className="mb-1 text-sm lg:align-bottom lg:items-end underline " key={projectNameWithoutSpace +linkHref.substring( 0,linkHref.length > 20 ? 20 : linkHref.length)}>
+                  {(hideProjectDetails ? linksText[index] : <img className="max-w-[20%]" src={isDarkMode ? "/ProjectAssets/github-mark-white.png" : "/ProjectAssets/github-mark.png"}></img>)}
                 </a>
               ))}
             </div>

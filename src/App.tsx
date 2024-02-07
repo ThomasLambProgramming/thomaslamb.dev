@@ -4,7 +4,7 @@ import ProjectDescription from "./Components/ProjectDescription";
 import { FC, useState, useEffect } from "react";
 import HeaderBar from "./Components/HeaderBar";
 import AboutSection from "./Components/AboutSection";
-import DynamicHeight from "./Components/DynamicHeight";
+
 
 const App: FC = () => {
   const [isShown, setIsShown] = useState<boolean>(false);
@@ -24,8 +24,8 @@ const App: FC = () => {
   };
 
   const testText: string[] = [
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "Loraem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "Hello, my name is Thomas Lamb. I have been working as a game programmer for just under 2 years. I am eager to learn any form of programming that is associated with games from AI (enemy ai not generative ai) to rendering apis/shaders",
+    "I am currently working on two projects: a cross platform game engine using multiple rendering apis (DirectX11, Opengl, Vulkan) and a cozy multiplayer fishing game",
   ];
 
   document.title = "ThomasLamb.dev";
@@ -40,7 +40,7 @@ const App: FC = () => {
       //Limiting so the scroll doesnt just go on forever.
       if (window.innerWidth < 1024)
         position = 0;
-      
+
       if (position < 0)
       {
         position = 0;
