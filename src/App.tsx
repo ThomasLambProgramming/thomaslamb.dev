@@ -32,27 +32,51 @@ const App: FC = () => {
   //Remove scrollbar so when modal opens it doesnt move everything and it looks cleaner without anyway.
   document.body.classList.add("no-scrollbar");
 
-  // const [scrollPosition, setScrollPosition] = useState(0);
-  // const handleScroll = () => {
-  //     const position = window.scrollY;
-  //     setScrollPosition(position);
-  //     console.log(position);
-  // };
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const handleScroll = () => {
+      let position = window.scrollY;
+      position -= 300;
+      //Limiting so the scroll doesnt just go on forever.
+      if (position > 3200)
+        position = 3200;
 
-  // useEffect(() => {
-  //     handleScroll();
-  //     window.addEventListener('scroll', handleScroll);
-  //     return () => {
-  //         window.removeEventListener('scroll', handleScroll);
-  //     };
-  // }, []);onScroll={handleScroll}
+      
+      let tempArray: number[];
+      tempArray = [];
+      for (let i = 0; i < position; i++)
+      {
+        tempArray.push(1);
+      }
+      setPixelOffset(tempArray);
+      setScrollPosition(position);
+  };
+
+  const [pixelOffset, setPixelOffset] = useState<Number[]>([]);
+
+  useEffect(() => {
+      handleScroll();
+      window.addEventListener('scroll', handleScroll);
+      return () => {
+          window.removeEventListener('scroll', handleScroll);
+      };
+  }, [scrollPosition]);
 
   return (
     <div className={isDarkMode ? "dark " : ""}>
       <div id="TopOfPage" className=" bg-Neutral-100 dark:bg-DarkNeutral-100 w-full h-full no-scrollbar overflow-y-hidden">
-        {/* <ProjectModal isShown={isShown} hide={ModalToggled} projectName={projectName}></ProjectModal> */}
+        <ProjectModal isShown={isShown} hide={ModalToggled} projectName={projectName}></ProjectModal>
 
         <HeaderBar isDarkMode={isDarkMode} DarkModeToggledFunc={DarkModeToggled}></HeaderBar>
+        {/* This px div is about to be used for some horrifically cursed things. */}
+        <div className="h-[1px] absolute"></div>
+        <div className="h-[2px] absolute"></div>
+        <div className="h-[5px] absolute"></div>
+        <div className="h-[10px] absolute"></div>
+        <div className="h-[50px] absolute"></div>
+        <div className="h-[100px] absolute"></div>
+        <div className="h-[250px] absolute"></div>
+        <div className="h-[500px] absolute"></div>
+        <div className="h-[1000px] absolute"></div>
         <div className="flex flex-col justify-center align-middle content-center items-center w-full">
           <div className="bg-Neutral-400 dark:bg-DarkNeutral-200 rounded-md flex flex-col justify-center align-middle content-center items-center w-full max-w-[1100px] mt-10 text-DarkNeutralN-100  dark:text-Neutral-0">
             <AboutSection
@@ -64,8 +88,11 @@ const App: FC = () => {
           <div className="text-DarkNeutralN-100 max-w-[2200px]  dark:text-Neutral-0 flex flex-col lg:flex-row align-middle justify-center content-center items-center lg:items-start w-[100%] bg-gray-400">
             <div className="flex flex-col items-start align-top lg:w-[20%] lg:max-w-[220px] lg:justify-end justify-center mt-10 ">
               <div className="items-left flex flex-row lg:flex-col space-x-5 w-full lg:space-x-0 ml-2 lg:justify-normal lg:align-start justify-center align-middle">
+                
                 <div className={`flex flex-col`}>
-                  
+                  {
+                    pixelOffset.map((number) => <div className={`h-[${number}px] opacity-0`}></div>) 
+                  }
                   <h2 className={"mt-4 text-md text-gray-600 " + (isDarkMode ? "text-Neutral-600" : "text-DarkNeutral-400 font-bold")}>
                     Professional Experience
                   </h2>
