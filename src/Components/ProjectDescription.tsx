@@ -91,7 +91,7 @@ const ProjectDescription: React.FC<{
       <div className="max-w-[40%] min-w-[40%] flex flex-col items-center justify-center">
         <DelayedImage
           projectName={projectNameWithoutSpace}
-          className="min-h-[70%] h-[100%] items-center"
+          className="min-h-[70%] h-[100%] items-center rounded-md"
         ></DelayedImage>
 
         {hideProjectDetails ? (

@@ -129,7 +129,7 @@ const App: FC = () => {
               <GithubCommitDisplay isDarkMode={isDarkMode} />
             </div>
 
-            <div className="w-[80%] max-w-[880px] mb-8 mt-14">
+            <div className="w-[80%] max-w-[780px] mb-8 mt-14">
               <h1 className="text-2xl">Professional Projects</h1>
 
               <div id="Vlad">
@@ -150,7 +150,6 @@ const App: FC = () => {
                   projectDescriptions={[
                     "In Vlad Circus: Descend into Madness, discover a story full of mystery and pain where every shadow hides a twisted secret or vicious threat, and no one is safe from tragedy.",
                     "Experience the chilling story of a 1920s freak circus that burned to the ground, and the grotesque quest to found the circus anew. Follow the tormented Oliver Mills as he struggles to survive and escape.",
-                    "Below are the links to each store that Blowfish published to.",
                   ]}
                   onClickFunction={ProjectNameChanged}
                 ></ProjectDescription>
