@@ -33,7 +33,7 @@ const ProjectDescription: React.FC<{
     >
       {/* Project Description + skills and etc. */}
       <div className="flex flex-col items-start pt-3 ml-6 w-full h-[90%]">
-        <div className="min-w-[90%] w-[30%]">
+        <div className="min-w-[90%] lg:w-[30%] w-[95%]">
           <h3
             className={
               "text-2xl font-medium mb-4 " +
@@ -71,12 +71,12 @@ const ProjectDescription: React.FC<{
                 {projDesc}
               </p>
             ))}
-            <div className="flex flex-col lg:text-start text-center">
+            <div className="flex flex-col lg:text-start text-center w-full">
               {linksLinks.map((linkHref: string, index: number) => (
                 <a
                   href={linkHref}
                   target="_blank"
-                  className="mb-1 text-sm align-bottom items-end "
+                  className="mb-1 text-sm lg:align-bottom lg:items-end "
                   key={
                     projectNameWithoutSpace +
                     linkHref.substring(
@@ -91,7 +91,7 @@ const ProjectDescription: React.FC<{
             </div>
           </div>
 
-          <p className="text-Neutral-100 lg:text-start text-center dark:text-DarkNeutral-400 mt-3">
+          <p className="text-Neutral-100 lg:text-start text-center dark:text-DarkNeutral-400 lg:mt-3 lg:mb-0 mb-2 mt-2">
             {copyrightText}
           </p>
         </div>
