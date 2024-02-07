@@ -8,7 +8,7 @@ import AboutSection from "./Components/AboutSection";
 const App: FC = () => {
 
   const [isShown, setIsShown] = useState<boolean>(false);
-  const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(true);
 
   const ModalToggled = () => {
     setIsShown(!isShown);
@@ -39,18 +39,23 @@ const App: FC = () => {
   [
     "In Vlad Circus: Descend into Madness, discover a story full of mystery and pain where every shadow hides a twisted secret or vicious threat, and no one is safe from tragedy.",
     "Experience the chilling story of a 1920s freak circus that burned to the ground, and the grotesque quest to found the circus anew. Follow the tormented Oliver Mills as he struggles to survive and escape.",
+    "Below are the links to each store that Blowfish published to."
   ]
   const vladLink: string[] = 
   [
     "https://store.steampowered.com/app/1702430/Vlad_Circus_Descend_Into_Madness/",
     "https://store.epicgames.com/en-US/p/vlad-circus-descend-into-madness-9d1ed2",
-    "m/app/1702430/Vlad_Circus_Descend_Into_Madness/",
+    "https://ec.nintendo.com/AU/en/titles/70010000045531",
+    "https://www.xbox.com/en-US/games/store/vlad-circus-descend-into-madness/9ns2rvcmxh60",
+    "https://store.playstation.com/en-us/product/UP5552-CUSA30287_00-9071855390281250",
   ]
   const vladLinkText: string[] = 
   [
-    "Steam: ",
-    "Epic Games: ",
-    "Switch: ",
+    "Steam",
+    "Epic Games Store",
+    "Switch",
+    "Xbox",
+    "Playstation",
   ]
 
   const aradenaTech: string[] = 
@@ -62,6 +67,14 @@ const App: FC = () => {
   [
     "Aradena is a free-to-play, Tactical TCG where collectable cards come to life in strategic, 3D gameplay. As a warrior, you'll join a faction and battle other players in the medieval fantasy kingdom.",
   ] 
+  const aradenaLinks: string[] =
+  [
+    "https://aradena.io/home/"
+  ]
+  const aradenaLinkNames: string[] =
+  [
+    "Aradena.io"
+  ]
 
   const homebaseTech: string[] = 
   [
@@ -72,6 +85,19 @@ const App: FC = () => {
   [
     "Scholastic Home Base is a safe, free, 3D interactive world that celebrates favorite stories through book-based games, live author events, and a large community of readers.",
   ] 
+  const homebaseLinks: string[] =
+  [
+    "https://kids.scholastic.com/kid/homebase/",
+    "https://play.google.com/store/apps/details?id=com.scholastic.HomeBase&hl=en&gl=US&pli=1",
+    "https://apps.apple.com/us/app/home-base-by-scholastic/id1450869907",
+  ]
+  const homebaseLinkNames: string[] =
+  [
+    "Homebase Website",
+    "Google Play Store",
+    "Apple App Store"
+  ]
+
 
   const motogpTech: string[] = 
   [
@@ -81,6 +107,14 @@ const App: FC = () => {
   const motogpDesc: string[] = 
   [
     "MotoGP Ignition is a play-to-earn blockchain-based racing management and collectibles game that utilizes the Flow network with its NFT assets and cryptocurrency, REVV.",
+  ]
+  const motogpLinks: string[] =
+  [
+    "https://motogp-ignition.com/"
+  ]
+  const motogpLinkNames: string[] =
+  [
+    "Motogp-Ignition.com"
   ]
 
 
@@ -241,19 +275,20 @@ const App: FC = () => {
               <h1 className="text-2xl">Professional Projects</h1>
 
               <div id="Aradena">
-                <ProjectDescription linksLinks={vladLink} linksText={vladLinkText} copyrightText="All rights to Blowfish studios and Diego" hideProjectDetails={true} isDarkMode={isDarkMode} projectName="Vlad Circus" technologiesList={vladTech} projectDescriptions={vladDescription} onClickFunction={ProjectNameChanged}></ProjectDescription>
+                <ProjectDescription linksLinks={vladLink} linksText={vladLinkText} copyrightText="Copyright © 2022 Indiesruption. All Rights Reserved." hideProjectDetails={true} isDarkMode={isDarkMode} projectName="Vlad Circus" technologiesList={vladTech} projectDescriptions={vladDescription} onClickFunction={ProjectNameChanged}></ProjectDescription>
               </div>
 
               <div id="Homebase">
-                <ProjectDescription linksLinks={vladLink} linksText={vladLinkText} copyrightText="All rights to Aradena.io" hideProjectDetails={true} isDarkMode={isDarkMode} projectName="Aradena" technologiesList={aradenaTech} projectDescriptions={aradenaDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
+                <ProjectDescription linksLinks={aradenaLinks} linksText={aradenaLinkNames} copyrightText="Copyright © 2024 Aradena. All Rights Reserved." hideProjectDetails={true} isDarkMode={isDarkMode} projectName="Aradena" technologiesList={aradenaTech} projectDescriptions={aradenaDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
               </div>
       
               <div id="Motogp">
-                <ProjectDescription linksLinks={vladLink} linksText={vladLinkText} copyrightText="All rights to scholastic"hideProjectDetails={true} isDarkMode={isDarkMode} projectName="Homebase" technologiesList={homebaseTech} projectDescriptions={homebaseDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
+                <ProjectDescription linksLinks={homebaseLinks} linksText={homebaseLinkNames} copyrightText="TM ® & © 2024 Scholastic Inc. All Rights Reserved."hideProjectDetails={true} isDarkMode={isDarkMode} projectName="Homebase" technologiesList={homebaseTech} projectDescriptions={homebaseDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
               </div>
 
               <div id="Maniac">
-                <ProjectDescription linksLinks={vladLink} linksText={vladLinkText} copyrightText="All rights to motogp"hideProjectDetails={true} isDarkMode={isDarkMode} projectName="Motogp Ignition" technologiesList={motogpTech} projectDescriptions={motogpDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
+                <ProjectDescription linksLinks={motogpLinks} linksText={motogpLinkNames} copyrightText="An official product of the MotoGP™ logo and related marks are trade marks. All rights reserved.
+Copyright © 2023 ANIMOCA BRANDS LIMITED, ALL RIGHTS RESERVED. MotoGP™ Ignition © 2023 DORNA"hideProjectDetails={true} isDarkMode={isDarkMode} projectName="Motogp Ignition" technologiesList={motogpTech} projectDescriptions={motogpDesc} onClickFunction={ProjectNameChanged}></ProjectDescription>
               </div>
 
               <h1 className="mt-20 text-2xl">Personal Projects</h1>

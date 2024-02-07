@@ -6,7 +6,7 @@ const ProjectDescription: React.FC<{isDarkMode: boolean, hideProjectDetails: boo
   let projectNameWithoutSpace = projectName.replace(/\s/g, '');
   
   return (
-    <div className={"min-h-[300px] min-w-[400px] mt-4 rounded-md flex flex-col lg:items-start items-center lg:flex-row w-full " + (isDarkMode ?
+    <div className={"z-30 relative min-h-[300px] min-w-[400px] max-h-[460px] mt-4 rounded-md flex flex-col lg:items-start items-center lg:flex-row w-full " + (isDarkMode ?
     "dark:bg-DarkNeutral-200 " : "bg-Neutral-400 ")}>
       {/* Project Description + skills and etc. */}
       <div className="flex flex-col items-start pt-3 ml-6 w-full h-[90%]">
@@ -27,11 +27,13 @@ const ProjectDescription: React.FC<{isDarkMode: boolean, hideProjectDetails: boo
               ))}
             {
               linksLinks.map((linkHref: string, index: number) => (
-                <a href={linkHref} target="_blank" className="mb-1 text-sm" key={projectNameWithoutSpace.substring(0,4) + linkHref.substring(0, linkHref.length > 20 ? 20 : linkHref.length)}>{linksText[index]}</a>
+                <a href={linkHref} target="_blank" className="mb-1 text-sm align-bottom items-end " key={projectNameWithoutSpace + linkHref.substring(0, linkHref.length > 20 ? 20 : linkHref.length)}>{linksText[index]}</a>
                 ))}
           </div>
+                <div className='flex h-full align-bottom'>
           <p className='text-Neutral-100 dark:text-DarkNeutral-400 mt-3'>{copyrightText}</p>
 
+                </div>
         </div>
       </div>
       {/* Project image and details button */}
