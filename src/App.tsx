@@ -96,16 +96,16 @@ const App: FC = () => {
                   <a href="#Motogp" className="text-sm">
                     Maniac Cab
                   </a>
-                  <a href="#Maniac" className="text-sm">
+                  {/* <a href="#Maniac" className="text-sm">
                     DirectX 11 Renderer
-                  </a>
+                  </a> */}
                 </div>
 
                 <div className="flex flex-col">
                   <h2 className={"mt-4 text-md text-gray-600 " + (isDarkMode ? "text-Neutral-600" : "text-DarkNeutral-400 font-bold")}>
                     University Projects
                   </h2>
-                  <a href="#DirectX" className="text-sm">
+                  <a href="#Maniac" className="text-sm">
                     Node Graph Generator
                   </a>
                   <a href="#Node" className="text-sm">
@@ -114,8 +114,14 @@ const App: FC = () => {
                   <a href="#Malicious" className="text-sm">
                     Rapid Delivery
                   </a>
-                  <a href="#RapidDelivery" className="mb-4 text-sm">
+                  <a href="#RapidDelivery" className="text-sm">
                     Carnival Carnage
+                  </a>
+                  <a href="#Isolator" className="text-sm">
+                    Isolator 
+                  </a>
+                  <a href="#BezierCurves" className="mb-4 text-sm">
+                    Bezier Curves
                   </a>
                 </div>
               </div>
