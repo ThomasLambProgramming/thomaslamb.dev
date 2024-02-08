@@ -1,12 +1,12 @@
 import React from 'react';
 
-const CarnivalCarnageProject: React.FC<{isDarkMode: boolean}> = ({isDarkMode}) =>
+const CarnivalCarnageProject: React.FC = () =>
 {
     return (
     <div className="">
         Carnival Carnage
 
-        ![FailedToLoadImage](/ProjectAssets/CarnivalCarnage/CarnivalCarnage.gif)
+        <img src="/ProjectAssets/CarnivalCarnage/CarnivalCarnage.gif"></img>
 
         During my advanced diploma of games development, we were placed into a team of three designers, three programmers, and three artists that would act as though they were contracted to only produce the assets to a given brief. Small note: I currently do not have images associated with the project, as unfortunately I no longer am in possession of a virtual reality headset that is compatible with the project since the project only works for the Oculus Quest 1/2.
 

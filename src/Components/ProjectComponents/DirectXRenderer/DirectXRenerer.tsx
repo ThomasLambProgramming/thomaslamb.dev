@@ -1,6 +1,6 @@
 import React from 'react';
 
-const DirectXRendererProject: React.FC<{isDarkMode: boolean}> = ({isDarkMode}) =>
+const DirectXRendererProject: React.FC = () =>
 {
     return (
     <div className="">
