@@ -10,7 +10,7 @@ const ProjectDescription: React.FC<{
   linksLinks: string[];
   technologiesList: string[];
   projectDescriptions: string[];
-  onClickFunction: (name: string) => void;
+  onClickFunction: () => void;
 }> = ({
   isDarkMode,
   hideProjectDetails,
@@ -97,7 +97,7 @@ const ProjectDescription: React.FC<{
         {hideProjectDetails ? (
           <p className="pb-4"></p>
         ) : (
-          <button onClick={() => {onClickFunction(projectName);}} className="w-[90%] rounded-sm bg-slate-500 text-sm border-slate-600 border-2 mt-4 mb-4">
+          <button onClick={onClickFunction} className="w-[90%] rounded-sm bg-slate-500 text-sm border-slate-600 border-2 mt-4 mb-4">
             Project Details
           </button>
         )}

@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 const NodeGraphGeneratorProject: React.FC = () =>
 {
     return (
-    <div className="">
+    <Fragment>
         # Node Graph Generator
         <img src="/ProjectAssets/NodeGraphGenerator/ComplexExample.gif"></img>
 
@@ -21,7 +21,7 @@ const NodeGraphGeneratorProject: React.FC = () =>
         <img src="/ProjectAssets/NodeGraphGenerator/ComplexAssessment.gif"></img>
 
         <a className='https://github.com/ThomasLambProgramming/NodeGraph' href=''></a>The unity package if you wish to use it is avaliable Here
-    </div>
+    </Fragment>
     );
 }
 

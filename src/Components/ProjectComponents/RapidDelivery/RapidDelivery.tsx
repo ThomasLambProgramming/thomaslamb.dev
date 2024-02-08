@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 const RapidDeliveryProject: React.FC = () =>
 {
     return (
-    <div className="">
+    <Fragment>
         # Rapid Delivery
         <img src="/ProjectAssets/RapidDelivery/RapidDeliveryGameplay.gif"></img>
 
@@ -19,7 +19,7 @@ const RapidDeliveryProject: React.FC = () =>
 
         Due to our limited time of six weeks and the fact that we only had two artists, we made all of our environment tiled. They all have a base of a set size, and our designers worked with the artists to create small environment prefabs of the same size to allow for the constant spawning of environment without them being in the wrong position. Our final game was fully playable with a nice and simple UI. We managed to get small details in such as the falling and raising ! mark for customers and etc.
         <img src="/ProjectAssets/RapidDelivery/FirstYearMajorTwo.gif"></img>
-    </div>
+    </Fragment>
     );
 }
 

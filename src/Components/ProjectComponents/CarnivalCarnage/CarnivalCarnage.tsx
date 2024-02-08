@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 const CarnivalCarnageProject: React.FC = () =>
 {
     return (
-    <div className="">
+    <Fragment>
         Carnival Carnage
 
         <img src="/ProjectAssets/CarnivalCarnage/CarnivalCarnage.gif"></img>
@@ -22,7 +22,7 @@ const CarnivalCarnageProject: React.FC = () =>
         # Planning for assets
 
         Due to the limited time that we were given to complete this project. The art team was considered to be contractors working to a set brief. This gave me a lot of learning opportunities as we had to really design the game and mechanics to accommodate the lack of changes that could be made to the art.
-    </div>
+    </Fragment>
     );
 }
 

@@ -4,22 +4,18 @@ import ProjectDescription from "./Components/ProjectDescription";
 import { FC, useState, useEffect } from "react";
 import HeaderBar from "./Components/HeaderBar";
 import AboutSection from "./Components/AboutSection";
-import BezierProject from "./Components/ProjectComponents/BezierCurves/BezierProject";
-
 
 const App: FC = () => {
   const [isShown, setIsShown] = useState<boolean>(false);
   const [isDarkMode, setIsDarkMode] = useState<boolean>(true);
+
+  const [modalProjectIndex, setModalProjectIndex] = useState(0);
 
   const ModalToggled = () => {
     setIsShown(!isShown);
   };
   const DarkModeToggled = () => {
     setIsDarkMode(!isDarkMode);
-  };
-
-  const ProjectNameChanged = (name: string) => {
-    ModalToggled();
   };
 
   const testText: string[] = [
@@ -33,7 +29,6 @@ const App: FC = () => {
   document.body.classList.add("no-scrollbar");
   
 
-  
   const handleScroll = () => {
       let position = window.scrollY;
       position -= 270;
@@ -48,8 +43,6 @@ const App: FC = () => {
           setHeightOffset(position);
         return;
       }
-
-      
       setHeightOffset(position);
   };
 
@@ -66,7 +59,7 @@ const App: FC = () => {
   return (
     <div className={isDarkMode ? "dark " : ""}>
       <div id="TopOfPage" className=" bg-Neutral-100 lg dark:bg-DarkNeutral-100 w-full h-full overflow-y-hidden">
-        <ProjectModal isShown={isShown} hide={ModalToggled} darkMode={isDarkMode} componentToRender={() => (<BezierProject />)}></ProjectModal>
+        <ProjectModal isShown={isShown} hide={ModalToggled} darkMode={isDarkMode} index={modalProjectIndex}></ProjectModal>
         <HeaderBar isDarkMode={isDarkMode} DarkModeToggledFunc={DarkModeToggled}></HeaderBar>
         
         {/* This px div is about to be used for some horrifically cursed things. */}
@@ -151,7 +144,7 @@ const App: FC = () => {
                     "In Vlad Circus: Descend into Madness, discover a story full of mystery and pain where every shadow hides a twisted secret or vicious threat, and no one is safe from tragedy.",
                     "Experience the chilling story of a 1920s freak circus that burned to the ground, and the grotesque quest to found the circus anew. Follow the tormented Oliver Mills as he struggles to survive and escape.",
                   ]}
-                  onClickFunction={ProjectNameChanged}
+                  onClickFunction={() => setModalProjectIndex(0)}
                 ></ProjectDescription>
               </div>
 
@@ -165,7 +158,7 @@ const App: FC = () => {
                   projectName="Aradena"
                   technologiesList={["Unity", "C#"]}
                   projectDescriptions={["Aradena is a free-to-play, Tactical TCG where collectable cards come to life in strategic, 3D gameplay. As a warrior, you'll join a faction and battle other players in the medieval fantasy kingdom."]}
-                  onClickFunction={ProjectNameChanged}
+                  onClickFunction={() => setModalProjectIndex(1)}
                 ></ProjectDescription>
               </div>
 
@@ -182,7 +175,7 @@ const App: FC = () => {
                   projectName="Homebase"
                   technologiesList={["Unity", "C#"]}
                   projectDescriptions={["Scholastic Home Base is a safe, free, 3D interactive world that celebrates favorite stories through book-based games, live author events, and a large community of readers."]}
-                  onClickFunction={ProjectNameChanged}
+                  onClickFunction={() => setModalProjectIndex(2)}
                 ></ProjectDescription>
               </div>
 
@@ -196,7 +189,7 @@ const App: FC = () => {
                   projectName="Motogp Ignition"
                   technologiesList={["Unity", "C#"]}
                   projectDescriptions={["MotoGP Ignition is a play-to-earn blockchain-based racing management and collectibles game that utilizes the Flow network with its NFT assets and cryptocurrency, REVV."]}
-                  onClickFunction={ProjectNameChanged}
+                  onClickFunction={() => setModalProjectIndex(3)}
                 ></ProjectDescription>
               </div>
 
@@ -213,7 +206,10 @@ const App: FC = () => {
                   projectName="Maniac Cab"
                   technologiesList={["Unreal", "C++"]}
                   projectDescriptions={["A Small arcade game that I am currently developing with friends where your character must deliver as many passengers as possible in the shortest amount of time.",]}
-                  onClickFunction={ProjectNameChanged}
+                  onClickFunction={() => {
+                    setModalProjectIndex(4);
+                    ModalToggled();
+                  }}
                 ></ProjectDescription>
               </div>
 
@@ -227,7 +223,12 @@ const App: FC = () => {
                   projectName="DirectX Renderer"
                   technologiesList={["C++", "Imgui", "Graphics"]}
                   projectDescriptions={["To learn more about graphics programming and shaders I have been working on a DirectX Renderer with dear Imgui.",]}
-                  onClickFunction={ProjectNameChanged}
+                  
+                  onClickFunction={() => {
+                    setModalProjectIndex(5);
+                    ModalToggled();
+                  }}
+
                 ></ProjectDescription>
               </div>
 
@@ -243,7 +244,12 @@ const App: FC = () => {
                   projectName="Node Graph Generator"
                   technologiesList={["Unity", "C#"]}
                   projectDescriptions={["Node graph generator that takes in a environment and creates a navigation mesh based off all meshes contained in the environment.",]}
-                  onClickFunction={ProjectNameChanged}
+                  
+                  onClickFunction={() => {
+                    setModalProjectIndex(6);
+                    ModalToggled();
+                  }}
+
                 ></ProjectDescription>
               </div>
 
@@ -257,7 +263,12 @@ const App: FC = () => {
                   projectName="Malicious"
                   technologiesList={["Unity", "C#"]}
                   projectDescriptions={["For my 2nd year major project at AIE I worked with a team of 6 other people to produce this robot puzzle platformer.",]}
-                  onClickFunction={ProjectNameChanged}
+                  
+                  onClickFunction={() => {
+                    setModalProjectIndex(7);
+                    ModalToggled();
+                  }}
+
                 ></ProjectDescription>
               </div>
 
@@ -271,7 +282,12 @@ const App: FC = () => {
                   projectName="Rapid Delivery"
                   technologiesList={["Unity", "C#"]}
                   projectDescriptions={["For my first major project at AIE we created an endless runner where the player must avoid obstacles and fire tea from a cannon to customers.",]}
-                  onClickFunction={ProjectNameChanged}
+                  
+                  onClickFunction={() => {
+                    setModalProjectIndex(8);
+                    ModalToggled();
+                  }}
+
                 ></ProjectDescription>
               </div>
 
@@ -285,7 +301,12 @@ const App: FC = () => {
                   projectName="Carnival Carnage"
                   technologiesList={["Unity", "C#", "VR"]}
                   projectDescriptions={["I worked with a team of 9 in a small time frame to create this VR arcade game where you smash clown heads with a hammer that can be thrown and recalled like thors hammer.",]}
-                  onClickFunction={ProjectNameChanged}
+                  
+                  onClickFunction={() => {
+                    setModalProjectIndex(9);
+                    ModalToggled();
+                  }}
+
                 ></ProjectDescription>
               </div>
 
@@ -299,7 +320,12 @@ const App: FC = () => {
                   projectName="Isolator"
                   technologiesList={["Unity", "C#"]}
                   projectDescriptions={["This was a small 12 hour game jam that I created with a team that involved some particle effects and interesting design.",]}
-                  onClickFunction={ProjectNameChanged}
+                  
+                  onClickFunction={() => {
+                    setModalProjectIndex(10);
+                    ModalToggled();
+                  }}
+
                 ></ProjectDescription>
               </div>
 
@@ -313,7 +339,12 @@ const App: FC = () => {
                   projectName="Bezier Curves"
                   technologiesList={["Unity", "C#"]}
                   projectDescriptions={[ "Small Bezier curve example to learn tooling and how bezier curves work for future projects",]}
-                  onClickFunction={ProjectNameChanged}
+                  
+                  onClickFunction={() => {
+                    setModalProjectIndex(11);
+                    ModalToggled();
+                  }}
+
                 ></ProjectDescription>
               </div>
             </div>

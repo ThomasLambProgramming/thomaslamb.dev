@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 const BezierProject: React.FC = () =>
 {
     return (
-    <div className="">
+    <Fragment>
         Bezier Curves
 
         <img src="/ProjectAssets/BezierCurves/NothingToCurve3.gif"></img>
@@ -20,7 +20,7 @@ const BezierProject: React.FC = () =>
         This tutorial showed me the great usage of unity editor functions and tools, alongside how they can be made to increase working speeds and clarity of code. The above image shows some of the code that I made to place unity handles for each spline point.
 
         <img src="/ProjectAssets/BezierCurves/Baseball.gif"></img>
-    </div>
+    </Fragment>
     );
 }
 
