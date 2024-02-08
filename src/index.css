@@ -17,7 +17,22 @@
       }
   }
 
-  html{
+html{
     --scroll-behavior: smooth!important;
     scroll-behavior: smooth!important;
-  }
+
+    scrollbar-width: none;
+}
+
+.hideScroll {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.hideScroll::-webkit-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    display: none;
+}

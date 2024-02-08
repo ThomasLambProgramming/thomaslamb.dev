@@ -4,6 +4,7 @@ import ProjectDescription from "./Components/ProjectDescription";
 import { FC, useState, useEffect } from "react";
 import HeaderBar from "./Components/HeaderBar";
 import AboutSection from "./Components/AboutSection";
+import BezierProject from "./Components/ProjectComponents/BezierCurves/BezierProject";
 
 
 const App: FC = () => {
@@ -17,9 +18,7 @@ const App: FC = () => {
     setIsDarkMode(!isDarkMode);
   };
 
-  const [projectName, setProjectName] = useState<string>("");
   const ProjectNameChanged = (name: string) => {
-    setProjectName(name);
     ModalToggled();
   };
 
@@ -32,6 +31,7 @@ const App: FC = () => {
 
   //Remove scrollbar so when modal opens it doesnt move everything and it looks cleaner without anyway.
   document.body.classList.add("no-scrollbar");
+  
 
   
   const handleScroll = () => {
@@ -65,8 +65,8 @@ const App: FC = () => {
 
   return (
     <div className={isDarkMode ? "dark " : ""}>
-      <div id="TopOfPage" className=" bg-Neutral-100 lg dark:bg-DarkNeutral-100 w-full h-full no-scrollbar overflow-y-hidden">
-        {/* <ProjectModal isShown={isShown} hide={ModalToggled} projectName={projectName}></ProjectModal> */}
+      <div id="TopOfPage" className=" bg-Neutral-100 lg dark:bg-DarkNeutral-100 w-full h-full overflow-y-hidden">
+        <ProjectModal isShown={isShown} hide={ModalToggled} darkMode={isDarkMode} componentToRender={() => (<BezierProject />)}></ProjectModal>
         <HeaderBar isDarkMode={isDarkMode} DarkModeToggledFunc={DarkModeToggled}></HeaderBar>
         
         {/* This px div is about to be used for some horrifically cursed things. */}
