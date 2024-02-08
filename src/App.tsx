@@ -213,7 +213,7 @@ const App: FC = () => {
                 ></ProjectDescription>
               </div>
 
-              <div id="DirectX">
+              {/* <div id="DirectX">
                 <ProjectDescription
                   linksLinks={["https://github.com/ThomasLambProgramming/DirectXRenderer"]}
                   linksText={["Github Source Repo"]}
@@ -230,7 +230,7 @@ const App: FC = () => {
                   }}
 
                 ></ProjectDescription>
-              </div>
+              </div> */}
 
               <h1 className="mt-20 text-2xl">University/Gamejam Projects</h1>
 
