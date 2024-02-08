@@ -1,1 +1,0 @@
-To learn more about graphics programming and shaders I have been working on a OpenGL Renderer with dear Imgui.

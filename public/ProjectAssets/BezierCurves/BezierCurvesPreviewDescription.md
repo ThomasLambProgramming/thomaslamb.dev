@@ -1,1 +1,0 @@
-Small Bezier curve example to learn tooling and how bezier curves work for future projects

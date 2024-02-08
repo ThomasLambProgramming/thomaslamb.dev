@@ -3,10 +3,13 @@ import React from 'react';
 const GithubCommitDisplay: React.FC<{isDarkMode: boolean}> = ({isDarkMode}) =>
 {
     return (
-    <div className="align-middle flex justify-center items-center mt-8 mb-12">
-        <div className="m-auto contain-fill">
-            <h3 className="align-middle justify-center flex text-lg mb-2">Github Commit History</h3>
-            <img src={isDarkMode ? "http://ghchart.rshah.org/d4d2d0/ThomasLambProgramming" : "http://ghchart.rshah.org/2b2d2f/ThomasLambProgramming"} alt="ThomasLamb GithubChart" />
+    <div className="mr-6 mt-8 lg:justify-normal lg:align-top align-middle items-center z-10">
+        {/* Possibly change the commit history text to be the github logo */}
+        <h3 className="align-center lg:align-middle justify-center mr-5 text-md lg:pb-[20px] ml-2 lg:text-start text-center ">Commit History</h3>
+        {/* Image must always be larger than 660px as that is the raw size and if it gets scaled down it is unreadable */}
+        
+        <div className={"lg:-rotate-90 lg:min-w-[660px] lg:mb-[100px] lg:min-h-[650px] mr-5 rounded-sm"}>
+            <img src={isDarkMode ? "http://ghchart.rshah.org/000000/ThomasLambProgramming" : "http://ghchart.rshah.org/444444/ThomasLambProgramming"} alt="ThomasLamb GithubChart"/>
         </div>
     </div>
     );
