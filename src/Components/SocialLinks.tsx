@@ -1,7 +1,7 @@
 function SocialLinks()
 {
     return (
-      <ul className="flex flex-row items-center mt-3 text-sm font-medium text-light_text-defaultBlack dark:text-dark_text-defaultWhite sm:mt-0">
+      <ul className="flex flex-row items-center text-sm font-medium text-light_text-defaultBlack dark:text-dark_text-defaultWhite">
         {/* Twitter */}
         <li>
           <a
