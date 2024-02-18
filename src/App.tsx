@@ -93,36 +93,24 @@ const App: FC = () => {
                   <h2 className={"mt-4 text-md text-gray-600 " + (isDarkMode ? "text-Neutral-600" : "text-DarkNeutral-400 font-bold")}>
                     Personal Projects
                   </h2>
-                  <a href="#Motogp" className="text-sm">
-                    Maniac Cab
-                  </a>
-                  {/* <a href="#Maniac" className="text-sm">
-                    DirectX 11 Renderer
-                  </a> */}
+                  <a href="#Motogp" className="text-sm">Maniac Cab</a>
+                  <a href="#Maniac" className="text-sm">DirectX Renderer</a>
+                  <a href="#DirectX" className="text-sm">Fishing Wizard</a>
+                  <a href="#FishingWizard" className="text-sm">Graphics Engine</a>
+                  <a href="#GraphicsEngine" className="text-sm">Opengl Renderer</a>
                 </div>
 
                 <div className="flex flex-col">
                   <h2 className={"mt-4 text-md text-gray-600 " + (isDarkMode ? "text-Neutral-600" : "text-DarkNeutral-400 font-bold")}>
                     University Projects
                   </h2>
-                  <a href="#Maniac" className="text-sm">
-                    Node Graph Generator
-                  </a>
-                  <a href="#Node" className="text-sm">
-                    Malicious
-                  </a>
-                  <a href="#Malicious" className="text-sm">
-                    Rapid Delivery
-                  </a>
-                  <a href="#RapidDelivery" className="text-sm">
-                    Carnival Carnage
-                  </a>
-                  <a href="#Isolator" className="text-sm">
-                    Isolator 
-                  </a>
-                  <a href="#BezierCurves" className="mb-4 text-sm">
-                    Bezier Curves
-                  </a>
+                  <a href="#OpenglRenderer" className="text-sm">Node Graph Generator</a>
+                  <a href="#Node" className="text-sm">Liminal Sleep</a>
+                  <a href="#LiminalSleep" className="text-sm">Malicious</a>
+                  <a href="#Malicious" className="text-sm">Rapid Delivery</a>
+                  <a href="#RapidDelivery" className="text-sm">Carnival Carnage</a>
+                  <a href="#Isolator" className="text-sm">Isolator</a>
+                  <a href="#BezierCurves" className="mb-4 text-sm">Bezier Curves</a>
                 </div>
               </div>
               <GithubCommitDisplay isDarkMode={isDarkMode} />
@@ -218,8 +206,8 @@ const App: FC = () => {
                   }}
                 ></ProjectDescription>
               </div>
-
-              {/* <div id="DirectX">
+              
+              <div id="DirectX">
                 <ProjectDescription
                   linksLinks={["https://github.com/ThomasLambProgramming/DirectXRenderer"]}
                   linksText={["Github Source Repo"]}
@@ -236,7 +224,65 @@ const App: FC = () => {
                   }}
 
                 ></ProjectDescription>
-              </div> */}
+              </div>
+
+              <div id="FishingWizard">
+                <ProjectDescription
+                  linksLinks={["https://github.com/AberrationGames/FishingWizard"]}
+                  linksText={["Github Source Repo"]}
+                  copyrightText=""
+                  hideProjectDetails={false}
+                  isDarkMode={isDarkMode}
+                  projectName="Fishing Wizard"
+                  technologiesList={["C#", "Multiplayer", "Shaders", "Unity"]}
+                  projectDescriptions={["Myself and a few friends have been working on a humor filled fishing adventure game where you and up to 3 friends must use a magical fishing rod to overcome puzzles and challenges",]}
+                  
+                  onClickFunction={() => {
+                    setModalProjectIndex(6);
+                    ModalToggled();
+                  }}
+
+                ></ProjectDescription>
+              </div>
+
+              <div id="GraphicsEngine">
+                <ProjectDescription
+                  linksLinks={["https://github.com/ThomasLambProgramming/GraphicsEngine"]}
+                  linksText={["Github Source Repo"]}
+                  copyrightText=""
+                  hideProjectDetails={false}
+                  isDarkMode={isDarkMode}
+                  projectName="Graphics Engine"
+                  technologiesList={["C++", "Imgui", "Dx11", "Opengl", "Vulkan"]}
+                  projectDescriptions={["While working on a directx11 and opengl renderer I wanted to try and merge the two together to attempt cross platform building with opengl for linux while using directx11 for windows.",]}
+                  
+                  onClickFunction={() => {
+                    setModalProjectIndex(7);
+                    ModalToggled();
+                  }}
+
+                ></ProjectDescription>
+              </div> 
+
+              <div id="OpenglRenderer">
+                <ProjectDescription
+                  linksLinks={["https://github.com/ThomasLambProgramming/GraphicsAIE"]}
+                  linksText={["Github Source Repo"]}
+                  copyrightText=""
+                  hideProjectDetails={false}
+                  isDarkMode={isDarkMode}
+                  projectName="Opengl Renderer"
+                  technologiesList={["C++", "Imgui", "Graphics", "Opengl"]}
+                  projectDescriptions={["I made a small opengl renderer a few years ago but now I am updating it for testing shaders / lighting models as I found direct x to be cumbersome for rapid iteration.",]}
+                  
+                  onClickFunction={() => {
+                    // I gave up trying to index everything properly and now each project will just add a number to the end since its on a switch statement where order doesnt impact.
+                    setModalProjectIndex(15);
+                    ModalToggled();
+                  }}
+
+                ></ProjectDescription>
+              </div>
 
               <h1 className="mt-20 text-2xl">University/Gamejam Projects</h1>
 
@@ -252,12 +298,31 @@ const App: FC = () => {
                   projectDescriptions={["Node graph generator that takes in a environment and creates a navigation mesh based off all meshes contained in the environment.",]}
                   
                   onClickFunction={() => {
-                    setModalProjectIndex(6);
+                    setModalProjectIndex(8);
                     ModalToggled();
                   }}
 
                 ></ProjectDescription>
               </div>
+
+              <div id="LiminalSleep">
+                <ProjectDescription
+                  linksLinks={["https://github.com/ThomasLambProgramming/LiminalSleep"]}
+                  linksText={["Github Source Repo"]}
+                  copyrightText=""
+                  hideProjectDetails={false}
+                  isDarkMode={isDarkMode}
+                  projectName="Liminal Sleep"
+                  technologiesList={["Unity", "C#"]}
+                  projectDescriptions={["As part of our GDML course we made a small horror/thriller project with mind bending effects in a playstation 1 style hospital"]}
+                  
+                  onClickFunction={() => {
+                    setModalProjectIndex(9);
+                    ModalToggled();
+                  }}
+
+                ></ProjectDescription>
+              </div> 
 
               <div id="Malicious">
                 <ProjectDescription
@@ -271,7 +336,7 @@ const App: FC = () => {
                   projectDescriptions={["For my 2nd year major project at AIE I worked with a team of 6 other people to produce this robot puzzle platformer.",]}
                   
                   onClickFunction={() => {
-                    setModalProjectIndex(7);
+                    setModalProjectIndex(10);
                     ModalToggled();
                   }}
 
@@ -290,7 +355,7 @@ const App: FC = () => {
                   projectDescriptions={["For my first major project at AIE we created an endless runner where the player must avoid obstacles and fire tea from a cannon to customers.",]}
                   
                   onClickFunction={() => {
-                    setModalProjectIndex(8);
+                    setModalProjectIndex(11);
                     ModalToggled();
                   }}
 
@@ -309,7 +374,7 @@ const App: FC = () => {
                   projectDescriptions={["I worked with a team of 9 in a small time frame to create this VR arcade game where you smash clown heads with a hammer that can be thrown and recalled like thors hammer.",]}
                   
                   onClickFunction={() => {
-                    setModalProjectIndex(9);
+                    setModalProjectIndex(12);
                     ModalToggled();
                   }}
 
@@ -328,13 +393,13 @@ const App: FC = () => {
                   projectDescriptions={["This was a small 12 hour game jam that I created with a team that involved some particle effects and interesting design.",]}
                   
                   onClickFunction={() => {
-                    setModalProjectIndex(10);
+                    setModalProjectIndex(13);
                     ModalToggled();
                   }}
 
                 ></ProjectDescription>
               </div>
-
+              
               <div id="BezierCurves">
                 <ProjectDescription
                   linksLinks={["https://github.com/ThomasLambProgramming/UnityGraphics"]}
@@ -347,7 +412,7 @@ const App: FC = () => {
                   projectDescriptions={[ "Small Bezier curve example to learn tooling and how bezier curves work for future projects",]}
                   
                   onClickFunction={() => {
-                    setModalProjectIndex(11);
+                    setModalProjectIndex(14);
                     ModalToggled();
                   }}
 
