@@ -20,7 +20,7 @@ const App: FC = () => {
 
   const testText: string[] = [
     "Hello, my name is Thomas Lamb. I have been working as a game programmer for just under 2 years. I am eager to learn any form of programming that is associated with games from AI (enemy ai not generative ai) to rendering apis/shaders",
-    "I am currently working on two projects: a cross platform game engine using multiple rendering apis (DirectX11, Opengl, Vulkan) and a cozy multiplayer fishing game",
+    "I am currently working on two projects: a cross platform game engine using multiple rendering apis (DirectX11, Opengl, Vulkan) and a humor filled multiplayer fishing game",
   ];
 
   document.title = "ThomasLamb.dev";
@@ -94,9 +94,9 @@ const App: FC = () => {
                     Personal Projects
                   </h2>
                   <a href="#Motogp" className="text-sm">Maniac Cab</a>
-                  <a href="#Maniac" className="text-sm">DirectX Renderer</a>
                   <a href="#DirectX" className="text-sm">Fishing Wizard</a>
                   <a href="#FishingWizard" className="text-sm">Graphics Engine</a>
+                  <a href="#Maniac" className="text-sm">DirectX Renderer</a>
                   <a href="#GraphicsEngine" className="text-sm">Opengl Renderer</a>
                 </div>
 
