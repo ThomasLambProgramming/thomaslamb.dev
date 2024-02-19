@@ -1,14 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import DefaultBlankProject from './ProjectComponents/DefaultBlank/DefaultBlankProject';
-import ManiacCabProject from './ProjectComponents/ManiacCab/ManiacCab';
-import DirectXRendererProject from './ProjectComponents/DirectXRenderer/DirectXRenerer';
-import NodeGraphGeneratorProject from './ProjectComponents/NodeGraphGenerator/NodeGraphGenerator';
-import MaliciousProject from './ProjectComponents/Malicious/Malicious';
-import RapidDeliveryProject from './ProjectComponents/RapidDelivery/RapidDelivery';
-import CarnivalCarnageProject from './ProjectComponents/CarnivalCarnage/CarnivalCarnage';
-import IsolatorProject from './ProjectComponents/Isolator/Isolator';
+import ManiacCabProject from './ProjectComponents/ManiacCab/ManiacCabProject';
+import DirectXRendererProject from './ProjectComponents/DirectXRenderer/DirectXRendererProject';
+import NodeGraphGeneratorProject from './ProjectComponents/NodeGraphGenerator/NodeGraphGeneratorProject';
+import MaliciousProject from './ProjectComponents/Malicious/MaliciousProject';
+import RapidDeliveryProject from './ProjectComponents/RapidDelivery/RapidDeliveryProject';
+import CarnivalCarnageProject from './ProjectComponents/CarnivalCarnage/CarnivalCarnageProject';
+import IsolatorProject from './ProjectComponents/Isolator/IsolatorProject';
 import BezierProject from './ProjectComponents/BezierCurves/BezierProject';
+import FishingWizardProject from './ProjectComponents/FishingWizard/FishingWizardProject';
+import GraphicsEngineProject from './ProjectComponents/GraphicsEngine/GraphicsEngineProject';
+import LiminalSleepProject from './ProjectComponents/LiminalSleep/LiminalSleepProject';
+import OpenglRendererProject from './ProjectComponents/OpenglRenderer/OpenglRendererProject';
 
 interface ModalProps {
   isShown: boolean;
@@ -43,29 +47,45 @@ const ProjectModal: React.FC<ModalProps> = (properties) => {
             componentToRender = <DirectXRendererProject/>
             break;
         case 6:
-            //NodeGraph
-            componentToRender = <NodeGraphGeneratorProject/>
+            //DirectX
+            componentToRender = <FishingWizardProject/>
             break;
         case 7:
-            //Malicious
-            componentToRender = <MaliciousProject/>
+            //DirectX
+            componentToRender = <GraphicsEngineProject/>
             break;
         case 8:
-            //RapidDelivery
-            componentToRender = <RapidDeliveryProject/>
+            //DirectX
+            componentToRender = <NodeGraphGeneratorProject darkModeEnabled={properties.darkMode}/>
             break;
         case 9:
-            //CarnivalCarnage
-            componentToRender = <CarnivalCarnageProject/>
+            //DirectX
+            componentToRender = <LiminalSleepProject/>
             break;
         case 10:
-            //Isolator
-            componentToRender = <IsolatorProject/>
+            //DirectX
+            componentToRender = <MaliciousProject/>
             break;
         case 11:
-            //BezierCurves
+            //DirectX
+            componentToRender = <RapidDeliveryProject/>
+            break;
+        case 12:
+            //NodeGraph
+            componentToRender = <CarnivalCarnageProject/>
+            break;
+        case 13:
+            //Malicious
+            componentToRender = <IsolatorProject/>
+            break;
+        case 14:
+            //RapidDelivery
             componentToRender = <BezierProject/>
             break;
+        case 15:
+            //RapidDelivery
+            componentToRender = <OpenglRendererProject/>
+            break; 
     }
 
     const modal = (
