@@ -94,19 +94,21 @@ const App: FC = () => {
                     Personal Projects
                   </h2>
                   <a href="#Motogp" className="text-sm">Maniac Cab</a>
-                  <a href="#DirectX" className="text-sm">Fishing Wizard</a>
+                  {/* <a href="#DirectX" className="text-sm">Fishing Wizard</a>
                   <a href="#FishingWizard" className="text-sm">Graphics Engine</a>
                   <a href="#Maniac" className="text-sm">DirectX Renderer</a>
-                  <a href="#GraphicsEngine" className="text-sm">Opengl Renderer</a>
+                  <a href="#GraphicsEngine" className="text-sm">Opengl Renderer</a> */}
                 </div>
 
                 <div className="flex flex-col">
                   <h2 className={"mt-4 text-md text-gray-600 " + (isDarkMode ? "text-Neutral-600" : "text-DarkNeutral-400 font-bold")}>
                     University Projects
                   </h2>
-                  <a href="#OpenglRenderer" className="text-sm">Node Graph Generator</a>
-                  <a href="#Node" className="text-sm">Liminal Sleep</a>
-                  <a href="#LiminalSleep" className="text-sm">Malicious</a>
+                  {/* <a href="#OpenglRenderer" className="text-sm">Node Graph Generator</a> */}
+                  {/* <a href="#Node" className="text-sm">Liminal Sleep</a> */}
+                  {/* <a href="#LiminalSleep" className="text-sm">Malicious</a> */}
+                  <a href="#Maniac" className="text-sm">Node Graph Generator</a>
+                  <a href="#Node" className="text-sm">Malicious</a>
                   <a href="#Malicious" className="text-sm">Rapid Delivery</a>
                   <a href="#RapidDelivery" className="text-sm">Carnival Carnage</a>
                   <a href="#Isolator" className="text-sm">Isolator</a>
@@ -207,7 +209,7 @@ const App: FC = () => {
                 ></ProjectDescription>
               </div>
               
-              <div id="DirectX">
+              {/* <div id="DirectX">
                 <ProjectDescription
                   linksLinks={["https://github.com/ThomasLambProgramming/DirectXRenderer"]}
                   linksText={["Github Source Repo"]}
@@ -282,7 +284,7 @@ const App: FC = () => {
                   }}
 
                 ></ProjectDescription>
-              </div>
+              </div> */}
 
               <h1 className="mt-20 text-2xl">University/Gamejam Projects</h1>
 
@@ -305,7 +307,7 @@ const App: FC = () => {
                 ></ProjectDescription>
               </div>
 
-              <div id="LiminalSleep">
+              {/* <div id="LiminalSleep">
                 <ProjectDescription
                   linksLinks={["https://github.com/ThomasLambProgramming/LiminalSleep"]}
                   linksText={["Github Source Repo"]}
@@ -322,7 +324,7 @@ const App: FC = () => {
                   }}
 
                 ></ProjectDescription>
-              </div> 
+              </div>  */}
 
               <div id="Malicious">
                 <ProjectDescription

@@ -56,7 +56,7 @@ const ProjectModal: React.FC<ModalProps> = (properties) => {
             break;
         case 8:
             //DirectX
-            componentToRender = <NodeGraphGeneratorProject/>
+            componentToRender = <NodeGraphGeneratorProject darkModeEnabled={properties.darkMode}/>
             break;
         case 9:
             //DirectX
