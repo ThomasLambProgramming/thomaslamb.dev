@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 
-const CarnivalCarnageProject: React.FC = () =>
+const CarnivalCarnageProject: React.FC<{darkModeEnabled: boolean}> = ({darkModeEnabled}) =>
 {
     return (
     <Fragment>

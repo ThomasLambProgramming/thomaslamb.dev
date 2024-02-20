@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 
-const OpenglRendererProject : React.FC = () =>
+const OpenglRendererProject : React.FC<{darkModeEnabled: boolean}> = ({darkModeEnabled}) =>
 {
     return (
     <Fragment>

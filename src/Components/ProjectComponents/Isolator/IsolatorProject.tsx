@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 
-const IsolatorProject: React.FC = () =>
+const IsolatorProject: React.FC<{darkModeEnabled: boolean}> = ({darkModeEnabled}) =>
 {
     return (
     <Fragment>

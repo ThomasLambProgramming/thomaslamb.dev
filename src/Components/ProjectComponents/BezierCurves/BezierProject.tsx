@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 
-const BezierProject: React.FC = () =>
+const BezierProject: React.FC<{darkModeEnabled: boolean}> = ({darkModeEnabled}) =>
 {
     return (
     <Fragment>

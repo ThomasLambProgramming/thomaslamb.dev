@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 
-const ManiacCabProject: React.FC = () =>
+const ManiacCabProject: React.FC<{darkModeEnabled: boolean}> = ({darkModeEnabled}) =>
 {
     return (
         <Fragment>

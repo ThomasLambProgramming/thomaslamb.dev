@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 
-const MaliciousProject: React.FC = () =>
+const MaliciousProject: React.FC<{darkModeEnabled: boolean}> = ({darkModeEnabled}) =>
 {
     return (
         <Fragment>
