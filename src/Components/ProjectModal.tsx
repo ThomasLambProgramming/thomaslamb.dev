@@ -47,43 +47,43 @@ const ProjectModal: React.FC<ModalProps> = (properties) => {
             componentToRender = <DirectXRendererProject darkModeEnabled={properties.darkMode}/>
             break;
         case 6:
-            //DirectX
+            //FishingWizard
             componentToRender = <FishingWizardProject darkModeEnabled={properties.darkMode}/>
             break;
         case 7:
-            //DirectX
+            //GraphicsEngine
             componentToRender = <GraphicsEngineProject darkModeEnabled={properties.darkMode}/>
             break;
         case 8:
-            //DirectX
+            //NodeGraph
             componentToRender = <NodeGraphGeneratorProject darkModeEnabled={properties.darkMode}/>
             break;
         case 9:
-            //DirectX
+            //LiminalSleep
             componentToRender = <LiminalSleepProject darkModeEnabled={properties.darkMode}/>
             break;
         case 10:
-            //DirectX
+            //MaliciousProject
             componentToRender = <MaliciousProject darkModeEnabled={properties.darkMode}/>
             break;
         case 11:
-            //DirectX
+            //RapidDelivery
             componentToRender = <RapidDeliveryProject darkModeEnabled={properties.darkMode}/>
             break;
         case 12:
-            //NodeGraph
+            //CarnivalCarnage
             componentToRender = <CarnivalCarnageProject darkModeEnabled={properties.darkMode}/>
             break;
         case 13:
-            //Malicious
+            //Isolator
             componentToRender = <IsolatorProject darkModeEnabled={properties.darkMode}/>
             break;
         case 14:
-            //RapidDelivery
+            //Bezier
             componentToRender = <BezierProject darkModeEnabled={properties.darkMode}/>
             break;
         case 15:
-            //RapidDelivery
+            //OpenglRenderer
             componentToRender = <OpenglRendererProject darkModeEnabled={properties.darkMode}/>
             break; 
     }
