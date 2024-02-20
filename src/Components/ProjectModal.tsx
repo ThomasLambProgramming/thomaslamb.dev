@@ -23,7 +23,7 @@ interface ModalProps {
 
 const ProjectModal: React.FC<ModalProps> = (properties) => {
 
-    let componentToRender = <DefaultBlankProject></DefaultBlankProject>
+    let componentToRender = <DefaultBlankProject darkModeEnabled={properties.darkMode}></DefaultBlankProject>
     switch(properties.index)
     {
         case 0:
@@ -40,19 +40,19 @@ const ProjectModal: React.FC<ModalProps> = (properties) => {
             break;
         case 4:
             //ManiacCab
-            componentToRender = <ManiacCabProject/>
+            componentToRender = <ManiacCabProject darkModeEnabled={properties.darkMode}/>
             break;
         case 5:
             //DirectX
-            componentToRender = <DirectXRendererProject/>
+            componentToRender = <DirectXRendererProject darkModeEnabled={properties.darkMode}/>
             break;
         case 6:
             //DirectX
-            componentToRender = <FishingWizardProject/>
+            componentToRender = <FishingWizardProject darkModeEnabled={properties.darkMode}/>
             break;
         case 7:
             //DirectX
-            componentToRender = <GraphicsEngineProject/>
+            componentToRender = <GraphicsEngineProject darkModeEnabled={properties.darkMode}/>
             break;
         case 8:
             //DirectX
@@ -60,31 +60,31 @@ const ProjectModal: React.FC<ModalProps> = (properties) => {
             break;
         case 9:
             //DirectX
-            componentToRender = <LiminalSleepProject/>
+            componentToRender = <LiminalSleepProject darkModeEnabled={properties.darkMode}/>
             break;
         case 10:
             //DirectX
-            componentToRender = <MaliciousProject/>
+            componentToRender = <MaliciousProject darkModeEnabled={properties.darkMode}/>
             break;
         case 11:
             //DirectX
-            componentToRender = <RapidDeliveryProject/>
+            componentToRender = <RapidDeliveryProject darkModeEnabled={properties.darkMode}/>
             break;
         case 12:
             //NodeGraph
-            componentToRender = <CarnivalCarnageProject/>
+            componentToRender = <CarnivalCarnageProject darkModeEnabled={properties.darkMode}/>
             break;
         case 13:
             //Malicious
-            componentToRender = <IsolatorProject/>
+            componentToRender = <IsolatorProject darkModeEnabled={properties.darkMode}/>
             break;
         case 14:
             //RapidDelivery
-            componentToRender = <BezierProject/>
+            componentToRender = <BezierProject darkModeEnabled={properties.darkMode}/>
             break;
         case 15:
             //RapidDelivery
-            componentToRender = <OpenglRendererProject/>
+            componentToRender = <OpenglRendererProject darkModeEnabled={properties.darkMode}/>
             break; 
     }
 
