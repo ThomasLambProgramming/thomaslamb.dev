@@ -26,6 +26,7 @@ const App: FC = () => {
   document.title = "ThomasLamb.dev";
 
   //Remove scrollbar so when modal opens it doesnt move everything and it looks cleaner without anyway.
+  //
   document.body.classList.add("no-scrollbar");
 
 
@@ -63,28 +64,26 @@ const App: FC = () => {
                   <h2 className={"mt-4 text-md " + (isDarkMode ? "text-Neutral-600" : "text-DarkNeutral-400 font-bold")}>
                     Personal Projects
                   </h2>
-                  <a href="#Motogp" className="text-sm hover:underline">Maniac Cab</a>
-                  <a href="#FishingWizard" className="text-sm">Raccoon Engine</a>
-                  <a href="#Maniac" className="text-sm">DirectX Renderer</a>
-                  <a href="#GraphicsEngine" className="text-sm">Opengl Renderer</a>
+                  <a href="#Motogp" className="text-sm hover:underline">Fishing Wizard</a>
+                  <a href="#FishingWizard" className="text-sm hover:underline">Maniac Cab</a>
+                  <a href="#Maniac" className="text-sm hover:underline">Raccoon Engine</a>
+                  <a href="#GraphicsEngine" className="text-sm hover:underline">Opengl Renderer</a>
+                  <a href="#OpenglRenderer" className="text-sm hover:underline">DirectX Renderer</a>
                 </div>
 
                 <div className="flex flex-col">
                   <h2 className={"mt-4 text-md " + (isDarkMode ? "text-Neutral-600" : "text-DarkNeutral-400 font-bold")}>
                     Tech Demos
                   </h2>
-                  <a href="#Isolator" className="text-sm hover:underline">Infinite Hallway</a>
-                  <a href="#BezierCurves" className="text-sm hover:underline">Bezier Curves</a>
+                  <a href="#DirectXRenderer" className="text-sm hover:underline">Infinite Hallway</a>
+                  <a href="#InfiniteHallway" className="text-sm hover:underline">Bezier Curves</a>
                 </div>
 
                 <div className="flex flex-col">
                   <h2 className={"mt-4 text-md " + (isDarkMode ? "text-Neutral-600" : "text-DarkNeutral-400 font-bold")}>
                     University Projects
                   </h2>
-                  {/* <a href="#OpenglRenderer" className="text-sm">Node Graph Generator</a> */}
-                  {/* <a href="#Node" className="text-sm">Liminal Sleep</a> */}
-                  {/* <a href="#LiminalSleep" className="text-sm">Malicious</a> */}
-                  <a href="#Maniac" className="text-sm hover:underline">Node Graph Generator</a>
+                  <a href="#BezierCurves" className="text-sm hover:underline">Node Graph Generator</a>
                   <a href="#Node" className="text-sm hover:underline">Malicious</a>
                   <a href="#Malicious" className="text-sm hover:underline">Rapid Delivery</a>
                   <a href="#RapidDelivery" className="text-sm hover:underline">Carnival Carnage</a>
@@ -168,42 +167,6 @@ const App: FC = () => {
               <h1 className="mt-20 text-2xl">Personal Projects</h1>
               <h3 className="text-lg">In Development Projects</h3>
 
-              <div id="Maniac">
-                <ProjectDescription
-                  linksLinks={["https://github.com/ThomasLambProgramming/ManiacCab"]}
-                  linksText={["Github Source Repo"]}
-                  copyrightText=""
-                  hideProjectDetails={false}
-                  isDarkMode={isDarkMode}
-                  projectName="Maniac Cab"
-                  technologiesList={["Unreal", "C++"]}
-                  projectDescriptions={["A Small arcade game that I am currently developing with friends where your character must deliver as many passengers as possible in the shortest amount of time.",]}
-                  onClickFunction={() => {
-                    setModalProjectIndex(4);
-                    ModalToggled();
-                  }}
-                ></ProjectDescription>
-              </div>
-
-              <div id="DirectX">
-                <ProjectDescription
-                  linksLinks={["https://github.com/ThomasLambProgramming/DirectXRenderer"]}
-                  linksText={["Github Source Repo"]}
-                  copyrightText=""
-                  hideProjectDetails={false}
-                  isDarkMode={isDarkMode}
-                  projectName="DirectX Renderer"
-                  technologiesList={["C++", "Imgui", "Graphics"]}
-                  projectDescriptions={["To learn more about graphics programming and shaders I have been working on a DirectX Renderer with dear Imgui.",]}
-
-                  onClickFunction={() => {
-                    setModalProjectIndex(5);
-                    ModalToggled();
-                  }}
-
-                ></ProjectDescription>
-              </div>
-
               <div id="FishingWizard">
                 <ProjectDescription
                   linksLinks={["https://github.com/AberrationGames/FishingWizard"]}
@@ -220,6 +183,23 @@ const App: FC = () => {
                     ModalToggled();
                   }}
 
+                ></ProjectDescription>
+              </div>
+
+              <div id="Maniac">
+                <ProjectDescription
+                  linksLinks={["https://github.com/ThomasLambProgramming/ManiacCab"]}
+                  linksText={["Github Source Repo"]}
+                  copyrightText=""
+                  hideProjectDetails={false}
+                  isDarkMode={isDarkMode}
+                  projectName="Maniac Cab"
+                  technologiesList={["Unreal", "C++"]}
+                  projectDescriptions={["A Small arcade game that I am currently developing with friends where your character must deliver as many passengers as possible in the shortest amount of time.",]}
+                  onClickFunction={() => {
+                    setModalProjectIndex(4);
+                    ModalToggled();
+                  }}
                 ></ProjectDescription>
               </div>
 
@@ -262,10 +242,28 @@ const App: FC = () => {
                 ></ProjectDescription>
               </div>
 
+              <div id="DirectXRenderer">
+                <ProjectDescription
+                  linksLinks={["https://github.com/ThomasLambProgramming/DirectXRenderer"]}
+                  linksText={["Github Source Repo"]}
+                  copyrightText=""
+                  hideProjectDetails={false}
+                  isDarkMode={isDarkMode}
+                  projectName="DirectX Renderer"
+                  technologiesList={["C++", "Imgui", "Graphics"]}
+                  projectDescriptions={["To learn more about graphics programming and shaders I have been working on a DirectX Renderer with dear Imgui.",]}
+
+                  onClickFunction={() => {
+                    setModalProjectIndex(5);
+                    ModalToggled();
+                  }}
+
+                ></ProjectDescription>
+              </div>
 
               <h1 className="mt-20 text-2xl">Tech Demos</h1>
 
-              <div id="LiminalSleep">
+              <div id="InfiniteHallway">
                 <ProjectDescription
                   linksLinks={["https://github.com/ThomasLambProgramming/LiminalSleep"]}
                   linksText={["Github Source Repo"]}

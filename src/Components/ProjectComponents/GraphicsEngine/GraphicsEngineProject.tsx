@@ -1,11 +1,10 @@
 import React, { Fragment } from 'react';
 
-const GraphicsEngineProject : React.FC<{darkModeEnabled: boolean}> = ({darkModeEnabled}) =>
-{
-    return (
+const GraphicsEngineProject: React.FC<{ darkModeEnabled: boolean }> = ({ darkModeEnabled }) => {
+  return (
     <Fragment>
-    </Fragment>
-    );
-}
 
+    </Fragment>
+  );
+}
 export default GraphicsEngineProject;
