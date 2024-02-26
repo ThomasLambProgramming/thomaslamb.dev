@@ -1,7 +1,7 @@
 import GithubCommitDisplay from "./Components/GithubCommitDisplay";
 import ProjectModal from "./Components/ProjectModal";
 import ProjectDescription from "./Components/ProjectDescription";
-import { FC, useState, useEffect } from "react";
+import { FC, useState } from "react";
 import HeaderBar from "./Components/HeaderBar";
 import AboutSection from "./Components/AboutSection";
 
@@ -29,40 +29,14 @@ const App: FC = () => {
   document.body.classList.add("no-scrollbar");
 
 
-  const handleScroll = () => {
-    let position = window.scrollY;
-    position -= 270;
-    //Limiting so the scroll doesnt just go on forever.
-    if (window.innerWidth < 1024)
-      position = 0;
-
-    if (position < 0) {
-      position = 0;
-      if (position != heightOffset)
-        setHeightOffset(position);
-      return;
-    }
-    setHeightOffset(position);
-  };
-
-  const [heightOffset, setHeightOffset] = useState<Number>(0);
-
-  useEffect(() => {
-    handleScroll();
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [heightOffset]);
-
+  //style={{ height: `${heightOffset}px` }}
   return (
     <div className={isDarkMode ? "dark " : ""}>
-      <div id="TopOfPage" className=" bg-Neutral-100 lg dark:bg-DarkNeutral-100 w-full h-full overflow-y-hidden">
+      <div id="TopOfPage" className=" bg-Neutral-100 lg dark:bg-DarkNeutral-100 w-full h-full ">
         <ProjectModal isShown={isShown} hide={ModalToggled} darkMode={isDarkMode} index={modalProjectIndex}></ProjectModal>
-        <HeaderBar isDarkMode={isDarkMode} DarkModeToggledFunc={DarkModeToggled}></HeaderBar>
-
-        {/* This px div is about to be used for some horrifically cursed things. */}
-
+        <div className="">
+          <HeaderBar isDarkMode={isDarkMode} DarkModeToggledFunc={DarkModeToggled}></HeaderBar>
+        </div>
 
         <div className="flex flex-col justify-center align-middle content-center items-center w-full">
           <div className="bg-DarkNeutral-1100 dark:bg-DarkNeutral-200 rounded-md flex flex-col justify-center align-middle content-center items-center w-full max-w-[860px] ml-[2px] mt-10 text-DarkNeutralN-100  dark:text-Neutral-0">
@@ -73,12 +47,9 @@ const App: FC = () => {
           </div>
 
           <div className="text-DarkNeutralN-100 max-w-[2200px] dark:text-Neutral-0 flex flex-col lg:flex-row align-middle justify-center content-center items-center lg:items-start w-[100%]">
-            <div className="flex flex-col !scroll-auto items-start align-top lg:w-[20%] lg:max-w-[220px] lg:justify-end justify-center mt-10 ">
-              <div className="items-left flex flex-row lg:flex-col space-x-5 w-full lg:space-x-0 ml-2 lg:justify-normal lg:align-start justify-center align-middle">
-
-                <div className={`flex flex-col`}>
-                  {/* {pixelOffset.map((number: Number, index: number) => <div key={`${number} ${index}`} style={{height:`${400}px`}}className={`opacity-0`}></div>) } */}
-                  <div style={{ height: `${heightOffset}px` }}></div>
+            <div className="flex flex-col sticky top-20 lg:w-[20%] lg:max-w-[220px] mt-10 ">
+              <div className="flex flex-row lg:flex-col space-x-5 w-full lg:space-x-0 ml-2 ">
+                <div className={`flex flex-col `}>
                   <h2 className={"mt-4 text-md " + (isDarkMode ? "text-Neutral-600" : "text-DarkNeutral-400 font-bold")}>
                     Professional Experience
                   </h2>
@@ -93,10 +64,9 @@ const App: FC = () => {
                     Personal Projects
                   </h2>
                   <a href="#Motogp" className="text-sm hover:underline">Maniac Cab</a>
-                  {/* <a href="#DirectX" className="text-sm">Fishing Wizard</a>
-                  <a href="#FishingWizard" className="text-sm">Graphics Engine</a>
+                  <a href="#FishingWizard" className="text-sm">Raccoon Engine</a>
                   <a href="#Maniac" className="text-sm">DirectX Renderer</a>
-                  <a href="#GraphicsEngine" className="text-sm">Opengl Renderer</a> */}
+                  <a href="#GraphicsEngine" className="text-sm">Opengl Renderer</a>
                 </div>
 
                 <div className="flex flex-col">
@@ -215,7 +185,7 @@ const App: FC = () => {
                 ></ProjectDescription>
               </div>
 
-              {/* <div id="DirectX">
+              <div id="DirectX">
                 <ProjectDescription
                   linksLinks={["https://github.com/ThomasLambProgramming/DirectXRenderer"]}
                   linksText={["Github Source Repo"]}
@@ -225,7 +195,7 @@ const App: FC = () => {
                   projectName="DirectX Renderer"
                   technologiesList={["C++", "Imgui", "Graphics"]}
                   projectDescriptions={["To learn more about graphics programming and shaders I have been working on a DirectX Renderer with dear Imgui.",]}
-                  
+
                   onClickFunction={() => {
                     setModalProjectIndex(5);
                     ModalToggled();
@@ -244,7 +214,7 @@ const App: FC = () => {
                   projectName="Fishing Wizard"
                   technologiesList={["C#", "Multiplayer", "Shaders", "Unity"]}
                   projectDescriptions={["Myself and a few friends have been working on a humor filled fishing adventure game where you and up to 3 friends must use a magical fishing rod to overcome puzzles and challenges",]}
-                  
+
                   onClickFunction={() => {
                     setModalProjectIndex(6);
                     ModalToggled();
@@ -263,14 +233,14 @@ const App: FC = () => {
                   projectName="Graphics Engine"
                   technologiesList={["C++", "Imgui", "Dx11", "Opengl", "Vulkan"]}
                   projectDescriptions={["While working on a directx11 and opengl renderer I wanted to try and merge the two together to attempt cross platform building with opengl for linux while using directx11 for windows.",]}
-                  
+
                   onClickFunction={() => {
                     setModalProjectIndex(7);
                     ModalToggled();
                   }}
 
                 ></ProjectDescription>
-              </div> 
+              </div>
 
               <div id="OpenglRenderer">
                 <ProjectDescription
@@ -282,7 +252,7 @@ const App: FC = () => {
                   projectName="Opengl Renderer"
                   technologiesList={["C++", "Imgui", "Graphics", "Opengl"]}
                   projectDescriptions={["I made a small opengl renderer a few years ago but now I am updating it for testing shaders / lighting models as I found direct x to be cumbersome for rapid iteration.",]}
-                  
+
                   onClickFunction={() => {
                     // I gave up trying to index everything properly and now each project will just add a number to the end since its on a switch statement where order doesnt impact.
                     setModalProjectIndex(15);
@@ -290,7 +260,48 @@ const App: FC = () => {
                   }}
 
                 ></ProjectDescription>
-              </div> */}
+              </div>
+
+
+              <h1 className="mt-20 text-2xl">Tech Demos</h1>
+
+              <div id="LiminalSleep">
+                <ProjectDescription
+                  linksLinks={["https://github.com/ThomasLambProgramming/LiminalSleep"]}
+                  linksText={["Github Source Repo"]}
+                  copyrightText=""
+                  hideProjectDetails={false}
+                  isDarkMode={isDarkMode}
+                  projectName="Infinite Hallway"
+                  technologiesList={["Unity", "C#"]}
+                  projectDescriptions={["As part of our GDML course we made a small horror/thriller project, It used look direction dot products to change the room as the player progressed."]}
+
+                  onClickFunction={() => {
+                    setModalProjectIndex(9);
+                    ModalToggled();
+                  }}
+
+                ></ProjectDescription>
+              </div>
+
+              <div id="BezierCurves">
+                <ProjectDescription
+                  linksLinks={["https://github.com/ThomasLambProgramming/UnityGraphics"]}
+                  linksText={["Github Source Repo"]}
+                  copyrightText=""
+                  hideProjectDetails={false}
+                  isDarkMode={isDarkMode}
+                  projectName="Bezier Curves"
+                  technologiesList={["Unity", "C#"]}
+                  projectDescriptions={["Small Bezier curve example to learn unity handles + other tooling and how bezier curves work for future projects",]}
+
+                  onClickFunction={() => {
+                    setModalProjectIndex(14);
+                    ModalToggled();
+                  }}
+
+                ></ProjectDescription>
+              </div>
 
               <h1 className="mt-20 text-2xl">University/Gamejam Projects</h1>
 
@@ -312,25 +323,6 @@ const App: FC = () => {
 
                 ></ProjectDescription>
               </div>
-
-              {/* <div id="LiminalSleep">
-                <ProjectDescription
-                  linksLinks={["https://github.com/ThomasLambProgramming/LiminalSleep"]}
-                  linksText={["Github Source Repo"]}
-                  copyrightText=""
-                  hideProjectDetails={false}
-                  isDarkMode={isDarkMode}
-                  projectName="Liminal Sleep"
-                  technologiesList={["Unity", "C#"]}
-                  projectDescriptions={["As part of our GDML course we made a small horror/thriller project with mind bending effects in a playstation 1 style hospital"]}
-                  
-                  onClickFunction={() => {
-                    setModalProjectIndex(9);
-                    ModalToggled();
-                  }}
-
-                ></ProjectDescription>
-              </div>  */}
 
               <div id="Malicious">
                 <ProjectDescription
@@ -402,25 +394,6 @@ const App: FC = () => {
 
                   onClickFunction={() => {
                     setModalProjectIndex(13);
-                    ModalToggled();
-                  }}
-
-                ></ProjectDescription>
-              </div>
-
-              <div id="BezierCurves">
-                <ProjectDescription
-                  linksLinks={["https://github.com/ThomasLambProgramming/UnityGraphics"]}
-                  linksText={["Github Source Repo"]}
-                  copyrightText=""
-                  hideProjectDetails={false}
-                  isDarkMode={isDarkMode}
-                  projectName="Bezier Curves"
-                  technologiesList={["Unity", "C#"]}
-                  projectDescriptions={["Small Bezier curve example to learn tooling and how bezier curves work for future projects",]}
-
-                  onClickFunction={() => {
-                    setModalProjectIndex(14);
                     ModalToggled();
                   }}
 

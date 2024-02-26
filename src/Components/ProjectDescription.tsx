@@ -32,7 +32,7 @@ const ProjectDescription: React.FC<{
         }
       >
         {/* Project Description + skills and etc. */}
-        <div className="flex flex-col items-start pt-3 ml-6 w-full h-[90%]">
+        <div className="flex flex-col items-start pt-3 ml-6 w-full h-[90%] max-w-[499px]">
           <div className="min-w-[90%] lg:w-[30%] w-[95%]">
             <h3
               className={
@@ -43,12 +43,12 @@ const ProjectDescription: React.FC<{
               {projectName}
             </h3>
 
-            <div className="flex flex-row w-full justify-start space-x-3 mb-4 text-sm">
+            <div className="flex flex-row w-full justify-start space-x-2 mb-4 text-sm max-w-[200px]">
               {technologiesList.map((techString: string) => (
                 <p
                   key={projectNameWithoutSpace + techString}
                   className={
-                    "rounded-lg text-md pl-4 pr-4 pt-1 pb-1 text-center align-middle justify-center " +
+                    "rounded-lg text-md pl-2 pr-2 pt-1 pb-1 text-center align-middle justify-center " +
                     (isDarkMode
                       ? "dark:bg-Neutral-200 text-DarkNeutral-200"
                       : "bg-Neutral-400")
