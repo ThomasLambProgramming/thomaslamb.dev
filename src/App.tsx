@@ -27,33 +27,32 @@ const App: FC = () => {
 
   //Remove scrollbar so when modal opens it doesnt move everything and it looks cleaner without anyway.
   document.body.classList.add("no-scrollbar");
-  
+
 
   const handleScroll = () => {
-      let position = window.scrollY;
-      position -= 270;
-      //Limiting so the scroll doesnt just go on forever.
-      if (window.innerWidth < 1024)
-        position = 0;
+    let position = window.scrollY;
+    position -= 270;
+    //Limiting so the scroll doesnt just go on forever.
+    if (window.innerWidth < 1024)
+      position = 0;
 
-      if (position < 0)
-      {
-        position = 0;
-        if (position != heightOffset)
-          setHeightOffset(position);
-        return;
-      }
-      setHeightOffset(position);
+    if (position < 0) {
+      position = 0;
+      if (position != heightOffset)
+        setHeightOffset(position);
+      return;
+    }
+    setHeightOffset(position);
   };
 
   const [heightOffset, setHeightOffset] = useState<Number>(0);
 
   useEffect(() => {
-      handleScroll();
-      window.addEventListener('scroll', handleScroll);
-      return () => {
-          window.removeEventListener('scroll', handleScroll);
-      };
+    handleScroll();
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, [heightOffset]);
 
   return (
@@ -61,12 +60,12 @@ const App: FC = () => {
       <div id="TopOfPage" className=" bg-Neutral-100 lg dark:bg-DarkNeutral-100 w-full h-full overflow-y-hidden">
         <ProjectModal isShown={isShown} hide={ModalToggled} darkMode={isDarkMode} index={modalProjectIndex}></ProjectModal>
         <HeaderBar isDarkMode={isDarkMode} DarkModeToggledFunc={DarkModeToggled}></HeaderBar>
-        
+
         {/* This px div is about to be used for some horrifically cursed things. */}
-        
-        
+
+
         <div className="flex flex-col justify-center align-middle content-center items-center w-full">
-          <div className="bg-DarkNeutral-1100 dark:bg-DarkNeutral-200 rounded-md flex flex-col justify-center align-middle content-center items-center w-full max-w-[1100px] mt-10 text-DarkNeutralN-100  dark:text-Neutral-0">
+          <div className="bg-DarkNeutral-1100 dark:bg-DarkNeutral-200 rounded-md flex flex-col justify-center align-middle content-center items-center w-full max-w-[860px] ml-[2px] mt-10 text-DarkNeutralN-100  dark:text-Neutral-0">
             <AboutSection
               isDarkMode={isDarkMode}
               defaultText={testText}
@@ -74,12 +73,12 @@ const App: FC = () => {
           </div>
 
           <div className="text-DarkNeutralN-100 max-w-[2200px]  dark:text-Neutral-0 flex flex-col lg:flex-row align-middle justify-center content-center items-center lg:items-start w-[100%] bg-gray-400">
-            <div className="flex flex-col items-start align-top lg:w-[20%] lg:max-w-[220px] lg:justify-end justify-center mt-10 ">
+            <div className="flex flex-col !scroll-auto items-start align-top lg:w-[20%] lg:max-w-[220px] lg:justify-end justify-center mt-10 ">
               <div className="items-left flex flex-row lg:flex-col space-x-5 w-full lg:space-x-0 ml-2 lg:justify-normal lg:align-start justify-center align-middle">
-                
+
                 <div className={`flex flex-col`}>
                   {/* {pixelOffset.map((number: Number, index: number) => <div key={`${number} ${index}`} style={{height:`${400}px`}}className={`opacity-0`}></div>) } */}
-                  <div style={{height:`${heightOffset}px`}}></div>
+                  <div style={{ height: `${heightOffset}px` }}></div>
                   <h2 className={"mt-4 text-md text-gray-600 " + (isDarkMode ? "text-Neutral-600" : "text-DarkNeutral-400 font-bold")}>
                     Professional Experience
                   </h2>
@@ -102,6 +101,14 @@ const App: FC = () => {
 
                 <div className="flex flex-col">
                   <h2 className={"mt-4 text-md text-gray-600 " + (isDarkMode ? "text-Neutral-600" : "text-DarkNeutral-400 font-bold")}>
+                    Tech Demos
+                  </h2>
+                  <a href="#Isolator" className="text-sm">Infinite Hallway</a>
+                  <a href="#BezierCurves" className="text-sm">Bezier Curves</a>
+                </div>
+
+                <div className="flex flex-col">
+                  <h2 className={"mt-4 text-md text-gray-600 " + (isDarkMode ? "text-Neutral-600" : "text-DarkNeutral-400 font-bold")}>
                     University Projects
                   </h2>
                   {/* <a href="#OpenglRenderer" className="text-sm">Node Graph Generator</a> */}
@@ -112,13 +119,12 @@ const App: FC = () => {
                   <a href="#Malicious" className="text-sm">Rapid Delivery</a>
                   <a href="#RapidDelivery" className="text-sm">Carnival Carnage</a>
                   <a href="#Isolator" className="text-sm">Isolator</a>
-                  <a href="#BezierCurves" className="mb-4 text-sm">Bezier Curves</a>
                 </div>
               </div>
               <GithubCommitDisplay isDarkMode={isDarkMode} />
             </div>
 
-            <div className="w-[80%] max-w-[780px] mb-8 mt-14">
+            <div className="w-[70%] max-w-[640px] mb-8 mt-14">
               <h1 className="text-2xl">Professional Projects</h1>
 
               <div id="Vlad">
@@ -130,7 +136,7 @@ const App: FC = () => {
                     "https://www.xbox.com/en-US/games/store/vlad-circus-descend-into-madness/9ns2rvcmxh60",
                     "https://store.playstation.com/en-us/product/UP5552-CUSA30287_00-9071855390281250",
                   ]}
-                  linksText={["Steam", "Epic Games Store", "Switch", "Xbox", "Playstation",]}
+                  linksText={["Steam", "Epic Games", "Switch", "Xbox", "Playstation",]}
                   copyrightText="Copyright © 2022 Indiesruption. All Rights Reserved."
                   hideProjectDetails={true}
                   isDarkMode={isDarkMode}
@@ -138,7 +144,7 @@ const App: FC = () => {
                   technologiesList={["Console", "Monogame", "C++", "C#"]}
                   projectDescriptions={[
                     "In Vlad Circus: Descend into Madness, discover a story full of mystery and pain where every shadow hides a twisted secret or vicious threat, and no one is safe from tragedy.",
-                    "Experience the chilling story of a 1920s freak circus that burned to the ground, and the grotesque quest to found the circus anew. Follow the tormented Oliver Mills as he struggles to survive and escape.",
+                    //"Experience the chilling story of a 1920s freak circus that burned to the ground, and the grotesque quest to found the circus anew. Follow the tormented Oliver Mills as he struggles to survive and escape.",
                   ]}
                   onClickFunction={() => setModalProjectIndex(0)}
                 ></ProjectDescription>
@@ -161,9 +167,9 @@ const App: FC = () => {
               <div id="Homebase">
                 <ProjectDescription
                   linksLinks={[
-                  "https://kids.scholastic.com/kid/homebase/",
-                  "https://play.google.com/store/apps/details?id=com.scholastic.HomeBase&hl=en&gl=US&pli=1",
-                  "https://apps.apple.com/us/app/home-base-by-scholastic/id1450869907",]}
+                    "https://kids.scholastic.com/kid/homebase/",
+                    "https://play.google.com/store/apps/details?id=com.scholastic.HomeBase&hl=en&gl=US&pli=1",
+                    "https://apps.apple.com/us/app/home-base-by-scholastic/id1450869907",]}
                   linksText={["Homebase Website", "Google Play Store", "Apple App Store",]}
                   copyrightText="TM ® & © 2024 Scholastic Inc. All Rights Reserved."
                   hideProjectDetails={true}
@@ -208,7 +214,7 @@ const App: FC = () => {
                   }}
                 ></ProjectDescription>
               </div>
-              
+
               {/* <div id="DirectX">
                 <ProjectDescription
                   linksLinks={["https://github.com/ThomasLambProgramming/DirectXRenderer"]}
@@ -298,7 +304,7 @@ const App: FC = () => {
                   projectName="Node Graph Generator"
                   technologiesList={["Unity", "C#"]}
                   projectDescriptions={["Node graph generator that takes in a environment and creates a navigation mesh based off all meshes contained in the environment.",]}
-                  
+
                   onClickFunction={() => {
                     setModalProjectIndex(8);
                     ModalToggled();
@@ -336,7 +342,7 @@ const App: FC = () => {
                   projectName="Malicious"
                   technologiesList={["Unity", "C#"]}
                   projectDescriptions={["For my 2nd year major project at AIE I worked with a team of 6 other people to produce this robot puzzle platformer.",]}
-                  
+
                   onClickFunction={() => {
                     setModalProjectIndex(10);
                     ModalToggled();
@@ -355,7 +361,7 @@ const App: FC = () => {
                   projectName="Rapid Delivery"
                   technologiesList={["Unity", "C#"]}
                   projectDescriptions={["For my first major project at AIE we created an endless runner where the player must avoid obstacles and fire tea from a cannon to customers.",]}
-                  
+
                   onClickFunction={() => {
                     setModalProjectIndex(11);
                     ModalToggled();
@@ -374,7 +380,7 @@ const App: FC = () => {
                   projectName="Carnival Carnage"
                   technologiesList={["Unity", "C#", "VR"]}
                   projectDescriptions={["I worked with a team of 9 in a small time frame to create this VR arcade game where you smash clown heads with a hammer that can be thrown and recalled like thors hammer.",]}
-                  
+
                   onClickFunction={() => {
                     setModalProjectIndex(12);
                     ModalToggled();
@@ -393,7 +399,7 @@ const App: FC = () => {
                   projectName="Isolator"
                   technologiesList={["Unity", "C#"]}
                   projectDescriptions={["This was a small 12 hour game jam that I created with a team that involved some particle effects and interesting design.",]}
-                  
+
                   onClickFunction={() => {
                     setModalProjectIndex(13);
                     ModalToggled();
@@ -401,7 +407,7 @@ const App: FC = () => {
 
                 ></ProjectDescription>
               </div>
-              
+
               <div id="BezierCurves">
                 <ProjectDescription
                   linksLinks={["https://github.com/ThomasLambProgramming/UnityGraphics"]}
@@ -411,8 +417,8 @@ const App: FC = () => {
                   isDarkMode={isDarkMode}
                   projectName="Bezier Curves"
                   technologiesList={["Unity", "C#"]}
-                  projectDescriptions={[ "Small Bezier curve example to learn tooling and how bezier curves work for future projects",]}
-                  
+                  projectDescriptions={["Small Bezier curve example to learn tooling and how bezier curves work for future projects",]}
+
                   onClickFunction={() => {
                     setModalProjectIndex(14);
                     ModalToggled();
@@ -424,7 +430,7 @@ const App: FC = () => {
           </div>
         </div>
       </div>
-    </div>
+    </div >
   );
 };
 
