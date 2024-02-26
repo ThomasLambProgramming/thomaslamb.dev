@@ -27,8 +27,8 @@ const ProjectDescription: React.FC<{
     return (
       <div
         className={
-          "z-30 relative min-h-[300px] min-w-[400px] mt-4 rounded-md flex flex-col lg:items-start items-center lg:flex-row w-full shadow-lg " +
-          (isDarkMode ? "dark:bg-DarkNeutral-200 " : "bg-DarkNeutral-1100 ")
+          "z-30 relative min-h-[300px] min-w-[400px] mt-4 rounded-md flex flex-col lg:items-start items-center lg:flex-row w-full shadow-md mb-6 " +
+          (isDarkMode ? "dark:bg-DarkNeutral-200 shadow-gray-700 shadow-lg " : "bg-DarkNeutral-1100 ")
         }
       >
         {/* Project Description + skills and etc. */}
@@ -48,7 +48,7 @@ const ProjectDescription: React.FC<{
                 <p
                   key={projectNameWithoutSpace + techString}
                   className={
-                    "bg-slate-600 rounded-lg text-md pl-4 pr-4 pt-1 pb-1 text-center align-middle justify-center " +
+                    "rounded-lg text-md pl-4 pr-4 pt-1 pb-1 text-center align-middle justify-center " +
                     (isDarkMode
                       ? "dark:bg-Neutral-200 text-DarkNeutral-200"
                       : "bg-Neutral-400")
@@ -73,16 +73,15 @@ const ProjectDescription: React.FC<{
               ))}
               <div className="flex lg:flex-row lg:space-x-2 flex-col lg:text-start text-center w-full">
                 {linksLinks.map((linkHref: string, index: number) => (
-
                   // let filePath = '/ProjectAssets/' + projectName + "/" + projectName + "Preview";
-                  <a href={linkHref} target="_blank" className="mb-1 text-sm lg:align-bottom lg:items-end underline " key={projectNameWithoutSpace + linkHref.substring(0, linkHref.length > 20 ? 20 : linkHref.length)}>
+                  <a href={linkHref} target="_blank" className="mb-1 text-sm lg:align-bottom lg:items-end underline hover:text-blue-500" key={projectNameWithoutSpace + linkHref.substring(0, linkHref.length > 20 ? 20 : linkHref.length)}>
                     {(hideProjectDetails ? linksText[index] : <img className="max-w-[20%]" src={isDarkMode ? "/ProjectAssets/github-mark-white.png" : "/ProjectAssets/github-mark.png"}></img>)}
                   </a>
                 ))}
               </div>
             </div>
 
-            <p className="text-Neutral-500 lg:text-start text-center dark:text-DarkNeutral-600 lg:mt-3 lg:mb-0 mb-2 mt-2">
+            <p className="text-Neutral-500 lg:text-start text-sm text-center dark:text-DarkNeutral-600 lg:mt-3 mb-2 mt-2">
               {copyrightText}
             </p>
           </div>
@@ -97,7 +96,7 @@ const ProjectDescription: React.FC<{
           {hideProjectDetails ? (
             <p className="pb-4"></p>
           ) : (
-            <button onClick={onClickFunction} className="w-[90%] rounded-sm bg-slate-500 text-sm border-slate-600 border-2 mt-4 mb-4">
+            <button onClick={onClickFunction} className={`w-[90%] rounded-sm text-sm border-2 mt-4 mb-4 ${isDarkMode ? "" : "border-black"}`}>
               Project Details
             </button>
           )}

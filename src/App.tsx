@@ -72,27 +72,27 @@ const App: FC = () => {
             ></AboutSection>
           </div>
 
-          <div className="text-DarkNeutralN-100 max-w-[2200px]  dark:text-Neutral-0 flex flex-col lg:flex-row align-middle justify-center content-center items-center lg:items-start w-[100%] bg-gray-400">
+          <div className="text-DarkNeutralN-100 max-w-[2200px] dark:text-Neutral-0 flex flex-col lg:flex-row align-middle justify-center content-center items-center lg:items-start w-[100%]">
             <div className="flex flex-col !scroll-auto items-start align-top lg:w-[20%] lg:max-w-[220px] lg:justify-end justify-center mt-10 ">
               <div className="items-left flex flex-row lg:flex-col space-x-5 w-full lg:space-x-0 ml-2 lg:justify-normal lg:align-start justify-center align-middle">
 
                 <div className={`flex flex-col`}>
                   {/* {pixelOffset.map((number: Number, index: number) => <div key={`${number} ${index}`} style={{height:`${400}px`}}className={`opacity-0`}></div>) } */}
                   <div style={{ height: `${heightOffset}px` }}></div>
-                  <h2 className={"mt-4 text-md text-gray-600 " + (isDarkMode ? "text-Neutral-600" : "text-DarkNeutral-400 font-bold")}>
+                  <h2 className={"mt-4 text-md " + (isDarkMode ? "text-Neutral-600" : "text-DarkNeutral-400 font-bold")}>
                     Professional Experience
                   </h2>
-                  <a href="#TopOfPage" className="text-sm">Vlad Circus</a>
-                  <a href="#Vlad" className="text-sm">Aradena</a>
-                  <a href="#Aradena" className="text-sm">Homebase</a>
-                  <a href="#Homebase" className="text-sm">Motogp: Ignition</a>
+                  <a href="#TopOfPage" className="text-sm hover:underline">Vlad Circus</a>
+                  <a href="#Vlad" className="text-sm hover:underline">Aradena</a>
+                  <a href="#Aradena" className="text-sm hover:underline">Homebase</a>
+                  <a href="#Homebase" className="text-sm hover:underline">Motogp: Ignition</a>
                 </div>
 
                 <div className="flex flex-col">
-                  <h2 className={"mt-4 text-md text-gray-600 " + (isDarkMode ? "text-Neutral-600" : "text-DarkNeutral-400 font-bold")}>
+                  <h2 className={"mt-4 text-md " + (isDarkMode ? "text-Neutral-600" : "text-DarkNeutral-400 font-bold")}>
                     Personal Projects
                   </h2>
-                  <a href="#Motogp" className="text-sm">Maniac Cab</a>
+                  <a href="#Motogp" className="text-sm hover:underline">Maniac Cab</a>
                   {/* <a href="#DirectX" className="text-sm">Fishing Wizard</a>
                   <a href="#FishingWizard" className="text-sm">Graphics Engine</a>
                   <a href="#Maniac" className="text-sm">DirectX Renderer</a>
@@ -100,25 +100,25 @@ const App: FC = () => {
                 </div>
 
                 <div className="flex flex-col">
-                  <h2 className={"mt-4 text-md text-gray-600 " + (isDarkMode ? "text-Neutral-600" : "text-DarkNeutral-400 font-bold")}>
+                  <h2 className={"mt-4 text-md " + (isDarkMode ? "text-Neutral-600" : "text-DarkNeutral-400 font-bold")}>
                     Tech Demos
                   </h2>
-                  <a href="#Isolator" className="text-sm">Infinite Hallway</a>
-                  <a href="#BezierCurves" className="text-sm">Bezier Curves</a>
+                  <a href="#Isolator" className="text-sm hover:underline">Infinite Hallway</a>
+                  <a href="#BezierCurves" className="text-sm hover:underline">Bezier Curves</a>
                 </div>
 
                 <div className="flex flex-col">
-                  <h2 className={"mt-4 text-md text-gray-600 " + (isDarkMode ? "text-Neutral-600" : "text-DarkNeutral-400 font-bold")}>
+                  <h2 className={"mt-4 text-md " + (isDarkMode ? "text-Neutral-600" : "text-DarkNeutral-400 font-bold")}>
                     University Projects
                   </h2>
                   {/* <a href="#OpenglRenderer" className="text-sm">Node Graph Generator</a> */}
                   {/* <a href="#Node" className="text-sm">Liminal Sleep</a> */}
                   {/* <a href="#LiminalSleep" className="text-sm">Malicious</a> */}
-                  <a href="#Maniac" className="text-sm">Node Graph Generator</a>
-                  <a href="#Node" className="text-sm">Malicious</a>
-                  <a href="#Malicious" className="text-sm">Rapid Delivery</a>
-                  <a href="#RapidDelivery" className="text-sm">Carnival Carnage</a>
-                  <a href="#Isolator" className="text-sm">Isolator</a>
+                  <a href="#Maniac" className="text-sm hover:underline">Node Graph Generator</a>
+                  <a href="#Node" className="text-sm hover:underline">Malicious</a>
+                  <a href="#Malicious" className="text-sm hover:underline">Rapid Delivery</a>
+                  <a href="#RapidDelivery" className="text-sm hover:underline">Carnival Carnage</a>
+                  <a href="#Isolator" className="text-sm hover:underline">Isolator</a>
                 </div>
               </div>
               <GithubCommitDisplay isDarkMode={isDarkMode} />
