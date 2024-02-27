@@ -98,7 +98,7 @@ const App: FC = () => {
             </div>
 
             <div className="w-[70%] max-w-[640px] mb-8 mt-14">
-              <h1 className="text-2xl">Professional Projects</h1>
+              <h1 className="text-2xl">Professional Experience</h1>
 
               <div id="Vlad">
                 <ProjectDescription
@@ -189,6 +189,8 @@ const App: FC = () => {
 
                 ></ProjectDescription>
               </div>
+
+              <h3 className="text-lg mt-16">Previous Projects</h3>
 
               <div id="Maniac">
                 <ProjectDescription
