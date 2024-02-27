@@ -42,7 +42,7 @@ const MaliciousProject: React.FC<{ darkModeEnabled: boolean }> = ({ darkModeEnab
 
       <ProjectTopicPoint isDarkMode={darkModeEnabled}
         projectPointTexts={["This fan mechanic taught me the most about games development in a team.", "This mechanic had a few smaller features to make it a better fan then just applying force in a direction such as a dot product check for the current objects velocity and apply extra force accordingly (this was done to allow for smoother fan pushing when the fan was horizontally pushing).", "The fan also used a different force to push based on the distance away from the object it was pushing. I implemented this because I wanted a smarter fan then just pushing it. This however led me to learn quite alot, as when explaining the fan to my other team members, they didn't understand what I was trying to add to the fan, and it caused a lot of communication issues."]}
-        projectImgSrc=''
+        projectImgSrc=' '
       />
 
       <ProjectTopicPoint isDarkMode={darkModeEnabled}
@@ -50,16 +50,19 @@ const MaliciousProject: React.FC<{ darkModeEnabled: boolean }> = ({ darkModeEnab
         projectImgSrc='/ProjectAssets/Malicious/Malicious3.gif'
       />
 
+      <p className='mt-10 mb-10 text-3xl'>
+        Enemies
+      </p>
       <ProjectTopicPoint isDarkMode={darkModeEnabled}
         projectPointTexts={["This ground enemy shown below just had simple seek behaviors with a limited turning speed. It acts as one of the main dangers to the player."]}
-        projectImgSrc=''
+        projectImgSrc=' '
       />
 
       <img src="/ProjectAssets/Malicious/Malicious4.gif"></img>
 
       <ProjectTopicPoint isDarkMode={darkModeEnabled}
         projectPointTexts={["Our final game was fully playable with a full sprint schedule of alpha, beta, and gold. Our end result had very few bugs and none of them were game breaking."]}
-        projectImgSrc=''
+        projectImgSrc=' '
       />
       <a className='text-blue-500 hover:underline pt-0' href='https://haydencarterdesign.itch.io/malicious' target='_blank'>The build is avaliable on Itch.io here</a>
     </div>
