@@ -1,5 +1,6 @@
 import GithubCommitDisplay from "./Components/GithubCommitDisplay";
 import ProjectModal from "./Components/ProjectModal";
+import ModalExitButton from "./Components/ModalExitButton";
 import ProjectDescription from "./Components/ProjectDescription";
 import { FC, useState } from "react";
 import HeaderBar from "./Components/HeaderBar";
@@ -18,7 +19,7 @@ const App: FC = () => {
     setIsDarkMode(!isDarkMode);
   };
 
-  const testText: string[] = [
+  const aboutMeSectionText: string[] = [
     "Hello, my name is Thomas Lamb. I have been working as a game programmer for just under 2 years. I am eager to learn any form of programming that is associated with games from AI (enemy ai not generative ai) to rendering apis/shaders",
     "I am currently working on two projects: a cross platform game engine using multiple rendering apis (DirectX11, Opengl, Vulkan) and a humor filled multiplayer fishing game",
   ];
@@ -34,8 +35,11 @@ const App: FC = () => {
   return (
     <div className={isDarkMode ? "dark " : ""}>
       <div id="TopOfPage" className=" bg-Neutral-100 lg dark:bg-DarkNeutral-100 w-full h-full ">
+
         <ProjectModal isShown={isShown} hide={ModalToggled} darkMode={isDarkMode} index={modalProjectIndex}></ProjectModal>
-        <div className="">
+        <ModalExitButton isShown={isShown} hide={ModalToggled} darkMode={isDarkMode}></ModalExitButton >
+
+        <div className="sticky top-0 z-30">
           <HeaderBar isDarkMode={isDarkMode} DarkModeToggledFunc={DarkModeToggled}></HeaderBar>
         </div>
 
@@ -43,7 +47,7 @@ const App: FC = () => {
           <div className="bg-DarkNeutral-1100 dark:bg-DarkNeutral-200 rounded-md flex flex-col justify-center align-middle content-center items-center w-full max-w-[860px] ml-[2px] mt-10 text-DarkNeutralN-100  dark:text-Neutral-0">
             <AboutSection
               isDarkMode={isDarkMode}
-              defaultText={testText}
+              defaultText={aboutMeSectionText}
             ></AboutSection>
           </div>
 
@@ -66,8 +70,8 @@ const App: FC = () => {
                   </h2>
                   <a href="#Motogp" className="text-sm hover:underline">Fishing Wizard</a>
                   <a href="#FishingWizard" className="text-sm hover:underline">Maniac Cab</a>
-                  <a href="#Maniac" className="text-sm hover:underline">Raccoon Engine</a>
-                  <a href="#GraphicsEngine" className="text-sm hover:underline">Opengl Renderer</a>
+                  {/*<a href="#Maniac" className="text-sm hover:underline">Raccoon Engine</a>*/}
+                  <a href="#Maniac" className="text-sm hover:underline">Opengl Renderer</a>
                   <a href="#OpenglRenderer" className="text-sm hover:underline">DirectX Renderer</a>
                 </div>
 
@@ -203,7 +207,7 @@ const App: FC = () => {
                 ></ProjectDescription>
               </div>
 
-              <div id="GraphicsEngine">
+              {/*<div id="GraphicsEngine">
                 <ProjectDescription
                   linksLinks={["https://github.com/ThomasLambProgramming/GraphicsEngine"]}
                   linksText={["Github Source Repo"]}
@@ -220,7 +224,7 @@ const App: FC = () => {
                   }}
 
                 ></ProjectDescription>
-              </div>
+              </div> */}
 
               <div id="OpenglRenderer">
                 <ProjectDescription
