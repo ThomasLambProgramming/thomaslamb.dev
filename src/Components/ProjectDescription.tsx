@@ -96,7 +96,7 @@ const ProjectDescription: React.FC<{
           {hideProjectDetails ? (
             <p className="pb-4"></p>
           ) : (
-            <button onClick={onClickFunction} className={`w-[90%] rounded-sm text-sm border-2 mt-4 mb-4 ${isDarkMode ? "" : "border-black"}`}>
+            <button onClick={onClickFunction} className={`w-[90%] hover:underline rounded-sm text-sm border-2 mt-4 mb-4 ${isDarkMode ? "" : "border-black"}`}>
               Project Details
             </button>
           )}

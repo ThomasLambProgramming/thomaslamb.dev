@@ -9,7 +9,7 @@ const NodeGraphGeneratorProject: React.FC<{ darkModeEnabled: boolean }> = ({ dar
       </p>
 
       <ProjectTopicPoint isDarkMode={darkModeEnabled}
-        projectPointTexts={["For my complex games systems assessment, I wanted to work with AI, but found unity's AI system hard to operate with custom locomotion. I then decided to create a simple to use node graph generator. This generator would take an object as an environment and use it to create a node graph on top of it."]}
+        projectPointTexts={["For my complex games systems assessment, I wanted to work with AI, but found unity's AI system hard to operate with custom locomotion.", "I then decided to create a simple to use node graph generator. This generator would take an object as an environment and use it to create a node graph on top of it."]}
         projectImgSrc='/ProjectAssets/NodeGraphGenerator/ComplexExample.gif'
       />
 
