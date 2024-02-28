@@ -11,7 +11,7 @@ import IsolatorProject from './ProjectComponents/Isolator/IsolatorProject';
 import BezierProject from './ProjectComponents/BezierCurves/BezierProject';
 import FishingWizardProject from './ProjectComponents/FishingWizard/FishingWizardProject';
 import GraphicsEngineProject from './ProjectComponents/GraphicsEngine/GraphicsEngineProject';
-import LiminalSleepProject from './ProjectComponents/LiminalSleep/LiminalSleepProject';
+import InfiniteHallwayProject from './ProjectComponents/InfiniteHallway/InfiniteHallwayProject';
 import OpenglRendererProject from './ProjectComponents/OpenglRenderer/OpenglRendererProject';
 
 interface ModalProps {
@@ -59,7 +59,7 @@ const ProjectModal: React.FC<ModalProps> = (properties) => {
       break;
     case 9:
       //LiminalSleep
-      componentToRender = <LiminalSleepProject darkModeEnabled={properties.darkMode} />
+      componentToRender = <InfiniteHallwayProject darkModeEnabled={properties.darkMode} />
       break;
     case 10:
       //MaliciousProject
