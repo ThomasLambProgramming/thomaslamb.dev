@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import ProjectTopicPoint from '../ProjectTopicPoint';
 
 const BezierProject: React.FC<{ darkModeEnabled: boolean }> = ({ darkModeEnabled }) => {
