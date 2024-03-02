@@ -201,7 +201,7 @@ const App: FC = () => {
                   isDarkMode={isDarkMode}
                   projectName="Maniac Cab"
                   technologiesList={["Unreal", "C++"]}
-                  projectDescriptions={["A Small arcade game that I am currently developing with friends where your character must deliver as many passengers as possible in the shortest amount of time.",]}
+                  projectDescriptions={["A Small arcade game where your character must deliver as many passengers as possible in the shortest amount of time.",]}
                   onClickFunction={() => {
                     setModalProjectIndex(4);
                     ModalToggled();
@@ -236,8 +236,8 @@ const App: FC = () => {
                   hideProjectDetails={false}
                   isDarkMode={isDarkMode}
                   projectName="Opengl Renderer"
-                  technologiesList={["C++", "Imgui", "Graphics", "Opengl"]}
-                  projectDescriptions={["I made a small opengl renderer a few years ago but now I am updating it for testing shaders / lighting models as I found direct x to be cumbersome for rapid iteration.",]}
+                  technologiesList={["C++", "Imgui", "Graphics", "OpenGL"]}
+                  projectDescriptions={["I am currently reworking a previous opengl rendering project to test out shader effects and learn more about graphics programming.",]}
 
                   onClickFunction={() => {
                     // I gave up trying to index everything properly and now each project will just add a number to the end since its on a switch statement where order doesnt impact.
@@ -256,7 +256,7 @@ const App: FC = () => {
                   hideProjectDetails={false}
                   isDarkMode={isDarkMode}
                   projectName="DirectX Renderer"
-                  technologiesList={["C++", "Imgui", "Graphics"]}
+                  technologiesList={["C++", "Imgui", "Graphics", "Dx11"]}
                   projectDescriptions={["To learn more about graphics programming and shaders I have been working on a DirectX Renderer with dear Imgui.",]}
 
                   onClickFunction={() => {
