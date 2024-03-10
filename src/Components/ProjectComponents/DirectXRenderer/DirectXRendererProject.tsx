@@ -1,11 +1,15 @@
-import React, { Fragment } from 'react';
+import ProjectTopicPoint from '../ProjectTopicPoint';
+import React from 'react';
+const DirectXRendererProject: React.FC<{ darkModeEnabled: boolean }> = ({ darkModeEnabled }) => {
+  return (
+    <div className='flex flex-col items-center space-y-20'>
+      <ProjectTopicPoint isDarkMode={darkModeEnabled}
+        projectPointTexts={["This project is currently in development, this page will be updated at a later date."]}
+        projectImgSrc=' '
+      />
+    </div>
+  );
 
-const DirectXRendererProject: React.FC = () =>
-{
-    return (
-    <Fragment>
-    </Fragment>
-    );
 }
 
 export default DirectXRendererProject;
