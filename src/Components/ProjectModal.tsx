@@ -94,7 +94,7 @@ const ProjectModal: React.FC<ModalProps> = (properties) => {
 
         <div className={`fixed ${properties.darkMode ? "bg-DarkNeutral-300" : "bg-Neutral-200"} hideScroll max-w-[1200px] inset-0 overflow-y-scroll z-40 rounded-lg align-middle w-[95%] h-full m-auto text-center`}>
           <div className="w-full flex flex-row max-w-[1200px] m-auto pb-12 dark:text-Neutral-600 text-DarkNeutral-0">
-            <div className='w-[95%]'>
+            <div className='ml-[2.5%] w-[95%]'>
               {componentToRender}
             </div>
           </div>

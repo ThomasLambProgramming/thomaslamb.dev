@@ -1,9 +1,9 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
 const ManiacCabProject: React.FC<{ darkModeEnabled: boolean }> = ({ darkModeEnabled }) => {
   return (
-    <Fragment>
-      <p className='mt-10 mb-10 text-3xl'>
+    <div className='flex flex-col justify-center'>
+      <p className={`mt-10 mb-10 text-3xl ${darkModeEnabled ? "text-white" : "text-black"}`}>
         Maniac Cab
       </p>
 
@@ -26,7 +26,7 @@ const ManiacCabProject: React.FC<{ darkModeEnabled: boolean }> = ({ darkModeEnab
       <p className='mt-4 mb-4'>
         To speed up our iteration speed acceleration, torque and friction values are affected by power curve assets, this allows our designers to be able to tweak values and iterate the cars feel without needing to touch any code or blueprints. We also implementated a drift function for the car by changing the friction power curve asset when the handbrake input key is pressed.
       </p>
-    </Fragment>
+    </div>
   );
 }
 
