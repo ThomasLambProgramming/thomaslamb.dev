@@ -11,6 +11,7 @@ import IsolatorProject from './ProjectComponents/Isolator/IsolatorProject';
 import BezierProject from './ProjectComponents/BezierCurves/BezierProject';
 import InfiniteHallwayProject from './ProjectComponents/InfiniteHallway/InfiniteHallwayProject';
 import OpenglRendererProject from './ProjectComponents/OpenglRenderer/OpenglRendererProject';
+import DwarfPuzzleGameProject from './ProjectComponents/DwarfPuzzleGame/DwarfPuzzleGameProject';
 
 interface ModalProps {
   isShown: boolean;
@@ -35,7 +36,7 @@ const ProjectModal: React.FC<ModalProps> = (properties) => {
       //Motogp
       break;
     case "Dwarf Puzzle Game":
-      componentToRender = <DirectXRendererProject darkModeEnabled={properties.darkMode} />
+      componentToRender = <DwarfPuzzleGameProject darkModeEnabled={properties.darkMode} />
       break;
     case "Vehicle Suspension":
       //ManiacCab
