@@ -78,7 +78,18 @@ export const projects: ProjectDescriptionInformation[] = [
     ["Motogp-Ignition.com"],
   },
 
-    {
+  {
+    projectType: ProjectType.ActiveProject,
+    projectName: "Dwarf Puzzle Game",
+    hasProjectModal: true,
+    copyRightText: "",
+    technologyList: ["Unity", "C#"],
+    projectDescriptions: ["Working for the IDGA Games expansion grant I came up with the idea for a puzzle game where you play as a fantasy dwarf with a scooter for a hammer"],
+    urlLinkTitles: ["https://github.com/ThomasLambProgramming/UnityTesting"],
+    urlLinks: ["Github Source Repo"],
+  },
+
+  {
     projectType: ProjectType.PreviousProject,
     projectName: "Opengl Renderer",
     hasProjectModal: true,
@@ -129,19 +140,19 @@ export const projects: ProjectDescriptionInformation[] = [
   {
     projectType: ProjectType.TechDemo,
     projectName: "Bezier Curves",
-    hasProjectModal: false,
+    hasProjectModal: true,
     copyRightText: "",
     technologyList: ["Unity", "C#"],
     projectDescriptions: ["Small Bezier curve example to learn unity handles + other tooling and how bezier curves work for future projects",],
     urlLinkTitles: ["Github Source Repo"],
     urlLinks:
-    ["https://github.com/ThomasLambProgramming/UnityGraphics"],
+    ["https://github.com/ThomasLambProgramming/UnityTesting"],
   },
 
   {
     projectType: ProjectType.TechDemo,
     projectName: "Node Graph Generator",
-    hasProjectModal: false,
+    hasProjectModal: true,
     copyRightText: "",
     technologyList: ["Unity", "C#"],
     projectDescriptions: ["Node graph generator that takes in a environment and creates a navigation mesh based off all meshes contained in the environment.",],
@@ -153,7 +164,7 @@ export const projects: ProjectDescriptionInformation[] = [
   {
     projectType: ProjectType.AieProject,
     projectName: "Malicious",
-    hasProjectModal: false,
+    hasProjectModal: true,
     copyRightText: "",
     technologyList: ["Unity", "C#"],
     projectDescriptions: ["For my 2nd year major project at AIE I worked with a team of 6 other people to produce this robot puzzle platformer.",],
@@ -165,7 +176,7 @@ export const projects: ProjectDescriptionInformation[] = [
   {
     projectType: ProjectType.AieProject,
     projectName: "Rapid Delivery",
-    hasProjectModal: false,
+    hasProjectModal: true,
     copyRightText: "",
     technologyList: ["Unity", "C#"],
     projectDescriptions: ["For my first major project at AIE we created an endless runner where the player must avoid obstacles and fire tea from a cannon to customers."],
@@ -177,7 +188,7 @@ export const projects: ProjectDescriptionInformation[] = [
   {
     projectType: ProjectType.AieProject,
     projectName: "Carnival Carnage",
-    hasProjectModal: false,
+    hasProjectModal: true,
     copyRightText: "",
     technologyList: ["Unity", "C#", "VR"],
     projectDescriptions: ["I worked with a team of 9 in a small time frame to create this VR arcade game where you smash clown heads with a hammer that can be thrown and recalled like thors hammer."],
@@ -189,7 +200,7 @@ export const projects: ProjectDescriptionInformation[] = [
   {
     projectType: ProjectType.AieProject,
     projectName: "Isolator",
-    hasProjectModal: false,
+    hasProjectModal: true,
     copyRightText: "",
     technologyList: ["Unity", "C#"],
     projectDescriptions: ["This was a small 12 hour game jam that I created with a team that involved some particle effects and interesting design.",],

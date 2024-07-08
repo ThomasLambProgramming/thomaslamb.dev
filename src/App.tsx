@@ -10,7 +10,8 @@ import ProjectSelectionSiderbar from "./Components/ProjectSelectionSidebar.tsx";
 const App: FC = () => {
   const [isShown, setIsShown] = useState<boolean>(false);
   const [isDarkMode, setIsDarkMode] = useState<boolean>(true);
-  const [modalProjectIndex, setModalProjectIndex] = useState(0);
+  const [modalProjectName, setModalProjectName] = useState<string>("");
+  const [projectSeparatorTitleClass] = useState<string>("mt-20 text-2xl underline");
 
   //From the central project description array separate array into project types so navbar links + sorting can be done without
   //manually editing each element.
@@ -46,6 +47,12 @@ const App: FC = () => {
   const DarkModeToggled = () => {
     setIsDarkMode(!isDarkMode);
   };
+  const ProjectDetailsButtonPressed = (projectName: string) => {
+    setModalProjectName(projectName);
+    ModalToggled();
+  }
+
+  console.log("Refreshed App");
 
   const aboutMeSectionText: string[] = [
     "Hello, my name is Thomas Lamb. I have been working as a game programmer for just under 2 years. I am eager to learn any form of game programming, with a current interest in graphics and gameplay",
@@ -62,7 +69,7 @@ const App: FC = () => {
     <div className={isDarkMode ? "dark " : ""}>
       <div id="TopOfPage" className=" bg-Neutral-100 lg dark:bg-DarkNeutral-100 w-full h-full ">
 
-        <ProjectModal isShown={isShown} hide={ModalToggled} darkMode={isDarkMode} index={modalProjectIndex}></ProjectModal>
+        <ProjectModal isShown={isShown} hide={ModalToggled} darkMode={isDarkMode} projectName={modalProjectName}></ProjectModal>
         <ModalExitButton isShown={isShown} hide={ModalToggled} darkMode={isDarkMode}></ModalExitButton >
 
         <div className="sticky top-0 z-30">
@@ -88,9 +95,15 @@ const App: FC = () => {
               aieProjects={aieProjectNames}
             />
             <div className="max-w-2xl">
-              {projects.map((projectInfo , index) => {
+              {projects.map((projectInfo, index) => {
                   return (
                     <div id={projectInfo.projectName}>
+                      {/* I am not happy using this method but it stops me from having multiple ProjectDescription component declares */}
+                      {index === 0 ? <h1 className={projectSeparatorTitleClass}>Professional Experience</h1> : <div></div>}
+                      {index === (professionalProjectNames.length) ? <h1 className={projectSeparatorTitleClass}>Active Projects</h1> : <div></div>}
+                      {index === (professionalProjectNames.length + activeProjectNames.length) ? <h1 className={projectSeparatorTitleClass}>Previous Projects</h1> : <div></div>}
+                      {index === (professionalProjectNames.length + activeProjectNames.length + previousProjectNames.length) ? <h1 className={projectSeparatorTitleClass}>Tech Demos</h1> : <div></div>}
+                      {index === (professionalProjectNames.length + activeProjectNames.length + previousProjectNames.length + techDemoProjectNames.length) ? <h1 className={projectSeparatorTitleClass}>University Projects</h1> : <div></div>}
                       <ProjectDescription 
                         isDarkMode={isDarkMode} 
                         hideProjectDetails={!projectInfo.hasProjectModal}
@@ -100,11 +113,14 @@ const App: FC = () => {
                         linksText={projectInfo.urlLinkTitles}
                         technologiesList={projectInfo.technologyList}
                         projectDescriptions={projectInfo.projectDescriptions}
-                        onClickFunction={() => setModalProjectIndex(index)}
+                        onClickFunction={() => ProjectDetailsButtonPressed(projectInfo.projectName)}
                       />
                     </div>
                   );
               })}
+              <div className=" h-[800px]">
+
+              </div>
             </div>
           </div>
         </div>

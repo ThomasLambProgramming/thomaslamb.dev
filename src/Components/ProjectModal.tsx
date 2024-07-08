@@ -9,81 +9,73 @@ import RapidDeliveryProject from './ProjectComponents/RapidDelivery/RapidDeliver
 import CarnivalCarnageProject from './ProjectComponents/CarnivalCarnage/CarnivalCarnageProject';
 import IsolatorProject from './ProjectComponents/Isolator/IsolatorProject';
 import BezierProject from './ProjectComponents/BezierCurves/BezierProject';
-import FishingWizardProject from './ProjectComponents/FishingWizard/FishingWizardProject';
-import GraphicsEngineProject from './ProjectComponents/GraphicsEngine/GraphicsEngineProject';
 import InfiniteHallwayProject from './ProjectComponents/InfiniteHallway/InfiniteHallwayProject';
 import OpenglRendererProject from './ProjectComponents/OpenglRenderer/OpenglRendererProject';
 
 interface ModalProps {
   isShown: boolean;
-  index: number;
+  projectName: string;
   hide: () => void;
   darkMode: boolean;
 }
 
 const ProjectModal: React.FC<ModalProps> = (properties) => {
-
   let componentToRender = <DefaultBlankProject darkModeEnabled={properties.darkMode}></DefaultBlankProject>
-  switch (properties.index) {
-    case 0:
+  switch (properties.projectName) {
+    case "Vlad Circus":
       //Vlad
       break;
-    case 1:
+    case "Aradena":
       //Aradena
       break;
-    case 2:
+    case "Homebase":
       //Homebase
       break;
-    case 3:
+    case "Motogp Ignition":
       //Motogp
       break;
-    case 4:
+    case "Dwarf Puzzle Game":
+      componentToRender = <DirectXRendererProject darkModeEnabled={properties.darkMode} />
+      break;
+    case "Vehicle Suspension":
       //ManiacCab
       componentToRender = <ManiacCabProject darkModeEnabled={properties.darkMode} />
       break;
-    case 5:
+    case "DirectX Renderer":
       //DirectX
       componentToRender = <DirectXRendererProject darkModeEnabled={properties.darkMode} />
       break;
-    case 6:
-      //FishingWizard
-      componentToRender = <FishingWizardProject darkModeEnabled={properties.darkMode} />
-      break;
-    case 7:
+    case "Opengl Renderer":
       //GraphicsEngine
-      componentToRender = <GraphicsEngineProject darkModeEnabled={properties.darkMode} />
+      componentToRender = <OpenglRendererProject darkModeEnabled={properties.darkMode} />
       break;
-    case 8:
+    case "Node Graph Generator":
       //NodeGraph
       componentToRender = <NodeGraphGeneratorProject darkModeEnabled={properties.darkMode} />
       break;
-    case 9:
+    case "Infinite Hallway":
       //LiminalSleep
       componentToRender = <InfiniteHallwayProject darkModeEnabled={properties.darkMode} />
       break;
-    case 10:
+    case "Malicious":
       //MaliciousProject
       componentToRender = <MaliciousProject darkModeEnabled={properties.darkMode} />
       break;
-    case 11:
+    case "Rapid Delivery":
       //RapidDelivery
       componentToRender = <RapidDeliveryProject darkModeEnabled={properties.darkMode} />
       break;
-    case 12:
+    case "Carnival Carnage":
       //CarnivalCarnage
       componentToRender = <CarnivalCarnageProject darkModeEnabled={properties.darkMode} />
       break;
-    case 13:
+    case "Isolator":
       //Isolator
       componentToRender = <IsolatorProject darkModeEnabled={properties.darkMode} />
       break;
-    case 14:
+    case "Bezier Curves":
       //Bezier
       componentToRender = <BezierProject darkModeEnabled={properties.darkMode} />
-      break;
-    case 15:
-      //OpenglRenderer
-      componentToRender = <OpenglRendererProject darkModeEnabled={properties.darkMode} />
       break;
   }
 
