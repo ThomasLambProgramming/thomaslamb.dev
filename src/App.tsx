@@ -70,6 +70,7 @@ const App: FC = () => {
         </div>
 
         <div className="flex flex-col justify-center align-middle content-center items-center w-full">
+
           <div className="bg-DarkNeutral-1100 dark:bg-DarkNeutral-200 rounded-md flex flex-col justify-center align-middle content-center items-center w-full max-w-[860px] ml-[2px] mt-10 text-DarkNeutralN-100  dark:text-Neutral-0">
             <AboutSection
               isDarkMode={isDarkMode}
@@ -78,7 +79,6 @@ const App: FC = () => {
           </div>
 
           <div className="text-DarkNeutralN-100 max-w-[2200px] dark:text-Neutral-0 flex flex-col lg:flex-row align-middle justify-center content-center items-center lg:items-start w-[100%]">
-
             <ProjectSelectionSiderbar 
               isDarkMode={isDarkMode}
               activeProjects={activeProjectNames}
@@ -86,12 +86,11 @@ const App: FC = () => {
               previousProjects={previousProjectNames}
               techDemoProjects={techDemoProjectNames}
               aieProjects={aieProjectNames}
-              />
-
+            />
             <div className="max-w-2xl">
               {projects.map((projectInfo , index) => {
                   return (
-                    <div>
+                    <div id={projectInfo.projectName}>
                       <ProjectDescription 
                         isDarkMode={isDarkMode} 
                         hideProjectDetails={!projectInfo.hasProjectModal}
@@ -107,7 +106,6 @@ const App: FC = () => {
                   );
               })}
             </div>
-
           </div>
         </div>
       </div>

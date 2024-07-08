@@ -13,53 +13,62 @@ const ProjectSelectionSiderbar: React.FC<SiderbarProps> = (properties) =>
     <div className="flex flex-col lg:sticky top-20 lg:w-[20%] lg:max-w-[220px] mt-10 ">
       <div className="flex flex-row lg:flex-col space-x-5 w-full lg:space-x-0 ml-2 ">
 
-        <div className={`flex flex-col `}>
-          <h2 className={"mt-4 text-md " + (properties.isDarkMode ? "text-Neutral-600" : "text-DarkNeutral-400 font-bold")}>
-            Professional Experience
-          </h2>
-          {properties.professionalProjects.map((projectName, index) => {return ( 
-            <a href={"#professionalProject" + index} className="text-sm hover:underline">{projectName}</a>
-          )})}
-        </div>
-
-        <div className="flex flex-col">
-          <h2 className={"mt-4 text-md " + (properties.isDarkMode ? "text-Neutral-600" : "text-DarkNeutral-400 font-bold")}>
-            Personal Projects
-          </h2>
-          {properties.activeProjects.map((projectName, index) => {return ( 
-            <a href={"#activeProject" + index} className="text-sm hover:underline">{projectName}</a>
-          )})}
-        </div>
-
-        <div className="flex flex-col">
-          <h2 className={"mt-4 text-md " + (properties.isDarkMode ? "text-Neutral-600" : "text-DarkNeutral-400 font-bold")}>
-            Previous Projects 
-          </h2>
-          {properties.previousProjects.map((projectName, index) => {return ( 
-            <a href={"#previousProject" + index} className="text-sm hover:underline">{projectName}</a>
-          )})}
-        </div>
-
-        <div className="flex flex-col">
-          <h2 className={"mt-4 text-md " + (properties.isDarkMode ? "text-Neutral-600" : "text-DarkNeutral-400 font-bold")}>
-            Tech Demos 
-          </h2>
-          {properties.techDemoProjects.map((projectName, index) => {return ( 
-            <a href={"#techDemo" + index} className="text-sm hover:underline">{projectName}</a>
-          )})}
-        </div>
-
-        <div className="flex flex-col">
-          <h2 className={"mt-4 text-md " + (properties.isDarkMode ? "text-Neutral-600" : "text-DarkNeutral-400 font-bold")}>
-           University Projects 
-          </h2>
-          {properties.aieProjects.map((projectName, index) => {return ( 
-            <a href={"#aieProject" + index} className="text-sm hover:underline">{projectName}</a>
-          )})}
-        </div>
-
+        <ProjectSidebarSection 
+          sectionTitle="Professional Projects"
+          isDarkMode={properties.isDarkMode}
+          projectNames={properties.professionalProjects}
+          firstLinkRef="#top"
+        />
+        <ProjectSidebarSection 
+          sectionTitle="Active Projects"
+          isDarkMode={properties.isDarkMode}
+          projectNames={properties.activeProjects}
+          firstLinkRef={"#" + properties.professionalProjects[properties.professionalProjects.length - 1]}
+        />
+        <ProjectSidebarSection 
+          sectionTitle="Previous Projects"
+          isDarkMode={properties.isDarkMode}
+          projectNames={properties.previousProjects}
+          firstLinkRef={"#" + properties.activeProjects[properties.activeProjects.length - 1]}
+        />
+        <ProjectSidebarSection 
+          sectionTitle="Tech Demos"
+          isDarkMode={properties.isDarkMode}
+          projectNames={properties.techDemoProjects}
+          firstLinkRef={"#" + properties.previousProjects[properties.previousProjects.length - 1]}
+        />
+        <ProjectSidebarSection 
+          sectionTitle="University Projects"
+          isDarkMode={properties.isDarkMode}
+          projectNames={properties.aieProjects}
+          firstLinkRef={"#" + properties.techDemoProjects[properties.techDemoProjects.length - 1]}
+        />
       </div>
       <GithubCommitDisplay isDarkMode={properties.isDarkMode} />
     </div>
   )
+
+interface SidebarSectionProps
+{
+  isDarkMode: boolean;
+  firstLinkRef: string;
+  sectionTitle: string;
+  projectNames: string[];
+}
+const ProjectSidebarSection: React.FC<SidebarSectionProps> = (props) =>
+(
+  <div className={`flex flex-col `}>
+    <h2 className={"mt-4 text-md " + (props.isDarkMode ? "text-Neutral-600" : "text-DarkNeutral-400 font-bold")}>
+      {props.sectionTitle}
+    </h2>
+    {props.projectNames.map((projectName, index) => {
+      if (index > 0)
+      {return ( 
+          <a href={"#" + props.projectNames[index - 1]} className="text-sm hover:underline">{projectName}</a>
+      )}
+      else
+          return <a href={props.firstLinkRef} className="text-sm hover:underline">{projectName}</a>
+    })}
+  </div>
+)
 export default ProjectSelectionSiderbar;

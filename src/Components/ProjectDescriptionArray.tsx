@@ -139,7 +139,7 @@ export const projects: ProjectDescriptionInformation[] = [
   },
 
   {
-    projectType: ProjectType.PreviousProject,
+    projectType: ProjectType.TechDemo,
     projectName: "Node Graph Generator",
     hasProjectModal: false,
     copyRightText: "",
