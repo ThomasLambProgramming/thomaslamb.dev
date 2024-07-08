@@ -1,4 +1,4 @@
-enum ProjectType 
+export enum ProjectType 
 {
   ActiveProject,
   ProfessionalProject,
@@ -78,19 +78,7 @@ export const projects: ProjectDescriptionInformation[] = [
     ["Motogp-Ignition.com"],
   },
 
-  {
-    projectType: ProjectType.PreviousProject,
-    projectName: "Vehicle Suspension",
-    hasProjectModal: true,
-    copyRightText: "",
-    technologyList: ["Unreal", "C++"],
-    projectDescriptions: ["Tech demo for simulating car suspension using 4 fake physics springs on one rigidbody",],
-    urlLinkTitles: ["Github Source Repo"],
-    urlLinks:
-    ["https://github.com/ThomasLambProgramming/ManiacCab"],
-  },
-
-  {
+    {
     projectType: ProjectType.PreviousProject,
     projectName: "Opengl Renderer",
     hasProjectModal: true,
@@ -115,7 +103,19 @@ export const projects: ProjectDescriptionInformation[] = [
   },
 
   {
-    projectType: ProjectType.PreviousProject,
+    projectType: ProjectType.TechDemo,
+    projectName: "Vehicle Suspension",
+    hasProjectModal: true,
+    copyRightText: "",
+    technologyList: ["Unreal", "C++"],
+    projectDescriptions: ["Tech demo for simulating car suspension using 4 fake physics springs on one rigidbody",],
+    urlLinkTitles: ["Github Source Repo"],
+    urlLinks:
+    ["https://github.com/ThomasLambProgramming/ManiacCab"],
+  },
+
+  {
+    projectType: ProjectType.TechDemo,
     projectName: "Infinite Hallway",
     hasProjectModal: true,
     copyRightText: "",
@@ -127,7 +127,7 @@ export const projects: ProjectDescriptionInformation[] = [
   },
 
   {
-    projectType: ProjectType.PreviousProject,
+    projectType: ProjectType.TechDemo,
     projectName: "Bezier Curves",
     hasProjectModal: false,
     copyRightText: "",

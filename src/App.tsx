@@ -4,14 +4,41 @@ import ProjectDescription from "./Components/ProjectDescription";
 import { FC, useState } from "react";
 import HeaderBar from "./Components/HeaderBar";
 import AboutSection from "./Components/AboutSection";
-import {projects} from "./Components/ProjectDescriptionArray.tsx";
+import {projects, ProjectType} from "./Components/ProjectDescriptionArray.tsx";
 import ProjectSelectionSiderbar from "./Components/ProjectSelectionSidebar.tsx";
 
 const App: FC = () => {
   const [isShown, setIsShown] = useState<boolean>(false);
   const [isDarkMode, setIsDarkMode] = useState<boolean>(true);
-
   const [modalProjectIndex, setModalProjectIndex] = useState(0);
+
+  //From the central project description array separate array into project types so navbar links + sorting can be done without
+  //manually editing each element.
+  let activeProjectBuffer: string[] = [];
+  let professionalProjectBuffer: string[] = [];
+  let previousProjectBuffer: string[] = [];
+  let techDemoProjectBuffer: string[] = [];
+  let aieProjectBuffer: string[] = [];
+
+  for (let i = 0; i < projects.length; i++)
+  {
+    if (projects[i].projectType == ProjectType.ActiveProject)
+      activeProjectBuffer.push(projects[i].projectName);
+    if (projects[i].projectType == ProjectType.ProfessionalProject)
+      professionalProjectBuffer.push(projects[i].projectName);
+    if (projects[i].projectType == ProjectType.PreviousProject)
+      previousProjectBuffer.push(projects[i].projectName);
+    if (projects[i].projectType == ProjectType.TechDemo)
+      techDemoProjectBuffer.push(projects[i].projectName);
+    if (projects[i].projectType == ProjectType.AieProject)
+      aieProjectBuffer.push(projects[i].projectName);
+  }
+
+  const [activeProjectNames] = useState<string[]>(activeProjectBuffer)
+  const [professionalProjectNames] = useState<string[]>(professionalProjectBuffer);
+  const [previousProjectNames] = useState<string[]>(previousProjectBuffer);
+  const [techDemoProjectNames] = useState<string[]>(techDemoProjectBuffer);
+  const [aieProjectNames] = useState<string[]>(aieProjectBuffer);
 
   const ModalToggled = () => {
     setIsShown(!isShown);
@@ -27,11 +54,9 @@ const App: FC = () => {
     "- Small opengl engine to test graphics programming such as shadow maps",
   ];
 
-  
-
-  document.title = "ThomasLamb.dev";
   //Remove scrollbar so when modal opens it doesnt move everything and it looks cleaner without anyway.
   document.body.classList.add("no-scrollbar");
+  document.title = "ThomasLamb.dev";
 
   return (
     <div className={isDarkMode ? "dark " : ""}>
@@ -53,24 +78,37 @@ const App: FC = () => {
           </div>
 
           <div className="text-DarkNeutralN-100 max-w-[2200px] dark:text-Neutral-0 flex flex-col lg:flex-row align-middle justify-center content-center items-center lg:items-start w-[100%]">
-            <ProjectSelectionSiderbar isDarkMode={isDarkMode}/>
-            {projects.map((projectInfo , index) => {
-                return (
-                <ProjectDescription 
-                  isDarkMode={isDarkMode} 
-                  hideProjectDetails={!projectInfo.hasProjectModal}
-                  projectName={projectInfo.projectName}
-                  copyrightText={projectInfo.copyRightText}
-                  linksLinks={projectInfo.urlLinks}
-                  linksText={projectInfo.urlLinkTitles}
-                  technologiesList={projectInfo.technologyList}
-                  projectDescriptions={projectInfo.projectDescriptions}
-                  onClickFunction={() => setModalProjectIndex(index)}
-                />
-                );
-            })}
-          </div>
 
+            <ProjectSelectionSiderbar 
+              isDarkMode={isDarkMode}
+              activeProjects={activeProjectNames}
+              professionalProjects={professionalProjectNames}
+              previousProjects={previousProjectNames}
+              techDemoProjects={techDemoProjectNames}
+              aieProjects={aieProjectNames}
+              />
+
+            <div className="max-w-2xl">
+              {projects.map((projectInfo , index) => {
+                  return (
+                    <div>
+                      <ProjectDescription 
+                        isDarkMode={isDarkMode} 
+                        hideProjectDetails={!projectInfo.hasProjectModal}
+                        projectName={projectInfo.projectName}
+                        copyrightText={projectInfo.copyRightText}
+                        linksLinks={projectInfo.urlLinks}
+                        linksText={projectInfo.urlLinkTitles}
+                        technologiesList={projectInfo.technologyList}
+                        projectDescriptions={projectInfo.projectDescriptions}
+                        onClickFunction={() => setModalProjectIndex(index)}
+                      />
+                    </div>
+                  );
+              })}
+            </div>
+
+          </div>
         </div>
       </div>
     </div >
