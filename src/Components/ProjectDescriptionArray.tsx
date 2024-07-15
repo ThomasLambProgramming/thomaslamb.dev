@@ -1,22 +1,20 @@
-export enum ProjectType 
-{
+export enum ProjectType {
   ActiveProject,
   ProfessionalProject,
   PreviousProject,
   TechDemo,
-  AieProject, 
+  AieProject,
 }
 
-interface ProjectDescriptionInformation
-{
-    projectType: number,
-    projectName: string,
-    hasProjectModal: boolean,
-    copyRightText: string,
-    projectDescriptions: string[],
-    technologyList: string[],
-    urlLinkTitles: string[],
-    urlLinks: string[],
+interface ProjectDescriptionInformation {
+  projectType: number,
+  projectName: string,
+  hasProjectModal: boolean,
+  copyRightText: string,
+  projectDescriptions: string[],
+  technologyList: string[],
+  urlLinkTitles: string[],
+  urlLinks: string[],
 }
 
 export const projects: ProjectDescriptionInformation[] = [
@@ -29,13 +27,13 @@ export const projects: ProjectDescriptionInformation[] = [
     projectDescriptions: ["In Vlad Circus: Descend into Madness, discover a story full of mystery and pain where every shadow hides a twisted secret or vicious threat, and no one is safe from tragedy."],
     urlLinkTitles: ["Steam", "Epic Games", "Switch", "Xbox", "Playstation"],
     urlLinks:
-    [
-      "https://store.steampowered.com/app/1702430/Vlad_Circus_Descend_Into_Madness/",
-      "https://store.epicgames.com/en-US/p/vlad-circus-descend-into-madness-9d1ed2",
-      "https://ec.nintendo.com/AU/en/titles/70010000045531",
-      "https://www.xbox.com/en-US/games/store/vlad-circus-descend-into-madness/9ns2rvcmxh60",
-      "https://store.playstation.com/en-us/product/UP5552-CUSA30287_00-9071855390281250"
-    ],
+      [
+        "https://store.steampowered.com/app/1702430/Vlad_Circus_Descend_Into_Madness/",
+        "https://store.epicgames.com/en-US/p/vlad-circus-descend-into-madness-9d1ed2",
+        "https://ec.nintendo.com/AU/en/titles/70010000045531",
+        "https://www.xbox.com/en-US/games/store/vlad-circus-descend-into-madness/9ns2rvcmxh60",
+        "https://store.playstation.com/en-us/product/UP5552-CUSA30287_00-9071855390281250"
+      ],
   },
 
   {
@@ -47,7 +45,7 @@ export const projects: ProjectDescriptionInformation[] = [
     projectDescriptions: ["Aradena is a free-to-play, Tactical TCG where collectable cards come to life in strategic, 3D gameplay. As a warrior, you'll join a faction and battle other players in the medieval fantasy kingdom."],
     urlLinkTitles: ["Aradena.io"],
     urlLinks:
-    ["https://aradena.io/home/"],
+      ["https://aradena.io/home/"],
   },
 
   {
@@ -59,11 +57,11 @@ export const projects: ProjectDescriptionInformation[] = [
     projectDescriptions: ["Scholastic Home Base is a safe, free, 3D interactive world that celebrates favorite stories through book-based games, live author events, and a large community of readers."],
     urlLinkTitles: ["Homebase Website", "Google Play Store", "Apple App Store",],
     urlLinks:
-    [        
-      "https://kids.scholastic.com/kid/homebase/",
-      "https://play.google.com/store/apps/details?id=com.scholastic.HomeBase&hl=en&gl=US&pli=1",
-      "https://apps.apple.com/us/app/home-base-by-scholastic/id1450869907",
-    ],
+      [
+        "https://kids.scholastic.com/kid/homebase/",
+        "https://play.google.com/store/apps/details?id=com.scholastic.HomeBase&hl=en&gl=US&pli=1",
+        "https://apps.apple.com/us/app/home-base-by-scholastic/id1450869907",
+      ],
   },
 
   {
@@ -75,7 +73,7 @@ export const projects: ProjectDescriptionInformation[] = [
     projectDescriptions: ["MotoGP Ignition is a play-to-earn blockchain-based racing management and collectibles game that utilizes the Flow network with its NFT assets and cryptocurrency, REVV."],
     urlLinkTitles: ["https://motogp-ignition.com/"],
     urlLinks:
-    ["Motogp-Ignition.com"],
+      ["Motogp-Ignition.com"],
   },
 
   {
@@ -84,7 +82,7 @@ export const projects: ProjectDescriptionInformation[] = [
     hasProjectModal: true,
     copyRightText: "",
     technologyList: ["Unity", "C#"],
-    projectDescriptions: ["Working for the IDGA Games expansion grant I came up with the idea for a puzzle game where you play as a fantasy dwarf with a scooter for a hammer"],
+    projectDescriptions: ["Working for the IDGA Games expansion grant I came up with the idea for a puzzle game where you play as a fantasy dwarf with a hammer that turns into a scooter"],
     urlLinkTitles: ["https://github.com/ThomasLambProgramming/UnityTesting"],
     urlLinks: ["Github Source Repo"],
   },
@@ -98,7 +96,7 @@ export const projects: ProjectDescriptionInformation[] = [
     projectDescriptions: ["I am currently reworking a previous opengl rendering project to test out shader effects and learn more about graphics programming.",],
     urlLinkTitles: ["Github Source Repo"],
     urlLinks:
-    ["https://github.com/ThomasLambProgramming/GraphicsAIE"],
+      ["https://github.com/ThomasLambProgramming/GraphicsAIE"],
   },
 
   {
@@ -110,7 +108,7 @@ export const projects: ProjectDescriptionInformation[] = [
     projectDescriptions: ["To learn more about graphics programming and shaders I have been working on a DirectX Renderer with dear Imgui.",],
     urlLinkTitles: ["Github Source Repo"],
     urlLinks:
-    ["https://github.com/ThomasLambProgramming/DirectXRenderer"],
+      ["https://github.com/ThomasLambProgramming/DirectXRenderer"],
   },
 
   {
@@ -122,7 +120,7 @@ export const projects: ProjectDescriptionInformation[] = [
     projectDescriptions: ["Tech demo for simulating car suspension using 4 fake physics springs on one rigidbody",],
     urlLinkTitles: ["Github Source Repo"],
     urlLinks:
-    ["https://github.com/ThomasLambProgramming/ManiacCab"],
+      ["https://github.com/ThomasLambProgramming/ManiacCab"],
   },
 
   {
@@ -134,7 +132,7 @@ export const projects: ProjectDescriptionInformation[] = [
     projectDescriptions: ["As part of our GDML course we made a small horror/thriller project, It used look direction dot products to change the room as the player progressed."],
     urlLinkTitles: ["Github Source Repo"],
     urlLinks:
-    ["https://github.com/ThomasLambProgramming/LiminalSleep"],
+      ["https://github.com/ThomasLambProgramming/LiminalSleep"],
   },
 
   {
@@ -146,7 +144,7 @@ export const projects: ProjectDescriptionInformation[] = [
     projectDescriptions: ["Small Bezier curve example to learn unity handles + other tooling and how bezier curves work for future projects",],
     urlLinkTitles: ["Github Source Repo"],
     urlLinks:
-    ["https://github.com/ThomasLambProgramming/UnityTesting"],
+      ["https://github.com/ThomasLambProgramming/UnityTesting"],
   },
 
   {
@@ -158,7 +156,7 @@ export const projects: ProjectDescriptionInformation[] = [
     projectDescriptions: ["Node graph generator that takes in a environment and creates a navigation mesh based off all meshes contained in the environment.",],
     urlLinkTitles: ["Github Source Repo"],
     urlLinks:
-    ["https://github.com/ThomasLambProgramming/NodeGraph"],
+      ["https://github.com/ThomasLambProgramming/NodeGraph"],
   },
 
   {
@@ -170,7 +168,7 @@ export const projects: ProjectDescriptionInformation[] = [
     projectDescriptions: ["For my 2nd year major project at AIE I worked with a team of 6 other people to produce this robot puzzle platformer.",],
     urlLinkTitles: ["Github Source Repo"],
     urlLinks:
-    ["https://github.com/ThomasLambProgramming/MaliciousVisionQuest"],
+      ["https://github.com/ThomasLambProgramming/MaliciousVisionQuest"],
   },
 
   {
@@ -182,7 +180,7 @@ export const projects: ProjectDescriptionInformation[] = [
     projectDescriptions: ["For my first major project at AIE we created an endless runner where the player must avoid obstacles and fire tea from a cannon to customers."],
     urlLinkTitles: ["Github Source Repo"],
     urlLinks:
-    ["https://github.com/ThomasLambProgramming/RapidDelivery"],
+      ["https://github.com/ThomasLambProgramming/RapidDelivery"],
   },
 
   {
@@ -194,7 +192,7 @@ export const projects: ProjectDescriptionInformation[] = [
     projectDescriptions: ["I worked with a team of 9 in a small time frame to create this VR arcade game where you smash clown heads with a hammer that can be thrown and recalled like thors hammer."],
     urlLinkTitles: ["Github Source Repo"],
     urlLinks:
-    ["https://github.com/ThomasLambProgramming/Carnival-Carnage"],
+      ["https://github.com/ThomasLambProgramming/Carnival-Carnage"],
   },
 
   {
@@ -206,6 +204,6 @@ export const projects: ProjectDescriptionInformation[] = [
     projectDescriptions: ["This was a small 12 hour game jam that I created with a team that involved some particle effects and interesting design.",],
     urlLinkTitles: ["Github Source Repo"],
     urlLinks:
-    ["https://github.com/ThomasLambProgramming/Isolator"],
+      ["https://github.com/ThomasLambProgramming/Isolator"],
   },
 ]

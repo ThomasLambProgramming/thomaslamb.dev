@@ -74,7 +74,6 @@ const App: FC = () => {
           <HeaderBar isDarkMode={isDarkMode} DarkModeToggledFunc={DarkModeToggled}></HeaderBar>
         </div>
 
-
         <div className="flex flex-col justify-center align-middle content-center items-center w-full">
           <CarouselDisplay imagesToDisplay={carouselConstantWidth} isDarkMode={isDarkMode} translateXAmount={carouselWidth}></CarouselDisplay>
           <div className="bg-DarkNeutral-1100 dark:bg-DarkNeutral-200 rounded-md flex flex-col justify-center align-middle content-center items-center w-full max-w-[860px] ml-[2px] mt-10 text-DarkNeutralN-100  dark:text-Neutral-0">
@@ -95,7 +94,7 @@ const App: FC = () => {
             <div className="max-w-2xl">
               {projects.map((projectInfo, index) => {
                 return (
-                  <div id={projectInfo.projectName}>
+                  <div id={projectInfo.projectName} key={projectInfo.projectName + "ProjectDescription"}>
                     {/* I am not happy using this method but it stops me from having multiple ProjectDescription component declares */}
                     {index === 0 ? <h1 className={projectSeparatorTitleClass}>Professional Experience</h1> : <div></div>}
                     {index === (professionalProjectNames.length) ? <h1 className={projectSeparatorTitleClass}>Active Projects</h1> : <div></div>}

@@ -1,41 +1,69 @@
 import { useState, Fragment } from "react";
 
-//const translateXAmount: number = 600;
-//const imagesToDisplay: string[] = [
-//  '/ProjectAssets/Malicious/MaliciousTitle.png',
-//  '/ProjectAssets/Malicious/Malicious4.png',
-//  '/ProjectAssets/Malicious/Malicious1.png',
-//];
+/*'/ProjectAssets/Malicious/Malicious1.gif',
+'/ProjectAssets/Malicious/MaliciousTitle.png',
+'/ProjectAssets/Malicious/Malicious4.gif',
+'/ProjectAssets/Malicious/Malicious1.gif',
+'/ProjectAssets/Malicious/MaliciousTitle.png',*/
+
 interface CarouselProps {
   translateXAmount: number,
   imagesToDisplay: string[],
   isDarkMode: boolean,
 }
-const CarouselDisplay: React.FC<CarouselProps> = (props: CarouselProps) => {
+const transitionDuration: number = 500;
 
-  const [projectIndex, setProjectIndex] = useState<number>(0);
+const CarouselDisplay: React.FC<CarouselProps> = (props: CarouselProps) => {
+  let imageArray = [props.imagesToDisplay[props.imagesToDisplay.length - 1], ...props.imagesToDisplay, props.imagesToDisplay[0]];
+  const [carouselImages] = useState<string[]>(imageArray);
+
+  const [projectIndex, setProjectIndex] = useState<number>(1);
+  const [previousProjectIndex, setPreviousProjectIndex] = useState<number>(1);
+  const [rejectInput, setRejectInput] = useState<boolean>(false);
+
   const IterateProjectIndex = (direction: number) => {
+
+    if (rejectInput)
+      return;
+
     let newIndex = projectIndex + direction;
-    if (newIndex < 0) {
-      newIndex = props.imagesToDisplay.length - 1;
+
+    if (direction > 0) {
+      if (newIndex > carouselImages.length - 2) {
+        setTimeout(() => {
+          setProjectIndex(1);
+        }, transitionDuration);
+        setPreviousProjectIndex(carouselImages.length - 1);
+      }
     }
-    else if (newIndex > props.imagesToDisplay.length - 1) {
-      newIndex = 0;
+    else if (direction < 0) {
+      if (newIndex < 1) {
+        setTimeout(() => {
+          setPreviousProjectIndex(0);
+          setProjectIndex(carouselImages.length - 2);
+        }, transitionDuration);
+      }
     }
+
+    if (previousProjectIndex != projectIndex)
+      setPreviousProjectIndex(projectIndex);
+
     setProjectIndex(newIndex);
+    setRejectInput(true);
+    setTimeout(() => { setRejectInput(false), transitionDuration })
   };
 
   return (
     <div className={`relative w-full max-w-[${props.translateXAmount}px] bg-emerald-100`}>
       <div className="relative h-56 flex overflow-hidden md:h-96">
-        <div className="flex transition ease-out duration-100"
+        <div className={`flex ${((projectIndex == 1 && previousProjectIndex == carouselImages.length - 2) || (projectIndex == carouselImages.length - 2 && previousProjectIndex == 0)) ? "" : "transition ease-out duration-500"}`}
           style={{
             transform: `translateX(${projectIndex * -props.translateXAmount}px)`,
           }}>
 
-          {props.imagesToDisplay.map((filepath: string) => {
+          {carouselImages.map((filepath: string, index: number) => {
             return (
-              <img src={filepath}></img>
+              <img key={index + "Carousel" + carouselImages[index]} src={filepath}></img>
             );
           })}
         </div>
@@ -57,7 +85,7 @@ const CarouselSideButton: React.FC<SideButtonInterface> = (props) => (
     <button type="button" onClick={props.onClickFunction} className={`absolute top-0 ${props.position} z-30 flex items-center justify-center h-full px-4 cursor-pointer group`}>
       <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60">
         <svg className="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={props.pointRight ? "m1 9 4-4-4-4" : "M4 1 1 5l4 4"} />
+          <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={props.pointRight ? "m1 9 4-4-4-4" : "M4 1 1 5l4 4"} />
         </svg>
       </span>
     </button >
