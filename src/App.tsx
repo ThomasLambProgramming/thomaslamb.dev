@@ -4,8 +4,9 @@ import ProjectDescription from "./Components/ProjectDescription";
 import { FC, useState } from "react";
 import HeaderBar from "./Components/HeaderBar";
 import AboutSection from "./Components/AboutSection";
-import {projects, ProjectType} from "./Components/ProjectDescriptionArray.tsx";
+import { projects, ProjectType } from "./Components/ProjectDescriptionArray.tsx";
 import ProjectSelectionSiderbar from "./Components/ProjectSelectionSidebar.tsx";
+import CarouselDisplay from "./Components/CarouselDisplay.tsx";
 
 const App: FC = () => {
   const [isShown, setIsShown] = useState<boolean>(false);
@@ -21,8 +22,7 @@ const App: FC = () => {
   let techDemoProjectBuffer: string[] = [];
   let aieProjectBuffer: string[] = [];
 
-  for (let i = 0; i < projects.length; i++)
-  {
+  for (let i = 0; i < projects.length; i++) {
     if (projects[i].projectType == ProjectType.ActiveProject)
       activeProjectBuffer.push(projects[i].projectName);
     if (projects[i].projectType == ProjectType.ProfessionalProject)
@@ -52,14 +52,12 @@ const App: FC = () => {
     ModalToggled();
   }
 
-  console.log("Refreshed App");
-
-  const aboutMeSectionText: string[] = [
-    "Hello, my name is Thomas Lamb. I have been working as a game programmer for just under 2 years. I am eager to learn any form of game programming, with a current interest in graphics and gameplay",
-    "Current projects: ", 
-    "- A dwarf puzzle game", 
-    "- Small opengl engine to test graphics programming such as shadow maps",
-  ];
+  const carouselConstantWidth: string[] = [
+    '/ProjectAssets/Malicious/MaliciousTitle.png',
+    '/ProjectAssets/Malicious/Malicious4.gif',
+    '/ProjectAssets/Malicious/Malicious1.gif',
+  ]
+  const carouselWidth: number = 600;
 
   //Remove scrollbar so when modal opens it doesnt move everything and it looks cleaner without anyway.
   document.body.classList.add("no-scrollbar");
@@ -76,17 +74,17 @@ const App: FC = () => {
           <HeaderBar isDarkMode={isDarkMode} DarkModeToggledFunc={DarkModeToggled}></HeaderBar>
         </div>
 
-        <div className="flex flex-col justify-center align-middle content-center items-center w-full">
 
+        <div className="flex flex-col justify-center align-middle content-center items-center w-full">
+          <CarouselDisplay imagesToDisplay={carouselConstantWidth} isDarkMode={isDarkMode} translateXAmount={carouselWidth}></CarouselDisplay>
           <div className="bg-DarkNeutral-1100 dark:bg-DarkNeutral-200 rounded-md flex flex-col justify-center align-middle content-center items-center w-full max-w-[860px] ml-[2px] mt-10 text-DarkNeutralN-100  dark:text-Neutral-0">
             <AboutSection
               isDarkMode={isDarkMode}
-              defaultText={aboutMeSectionText}
             ></AboutSection>
           </div>
 
           <div className="text-DarkNeutralN-100 max-w-[2200px] dark:text-Neutral-0 flex flex-col lg:flex-row align-middle justify-center content-center items-center lg:items-start w-[100%]">
-            <ProjectSelectionSiderbar 
+            <ProjectSelectionSiderbar
               isDarkMode={isDarkMode}
               activeProjects={activeProjectNames}
               professionalProjects={professionalProjectNames}
@@ -96,27 +94,27 @@ const App: FC = () => {
             />
             <div className="max-w-2xl">
               {projects.map((projectInfo, index) => {
-                  return (
-                    <div id={projectInfo.projectName}>
-                      {/* I am not happy using this method but it stops me from having multiple ProjectDescription component declares */}
-                      {index === 0 ? <h1 className={projectSeparatorTitleClass}>Professional Experience</h1> : <div></div>}
-                      {index === (professionalProjectNames.length) ? <h1 className={projectSeparatorTitleClass}>Active Projects</h1> : <div></div>}
-                      {index === (professionalProjectNames.length + activeProjectNames.length) ? <h1 className={projectSeparatorTitleClass}>Previous Projects</h1> : <div></div>}
-                      {index === (professionalProjectNames.length + activeProjectNames.length + previousProjectNames.length) ? <h1 className={projectSeparatorTitleClass}>Tech Demos</h1> : <div></div>}
-                      {index === (professionalProjectNames.length + activeProjectNames.length + previousProjectNames.length + techDemoProjectNames.length) ? <h1 className={projectSeparatorTitleClass}>University Projects</h1> : <div></div>}
-                      <ProjectDescription 
-                        isDarkMode={isDarkMode} 
-                        hideProjectDetails={!projectInfo.hasProjectModal}
-                        projectName={projectInfo.projectName}
-                        copyrightText={projectInfo.copyRightText}
-                        linksLinks={projectInfo.urlLinks}
-                        linksText={projectInfo.urlLinkTitles}
-                        technologiesList={projectInfo.technologyList}
-                        projectDescriptions={projectInfo.projectDescriptions}
-                        onClickFunction={() => ProjectDetailsButtonPressed(projectInfo.projectName)}
-                      />
-                    </div>
-                  );
+                return (
+                  <div id={projectInfo.projectName}>
+                    {/* I am not happy using this method but it stops me from having multiple ProjectDescription component declares */}
+                    {index === 0 ? <h1 className={projectSeparatorTitleClass}>Professional Experience</h1> : <div></div>}
+                    {index === (professionalProjectNames.length) ? <h1 className={projectSeparatorTitleClass}>Active Projects</h1> : <div></div>}
+                    {index === (professionalProjectNames.length + activeProjectNames.length) ? <h1 className={projectSeparatorTitleClass}>Previous Projects</h1> : <div></div>}
+                    {index === (professionalProjectNames.length + activeProjectNames.length + previousProjectNames.length) ? <h1 className={projectSeparatorTitleClass}>Tech Demos</h1> : <div></div>}
+                    {index === (professionalProjectNames.length + activeProjectNames.length + previousProjectNames.length + techDemoProjectNames.length) ? <h1 className={projectSeparatorTitleClass}>University Projects</h1> : <div></div>}
+                    <ProjectDescription
+                      isDarkMode={isDarkMode}
+                      hideProjectDetails={!projectInfo.hasProjectModal}
+                      projectName={projectInfo.projectName}
+                      copyrightText={projectInfo.copyRightText}
+                      linksLinks={projectInfo.urlLinks}
+                      linksText={projectInfo.urlLinkTitles}
+                      technologiesList={projectInfo.technologyList}
+                      projectDescriptions={projectInfo.projectDescriptions}
+                      onClickFunction={() => ProjectDetailsButtonPressed(projectInfo.projectName)}
+                    />
+                  </div>
+                );
               })}
               <div className=" h-[800px]">
 
