@@ -1,17 +1,13 @@
-import { useState, Fragment } from "react";
-
-/*'/ProjectAssets/Malicious/Malicious1.gif',
-'/ProjectAssets/Malicious/MaliciousTitle.png',
-'/ProjectAssets/Malicious/Malicious4.gif',
-'/ProjectAssets/Malicious/Malicious1.gif',
-'/ProjectAssets/Malicious/MaliciousTitle.png',*/
+import { useState, useEffect, Fragment } from "react";
 
 interface CarouselProps {
   translateXAmount: number,
   imagesToDisplay: string[],
   isDarkMode: boolean,
 }
+
 const transitionDuration: number = 500;
+const gotoNextImageTimer: number = 4000;
 
 const CarouselDisplay: React.FC<CarouselProps> = (props: CarouselProps) => {
   let imageArray = [props.imagesToDisplay[props.imagesToDisplay.length - 1], ...props.imagesToDisplay, props.imagesToDisplay[0]];
@@ -19,13 +15,19 @@ const CarouselDisplay: React.FC<CarouselProps> = (props: CarouselProps) => {
 
   const [projectIndex, setProjectIndex] = useState<number>(1);
   const [previousProjectIndex, setPreviousProjectIndex] = useState<number>(1);
-  const [rejectInput, setRejectInput] = useState<boolean>(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      IterateProjectIndex(1);
+    }, gotoNextImageTimer);
+    return () => {
+      if (interval) {
+        clearInterval(interval);
+      }
+    };
+  }, [projectIndex]);
 
   const IterateProjectIndex = (direction: number) => {
-
-    if (rejectInput)
-      return;
-
     let newIndex = projectIndex + direction;
 
     if (direction > 0) {
@@ -49,8 +51,6 @@ const CarouselDisplay: React.FC<CarouselProps> = (props: CarouselProps) => {
       setPreviousProjectIndex(projectIndex);
 
     setProjectIndex(newIndex);
-    setRejectInput(true);
-    setTimeout(() => { setRejectInput(false), transitionDuration })
   };
 
   return (
