@@ -43,9 +43,9 @@ export const projects: ProjectDescriptionInformation[] = [
     copyRightText: "Copyright © 2024 Aradena. All Rights Reserved.",
     technologyList: ["Unity", "C#"],
     projectDescriptions: ["Aradena is a free-to-play, Tactical TCG where collectable cards come to life in strategic, 3D gameplay. As a warrior, you'll join a faction and battle other players in the medieval fantasy kingdom."],
-    urlLinkTitles: ["Aradena.io"],
+    urlLinkTitles: ["Aradena"],
     urlLinks:
-      ["https://aradena.io/home/"],
+      ["https://www.immutable.com/play/aradena"],
   },
 
   {
@@ -71,9 +71,9 @@ export const projects: ProjectDescriptionInformation[] = [
     copyRightText: "An official product of the MotoGP™ logo and related marks are trade marks. All rights reserved. Copyright © 2023 ANIMOCA BRANDS LIMITED, ALL RIGHTS RESERVED. MotoGP™ Ignition © 2023 DORNA",
     technologyList: ["Unity", "C#"],
     projectDescriptions: ["MotoGP Ignition is a play-to-earn blockchain-based racing management and collectibles game that utilizes the Flow network with its NFT assets and cryptocurrency, REVV."],
-    urlLinkTitles: ["https://motogp-ignition.com/"],
+    urlLinkTitles: ["MotoGP Ignition"],
     urlLinks:
-      ["Motogp-Ignition.com"],
+      ["https://motogp-ignition.com/"],
   },
 
   {
