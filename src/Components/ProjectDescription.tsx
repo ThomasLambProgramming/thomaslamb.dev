@@ -1,5 +1,6 @@
 import React from "react";
-import DelayedImage from "./DelayedImage";
+import CarouselDisplay from "./CarouselDisplay";
+import { useState } from "react";
 
 const ProjectDescription: React.FC<{
   isDarkMode: boolean;
@@ -10,6 +11,7 @@ const ProjectDescription: React.FC<{
   linksLinks: string[];
   technologiesList: string[];
   projectDescriptions: string[];
+  imageFilePaths: string[];
   onClickFunction: () => void;
 }> = ({
   isDarkMode,
@@ -20,10 +22,17 @@ const ProjectDescription: React.FC<{
   projectName,
   technologiesList,
   projectDescriptions,
+  imageFilePaths,
   onClickFunction,
 }) => {
     let projectNameWithoutSpace = projectName.replace(/\s/g, "");
+    console.log(projectNameWithoutSpace);
 
+    let bufferArray: string[] = [];
+    imageFilePaths.map((stringValue) => {
+      bufferArray.push("./ProjectAssets/" + projectNameWithoutSpace + "/" + stringValue);
+    })
+    const [imageFiles] = useState<string[]>(bufferArray);
     return (
       <div
         className={
@@ -87,11 +96,10 @@ const ProjectDescription: React.FC<{
           </div>
         </div>
         {/* Project image and details button */}
-        <div className="max-w-[40%] min-w-[40%] flex flex-col items-center justify-center">
-          <DelayedImage
-            projectName={projectNameWithoutSpace}
-            className="min-h-[70%] h-[100%] items-center rounded-md"
-          ></DelayedImage>
+        <div className="max-w-[50%] min-w-[50%] flex flex-col items-center justify-center">
+          <div className="">
+            <CarouselDisplay translateXAmount={268.8} imagesToDisplay={imageFiles} isDarkMode={isDarkMode}></CarouselDisplay>
+          </div>
 
           {hideProjectDetails ? (
             <p className="pb-4"></p>

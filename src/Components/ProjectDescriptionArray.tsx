@@ -15,6 +15,7 @@ interface ProjectDescriptionInformation {
   technologyList: string[],
   urlLinkTitles: string[],
   urlLinks: string[],
+  carouselImageNames: string[],
 }
 
 export const projects: ProjectDescriptionInformation[] = [
@@ -34,6 +35,7 @@ export const projects: ProjectDescriptionInformation[] = [
         "https://www.xbox.com/en-US/games/store/vlad-circus-descend-into-madness/9ns2rvcmxh60",
         "https://store.playstation.com/en-us/product/UP5552-CUSA30287_00-9071855390281250"
       ],
+    carouselImageNames: ["Vlad1.gif", "Vlad2.gif", "Vlad3.gif", "Vlad4.jpg", "Vlad5.jpg", "Vlad6.jpg"],
   },
 
   {
@@ -46,6 +48,7 @@ export const projects: ProjectDescriptionInformation[] = [
     urlLinkTitles: ["Aradena"],
     urlLinks:
       ["https://www.immutable.com/play/aradena"],
+    carouselImageNames: ["Aradena1.jpg", "Aradena2.jpg", "Aradena3.jpg"],
   },
 
   {
@@ -62,6 +65,7 @@ export const projects: ProjectDescriptionInformation[] = [
         "https://play.google.com/store/apps/details?id=com.scholastic.HomeBase&hl=en&gl=US&pli=1",
         "https://apps.apple.com/us/app/home-base-by-scholastic/id1450869907",
       ],
+    carouselImageNames: ["Homebase1.png", "Homebase2.jpg", "Homebase3.png", "Homebase4.png", "Homebase5.png", "Homebase6.png", "Homebase7.png",],
   },
 
   {
@@ -74,6 +78,7 @@ export const projects: ProjectDescriptionInformation[] = [
     urlLinkTitles: ["MotoGP Ignition"],
     urlLinks:
       ["https://motogp-ignition.com/"],
+    carouselImageNames: ["Motogp1.png", "Motogp2.jpg", "Motogp3.jpg"],
   },
 
   {
@@ -85,6 +90,7 @@ export const projects: ProjectDescriptionInformation[] = [
     projectDescriptions: ["Working for the IDGA Games expansion grant I came up with the idea for a puzzle game where you play as a fantasy dwarf with a hammer that turns into a scooter"],
     urlLinkTitles: ["https://github.com/ThomasLambProgramming/UnityTesting"],
     urlLinks: ["Github Source Repo"],
+    carouselImageNames: ["", ""],
   },
 
   {
@@ -95,8 +101,8 @@ export const projects: ProjectDescriptionInformation[] = [
     technologyList: ["C++", "Imgui", "Graphics", "OpenGL"],
     projectDescriptions: ["I am currently reworking a previous opengl rendering project to test out shader effects and learn more about graphics programming.",],
     urlLinkTitles: ["Github Source Repo"],
-    urlLinks:
-      ["https://github.com/ThomasLambProgramming/GraphicsAIE"],
+    urlLinks: ["https://github.com/ThomasLambProgramming/GraphicsAIE"],
+    carouselImageNames: ["", ""],
   },
 
   {
@@ -107,8 +113,8 @@ export const projects: ProjectDescriptionInformation[] = [
     technologyList: ["C++", "Imgui", "Graphics", "Dx11"],
     projectDescriptions: ["To learn more about graphics programming and shaders I have been working on a DirectX Renderer with dear Imgui.",],
     urlLinkTitles: ["Github Source Repo"],
-    urlLinks:
-      ["https://github.com/ThomasLambProgramming/DirectXRenderer"],
+    urlLinks: ["https://github.com/ThomasLambProgramming/DirectXRenderer"],
+    carouselImageNames: ["", ""],
   },
 
   {
@@ -119,8 +125,8 @@ export const projects: ProjectDescriptionInformation[] = [
     technologyList: ["Unreal", "C++"],
     projectDescriptions: ["Tech demo for simulating car suspension using 4 fake physics springs on one rigidbody",],
     urlLinkTitles: ["Github Source Repo"],
-    urlLinks:
-      ["https://github.com/ThomasLambProgramming/ManiacCab"],
+    urlLinks: ["https://github.com/ThomasLambProgramming/ManiacCab"],
+    carouselImageNames: ["", ""],
   },
 
   {
@@ -131,8 +137,8 @@ export const projects: ProjectDescriptionInformation[] = [
     technologyList: ["Unity", "C#"],
     projectDescriptions: ["As part of our GDML course we made a small horror/thriller project, It used look direction dot products to change the room as the player progressed."],
     urlLinkTitles: ["Github Source Repo"],
-    urlLinks:
-      ["https://github.com/ThomasLambProgramming/LiminalSleep"],
+    urlLinks: ["https://github.com/ThomasLambProgramming/LiminalSleep"],
+    carouselImageNames: ["", ""],
   },
 
   {
@@ -143,8 +149,8 @@ export const projects: ProjectDescriptionInformation[] = [
     technologyList: ["Unity", "C#"],
     projectDescriptions: ["Small Bezier curve example to learn unity handles + other tooling and how bezier curves work for future projects",],
     urlLinkTitles: ["Github Source Repo"],
-    urlLinks:
-      ["https://github.com/ThomasLambProgramming/UnityTesting"],
+    urlLinks: ["https://github.com/ThomasLambProgramming/UnityTesting"],
+    carouselImageNames: ["", ""],
   },
 
   {
@@ -155,8 +161,8 @@ export const projects: ProjectDescriptionInformation[] = [
     technologyList: ["Unity", "C#"],
     projectDescriptions: ["Node graph generator that takes in a environment and creates a navigation mesh based off all meshes contained in the environment.",],
     urlLinkTitles: ["Github Source Repo"],
-    urlLinks:
-      ["https://github.com/ThomasLambProgramming/NodeGraph"],
+    urlLinks: ["https://github.com/ThomasLambProgramming/NodeGraph"],
+    carouselImageNames: ["", ""],
   },
 
   {
@@ -167,8 +173,8 @@ export const projects: ProjectDescriptionInformation[] = [
     technologyList: ["Unity", "C#"],
     projectDescriptions: ["For my 2nd year major project at AIE I worked with a team of 6 other people to produce this robot puzzle platformer.",],
     urlLinkTitles: ["Github Source Repo"],
-    urlLinks:
-      ["https://github.com/ThomasLambProgramming/MaliciousVisionQuest"],
+    urlLinks: ["https://github.com/ThomasLambProgramming/MaliciousVisionQuest"],
+    carouselImageNames: ["", ""],
   },
 
   {
@@ -179,8 +185,8 @@ export const projects: ProjectDescriptionInformation[] = [
     technologyList: ["Unity", "C#"],
     projectDescriptions: ["For my first major project at AIE we created an endless runner where the player must avoid obstacles and fire tea from a cannon to customers."],
     urlLinkTitles: ["Github Source Repo"],
-    urlLinks:
-      ["https://github.com/ThomasLambProgramming/RapidDelivery"],
+    urlLinks: ["https://github.com/ThomasLambProgramming/RapidDelivery"],
+    carouselImageNames: ["", ""],
   },
 
   {
@@ -191,8 +197,8 @@ export const projects: ProjectDescriptionInformation[] = [
     technologyList: ["Unity", "C#", "VR"],
     projectDescriptions: ["I worked with a team of 9 in a small time frame to create this VR arcade game where you smash clown heads with a hammer that can be thrown and recalled like thors hammer."],
     urlLinkTitles: ["Github Source Repo"],
-    urlLinks:
-      ["https://github.com/ThomasLambProgramming/Carnival-Carnage"],
+    urlLinks: ["https://github.com/ThomasLambProgramming/Carnival-Carnage"],
+    carouselImageNames: ["", ""],
   },
 
   {
@@ -203,7 +209,7 @@ export const projects: ProjectDescriptionInformation[] = [
     technologyList: ["Unity", "C#"],
     projectDescriptions: ["This was a small 12 hour game jam that I created with a team that involved some particle effects and interesting design.",],
     urlLinkTitles: ["Github Source Repo"],
-    urlLinks:
-      ["https://github.com/ThomasLambProgramming/Isolator"],
+    urlLinks: ["https://github.com/ThomasLambProgramming/Isolator"],
+    carouselImageNames: ["", ""],
   },
 ]

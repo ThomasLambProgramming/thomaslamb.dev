@@ -6,7 +6,7 @@ import HeaderBar from "./Components/HeaderBar";
 import AboutSection from "./Components/AboutSection";
 import { projects, ProjectType } from "./Components/ProjectDescriptionArray.tsx";
 import ProjectSelectionSiderbar from "./Components/ProjectSelectionSidebar.tsx";
-import CarouselDisplay from "./Components/CarouselDisplay.tsx";
+
 
 const App: FC = () => {
   const [isShown, setIsShown] = useState<boolean>(false);
@@ -52,13 +52,6 @@ const App: FC = () => {
     ModalToggled();
   }
 
-  const carouselConstantWidth: string[] = [
-    '/ProjectAssets/Malicious/MaliciousTitle.png',
-    '/ProjectAssets/Malicious/Malicious4.gif',
-    '/ProjectAssets/Malicious/Malicious1.gif',
-  ]
-  const carouselWidth: number = 600;
-
   //Remove scrollbar so when modal opens it doesnt move everything and it looks cleaner without anyway.
   document.body.classList.add("no-scrollbar");
   document.title = "ThomasLamb.dev";
@@ -75,14 +68,13 @@ const App: FC = () => {
         </div>
 
         <div className="flex flex-col justify-center align-middle content-center items-center w-full">
-          <CarouselDisplay imagesToDisplay={carouselConstantWidth} isDarkMode={isDarkMode} translateXAmount={carouselWidth}></CarouselDisplay>
           <div className="bg-DarkNeutral-1100 dark:bg-DarkNeutral-200 rounded-md flex flex-col justify-center align-middle content-center items-center w-full max-w-[860px] ml-[2px] mt-10 text-DarkNeutralN-100  dark:text-Neutral-0">
             <AboutSection
               isDarkMode={isDarkMode}
             ></AboutSection>
           </div>
 
-          <div className="text-DarkNeutralN-100 max-w-[2200px] dark:text-Neutral-0 flex flex-col lg:flex-row align-middle justify-center content-center items-center lg:items-start w-[100%]">
+          <div className="text-DarkNeutralN-100 max-w-[2600px] dark:text-Neutral-0 flex flex-col lg:flex-row align-middle justify-center content-center items-center lg:items-start w-[100%]">
             <ProjectSelectionSiderbar
               isDarkMode={isDarkMode}
               activeProjects={activeProjectNames}
@@ -91,7 +83,7 @@ const App: FC = () => {
               techDemoProjects={techDemoProjectNames}
               aieProjects={aieProjectNames}
             />
-            <div className="max-w-2xl">
+            <div className="max-w-4xl">
               {projects.map((projectInfo, index) => {
                 return (
                   <div id={projectInfo.projectName} key={projectInfo.projectName + "ProjectDescription"}>
@@ -110,6 +102,7 @@ const App: FC = () => {
                       linksText={projectInfo.urlLinkTitles}
                       technologiesList={projectInfo.technologyList}
                       projectDescriptions={projectInfo.projectDescriptions}
+                      imageFilePaths={projectInfo.carouselImageNames}
                       onClickFunction={() => ProjectDetailsButtonPressed(projectInfo.projectName)}
                     />
                   </div>

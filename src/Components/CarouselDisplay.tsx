@@ -5,9 +5,9 @@ interface CarouselProps {
   imagesToDisplay: string[],
   isDarkMode: boolean,
 }
-
+//const allowAutoMove: boolean = true;
 const transitionDuration: number = 500;
-const gotoNextImageTimer: number = 4000;
+//const gotoNextImageTimer: number = 4000;
 
 const CarouselDisplay: React.FC<CarouselProps> = (props: CarouselProps) => {
   let imageArray = [props.imagesToDisplay[props.imagesToDisplay.length - 1], ...props.imagesToDisplay, props.imagesToDisplay[0]];
@@ -15,17 +15,6 @@ const CarouselDisplay: React.FC<CarouselProps> = (props: CarouselProps) => {
 
   const [projectIndex, setProjectIndex] = useState<number>(1);
   const [previousProjectIndex, setPreviousProjectIndex] = useState<number>(1);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      IterateProjectIndex(1);
-    }, gotoNextImageTimer);
-    return () => {
-      if (interval) {
-        clearInterval(interval);
-      }
-    };
-  }, [projectIndex]);
 
   const IterateProjectIndex = (direction: number) => {
     let newIndex = projectIndex + direction;
@@ -55,7 +44,7 @@ const CarouselDisplay: React.FC<CarouselProps> = (props: CarouselProps) => {
 
   return (
     <div className={`relative w-full max-w-[${props.translateXAmount}px] bg-emerald-100`}>
-      <div className="relative h-56 flex overflow-hidden md:h-96">
+      <div className="flex overflow-hidden ">
         <div className={`flex ${((projectIndex == 1 && previousProjectIndex == carouselImages.length - 2) || (projectIndex == carouselImages.length - 2 && previousProjectIndex == 0)) ? "" : "transition ease-out duration-500"}`}
           style={{
             transform: `translateX(${projectIndex * -props.translateXAmount}px)`,
