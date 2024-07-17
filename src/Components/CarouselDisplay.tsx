@@ -38,10 +38,8 @@ const CarouselDisplay: React.FC<CarouselProps> = (props: CarouselProps) => {
         autoPlaySpeed={5000}
         keyBoardControl={true}
         autoPlay={true}
-        customTransition=""
         transitionDuration={500}
-        containerClass="carousel-container flex max-w-[500px] object-fit"
-        removeArrowOnDeviceType={["tablet", "mobile"]}
+        containerClass="carousel-container flex max-w-[500px]"
         itemClass="carousel-item-padding-40-px"
         dotListClass="custom-dot-list-style"
         pauseOnHover

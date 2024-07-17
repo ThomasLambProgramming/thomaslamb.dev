@@ -36,7 +36,7 @@ const ProjectDescription: React.FC<{
     return (
       <div
         className={
-          "z-20 relative min-h-[300px] min-w-[400px] mt-4 rounded-md flex flex-col lg:items-start items-center lg:flex-row w-full shadow-md mb-6 " +
+          "z-20 relative min-h-[300px] min-w-[400px] mt-4 rounded-md flex flex-col items-center lg:flex-row w-full shadow-md mb-6 " +
           (isDarkMode ? "dark:bg-DarkNeutral-200 shadow-ShadowColorDark shadow-md" : "bg-DarkNeutral-1100 ")
         }
       >
@@ -96,7 +96,7 @@ const ProjectDescription: React.FC<{
           </div>
         </div>
         {/* Project image and details button */}
-        <div className="max-w-[50%] min-w-[50%] flex flex-col">
+        <div className="lg:max-w-[50%] max-w-[80%] min-w-[50%] flex flex-col">
           <div className="">
             <CarouselDisplay translateXAmount={268.8} imagesToDisplay={imageFiles} isDarkMode={isDarkMode}></CarouselDisplay>
           </div>
