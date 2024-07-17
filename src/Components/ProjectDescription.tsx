@@ -96,15 +96,15 @@ const ProjectDescription: React.FC<{
           </div>
         </div>
         {/* Project image and details button */}
-        <div className="max-w-[50%] min-w-[50%] flex flex-col items-center">
-          <div className="max-w-[95%]">
+        <div className="max-w-[50%] min-w-[50%] flex flex-col">
+          <div className="">
             <CarouselDisplay translateXAmount={268.8} imagesToDisplay={imageFiles} isDarkMode={isDarkMode}></CarouselDisplay>
           </div>
 
           {hideProjectDetails ? (
             <p className="pb-4"></p>
           ) : (
-            <button onClick={onClickFunction} className={`w-[90%] hover:underline rounded-sm text-sm border-2 mt-4 mb-4 ${isDarkMode ? "" : "border-black"}`}>
+            <button onClick={onClickFunction} className={`w-[100%] hover:underline rounded-sm text-sm border-2 mt-4 mb-4 ${isDarkMode ? "" : "border-black"}`}>
               Project Details
             </button>
           )}
