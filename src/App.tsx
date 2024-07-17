@@ -12,7 +12,7 @@ const App: FC = () => {
   const [isShown, setIsShown] = useState<boolean>(false);
   const [isDarkMode, setIsDarkMode] = useState<boolean>(true);
   const [modalProjectName, setModalProjectName] = useState<string>("");
-  const [projectSeparatorTitleClass] = useState<string>("mt-20 text-2xl underline");
+  const [projectSeparatorTitleClass] = useState<string>("mt-20 text-2xl underline dark:text-DarkNeutral-300");
 
   //From the central project description array separate array into project types so navbar links + sorting can be done without
   //manually editing each element.

@@ -57,7 +57,7 @@ interface SidebarSectionProps {
 const ProjectSidebarSection: React.FC<SidebarSectionProps> = (props) =>
 (
   <div className={`flex flex-col `}>
-    <h2 className={"mt-4 text-md " + (props.isDarkMode ? "text-Neutral-600" : "text-DarkNeutral-400 font-bold")}>
+    <h2 className={"mt-4 text-md " + (props.isDarkMode ? "text-DarkNeutral-300" : "text-DarkNeutral-400 font-bold")}>
       {props.sectionTitle}
     </h2>
     {props.projectNames.map((projectName, index) => {
