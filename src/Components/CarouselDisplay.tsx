@@ -40,15 +40,15 @@ const CarouselDisplay: React.FC<CarouselProps> = (props: CarouselProps) => {
         autoPlay={true}
         customTransition=""
         transitionDuration={500}
-        containerClass="carousel-container"
+        containerClass="carousel-container flex max-w-[500px] object-fit"
         removeArrowOnDeviceType={["tablet", "mobile"]}
-        dotListClass="custom-dot-list-style"
         itemClass="carousel-item-padding-40-px"
+        dotListClass="custom-dot-list-style"
         pauseOnHover
       >
         {props.imagesToDisplay.map((filepath: string, index: number) => {
           return (
-            <div className='max-h-[250px]'>
+            <div className=''>
               <img key={index + "Carousel" + props.imagesToDisplay[index]} src={filepath}></img>
             </div>
           );
