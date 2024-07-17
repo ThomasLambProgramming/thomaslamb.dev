@@ -36,17 +36,17 @@ const ProjectDescription: React.FC<{
     return (
       <div
         className={
-          "z-20 relative min-h-[300px] min-w-[400px] mt-4 rounded-md flex flex-col items-center lg:flex-row w-full shadow-md mb-6 " +
+          "z-20 relative min-h-[300px] min-w-[400px] mt-4 rounded-md flex lg:items-start flex-col items-center lg:flex-row w-full shadow-md mb-6 " +
           (isDarkMode ? "dark:bg-DarkNeutral-200 shadow-ShadowColorDark shadow-md" : "bg-DarkNeutral-1100 ")
         }
       >
         {/* Project Description + skills and etc. */}
         <div className="flex flex-col items-start pt-3 ml-6 w-full h-[90%] max-w-[499px]">
-          <div className="min-w-[90%] lg:w-[30%] w-[95%]">
+          <div className="min-w-[90%] lg:w-[30%] w-[95%] items-start">
             <h3
               className={
                 "text-2xl font-medium mb-4 " +
-                (isDarkMode ? "text-Neutral-400" : "text-DarkNeutral-200")
+                (isDarkMode ? "text-DarkTextColor1" : "text-DarkNeutral-200")
               }
             >
               {projectName}
@@ -90,7 +90,7 @@ const ProjectDescription: React.FC<{
               </div>
             </div>
 
-            <p className="text-Neutral-500 lg:text-start text-sm text-center dark:text-DarkNeutral-600 lg:mt-3 mb-2 mt-2">
+            <p className="text-CopyrightColor lg:text-start text-sm text-center dark:text-CopyrightColor lg:mt-3 mb-2 mt-2">
               {copyrightText}
             </p>
           </div>

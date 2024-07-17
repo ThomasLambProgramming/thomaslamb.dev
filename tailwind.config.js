@@ -50,7 +50,7 @@ export default {
         'Neutral-500A': "#091E427D",
         'DarkTextColor1': "#d5c4a1",
         'ShadowColorDark': "#665c54",
-        'ShadowColorWhite': "#d5c4a1",
+        'CopyrightColor': "#83a598",
       },
     },
 
