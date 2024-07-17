@@ -90,7 +90,7 @@ export const projects: ProjectDescriptionInformation[] = [
     projectDescriptions: ["Working for the IDGA Games expansion grant I came up with the idea for a puzzle game where you play as a fantasy dwarf with a hammer that turns into a scooter"],
     urlLinkTitles: ["https://github.com/ThomasLambProgramming/UnityTesting"],
     urlLinks: ["Github Source Repo"],
-    carouselImageNames: [""],
+    carouselImageNames: ["DwarfGame1.jpg"],
   },
 
   {
@@ -210,6 +210,6 @@ export const projects: ProjectDescriptionInformation[] = [
     projectDescriptions: ["This was a small 12 hour game jam that I created with a team that involved some particle effects and interesting design.",],
     urlLinkTitles: ["Github Source Repo"],
     urlLinks: ["https://github.com/ThomasLambProgramming/Isolator"],
-    carouselImageNames: ["IsolatorPreview.gif"],
+    carouselImageNames: ["IsolatorPreviewLarge.gif"],
   },
 ]
