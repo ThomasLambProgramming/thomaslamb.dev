@@ -96,7 +96,7 @@ const ProjectDescription: React.FC<{
           </div>
         </div>
         {/* Project image and details button */}
-        <div className="max-w-[50%] min-w-[50%] flex flex-col items-center justify-center">
+        <div className="max-w-[50%] min-w-[50%]">
           <div className="">
             <CarouselDisplay translateXAmount={268.8} imagesToDisplay={imageFiles} isDarkMode={isDarkMode}></CarouselDisplay>
           </div>
