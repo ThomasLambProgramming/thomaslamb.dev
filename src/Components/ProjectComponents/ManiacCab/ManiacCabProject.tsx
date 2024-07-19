@@ -3,29 +3,58 @@ import React from 'react';
 const ManiacCabProject: React.FC<{ darkModeEnabled: boolean }> = ({ darkModeEnabled }) => {
   return (
     <div className='flex flex-col justify-center'>
-      <p className={`mt-10 mb-10 text-3xl ${darkModeEnabled ? "text-white" : "text-black"}`}>
-        Maniac Cab
+      <p className={`mt-10 mb-10 text-5xl text-left ${darkModeEnabled ? "text-DarkNeutral-300" : "text-black"}`}>
+        Suspension Tech Demo
       </p>
 
-      <p className='mt-4 mb-4'>
-        I have recently started a project based on the crazy taxi genre where the player has to deliver as many passengers in a short amount of time, we wanted to work on this project because of its simplicity and that arcade games generally take a shorter amount of time to create.
+      <p className='mt-4 mb-4 max-w-4xl text-left'>
+        I saw an example online for a suspension based car in unity that seemed fairly straightforward to get working. For a while I wanted to work in unreal as at the time I had little experience in it. The following is examples of a suspension based vehicle with one rigidbody and 4 fake wheels.
       </p>
 
-      <p className='mt-10 mb-10 text-3xl'>
+
+
+      <p className='text-3xl mt-10 text-left text-DarkNeutral-300'>
         Raycast Suspension
       </p>
+      <div className='flex flex-row max-w-[95%] items-center my-4'>
+        <div className='text-left mr-20'>
+          <p className='text-xl'>
+            The car uses three separate forces to calculate a fake wheel.
+          </p>
+          <ul className='mt-4'>
+            <li className=' mb-2'>Spring Force: Raycasting down from the wheel position we take the ideal offset of a fake spring to calculate how much force upwards would a spring of a set strength apply if it was attached to the car. </li>
+            <li className=' mb-2'>Friction Force: Get the current velocity and project it into the right direction of the wheel, using this and a power curve we can apply a force in the opposite direction based on a dot product</li>
+            <li className=' mb-2'>Acceleration Force: Applying a force in the current forward direction of the wheel</li>
+          </ul>
+          <p>Finally using a small rotation on the front wheels the above forces are able to be used for steering as the acceleration and friction allow for turning motions while removing some velocity</p>
+        </div>
+        <div className='max-w-[70%] min-w-[40%]'>
+          <video autoPlay={true} muted loop src="/ProjectAssets/VehicleSuspension/CarSuspension.mp4"></video>
+        </div>
+      </div>
 
-      <img src="/ProjectAssets/VehicleSuspension/ManiacCabSuspension.gif"></img>
-
-      <p className='mt-4 mb-4'>
-        Initially we wanted to have a more reactive car while driving around, this initial raycast based suspension model for the car worked amazingly for the day it took to get an initial implementation completed. instead of attempting to simulate multiple wheels we are using four fake physics springs to act as the cars suspension and using the wheels as purely art.
+      <p className='text-3xl mt-10 text-left text-DarkNeutral-300'>
+        InAir Correction
       </p>
+      <div className='flex flex-row max-w-[95%] items-center my-4'>
+        <div>
+          <p className='text-left mr-20'>
+            While testing the car I noticed that there was alot of flipping and not landing quite right which would ruin the flow that the player would have. to solve this whenever the car was in the air for more than a set duration, the car raycasts 5 times outward taking the average normal hit that was around 70 degrees from the upwards direction.
+          </p>
+          <p className='text-left mr-20 mt-4'>
+            The result of this was the car would rotate slightly based on a speed so that the players landing was consistently smoother allowing for a larger retention of speed giving a much better gameplay loop.
+          </p>
+        </div>
+        <div className='max-w-[70%] min-w-[40%]'>
+          <video autoPlay={true} muted loop src="/ProjectAssets/VehicleSuspension/CarAirCorrection.mp4"></video>
+        </div>
+      </div>
 
-      <img src="/ProjectAssets/VehicleSuspension/ManiacCabSuspensionCube.gif"></img>
-
-      <p className='mt-4 mb-4'>
-        To speed up our iteration speed acceleration, torque and friction values are affected by power curve assets, this allows our designers to be able to tweak values and iterate the cars feel without needing to touch any code or blueprints. We also implementated a drift function for the car by changing the friction power curve asset when the handbrake input key is pressed.
-      </p>
+      <div className='flex items-center w-full'>
+        <div className=''>
+          <video autoPlay={true} muted loop src="/ProjectAssets/VehicleSuspension/SuspensionPreview.mp4"></video>
+        </div>
+      </div>
     </div>
   );
 }
