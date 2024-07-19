@@ -63,11 +63,11 @@ const ProjectSidebarSection: React.FC<SidebarSectionProps> = (props) =>
     {props.projectNames.map((projectName, index) => {
       if (index > 0) {
         return (
-          <a key={projectName + index + "ProjectSelectionSiderbar"} href={"#" + props.projectNames[index - 1]} className="text-sm hover:underline">{projectName}</a>
+          <a key={projectName + index + "ProjectSelectionSiderbar"} href={"#" + props.projectNames[index - 1]} className="text-sm ml-2 hover:underline">{projectName}</a>
         )
       }
       else
-        return <a key={projectName + index + "ProjectSelectionSiderbar"} href={props.firstLinkRef} className="text-sm hover:underline">{projectName}</a>
+        return <a key={projectName + index + "ProjectSelectionSiderbar"} href={props.firstLinkRef} className="text-sm ml-2 hover:underline">{projectName}</a>
     })}
   </div>
 )

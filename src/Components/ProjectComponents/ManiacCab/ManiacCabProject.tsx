@@ -3,7 +3,7 @@ import React from 'react';
 const ManiacCabProject: React.FC<{ darkModeEnabled: boolean }> = ({ darkModeEnabled }) => {
   return (
     <div className='flex flex-col justify-center'>
-      <p className={`mt-10 mb-10 text-5xl text-left ${darkModeEnabled ? "text-DarkNeutral-300" : "text-black"}`}>
+      <p className={`mt-10 mb-10 text-5xl text-left ${darkModeEnabled ? "text-DarkNeutral-300" : "text-DarkNeutral-300"}`}>
         Suspension Tech Demo
       </p>
 
