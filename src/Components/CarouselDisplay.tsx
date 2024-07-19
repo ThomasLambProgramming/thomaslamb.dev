@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 
@@ -26,6 +27,20 @@ interface CarouselProps {
 }
 
 const CarouselDisplay: React.FC<CarouselProps> = (props: CarouselProps) => {
+
+  let imgArray: string[] = [];
+  let vidArray: string[] = [];
+
+  props.imagesToDisplay.map((stringValue) => {
+    if (stringValue.includes(".mp4"))
+      vidArray.push(stringValue);
+    else
+      imgArray.push(stringValue);
+  })
+
+  const [imageArray] = useState(imgArray);
+  const [videoArray] = useState(vidArray);
+
   return (
     <div>
       <Carousel
@@ -44,10 +59,18 @@ const CarouselDisplay: React.FC<CarouselProps> = (props: CarouselProps) => {
         dotListClass="custom-dot-list-style"
         pauseOnHover
       >
-        {props.imagesToDisplay.map((filepath: string, index: number) => {
+
+        {videoArray.map((filepath: string, index: number) => {
           return (
             <div className=''>
-              <img key={index + "Carousel" + props.imagesToDisplay[index]} src={filepath}></img>
+              <video key={index + "Carousel" + videoArray[index]} muted autoPlay={true} loop src={filepath}></video>
+            </div>
+          );
+        })}
+        {imageArray.map((filepath: string, index: number) => {
+          return (
+            <div className=''>
+              <img key={index + "Carousel" + imageArray[index]} src={filepath}></img>
             </div>
           );
         })}

@@ -126,7 +126,7 @@ export const projects: ProjectDescriptionInformation[] = [
     projectDescriptions: ["Tech demo for simulating car suspension using 4 fake physics springs on one rigidbody",],
     urlLinkTitles: ["Github Source Repo"],
     urlLinks: ["https://github.com/ThomasLambProgramming/ManiacCab"],
-    carouselImageNames: ["ManiacCabPreviewLarge.gif"],
+    carouselImageNames: ["SuspensionPreview.mp4"],
   },
 
   {
