@@ -12,7 +12,7 @@ const App: FC = () => {
   const [isShown, setIsShown] = useState<boolean>(false);
   const [isDarkMode, setIsDarkMode] = useState<boolean>(true);
   const [modalProjectName, setModalProjectName] = useState<string>("");
-  const [projectSeparatorTitleClass] = useState<string>("mt-20 text-2xl dark:text-DarkNeutral-300");
+  const [projectSeparatorTitleClass] = useState<string>("mt-20 text-[27px] font-medium dark:text-DarkNeutral-300");
 
   //From the central project description array separate array into project types so navbar links + sorting can be done without
   //manually editing each element.
@@ -88,7 +88,7 @@ const App: FC = () => {
                 return (
                   <div id={projectInfo.projectName} key={projectInfo.projectName + "ProjectDescription"}>
                     {/* I am not happy using this method but it stops me from having multiple ProjectDescription component declares */}
-                    {index === 0 ? <h1 className={projectSeparatorTitleClass + " mt-[54px]"}>Professional Projects</h1> : <div></div>}
+                    {index === 0 ? <h1 className={projectSeparatorTitleClass + " mt-[50px]"}>Professional Projects</h1> : <div></div>}
                     {index === (professionalProjectNames.length) ? <h1 className={projectSeparatorTitleClass}>Active Projects</h1> : <div></div>}
                     {index === (professionalProjectNames.length + activeProjectNames.length) ? <h1 className={projectSeparatorTitleClass}>Previous Projects</h1> : <div></div>}
                     {index === (professionalProjectNames.length + activeProjectNames.length + previousProjectNames.length) ? <h1 className={projectSeparatorTitleClass}>Tech Demos</h1> : <div></div>}

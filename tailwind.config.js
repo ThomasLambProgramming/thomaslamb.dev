@@ -55,7 +55,7 @@ export default {
     },
 
     fontFamily: {
-      'sans': ['Hedvig Letters Sans']
+      'Fira Sans': ['sans-serif']
     },
   },
   plugins: [],

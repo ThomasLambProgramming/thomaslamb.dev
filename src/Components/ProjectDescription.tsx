@@ -90,7 +90,7 @@ const ProjectDescription: React.FC<{
               </div>
             </div>
 
-            <p className="text-CopyrightColor lg:text-start text-sm text-center dark:text-CopyrightColor lg:mt-3 mb-2 mt-2">
+            <p className="text-CopyrightColor lg:text-start text-sm italic text-center dark:text-CopyrightColor lg:mt-3 mb-2 mt-2">
               {copyrightText}
             </p>
           </div>

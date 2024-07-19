@@ -70,7 +70,7 @@ export const projects: ProjectDescriptionInformation[] = [
 
   {
     projectType: ProjectType.ProfessionalProject,
-    projectName: "Motogp Ignition",
+    projectName: "MotoGP Ignition",
     hasProjectModal: false,
     copyRightText: "An official product of the MotoGP™ logo and related marks are trade marks. All rights reserved. Copyright © 2023 ANIMOCA BRANDS LIMITED, ALL RIGHTS RESERVED. MotoGP™ Ignition © 2023 DORNA",
     technologyList: ["Unity", "C#"],
