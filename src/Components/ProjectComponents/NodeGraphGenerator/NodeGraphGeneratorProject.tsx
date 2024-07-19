@@ -4,7 +4,7 @@ import ProjectTopicPoint from '../ProjectTopicPoint';
 const NodeGraphGeneratorProject: React.FC<{ darkModeEnabled: boolean }> = ({ darkModeEnabled }) => {
   return (
     <div className='flex flex-col items-center space-y-20'>
-      <p className='mt-20 mb-20 text-6xl items-start bg-DarkNeutral-200 p-10'>
+      <p className='mt-20 mb-20 text-6xl items-start dark:bg-DarkNeutral-100 bg-DarkNeutral-700 p-10'>
         Node Graph Generator
       </p>
 
@@ -29,7 +29,7 @@ const NodeGraphGeneratorProject: React.FC<{ darkModeEnabled: boolean }> = ({ dar
       ></ProjectTopicPoint>
 
 
-      <div className='flex flex-col w-[70%] bg-DarkNeutral-200 p-10'>
+      <div className='flex flex-col w-[70%] dark:bg-DarkNeutral-100 bg-DarkNeutral-700 p-10'>
         <p className='mt-4 mb-4'>
           To increase performance the job system was used to add multithreading to the vertex processing. After this whole process is done, the array is also loaded into a NodeGraphContainer scriptable object to be saved so the generation process only needs to occur once.
         </p>
