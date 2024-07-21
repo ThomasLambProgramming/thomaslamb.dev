@@ -1,5 +1,4 @@
 import React from 'react';
-import ProjectTopicPoint from '../ProjectTopicPoint';
 
 const InfiniteHallwayProject: React.FC<{ darkModeEnabled: boolean }> = ({ darkModeEnabled }) => {
   return (

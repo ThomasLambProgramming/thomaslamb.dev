@@ -1,35 +1,49 @@
 import React from 'react';
-import ProjectTopicPoint from '../ProjectTopicPoint';
 
 const BezierProject: React.FC<{ darkModeEnabled: boolean }> = ({ darkModeEnabled }) => {
   return (
-    <div className='flex flex-col items-center space-y-10'>
-      <p className='mt-10 mb-10 text-3xl'>
+
+    <div className='flex flex-col justify-center'>
+      <p className={`mt-10 mb-10 text-5xl text-left ${darkModeEnabled ? "text-DarkNeutral-300" : "text-DarkNeutral-300"}`}>
         Bezier Curves
       </p>
-      <video className='max-w-[700px] w-[90%] h-full min-h-full' key={"Carousel"} muted autoPlay={true} loop src={"/ProjectAssets/BezierCurves/Bezier1.mp4"}></video>
+      <div className='flex flex-row max-w-[95%] items-center my-4'>
+        <div className='max-w-[45%]'>
+          <p className='text-left mr-20'>
+            I have been interested in learning how to make smoother movement and animations with code and have started learning bezier curves and splines.
+          </p>
+        </div>
+      </div>
 
-      <ProjectTopicPoint isDarkMode={darkModeEnabled}
-        projectPointTexts={["I have been interested in learning how to make smoother movement and animations with code and have started learning bezier curves and splines."]}
-        projectImgSrc=' '
-      />
+      <div className='w-full flex justify-left mt-4'>
+        <video className='max-w-[48%] mr-4' key={"Carousel"} muted autoPlay={true} loop src={"/ProjectAssets/BezierCurves/Spline1.mp4"}></video>
+        <video className='max-w-[48%]' autoPlay={true} muted loop src="/ProjectAssets/BezierCurves/Bezier1.mp4"></video>
+      </div>
 
-      <video className='max-w-[700px] w-[90%] h-full min-h-full' key={"Carousel"} muted autoPlay={true} loop src={"/ProjectAssets/BezierCurves/Spline1.mp4"}></video>
+      <div className='flex flex-row max-w-[95%] items-center my-4'>
+        <div className='max-w-[40%]'>
+          <p className='text-left mr-20'>
+            I started with making simple bezier curves using Unity's Vector3.lerp function. I made a simple cubic and quadratic curve and found a tutorial with equations that combined the multiple lerps to make it more efficent. With these equations I learned that the derivatives could be used to find movement direction and acceleration (shown with the direction marked green above). I later followed some resources I found online to create the above spline editor.
+          </p>
+        </div>
+        <div className='max-w-[70%] min-w-[40%]'>
+          <img src='/ProjectAssets/BezierCurves/Bezier1.png' />
+        </div>
+      </div>
 
-      <ProjectTopicPoint isDarkMode={darkModeEnabled}
-        projectPointTexts={["I started with making simple bezier curves using Unity's Vector3.lerp function. I made a simple cubic and quadratic curve and found a tutorial with equations that combined the multiple lerps to make it more efficent. With these equations I learned that the derivatives could be used to find movement direction and acceleration (shown with the direction marked green above). I later followed some resources I found online to create the above spline editor."]}
-        projectImgSrc='/ProjectAssets/BezierCurves/Bezier1.png'
-      />
-      <p className='mt-4 mb-4'>
+      <div className='flex flex-row max-w-[95%] items-center my-4'>
+        <div className='max-w-[30%]'>
+          <p className='text-left mr-20'>
+            This tutorial showed me the great usage of unity editor functions and tools, alongside how they can be made to increase working speeds and clarity of code. The above image shows some of the code that I made to place unity handles for each spline point.          </p>
+        </div>
+        <div className='max-w-[70%] min-w-[40%]'>
+          <img src='/ProjectAssets/BezierCurves/Bezier4.png' />
+        </div>
+      </div>
 
-      </p>
-
-      <ProjectTopicPoint isDarkMode={darkModeEnabled}
-        projectPointTexts={["This tutorial showed me the great usage of unity editor functions and tools, alongside how they can be made to increase working speeds and clarity of code. The above image shows some of the code that I made to place unity handles for each spline point."]}
-        projectImgSrc='/ProjectAssets/BezierCurves/Bezier4.png'
-      />
-
-      <video className='max-w-[700px] w-[90%] h-full min-h-full' key={"Carousel"} muted autoPlay={true} loop src={"/ProjectAssets/BezierCurves/Baseball.mp4"}></video>
+      <div className='w-full flex justify-center mt-4'>
+        <video className='max-w-[700px] w-[90%] h-full min-h-full' key={"Carousel"} muted autoPlay={true} loop src={"/ProjectAssets/BezierCurves/Baseball.mp4"}></video>
+      </div>
     </div>
   );
 }

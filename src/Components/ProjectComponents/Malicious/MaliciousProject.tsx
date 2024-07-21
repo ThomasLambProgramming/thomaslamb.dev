@@ -3,9 +3,6 @@ import React from 'react';
 const MaliciousProject: React.FC<{ darkModeEnabled: boolean }> = ({ darkModeEnabled }) => {
   return (
     <div className='flex flex-col justify-center'>
-
-
-
       <p className={`mt-10 mb-10 text-5xl text-left ${darkModeEnabled ? "text-DarkNeutral-300" : "text-DarkNeutral-300"}`}>
         Malicious
       </p>
@@ -24,8 +21,6 @@ const MaliciousProject: React.FC<{ darkModeEnabled: boolean }> = ({ darkModeEnab
 
 
 
-
-
       <div className='flex flex-row max-w-[95%] items-center my-4'>
         <p className='text-left mr-20'>
           This game brought alot of challenges and I learned alot about developing as a team.
@@ -34,8 +29,6 @@ const MaliciousProject: React.FC<{ darkModeEnabled: boolean }> = ({ darkModeEnab
           <img src="/ProjectAssets/Malicious/RoomDisplay.jpg"></img>
         </div>
       </div>
-
-
 
 
 
@@ -135,6 +128,8 @@ const MaliciousProject: React.FC<{ darkModeEnabled: boolean }> = ({ darkModeEnab
           <video autoPlay={true} muted loop src="/ProjectAssets/Malicious/Malicious4.mp4"></video>
         </div>
       </div>
+
+
 
       <div className='max-w-[50%] text-left mt-4'>
         <p className='mb-4'>
