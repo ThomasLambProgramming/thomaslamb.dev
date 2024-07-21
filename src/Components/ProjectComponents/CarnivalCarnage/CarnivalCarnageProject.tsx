@@ -10,7 +10,7 @@ const CarnivalCarnageProject: React.FC<{ darkModeEnabled: boolean }> = ({ darkMo
 
       <ProjectTopicPoint isDarkMode={darkModeEnabled}
         projectPointTexts={["During my advanced diploma of games development, we were placed into a team of three designers, three programmers, and three artists that would act as though they were contracted to only produce the assets to a given brief. ", "DISCLAIMER: The game is fully functional but I did not take any screen captures while using the headset and I do not own a Oculus headset, this game was developed on site at AIE"]}
-        projectImgSrc='/ProjectAssets/CarnivalCarnage/CarnivalCarnage.gif'
+        projectImgSrc='/ProjectAssets/CarnivalCarnage/CarnivalCarnage.mp4'
       />
 
       <ProjectTopicPoint isDarkMode={darkModeEnabled}

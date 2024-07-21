@@ -7,14 +7,14 @@ const BezierProject: React.FC<{ darkModeEnabled: boolean }> = ({ darkModeEnabled
       <p className='mt-10 mb-10 text-3xl'>
         Bezier Curves
       </p>
-      <img src="/ProjectAssets/BezierCurves/NothingToCurve3.gif"></img>
+      <video className='max-w-[700px] w-[90%] h-full min-h-full' key={"Carousel"} muted autoPlay={true} loop src={"/ProjectAssets/BezierCurves/Bezier1.mp4"}></video>
 
       <ProjectTopicPoint isDarkMode={darkModeEnabled}
         projectPointTexts={["I have been interested in learning how to make smoother movement and animations with code and have started learning bezier curves and splines."]}
         projectImgSrc=' '
       />
 
-      <img src="/ProjectAssets/BezierCurves/Spline1.gif"></img>
+      <video className='max-w-[700px] w-[90%] h-full min-h-full' key={"Carousel"} muted autoPlay={true} loop src={"/ProjectAssets/BezierCurves/Spline1.mp4"}></video>
 
       <ProjectTopicPoint isDarkMode={darkModeEnabled}
         projectPointTexts={["I started with making simple bezier curves using Unity's Vector3.lerp function. I made a simple cubic and quadratic curve and found a tutorial with equations that combined the multiple lerps to make it more efficent. With these equations I learned that the derivatives could be used to find movement direction and acceleration (shown with the direction marked green above). I later followed some resources I found online to create the above spline editor."]}
@@ -29,7 +29,7 @@ const BezierProject: React.FC<{ darkModeEnabled: boolean }> = ({ darkModeEnabled
         projectImgSrc='/ProjectAssets/BezierCurves/Bezier4.png'
       />
 
-      <img src="/ProjectAssets/BezierCurves/Baseball.gif"></img>
+      <video className='max-w-[700px] w-[90%] h-full min-h-full' key={"Carousel"} muted autoPlay={true} loop src={"/ProjectAssets/BezierCurves/Baseball.mp4"}></video>
     </div>
   );
 }

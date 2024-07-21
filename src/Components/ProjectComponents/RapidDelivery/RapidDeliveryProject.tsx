@@ -11,7 +11,7 @@ const RapidDeliveryProject: React.FC<{ darkModeEnabled: boolean }> = ({ darkMode
 
       <ProjectTopicPoint isDarkMode={darkModeEnabled}
         projectPointTexts={["As part of my diploma of games development, I was put into a small team of six developers over six weeks.", "We created an endless runner game where the player must maneuver their car around obstacles while delivering tea to customers from their cannon on the top of the car. "]}
-        projectImgSrc='/ProjectAssets/RapidDelivery/RapidDeliveryGameplay.gif'
+        projectImgSrc='/ProjectAssets/RapidDelivery/RapidDeliveryGameplay.mp4'
       />
 
       <p className='mt-10 mb-10 text-3xl'>
@@ -20,7 +20,7 @@ const RapidDeliveryProject: React.FC<{ darkModeEnabled: boolean }> = ({ darkMode
       <ProjectTopicPoint
         isDarkMode={darkModeEnabled}
         projectPointTexts={['The road object is split into ten meter chunks that are instantiated at set intervals.', 'This road object covers all three lanes and is not separated. For the spawning of obstacles, we have six different prefabs that are instantiated into the game beyond what the player can see and are deleted when they collide with a trigger box behind the player.', 'Npc customers will spawn along the sidewalk at random intervals; when the player is in range the cannon will aim at the closest customer allowing the player to shoot tea at them.']}
-        projectImgSrc='/ProjectAssets/RapidDelivery/RapidDeliverySceneView.gif'
+        projectImgSrc='/ProjectAssets/RapidDelivery/RapidDeliverySceneView.mp4'
       />
 
       <p className='mt-10 mb-10 text-3xl'>
@@ -32,7 +32,7 @@ const RapidDeliveryProject: React.FC<{ darkModeEnabled: boolean }> = ({ darkMode
         projectImgSrc='/ProjectAssets/RapidDelivery/TemplatedEnvironment.png'
       />
 
-      <img src="/ProjectAssets/RapidDelivery/FirstYearMajorTwo.gif" className='mt-14'></img>
+      <video className='max-w-[800px] mt-20 w-[90%] h-full min-h-full' key={"Carousel"} muted autoPlay={true} loop src={"/ProjectAssets/RapidDelivery/FirstYearMajorTwo.mp4"}></video>
     </div >
   );
 }

@@ -8,10 +8,10 @@ const InfiniteHallwayProject: React.FC<{ darkModeEnabled: boolean }> = ({ darkMo
         Infinite Hallway
       </p>
 
-      <img src="/ProjectAssets/InfiniteHallway/InfiniteHallwayPreview.gif" className='max-w-[80%] w-[50%]' />
+      <video key={"Carousel"} muted autoPlay={true} loop src={"/ProjectAssets/InfiniteHallway/InfiniteHallwayLarge.mp4"}></video>
       <ProjectTopicPoint isDarkMode={darkModeEnabled}
         projectPointTexts={["Our gdml (aie third year) team decided to do a mind bending horror/thriller game.", "Our two designers really wanted the player to be on edge and the best way we found to do that was changing the environment constantly whenever the player would look away"]}
-        projectImgSrc='/ProjectAssets/InfiniteHallway/InfiniteHallwayUnitySceneGif.gif'
+        projectImgSrc='/ProjectAssets/InfiniteHallway/InfiniteHallwayUnityScene.mp4'
       />
       <ProjectTopicPoint isDarkMode={darkModeEnabled}
         projectPointTexts={["I created a small script that allowed the designers to assign unity events whenever the player would enter a collider and was looking in an angle range of a direction."]}

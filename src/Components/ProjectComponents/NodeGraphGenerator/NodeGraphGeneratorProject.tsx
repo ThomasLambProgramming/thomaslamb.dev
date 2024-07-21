@@ -10,7 +10,7 @@ const NodeGraphGeneratorProject: React.FC<{ darkModeEnabled: boolean }> = ({ dar
 
       <ProjectTopicPoint isDarkMode={darkModeEnabled}
         projectPointTexts={["For my complex games systems assessment, I wanted to work with AI, but found unity's AI system hard to operate with custom locomotion.", "I then decided to create a simple to use node graph generator. This generator would take an object as an environment and use it to create a node graph on top of it."]}
-        projectImgSrc='/ProjectAssets/NodeGraphGenerator/ComplexExample.gif'
+        projectImgSrc='/ProjectAssets/NodeGraphGenerator/ComplexExample.mp4'
       ></ProjectTopicPoint>
 
       <img src="/ProjectAssets/NodeGraphGenerator/ComplexOne.png"></img>
@@ -25,7 +25,7 @@ const NodeGraphGeneratorProject: React.FC<{ darkModeEnabled: boolean }> = ({ dar
       <ProjectTopicPoint
         isDarkMode={darkModeEnabled}
         projectPointTexts={["To make it simple to use I made the system require a single object", "this could be an empty child that has multiple hundreds of objects; the reasoning for this was so all objects are accounted for under the one environment object, so all objects with a mesh are processed without individually referencing them."]}
-        projectImgSrc='/ProjectAssets/NodeGraphGenerator/ComplexAssessment.gif'
+        projectImgSrc='/ProjectAssets/NodeGraphGenerator/ComplexAssessment.mp4'
       ></ProjectTopicPoint>
 
 

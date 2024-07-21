@@ -35,7 +35,7 @@ export const projects: ProjectDescriptionInformation[] = [
         "https://www.xbox.com/en-US/games/store/vlad-circus-descend-into-madness/9ns2rvcmxh60",
         "https://store.playstation.com/en-us/product/UP5552-CUSA30287_00-9071855390281250"
       ],
-    carouselImageNames: ["Vlad1.gif", "Vlad2.gif", "Vlad3.gif", "Vlad4.jpg", "Vlad5.jpg", "Vlad6.jpg"],
+    carouselImageNames: ["Vlad1.mp4", "Vlad2.mp4", "Vlad3.mp4", "Vlad4.jpg", "Vlad5.jpg", "Vlad6.jpg"],
   },
 
   {
@@ -102,7 +102,7 @@ export const projects: ProjectDescriptionInformation[] = [
     projectDescriptions: ["I am currently reworking a previous opengl rendering project to test out shader effects and learn more about graphics programming.",],
     urlLinkTitles: ["Github Source Repo"],
     urlLinks: ["https://github.com/ThomasLambProgramming/GraphicsAIE"],
-    carouselImageNames: ["OpenglRendererPreview.gif"],
+    carouselImageNames: ["OpenGlRendererPreview.mp4"],
   },
 
   {
@@ -114,7 +114,7 @@ export const projects: ProjectDescriptionInformation[] = [
     projectDescriptions: ["To learn more about graphics programming and shaders I have been working on a DirectX Renderer with dear Imgui.",],
     urlLinkTitles: ["Github Source Repo"],
     urlLinks: ["https://github.com/ThomasLambProgramming/DirectXRenderer"],
-    carouselImageNames: ["DirectX1.gif"],
+    carouselImageNames: ["DirectX1.mp4"],
   },
 
   {
@@ -138,7 +138,7 @@ export const projects: ProjectDescriptionInformation[] = [
     projectDescriptions: ["As part of our GDML course we made a small horror/thriller project, It used look direction dot products to change the room as the player progressed."],
     urlLinkTitles: ["Github Source Repo"],
     urlLinks: ["https://github.com/ThomasLambProgramming/LiminalSleep"],
-    carouselImageNames: ["InfiniteHallwayPreviewLarge.gif"],
+    carouselImageNames: ["InfiniteHallwayLarge.mp4"],
   },
 
   {
@@ -150,7 +150,7 @@ export const projects: ProjectDescriptionInformation[] = [
     projectDescriptions: ["Small Bezier curve example to learn unity handles + other tooling and how bezier curves work for future projects",],
     urlLinkTitles: ["Github Source Repo"],
     urlLinks: ["https://github.com/ThomasLambProgramming/UnityTesting"],
-    carouselImageNames: ["Bezier1.gif", "Bezier2.gif"],
+    carouselImageNames: ["Bezier1.mp4", "Bezier2.mp4"],
   },
 
   {
@@ -162,7 +162,7 @@ export const projects: ProjectDescriptionInformation[] = [
     projectDescriptions: ["Node graph generator that takes in a environment and creates a navigation mesh based off all meshes contained in the environment.",],
     urlLinkTitles: ["Github Source Repo"],
     urlLinks: ["https://github.com/ThomasLambProgramming/NodeGraph"],
-    carouselImageNames: ["ComplexAssessment.gif", "ComplexFiltering.png", "ComplexExample.gif"],
+    carouselImageNames: ["ComplexAssessment.mp4", "ComplexFiltering.png", "ComplexExample.mp4"],
   },
 
   {
@@ -174,7 +174,7 @@ export const projects: ProjectDescriptionInformation[] = [
     projectDescriptions: ["For my 2nd year major project at AIE I worked with a team of 6 other people to produce this robot puzzle platformer.",],
     urlLinkTitles: ["Github Source Repo"],
     urlLinks: ["https://github.com/ThomasLambProgramming/MaliciousVisionQuest"],
-    carouselImageNames: ["MaliciousTitle.png", "Malicious4.gif", "Malicious3.gif", "RoomDisplay.jpg"],
+    carouselImageNames: ["MaliciousTitle.png", "Malicious4.mp4", "Malicious3.mp4", "RoomDisplay.jpg"],
   },
 
   {
@@ -186,7 +186,7 @@ export const projects: ProjectDescriptionInformation[] = [
     projectDescriptions: ["For my first major project at AIE we created an endless runner where the player must avoid obstacles and fire tea from a cannon to customers."],
     urlLinkTitles: ["Github Source Repo"],
     urlLinks: ["https://github.com/ThomasLambProgramming/RapidDelivery"],
-    carouselImageNames: ["RapidDeliveryPreviewLarge.gif", "TemplatedEnvironment.png", "RapidDeliverySceneView.gif"],
+    carouselImageNames: ["RapidDeliveryPreviewLarge.mp4", "TemplatedEnvironment.png", "RapidDeliverySceneView.mp4"],
   },
 
   {
@@ -198,7 +198,7 @@ export const projects: ProjectDescriptionInformation[] = [
     projectDescriptions: ["I worked with a team of 9 in a small time frame to create this VR arcade game where you smash clown heads with a hammer that can be thrown and recalled like thors hammer."],
     urlLinkTitles: ["Github Source Repo"],
     urlLinks: ["https://github.com/ThomasLambProgramming/Carnival-Carnage"],
-    carouselImageNames: ["Carnival1.gif"],
+    carouselImageNames: ["CarnivalCarnage.mp4"],
   },
 
   {
@@ -210,6 +210,6 @@ export const projects: ProjectDescriptionInformation[] = [
     projectDescriptions: ["This was a small 12 hour game jam that I created with a team that involved some particle effects and interesting design.",],
     urlLinkTitles: ["Github Source Repo"],
     urlLinks: ["https://github.com/ThomasLambProgramming/Isolator"],
-    carouselImageNames: ["IsolatorPreviewLarge.gif"],
+    carouselImageNames: ["IsolatorPreview.mp4"],
   },
 ]

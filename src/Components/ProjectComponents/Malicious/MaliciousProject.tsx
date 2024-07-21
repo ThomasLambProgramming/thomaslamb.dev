@@ -24,7 +24,7 @@ const MaliciousProject: React.FC<{ darkModeEnabled: boolean }> = ({ darkModeEnab
 
       <ProjectTopicPoint isDarkMode={darkModeEnabled}
         projectPointTexts={["One of the biggest challenges that this project brought was the hacking mechanic. ", "This mechanic was challenging for me as it required me to learn how to develop more modular and reusable code as this hacking mechanic had to work alongside the enemy, blocks, drone, spring and wire mechanics.", "I solved this issue by making a base class of hackable that was then inherited by all the mechanics that needed it. allowing the player to enter and exit without affecting any of the code for that specific mechanic itself."]}
-        projectImgSrc='/ProjectAssets/Malicious/Malicious1.gif'
+        projectImgSrc='/ProjectAssets/Malicious/Malicious1.mp4'
       />
 
       <p className='mt-10 mb-10 text-3xl'>
@@ -33,7 +33,7 @@ const MaliciousProject: React.FC<{ darkModeEnabled: boolean }> = ({ darkModeEnab
 
       <ProjectTopicPoint isDarkMode={darkModeEnabled}
         projectPointTexts={["To add verticality to the platforming without directly allowing the player to jump up all the blocks, the designers came up with the wire mechanic.", "This mechanic allows the player to enter into a wire and use the wasd, space and ctrl keys to place wires and move along them.", "The wire does raycasts to check if a wire can be placed and is checked against a layer mask to give the designers more options. The player also has a limit on the amount of moves they can do. At any time the player can launch themselves out of the wire in the direction they are facing."]}
-        projectImgSrc='/ProjectAssets/Malicious/Malicious2.gif'
+        projectImgSrc='/ProjectAssets/Malicious/Malicious2.mp4'
       />
 
       <p className='mt-10 mb-10 text-3xl'>
@@ -47,7 +47,7 @@ const MaliciousProject: React.FC<{ darkModeEnabled: boolean }> = ({ darkModeEnab
 
       <ProjectTopicPoint isDarkMode={darkModeEnabled}
         projectPointTexts={["I learned a lot from this experience as it taught me how to communicate with less technically knowledgeable team members.", "The need for tooling and variable limit setting, good descriptions (in Unity's case tooltips) and most importantly.", "Knowing when something actually adds to the game rather than wasting time adding extra features that will not be noticed by the general player base and spending time refining what will be noticed."]}
-        projectImgSrc='/ProjectAssets/Malicious/Malicious3.gif'
+        projectImgSrc='/ProjectAssets/Malicious/Malicious3.mp4'
       />
 
       <p className='mt-10 mb-10 text-3xl'>
@@ -55,10 +55,8 @@ const MaliciousProject: React.FC<{ darkModeEnabled: boolean }> = ({ darkModeEnab
       </p>
       <ProjectTopicPoint isDarkMode={darkModeEnabled}
         projectPointTexts={["This ground enemy shown below just had simple seek behaviors with a limited turning speed. It acts as one of the main dangers to the player."]}
-        projectImgSrc=' '
+        projectImgSrc='/ProjectAssets/Malicious/Malicious4.mp4'
       />
-
-      <img src="/ProjectAssets/Malicious/Malicious4.gif"></img>
 
       <ProjectTopicPoint isDarkMode={darkModeEnabled}
         projectPointTexts={["Our final game was fully playable with a full sprint schedule of alpha, beta, and gold. Our end result had very few bugs and none of them were game breaking."]}

@@ -19,9 +19,12 @@ const ProjectTopicPoint: React.FC<{ isDarkMode: boolean, projectPointTexts: stri
           <p className='mt-4 mb-4 w-[90%] mr-8 ml-4'>{stringValue}</p>
         ))}
       </div>
-      <img src={projectImgSrc} className='max-w-[700px] w-[90%] h-full min-h-full'>
-      </img>
-    </div>
+
+      {projectImgSrc.endsWith(".mp4") ?
+        <video className='max-w-[700px] w-[90%] h-full min-h-full' key={"Carousel"} muted autoPlay={true} loop src={projectImgSrc}></video> :
+        <img src={projectImgSrc} className='max-w-[700px] w-[90%] h-full min-h-full' />
+      }
+    </div >
   );
 }
 
