@@ -6,12 +6,12 @@ const CarnivalCarnageProject: React.FC<{ darkModeEnabled: boolean }> = ({ darkMo
       <p className={`mt-10 mb-10 text-5xl text-left ${darkModeEnabled ? "text-DarkNeutral-300" : "text-DarkNeutral-300"}`}>
         Carnival Carnage
       </p>
-      <div className='flex flex-row max-w-[95%] items-center my-4'>
+      <div className='flex flex-col md:flex-row max-w-[95%] items-center my-4'>
         <div className='text-left max-w-[55%] mr-5 '>
-          <p className='mr-20'>
+          <p className=''>
             During my advanced diploma of games development, we were placed into a team of three designers, three programmers, and three artists that would act as though they were contracted to only produce the assets to a given brief.
           </p>
-          <p className='mr-20 mt-4'>
+          <p className='mt-4'>
             DISCLAIMER: The game is fully functional but I did not take any screen captures while using the headset and I do not own a Oculus headset, this game was developed on site at AIE
           </p>
           <p className='mt-4'>Carnival Carnage is a vr arcade game in which the player must smash clown heads within a time limit with a hammer that can return to them.</p>
@@ -28,7 +28,7 @@ const CarnivalCarnageProject: React.FC<{ darkModeEnabled: boolean }> = ({ darkMo
           <p className='mt-4'>This gave me a lot of learning opportunities as we had to really design the game and mechanics to accommodate the lack of changes that could be made to the art.</p>
         </div>
 
-        <div className='max-w-[70%] min-w-[40%]'>
+        <div className='max-w-[70%] min-w-[40%] mt-10 md:mt-10'>
           <video autoPlay={true} muted loop src="/ProjectAssets/CarnivalCarnage/CarnivalCarnage.mp4"></video>
         </div>
       </div>

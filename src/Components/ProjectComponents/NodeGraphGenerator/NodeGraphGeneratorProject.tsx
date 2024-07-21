@@ -6,12 +6,12 @@ const NodeGraphGeneratorProject: React.FC<{ darkModeEnabled: boolean }> = ({ dar
       <p className={`mt-10 mb-10 text-5xl text-left ${darkModeEnabled ? "text-DarkNeutral-300" : "text-DarkNeutral-300"}`}>
         Node Graph Generator
       </p>
-      <div className='flex flex-col md:flex-row  max-w-[95%] items-center my-4'>
-        <div className='max-w-[45%]'>
-          <p className='text-left mr-20'>
+      <div className='flex flex-col md:flex-row max-w-[95%] items-center my-4'>
+        <div className='md:max-w-[45%]'>
+          <p className='text-left md:mr-20'>
             For my complex games systems assessment, I wanted to work with AI, but found unity's AI system hard to operate with custom locomotion.
           </p>
-          <p className='text-left mr-20 mt-4'>
+          <p className='text-left md:mr-20 mt-4 mb-8'>
             I then decided to create a simple to use node graph generator. This generator would take an object as an environment and use it to create a node graph on top of it.
           </p>
         </div>
@@ -26,14 +26,14 @@ const NodeGraphGeneratorProject: React.FC<{ darkModeEnabled: boolean }> = ({ dar
       </div>
 
       <div className='flex flex-col md:flex-row  max-w-[95%] items-center my-4'>
-        <div className='max-w-[45%]'>
-          <p className='text-left mr-20 mt-10'>
+        <div className='md:max-w-[45%]'>
+          <p className='text-left md:mr-20 mt-10'>
             One of the first problems that I ran into with this system was filtering out the vertices of objects that were not needed.
           </p>
-          <p className='text-left mr-20 mt-4'>
+          <p className='text-left md:mr-20 mt-4'>
             The solution to this was a dot product check against that object's other vertices to make sure that they were not underneath another vertex within a set distance.
           </p>
-          <p className='text-left mr-20 mt-4'>
+          <p className='text-left md:mr-20 mt-4 mb-8'>
             If they were then they are ignored. After this is done on all objects in the environment they are then collected into a single list container where they are filtered by distance, and heights to remove overlaps, placed into a node class and given connections then all the node objects are then collected into a single array to be used as a node graph.
           </p>
         </div>
@@ -45,12 +45,12 @@ const NodeGraphGeneratorProject: React.FC<{ darkModeEnabled: boolean }> = ({ dar
 
 
       <div className='flex flex-col md:flex-row max-w-[95%] items-center my-4'>
-        <div className='max-w-[45%]'>
-          <p className='text-left mr-20'>
+        <div className='md:max-w-[45%]'>
+          <p className='text-left md:mr-20'>
             To make it simple to use I made the system require a single object.
           </p>
-          <p className='text-left mr-20 mt-4'>
-            this could be an empty child that has multiple hundreds of objects; the reasoning for this was so all objects are accounted for under the one environment object, so all objects with a mesh are processed without individually referencing them.
+          <p className='text-left md:mr-20 mt-4 mb-8'>
+            This could be an empty child that has multiple hundreds of objects; the reasoning for this was so all objects are accounted for under the one environment object, so all objects with a mesh are processed without individually referencing them.
           </p>
         </div>
 
@@ -60,7 +60,7 @@ const NodeGraphGeneratorProject: React.FC<{ darkModeEnabled: boolean }> = ({ dar
       </div>
 
       <div className='w-full flex justify-center'>
-        <div className='flex flex-col items-center text-left max-w-[70%] my-4'>
+        <div className='flex flex-col items-center text-left md:max-w-[70%] my-4'>
           <p className='mt-4 mb-4'>
             To increase performance the job system was used to add multithreading to the vertex processing. After this whole process is done, the array is also loaded into a NodeGraphContainer scriptable object to be saved so the generation process only needs to occur once.
           </p>
