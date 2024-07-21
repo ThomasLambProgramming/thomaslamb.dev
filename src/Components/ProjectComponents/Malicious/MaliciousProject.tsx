@@ -67,7 +67,7 @@ const MaliciousProject: React.FC<{ darkModeEnabled: boolean }> = ({ darkModeEnab
           <p className='text-left md:mr-20 mt-4'>
             This mechanic allows the player to enter into a wire and use the wasd, space and ctrl keys to place wires and move along them.
           </p>
-          <p className='text-left md:mr-20 m-4 mb-4'>
+          <p className='text-left md:mr-20 m-4 mb-4 ml-0'>
             The wire does raycasts to check if a wire can be placed and is checked against a layer mask to give the designers more options. The player also has a limit on the amount of moves they can do. At any time the player can launch themselves out of the wire in the direction they are facing.
           </p>
         </div>
