@@ -8,7 +8,7 @@ const RapidDeliveryProject: React.FC<{ darkModeEnabled: boolean }> = ({ darkMode
         Rapid Delivery
       </p>
       <div className='flex flex-row max-w-[95%] items-center my-4'>
-        <div>
+        <div className='max-w-[50%]'>
           <p className='text-left mr-20'>
             As part of my diploma of games development, I was put into a small team of six developers over six weeks.
           </p>
@@ -25,7 +25,7 @@ const RapidDeliveryProject: React.FC<{ darkModeEnabled: boolean }> = ({ darkMode
         Road Generation and Obstacles
       </p>
       <div className='flex flex-row max-w-[95%] items-center my-4'>
-        <div>
+        <div className='max-w-[50%]'>
           <p className='text-left mr-20'>
             The road object is split into ten meter chunks that are instantiated at set intervals.
           </p>
@@ -45,7 +45,7 @@ const RapidDeliveryProject: React.FC<{ darkModeEnabled: boolean }> = ({ darkMode
         Tileset Environment
       </p>
       <div className='flex flex-row max-w-[95%] items-center my-4'>
-        <div>
+        <div className='max-w-[50%]'>
           <p className='text-left mr-20'>
             Due to our limited time of six weeks and the fact that we only had two artists, we made all of our environment tiled.
           </p>
