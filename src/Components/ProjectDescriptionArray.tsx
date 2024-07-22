@@ -114,7 +114,7 @@ export const projects: ProjectDescriptionInformation[] = [
     projectDescriptions: ["To learn more about graphics programming and shaders I have been working on a DirectX Renderer with dear Imgui.",],
     urlLinkTitles: ["Github Source Repo"],
     urlLinks: ["https://github.com/ThomasLambProgramming/DirectXRenderer"],
-    carouselImageNames: ["DirectX1.mp4"],
+    carouselImageNames: ["DirectX1.mp4", "SpecularLighting.mp4", "Dx11FlybyExample.mp4", "LightmapExample.jpg"],
   },
 
   {
