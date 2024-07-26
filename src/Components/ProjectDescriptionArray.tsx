@@ -102,7 +102,7 @@ export const projects: ProjectDescriptionInformation[] = [
     projectDescriptions: ["I am currently reworking a previous opengl rendering project to test out shader effects and learn more about graphics programming.",],
     urlLinkTitles: ["Github Source Repo"],
     urlLinks: ["https://github.com/ThomasLambProgramming/GraphicsAIE"],
-    carouselImageNames: ["OpenGlRendererPreview.mp4"],
+    carouselImageNames: ["OpenGlRendererPreview.mp4", "SpearLighting.mp4", "ParticleSystem.mp4"],
   },
 
   {
@@ -114,7 +114,7 @@ export const projects: ProjectDescriptionInformation[] = [
     projectDescriptions: ["To learn more about graphics programming and shaders I have been working on a DirectX Renderer with dear Imgui.",],
     urlLinkTitles: ["Github Source Repo"],
     urlLinks: ["https://github.com/ThomasLambProgramming/DirectXRenderer"],
-    carouselImageNames: ["DirectX1.mp4", "SpecularLighting.mp4", "Dx11FlybyExample.mp4", "LightmapExample.jpg"],
+    carouselImageNames: ["DirectX1.mp4", "SpecularLighting.mp4", "FlybyExample.mp4", "LightmapExample.jpg"],
   },
 
   {
