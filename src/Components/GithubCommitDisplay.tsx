@@ -8,7 +8,7 @@ const GithubCommitDisplay: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) 
       {/* Image must always be larger than 660px as that is the raw size and if it gets scaled down it is unreadable */}
 
       <div className={"lg:-rotate-90 lg:min-w-[660px] lg:mb-[100px] lg:min-h-[650px] mr-5 rounded-sm"}>
-        <img src={isDarkMode ? "http://ghchart.rshah.org/000000/ThomasLambProgramming" : "http://ghchart.rshah.org/444444/ThomasLambProgramming"} alt="ThomasLamb GithubChart" />
+        <img src={isDarkMode ? "https://ghchart.rshah.org/000000/ThomasLambProgramming" : "https://ghchart.rshah.org/444444/ThomasLambProgramming"} alt="ThomasLamb GithubChart" />
       </div>
     </div>
   );
