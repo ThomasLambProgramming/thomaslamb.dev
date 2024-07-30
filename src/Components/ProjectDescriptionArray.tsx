@@ -150,7 +150,7 @@ export const projects: ProjectDescriptionInformation[] = [
     projectDescriptions: ["Small Bezier curve example to learn unity handles + other tooling and how bezier curves work for future projects",],
     urlLinkTitles: ["Github Source Repo"],
     urlLinks: ["https://github.com/ThomasLambProgramming/UnityTesting"],
-    carouselImageNames: ["Bezier1.mp4", "Bezier2.mp4"],
+    carouselImageNames: ["Bezier1.mp4"],
   },
 
   {
@@ -162,7 +162,7 @@ export const projects: ProjectDescriptionInformation[] = [
     projectDescriptions: ["Node graph generator that takes in a environment and creates a navigation mesh based off all meshes contained in the environment.",],
     urlLinkTitles: ["Github Source Repo"],
     urlLinks: ["https://github.com/ThomasLambProgramming/NodeGraph"],
-    carouselImageNames: ["ComplexAssessment.mp4", "ComplexFiltering.png", "ComplexExample.mp4"],
+    carouselImageNames: ["ComplexExample.mp4"],
   },
 
   {
@@ -174,7 +174,7 @@ export const projects: ProjectDescriptionInformation[] = [
     projectDescriptions: ["For my 2nd year major project at AIE I worked with a team of 6 other people to produce this robot puzzle platformer.",],
     urlLinkTitles: ["Github Source Repo"],
     urlLinks: ["https://github.com/ThomasLambProgramming/MaliciousVisionQuest"],
-    carouselImageNames: ["MaliciousTitle.png", "Malicious4.mp4", "Malicious3.mp4", "RoomDisplay.jpg"],
+    carouselImageNames: ["MaliciousTitle.png"],
   },
 
   {
@@ -186,7 +186,7 @@ export const projects: ProjectDescriptionInformation[] = [
     projectDescriptions: ["For my first major project at AIE we created an endless runner where the player must avoid obstacles and fire tea from a cannon to customers."],
     urlLinkTitles: ["Github Source Repo"],
     urlLinks: ["https://github.com/ThomasLambProgramming/RapidDelivery"],
-    carouselImageNames: ["RapidDeliveryPreviewLarge.mp4", "TemplatedEnvironment.png", "RapidDeliverySceneView.mp4"],
+    carouselImageNames: ["RapidDeliveryPreviewLarge.mp4"],
   },
 
   {
