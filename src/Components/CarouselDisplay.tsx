@@ -63,7 +63,7 @@ const CarouselDisplay: React.FC<CarouselProps> = (props: CarouselProps) => {
         {videoArray.map((filepath: string, index: number) => {
           return (
             <div className=''>
-              <video key={index + "Carousel" + videoArray[index]} muted autoPlay={true} loop src={filepath}></video>
+              <video key={index + "Carousel" + videoArray[index]} muted preload="none" autoPlay={true} loop src={filepath}></video>
             </div>
           );
         })}
