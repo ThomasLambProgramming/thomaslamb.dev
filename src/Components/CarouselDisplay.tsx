@@ -48,7 +48,7 @@ const CarouselDisplay: React.FC<CarouselProps> = (props: CarouselProps) => {
         draggable={false}
         showDots={false}
         responsive={responsive}
-        ssr={true} // means to render carousel on server-side.
+        ssr={false} // means to render carousel on server-side.
         infinite={props.imagesToDisplay.length > 1}
         autoPlaySpeed={5000}
         keyBoardControl={true}

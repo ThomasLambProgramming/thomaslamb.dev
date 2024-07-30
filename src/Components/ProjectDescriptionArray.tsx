@@ -65,7 +65,7 @@ export const projects: ProjectDescriptionInformation[] = [
         "https://play.google.com/store/apps/details?id=com.scholastic.HomeBase&hl=en&gl=US&pli=1",
         "https://apps.apple.com/us/app/home-base-by-scholastic/id1450869907",
       ],
-    carouselImageNames: ["Homebase1.png", "Homebase2.jpg", "Homebase3.png", "Homebase4.png", "Homebase5.png", "Homebase6.png", "Homebase7.png",],
+    carouselImageNames: ["Homebase1.png", "Homebase2.jpg", "Homebase3.png", "Homebase4.png", "Homebase5.png", "Homebase6.jpeg", "Homebase7.jpeg",],
   },
 
   {
