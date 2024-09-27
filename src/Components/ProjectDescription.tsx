@@ -32,10 +32,37 @@ const ProjectDescription: React.FC<{
       bufferArray.push("./ProjectAssets/" + projectNameWithoutSpace + "/" + stringValue);
     })
     const [imageFiles] = useState<string[]>(bufferArray);
+
+    //const elementRef = useRef<HTMLDivElement>(null);
+    //const [isVisible, setIsVisible] = useState(false);
+
+    //useEffect(() => {
+    //  const handleScroll = () => {
+    //    if (elementRef.current) {
+    //      const rect = elementRef.current.getBoundingClientRect();
+    //      const isVisible = (
+    //        rect.top >= -1000 &&
+    //        rect.left >= 0 &&
+    //        rect.bottom <= 1000 + (window.innerHeight || document.documentElement.clientHeight) &&
+    //        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    //      );
+    //      setIsVisible(isVisible);
+    //    }
+    //  };
+
+    //  window.addEventListener('scroll', handleScroll);
+    //  // Initial check on component mount
+    //  handleScroll();
+
+    //  return () => {
+    //    window.removeEventListener('scroll', handleScroll);
+    //  };
+    //}, []);
+
     return (
       <div
         className={
-          "z-20 relative min-h-[300px] min-w-[400px] mt-4 rounded-md flex lg:items-start flex-col items-center lg:flex-row w-full shadow-md mb-6 " +
+          "z-20 relative min-h-[300px] min-w-[700px] lg:min-w-[400px] mt-4 rounded-md flex lg:items-start flex-col items-center lg:flex-row w-full shadow-md mb-6 " +
           (isDarkMode ? "dark:bg-DarkNeutral-200 shadow-gray-700 shadow-md" : "bg-DarkNeutral-1100 ")
         }
       >
@@ -79,7 +106,7 @@ const ProjectDescription: React.FC<{
                   {projDesc}
                 </p>
               ))}
-              <div className="flex lg:flex-row lg:space-x-2 flex-col lg:text-start text-center w-full">
+              <div className="flex flex-row space-x-2 lg:text-start align-middle text-center w-full">
                 {linksLinks.map((linkHref: string, index: number) => (
                   // let filePath = '/ProjectAssets/' + projectName + "/" + projectName + "Preview";
                   <a href={linkHref} target="_blank" className="mb-1 text-sm lg:align-bottom lg:items-end underline hover:text-blue-500" key={projectNameWithoutSpace + linkHref.substring(0, linkHref.length > 20 ? 20 : linkHref.length)}>

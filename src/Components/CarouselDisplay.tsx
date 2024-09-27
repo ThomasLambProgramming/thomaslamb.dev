@@ -42,7 +42,7 @@ const CarouselDisplay: React.FC<CarouselProps> = (props: CarouselProps) => {
   const [videoArray] = useState(vidArray);
 
   return (
-    <div>
+    <div >
       <Carousel
         swipeable={false}
         draggable={false}
@@ -62,14 +62,14 @@ const CarouselDisplay: React.FC<CarouselProps> = (props: CarouselProps) => {
 
         {videoArray.map((filepath: string, index: number) => {
           return (
-            <div className=''>
+            <div className='' key={index + "CarouselDiv" + videoArray[index]}>
               <video key={index + "Carousel" + videoArray[index]} muted preload="none" autoPlay={true} loop src={filepath}></video>
             </div>
           );
         })}
         {imageArray.map((filepath: string, index: number) => {
           return (
-            <div className=''>
+            <div className='' key={index + "CarouselDiv" + videoArray[index]}>
               <img key={index + "Carousel" + imageArray[index]} src={filepath}></img>
             </div>
           );
