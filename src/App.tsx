@@ -86,6 +86,7 @@ const App: FC = () => {
             <div className="max-w-4xl">
               {projects.map((projectInfo, index) => {
                 return (
+
                   <div id={projectInfo.projectName} key={projectInfo.projectName + "ProjectDescription"}>
                     {/* I am not happy using this method but it stops me from having multiple ProjectDescription component declares */}
                     {index === 0 ? <h1 className={projectSeparatorTitleClass + " mt-[50px]"}>Professional Projects</h1> : <div></div>}

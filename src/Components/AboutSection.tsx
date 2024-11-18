@@ -11,8 +11,8 @@ const AboutSection: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
         Current Projects
       </h2>
       <ul className='list-disc ml-8'>
-        <li className='ml-10 mt-3'>A dwarf puzzle game</li>
-        <li className='ml-10 mb-8'>Small opengl engine to test graphics programming such as shadow maps</li>
+        <li className='ml-10 mt-3'>OpenGL Renderer for learning graphics techniques such as anti-aliasing</li>
+        <li className='ml-10 mb-8'>Escape room with many small interacting mechanics</li>
       </ul>
     </div>
   );
