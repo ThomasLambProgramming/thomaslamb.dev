@@ -2,7 +2,6 @@ export enum ProjectType {
   ActiveProject,
   ProfessionalProject,
   PreviousProject,
-  TechDemo,
   AieProject,
 }
 
@@ -82,15 +81,27 @@ export const projects: ProjectDescriptionInformation[] = [
   },
 
   {
-    projectType: ProjectType.ActiveProject,
-    projectName: "Dwarf Puzzle Game",
+    projectType: ProjectType.PreviousProject,
+    projectName: "Node Graph Generator",
     hasProjectModal: true,
     copyRightText: "",
     technologyList: ["Unity", "C#"],
-    projectDescriptions: ["Working for the IDGA Games expansion grant I came up with the idea for a puzzle game where you play as a fantasy dwarf with a hammer that turns into a scooter"],
-    urlLinkTitles: ["https://github.com/ThomasLambProgramming/UnityTesting"],
-    urlLinks: ["Github Source Repo"],
-    carouselImageNames: ["DwarfGame1.jpg"],
+    projectDescriptions: ["Node graph generator that takes in a environment and creates a navigation mesh based off all meshes contained in the environment.",],
+    urlLinkTitles: ["Github Source Repo"],
+    urlLinks: ["https://github.com/ThomasLambProgramming/NodeGraph"],
+    carouselImageNames: ["ComplexExample.mp4"],
+  },
+
+  {
+    projectType: ProjectType.PreviousProject,
+    projectName: "Vehicle Suspension",
+    hasProjectModal: true,
+    copyRightText: "",
+    technologyList: ["Unreal", "C++"],
+    projectDescriptions: ["Tech demo for simulating car suspension using 4 fake physics springs on one rigidbody",],
+    urlLinkTitles: ["Github Source Repo"],
+    urlLinks: ["https://github.com/ThomasLambProgramming/ManiacCab"],
+    carouselImageNames: ["SuspensionPreview.mp4"],
   },
 
   {
@@ -104,45 +115,9 @@ export const projects: ProjectDescriptionInformation[] = [
     urlLinks: ["https://github.com/ThomasLambProgramming/GraphicsAIE"],
     carouselImageNames: ["OpenGlRendererPreview.mp4", "SpearLighting.mp4", "ParticleSystem.mp4"],
   },
-
+  
   {
     projectType: ProjectType.PreviousProject,
-    projectName: "DirectX Renderer",
-    hasProjectModal: true,
-    copyRightText: "",
-    technologyList: ["C++", "Imgui", "Graphics", "Dx11"],
-    projectDescriptions: ["To learn more about graphics programming and shaders I have been working on a DirectX Renderer with dear Imgui.",],
-    urlLinkTitles: ["Github Source Repo"],
-    urlLinks: ["https://github.com/ThomasLambProgramming/DirectXRenderer"],
-    carouselImageNames: ["DirectX1.mp4", "SpecularLighting.mp4", "FlybyExample.mp4", "LightmapExample.jpg"],
-  },
-
-  {
-    projectType: ProjectType.TechDemo,
-    projectName: "Vehicle Suspension",
-    hasProjectModal: true,
-    copyRightText: "",
-    technologyList: ["Unreal", "C++"],
-    projectDescriptions: ["Tech demo for simulating car suspension using 4 fake physics springs on one rigidbody",],
-    urlLinkTitles: ["Github Source Repo"],
-    urlLinks: ["https://github.com/ThomasLambProgramming/ManiacCab"],
-    carouselImageNames: ["SuspensionPreview.mp4"],
-  },
-
-  {
-    projectType: ProjectType.TechDemo,
-    projectName: "Infinite Hallway",
-    hasProjectModal: true,
-    copyRightText: "",
-    technologyList: ["Unity", "C#"],
-    projectDescriptions: ["As part of our GDML course we made a small horror/thriller project, It used look direction dot products to change the room as the player progressed."],
-    urlLinkTitles: ["Github Source Repo"],
-    urlLinks: ["https://github.com/ThomasLambProgramming/LiminalSleep"],
-    carouselImageNames: ["InfiniteHallwayLarge.mp4"],
-  },
-
-  {
-    projectType: ProjectType.TechDemo,
     projectName: "Bezier Curves",
     hasProjectModal: true,
     copyRightText: "",
@@ -152,19 +127,7 @@ export const projects: ProjectDescriptionInformation[] = [
     urlLinks: ["https://github.com/ThomasLambProgramming/UnityTesting"],
     carouselImageNames: ["Bezier1.mp4"],
   },
-
-  {
-    projectType: ProjectType.TechDemo,
-    projectName: "Node Graph Generator",
-    hasProjectModal: true,
-    copyRightText: "",
-    technologyList: ["Unity", "C#"],
-    projectDescriptions: ["Node graph generator that takes in a environment and creates a navigation mesh based off all meshes contained in the environment.",],
-    urlLinkTitles: ["Github Source Repo"],
-    urlLinks: ["https://github.com/ThomasLambProgramming/NodeGraph"],
-    carouselImageNames: ["ComplexExample.mp4"],
-  },
-
+  
   {
     projectType: ProjectType.AieProject,
     projectName: "Malicious",
@@ -189,27 +152,60 @@ export const projects: ProjectDescriptionInformation[] = [
     carouselImageNames: ["RapidDeliveryPreviewLarge.mp4"],
   },
 
-  {
-    projectType: ProjectType.AieProject,
-    projectName: "Carnival Carnage",
-    hasProjectModal: true,
-    copyRightText: "",
-    technologyList: ["Unity", "C#", "VR"],
-    projectDescriptions: ["I worked with a team of 9 in a small time frame to create this VR arcade game where you smash clown heads with a hammer that can be thrown and recalled like thors hammer."],
-    urlLinkTitles: ["Github Source Repo"],
-    urlLinks: ["https://github.com/ThomasLambProgramming/Carnival-Carnage"],
-    carouselImageNames: ["CarnivalCarnage.mp4"],
-  },
-
-  {
-    projectType: ProjectType.AieProject,
-    projectName: "Isolator",
-    hasProjectModal: true,
-    copyRightText: "",
-    technologyList: ["Unity", "C#"],
-    projectDescriptions: ["This was a small 12 hour game jam that I created with a team that involved some particle effects and interesting design.",],
-    urlLinkTitles: ["Github Source Repo"],
-    urlLinks: ["https://github.com/ThomasLambProgramming/Isolator"],
-    carouselImageNames: ["IsolatorPreview.mp4"],
-  },
+  //Old projects that were not worth keeping in.
+  // {
+  //   projectType: ProjectType.PreviousProject,
+  //   projectName: "Infinite Hallway",
+  //   hasProjectModal: true,
+  //   copyRightText: "",
+  //   technologyList: ["Unity", "C#"],
+  //   projectDescriptions: ["As part of our GDML course we made a small horror/thriller project, It used look direction dot products to change the room as the player progressed."],
+  //   urlLinkTitles: ["Github Source Repo"],
+  //   urlLinks: ["https://github.com/ThomasLambProgramming/LiminalSleep"],
+  //   carouselImageNames: ["InfiniteHallwayLarge.mp4"],
+  // },
+  // {
+  //   projectType: ProjectType.ActiveProject,
+  //   projectName: "Dwarf Puzzle Game",
+  //   hasProjectModal: true,
+  //   copyRightText: "",
+  //   technologyList: ["Unity", "C#"],
+  //   projectDescriptions: ["Working for the IDGA Games expansion grant I came up with the idea for a puzzle game where you play as a fantasy dwarf with a hammer that turns into a scooter"],
+  //   urlLinkTitles: ["https://github.com/ThomasLambProgramming/UnityTesting"],
+  //   urlLinks: ["Github Source Repo"],
+  //   carouselImageNames: ["DwarfGame1.jpg"],
+  // },
+  // {
+  //   projectType: ProjectType.PreviousProject,
+  //   projectName: "DirectX Renderer",
+  //   hasProjectModal: true,
+  //   copyRightText: "",
+  //   technologyList: ["C++", "Imgui", "Graphics", "Dx11"],
+  //   projectDescriptions: ["To learn more about graphics programming and shaders I have been working on a DirectX Renderer with dear Imgui.",],
+  //   urlLinkTitles: ["Github Source Repo"],
+  //   urlLinks: ["https://github.com/ThomasLambProgramming/DirectXRenderer"],
+  //   carouselImageNames: ["DirectX1.mp4", "SpecularLighting.mp4", "FlybyExample.mp4", "LightmapExample.jpg"],
+  // },
+  // {
+  //   projectType: ProjectType.AieProject,
+  //   projectName: "Carnival Carnage",
+  //   hasProjectModal: true,
+  //   copyRightText: "",
+  //   technologyList: ["Unity", "C#", "VR"],
+  //   projectDescriptions: ["I worked with a team of 9 in a small time frame to create this VR arcade game where you smash clown heads with a hammer that can be thrown and recalled like thors hammer."],
+  //   urlLinkTitles: ["Github Source Repo"],
+  //   urlLinks: ["https://github.com/ThomasLambProgramming/Carnival-Carnage"],
+  //   carouselImageNames: ["CarnivalCarnage.mp4"],
+  // },
+  // {
+  //   projectType: ProjectType.AieProject,
+  //   projectName: "Isolator",
+  //   hasProjectModal: true,
+  //   copyRightText: "",
+  //   technologyList: ["Unity", "C#"],
+  //   projectDescriptions: ["This was a small 12 hour game jam that I created with a team that involved some particle effects and interesting design.",],
+  //   urlLinkTitles: ["Github Source Repo"],
+  //   urlLinks: ["https://github.com/ThomasLambProgramming/Isolator"],
+  //   carouselImageNames: ["IsolatorPreview.mp4"],
+  // },
 ]

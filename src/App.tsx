@@ -29,8 +29,6 @@ const App: FC = () => {
       professionalProjectBuffer.push(projects[i].projectName);
     if (projects[i].projectType == ProjectType.PreviousProject)
       previousProjectBuffer.push(projects[i].projectName);
-    if (projects[i].projectType == ProjectType.TechDemo)
-      techDemoProjectBuffer.push(projects[i].projectName);
     if (projects[i].projectType == ProjectType.AieProject)
       aieProjectBuffer.push(projects[i].projectName);
   }
@@ -77,10 +75,10 @@ const App: FC = () => {
           <div className="text-DarkNeutralN-100 max-w-[2600px] dark:text-Neutral-0 flex flex-col lg:flex-row align-middle justify-center content-center items-center lg:items-start w-[100%]">
             <ProjectSelectionSiderbar
               isDarkMode={isDarkMode}
-              activeProjects={activeProjectNames}
+              // activeProjects={activeProjectNames}
               professionalProjects={professionalProjectNames}
               previousProjects={previousProjectNames}
-              techDemoProjects={techDemoProjectNames}
+              // techDemoProjects={techDemoProjectNames}
               aieProjects={aieProjectNames}
             />
             <div className="max-w-4xl">
@@ -90,9 +88,9 @@ const App: FC = () => {
                   <div id={projectInfo.projectName} key={projectInfo.projectName + "ProjectDescription"}>
                     {/* I am not happy using this method but it stops me from having multiple ProjectDescription component declares */}
                     {index === 0 ? <h1 className={projectSeparatorTitleClass + " mt-[50px]"}>Professional Projects</h1> : <div></div>}
-                    {index === (professionalProjectNames.length) ? <h1 className={projectSeparatorTitleClass}>Active Projects</h1> : <div></div>}
+                    {/* {index === (professionalProjectNames.length) ? <h1 className={projectSeparatorTitleClass}>Active Projects</h1> : <div></div>} */}
                     {index === (professionalProjectNames.length + activeProjectNames.length) ? <h1 className={projectSeparatorTitleClass}>Previous Projects</h1> : <div></div>}
-                    {index === (professionalProjectNames.length + activeProjectNames.length + previousProjectNames.length) ? <h1 className={projectSeparatorTitleClass}>Tech Demos</h1> : <div></div>}
+                    {/* {index === (professionalProjectNames.length + activeProjectNames.length + previousProjectNames.length) ? <h1 className={projectSeparatorTitleClass}>Tech Demos</h1> : <div></div>} */}
                     {index === (professionalProjectNames.length + activeProjectNames.length + previousProjectNames.length + techDemoProjectNames.length) ? <h1 className={projectSeparatorTitleClass}>University Projects</h1> : <div></div>}
                     <ProjectDescription
                       isDarkMode={isDarkMode}

@@ -33,32 +33,6 @@ const ProjectDescription: React.FC<{
     })
     const [imageFiles] = useState<string[]>(bufferArray);
 
-    //const elementRef = useRef<HTMLDivElement>(null);
-    //const [isVisible, setIsVisible] = useState(false);
-
-    //useEffect(() => {
-    //  const handleScroll = () => {
-    //    if (elementRef.current) {
-    //      const rect = elementRef.current.getBoundingClientRect();
-    //      const isVisible = (
-    //        rect.top >= -1000 &&
-    //        rect.left >= 0 &&
-    //        rect.bottom <= 1000 + (window.innerHeight || document.documentElement.clientHeight) &&
-    //        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    //      );
-    //      setIsVisible(isVisible);
-    //    }
-    //  };
-
-    //  window.addEventListener('scroll', handleScroll);
-    //  // Initial check on component mount
-    //  handleScroll();
-
-    //  return () => {
-    //    window.removeEventListener('scroll', handleScroll);
-    //  };
-    //}, []);
-
     return (
       <div
         className={

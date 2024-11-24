@@ -9,10 +9,10 @@ const NodeGraphGeneratorProject: React.FC<{ darkModeEnabled: boolean }> = ({ dar
       <div className='flex flex-col md:flex-row max-w-[95%] items-center my-4'>
         <div className='md:max-w-[45%]'>
           <p className='text-left md:mr-20'>
-            For my complex games systems assessment, I wanted to work with AI, but found unity's AI system hard to operate with custom locomotion.
+            When working with Unity's Ai navigation system, I found it slightly difficult to implement custom locomotion into the system.
           </p>
           <p className='text-left md:mr-20 mt-4 mb-8'>
-            I then decided to create a simple to use node graph generator. This generator would take an object as an environment and use it to create a node graph on top of it.
+            I then decided to create a node graph generator to allow my custom ai agents to have the environmental data they need to move without Unity's inbuilt systems. This generator would take an object as an environment and use it to create a node graph on top of it.
           </p>
         </div>
 
@@ -68,7 +68,6 @@ const NodeGraphGeneratorProject: React.FC<{ darkModeEnabled: boolean }> = ({ dar
             The final result is a fully ready node graph that can be generated from many different models or environments that AI can then traverse. The Ai in this example uses simple steering behaviours.
           </p>
 
-          <a className='mt-4 text-Neutral-100 hover:underline' target='_blank' href='https://github.com/ThomasLambProgramming/NodeGraph'>The unity package if you wish to use it is avaliable Here</a>
         </div>
       </div>
     </div>

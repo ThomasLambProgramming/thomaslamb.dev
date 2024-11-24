@@ -2,10 +2,10 @@ import GithubCommitDisplay from "./GithubCommitDisplay";
 
 interface SiderbarProps {
   isDarkMode: boolean;
-  activeProjects: string[];
+  // activeProjects: string[];
   professionalProjects: string[];
   previousProjects: string[];
-  techDemoProjects: string[];
+  // techDemoProjects: string[];
   aieProjects: string[];
 }
 const ProjectSelectionSiderbar: React.FC<SiderbarProps> = (properties) =>
@@ -19,29 +19,29 @@ const ProjectSelectionSiderbar: React.FC<SiderbarProps> = (properties) =>
         projectNames={properties.professionalProjects}
         firstLinkRef="#top"
       />
-      <ProjectSidebarSection
+      {/* <ProjectSidebarSection
         sectionTitle="Active Projects"
         isDarkMode={properties.isDarkMode}
         projectNames={properties.activeProjects}
         firstLinkRef={"#" + properties.professionalProjects[properties.professionalProjects.length - 1]}
-      />
+      /> */}
       <ProjectSidebarSection
         sectionTitle="Previous Projects"
         isDarkMode={properties.isDarkMode}
         projectNames={properties.previousProjects}
-        firstLinkRef={"#" + properties.activeProjects[properties.activeProjects.length - 1]}
+        firstLinkRef={"#" + properties.professionalProjects[properties.professionalProjects.length - 1]}
       />
-      <ProjectSidebarSection
+      {/* <ProjectSidebarSection
         sectionTitle="Tech Demos"
         isDarkMode={properties.isDarkMode}
         projectNames={properties.techDemoProjects}
         firstLinkRef={"#" + properties.previousProjects[properties.previousProjects.length - 1]}
-      />
+      /> */}
       <ProjectSidebarSection
         sectionTitle="University Projects"
         isDarkMode={properties.isDarkMode}
         projectNames={properties.aieProjects}
-        firstLinkRef={"#" + properties.techDemoProjects[properties.techDemoProjects.length - 1]}
+        firstLinkRef={"#" + properties.previousProjects[properties.previousProjects.length - 1]}
       />
     </div>
     <GithubCommitDisplay isDarkMode={properties.isDarkMode} />
