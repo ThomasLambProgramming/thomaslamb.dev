@@ -89,7 +89,7 @@ export const projects: ProjectDescriptionInformation[] = [
     projectDescriptions: ["Node graph generator that takes in a environment and creates a navigation mesh based off all meshes contained in the environment.",],
     urlLinkTitles: ["Github Source Repo"],
     urlLinks: ["https://github.com/ThomasLambProgramming/NodeGraph"],
-    carouselImageNames: ["ComplexExample.mp4"],
+    carouselImageNames: ["NodeGraphGeneratorPreview.mp4"],
   },
 
   {
@@ -115,7 +115,20 @@ export const projects: ProjectDescriptionInformation[] = [
     urlLinks: ["https://github.com/ThomasLambProgramming/GraphicsAIE"],
     carouselImageNames: ["OpenGlRendererPreview.mp4", "SpearLighting.mp4", "ParticleSystem.mp4"],
   },
-  
+
+  {
+    projectType: ProjectType.PreviousProject,
+    projectName: "Ray Tracing Demo",
+    hasProjectModal: true,
+    copyRightText: "",
+    technologyList: ["C++", "Graphics"],
+    projectDescriptions: ["A CPU based example of ray tracing which contains Lambert, Metal and Dielectric materials."],
+    urlLinkTitles: ["Github Source Repo"],
+    urlLinks: ["https://github.com/ThomasLambProgramming/RayTracingInAWeekend"],
+    carouselImageNames: ["RayTracingRender.png"],
+  },
+
+
   {
     projectType: ProjectType.PreviousProject,
     projectName: "Bezier Curves",
@@ -127,7 +140,7 @@ export const projects: ProjectDescriptionInformation[] = [
     urlLinks: ["https://github.com/ThomasLambProgramming/UnityTesting"],
     carouselImageNames: ["Bezier1.mp4"],
   },
-  
+
   {
     projectType: ProjectType.AieProject,
     projectName: "Malicious",

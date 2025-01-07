@@ -12,6 +12,7 @@ import BezierProject from './ProjectComponents/BezierCurves/BezierProject';
 import InfiniteHallwayProject from './ProjectComponents/InfiniteHallway/InfiniteHallwayProject';
 import OpenglRendererProject from './ProjectComponents/OpenglRenderer/OpenglRendererProject';
 import DwarfPuzzleGameProject from './ProjectComponents/DwarfPuzzleGame/DwarfPuzzleGameProject';
+import RayTracingDemoProject from './ProjectComponents/RayTracingDemo/RayTracingDemoProject';
 
 interface ModalProps {
   isShown: boolean;
@@ -77,6 +78,9 @@ const ProjectModal: React.FC<ModalProps> = (properties) => {
     case "Bezier Curves":
       //Bezier
       componentToRender = <BezierProject darkModeEnabled={properties.darkMode} />
+      break;
+    case "Ray Tracing Demo":
+      componentToRender = <RayTracingDemoProject darkModeEnabled={properties.darkMode} />
       break;
   }
 
