@@ -5,7 +5,7 @@ const AboutSection: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
     <div className={"pb-6 " + (isDarkMode ? "shadow-gray-700 shadow-md " : "")}>
       <h1 className='text-2xl ml-3 dark:text-DarkNeutral-300 text-DarkNeutralN-100 p-2'>About Me</h1>
       <p className='ml-8'>
-        Hello, my name is Thomas Lamb. I have been working as a game programmer for just under 2 years. I am eager to learn any form of game programming, with a current interest in graphics and gameplay.
+        Hello, my name is Thomas Lamb. I have been working as a game programmer for 2 years. I am eager to learn any form of game programming, with a current interest in graphics and gameplay.
       </p>
       {/* <h2 className='ml-5 mt-4 text-2xl dark:text-DarkNeutral-300'>
         Current Projects
