@@ -10,7 +10,7 @@ interface SiderbarProps {
 }
 const ProjectSelectionSiderbar: React.FC<SiderbarProps> = (properties) =>
 (
-  <div className="flex flex-col lg:sticky top-20 lg:w-[20%] lg:max-w-[220px] mt-10 ">
+  <div className="flex flex-col lg:sticky top-20 lg:w-[22%] lg:max-w-[240px] mt-10 ">
     <div className="flex flex-row lg:flex-col space-x-5 w-full lg:space-x-0 ml-2 ">
 
       <ProjectSidebarSection
@@ -63,11 +63,11 @@ const ProjectSidebarSection: React.FC<SidebarSectionProps> = (props) =>
     {props.projectNames.map((projectName, index) => {
       if (index > 0) {
         return (
-          <a key={projectName + index + "ProjectSelectionSiderbar"} href={"#" + props.projectNames[index - 1]} className="text-sm ml-2 hover:underline">{projectName}</a>
+          <a key={projectName + index + "ProjectSelectionSiderbar"} href={"#" + props.projectNames[index - 1]} className="text-sm ml-0 hover:underline">{projectName}</a>
         )
       }
       else
-        return <a key={projectName + index + "ProjectSelectionSiderbar"} href={props.firstLinkRef} className="text-sm ml-2 hover:underline">{projectName}</a>
+        return <a key={projectName + index + "ProjectSelectionSiderbar"} href={props.firstLinkRef} className="text-sm ml-0 hover:underline">{projectName}</a>
     })}
   </div>
 )

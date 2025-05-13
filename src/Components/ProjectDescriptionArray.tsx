@@ -18,23 +18,61 @@ interface ProjectDescriptionInformation {
 }
 
 export const projects: ProjectDescriptionInformation[] = [
+
   {
     projectType: ProjectType.ProfessionalProject,
-    projectName: "Vlad Circus",
+    projectName: "Vlad Circus: Curse of Asmodeus",
+    hasProjectModal: false,
+    copyRightText: "Copyright © 2025 Indiesruption. All Rights Reserved.",
+    technologyList: ["Console", "Monogame", "C++", "C#"],
+    projectDescriptions: ["Vlad Circus: Curse of Asmodeus drags you into a sordid world of mirrors and shadows where the demon lurks. Dare to take on this macabre pixel-art graphic adventure of horror and madness. Solve puzzles and explore two parallel timelines."],
+    urlLinkTitles: ["Steam", "Xbox", "Playstation", "Epic Games", "GOG"],
+    urlLinks:
+      [
+        "https://store.steampowered.com/app/1567530/Vlad_Circus_Curse_of_Asmodeus/",
+        "https://www.xbox.com/en-us/games/store/vlad-circus-curse-of-asmodeus/9nf8tnj0253w",
+        "https://store.playstation.com/en-us/concept/10013886",
+        "https://store.epicgames.com/en-US/p/vlad-circus-curse-of-asmodeus-b42dae",
+        "https://www.gog.com/en/game/vlad_circus_curse_of_asmodeus",
+      ],
+    carouselImageNames: ["Vlad1.jpg", "Vlad2.jpg", "Vlad3.jpg", "Vlad4.jpg", "Vlad5.jpg"],
+  },
+  {
+    projectType: ProjectType.ProfessionalProject,
+    projectName: "Vlad Circus: Descend into Madness",
     hasProjectModal: false,
     copyRightText: "Copyright © 2022 Indiesruption. All Rights Reserved.",
     technologyList: ["Console", "Monogame", "C++", "C#"],
     projectDescriptions: ["In Vlad Circus: Descend into Madness, discover a story full of mystery and pain where every shadow hides a twisted secret or vicious threat, and no one is safe from tragedy."],
-    urlLinkTitles: ["Steam", "Epic Games", "Switch", "Xbox", "Playstation"],
+    urlLinkTitles: ["Steam", "Switch", "Xbox", "Playstation", "Epic Games", "GOG"],
     urlLinks:
       [
         "https://store.steampowered.com/app/1702430/Vlad_Circus_Descend_Into_Madness/",
-        "https://store.epicgames.com/en-US/p/vlad-circus-descend-into-madness-9d1ed2",
         "https://ec.nintendo.com/AU/en/titles/70010000045531",
         "https://www.xbox.com/en-US/games/store/vlad-circus-descend-into-madness/9ns2rvcmxh60",
-        "https://store.playstation.com/en-us/product/UP5552-CUSA30287_00-9071855390281250"
+        "https://store.playstation.com/en-us/product/UP5552-CUSA30287_00-9071855390281250",
+        "https://store.epicgames.com/en-US/p/vlad-circus-descend-into-madness-9d1ed2",
+        "https://www.gog.com/en/game/vlad_circus_descend_into_madness",
       ],
     carouselImageNames: ["Vlad1.mp4", "Vlad2.mp4", "Vlad3.mp4", "Vlad4.jpg", "Vlad5.jpg", "Vlad6.jpg"],
+  },
+  {
+    projectType: ProjectType.ProfessionalProject,
+    projectName: "Mirage 7",
+    hasProjectModal: false,
+    copyRightText: "Copyright © 2022 Indiesruption. All Rights Reserved.",
+    technologyList: ["Console", "Unity", "C#"],
+    projectDescriptions: ["Mirage 7 is a dark fairytale, a third-person adventure with a unique blend of fantasy and sci-fi. The young Nadira travels the desert with her pet lizard companion Jiji, searching for a lost oasis - where she hopes to find a way to save her sister."],
+    urlLinkTitles: ["Steam", "Playstation", "Xbox", "Epic Games", "GOG"],
+    urlLinks:
+      [
+        "https://store.steampowered.com/app/2325180/Mirage_7/",
+        "https://store.playstation.com/en-au/concept/10005852/",
+        "https://www.xbox.com/en-US/games/store/mirage-7/9P3SXSTLS8BZ",
+        "https://store.epicgames.com/en-US/p/mirage-7-fd5929",
+        "https://www.gog.com/en/game/mirage_7",
+      ],
+    carouselImageNames: ["Mirage71.mp4", "Mirage72.jpg", "Mirage73.jpg", "Mirage74.jpg"],
   },
 
   {

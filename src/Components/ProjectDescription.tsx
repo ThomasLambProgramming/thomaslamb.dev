@@ -26,6 +26,7 @@ const ProjectDescription: React.FC<{
   onClickFunction,
 }) => {
     let projectNameWithoutSpace = projectName.replace(/\s/g, "");
+    projectNameWithoutSpace = projectNameWithoutSpace.replace(":", "")
 
     let bufferArray: string[] = [];
     imageFilePaths.map((stringValue) => {

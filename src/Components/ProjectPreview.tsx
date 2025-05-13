@@ -3,6 +3,7 @@ import DelayedImage from './DelayedImage';
 
 const ProjectPreview: React.FC<{ projectName: string, showTitle: boolean, onClickFunction: (name: string) => void }> = ({ projectName, showTitle, onClickFunction }) => {
   let projectNameWithoutSpace = projectName.replace(/\s/g, '');
+  projectNameWithoutSpace = projectNameWithoutSpace.replace(":", "")
   let filePath = '/ProjectAssets/' + projectNameWithoutSpace + "/" + projectNameWithoutSpace + "PreviewDescription" + ".md";
 
   const [previewDescription, setPreviewDescription] = useState('');
@@ -11,6 +12,7 @@ const ProjectPreview: React.FC<{ projectName: string, showTitle: boolean, onClic
     const mrk = new Request(filePath);
     fetch(mrk).then(data => data.text()).then(text => setPreviewDescription(text));
   });
+
 
   return (
     <div className="flex flex-col items-center justify-center mt-8 relative bg-slate-900 dark:bg-dark_theme-default group min-w-[200px] rounded">
