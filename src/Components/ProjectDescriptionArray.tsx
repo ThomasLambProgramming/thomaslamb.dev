@@ -60,7 +60,7 @@ export const projects: ProjectDescriptionInformation[] = [
     projectType: ProjectType.ProfessionalProject,
     projectName: "Mirage 7",
     hasProjectModal: false,
-    copyRightText: "Copyright © 2022 Indiesruption. All Rights Reserved.",
+    copyRightText: "Copyright © 2025 Drakkar Dev. All Rights Reserved.",
     technologyList: ["Console", "Unity", "C#"],
     projectDescriptions: ["Mirage 7 is a dark fairytale, a third-person adventure with a unique blend of fantasy and sci-fi. The young Nadira travels the desert with her pet lizard companion Jiji, searching for a lost oasis - where she hopes to find a way to save her sister."],
     urlLinkTitles: ["Steam", "Playstation", "Xbox", "Epic Games", "GOG"],
