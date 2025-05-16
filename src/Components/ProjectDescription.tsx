@@ -37,7 +37,7 @@ const ProjectDescription: React.FC<{
     return (
       <div
         className={
-          "z-20 relative min-h-[300px] min-w-[700px] lg:min-w-[400px] mt-4 rounded-md flex lg:items-start flex-col items-center lg:flex-row w-full shadow-md mb-6 " +
+          "hover:scale-y-[103%] hover:scale-x-[103%] transition-transform duration-300 z-20 relative min-h-[300px] min-w-[700px] lg:min-w-[400px] mt-4 rounded-md flex lg:items-start flex-col items-center lg:flex-row w-full shadow-md mb-6 " +
           (isDarkMode ? "dark:bg-DarkNeutral-200 shadow-gray-700 shadow-md" : "bg-DarkNeutral-1100 ")
         }
       >
