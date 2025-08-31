@@ -1,5 +1,3 @@
-import GithubCommitDisplay from "./GithubCommitDisplay";
-
 interface SiderbarProps {
   isDarkMode: boolean;
   // activeProjects: string[];
@@ -44,7 +42,6 @@ const ProjectSelectionSiderbar: React.FC<SiderbarProps> = (properties) =>
         firstLinkRef={"#" + properties.previousProjects[properties.previousProjects.length - 1]}
       />
     </div>
-    <GithubCommitDisplay isDarkMode={properties.isDarkMode} />
   </div>
 )
 
