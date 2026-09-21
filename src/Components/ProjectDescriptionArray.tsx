@@ -84,7 +84,7 @@ export const projects: ProjectDescriptionInformation[] = [
     projectDescriptions: ["Aradena is a free-to-play, Tactical TCG where collectable cards come to life in strategic, 3D gameplay. As a warrior, you'll join a faction and battle other players in the medieval fantasy kingdom."],
     urlLinkTitles: ["Aradena"],
     urlLinks:
-      ["https://www.immutable.com/play/aradena"],
+      ["https://store.steampowered.com/app/2575530/Aradena_Battlegrounds/"],
     carouselImageNames: ["Aradena1.jpg", "Aradena2.jpg", "Aradena3.jpg"],
   },
 
@@ -94,7 +94,7 @@ export const projects: ProjectDescriptionInformation[] = [
     hasProjectModal: false,
     copyRightText: "TM ® & © 2024 Scholastic Inc. All Rights Reserved.",
     technologyList: ["Unity", "C#"],
-    projectDescriptions: ["Scholastic Home Base is a safe, free, 3D interactive world that celebrates favorite stories through book-based games, live author events, and a large community of readers."],
+    projectDescriptions: ["Scholastic Home Base is a safe, free, 3D interactive world that celebrates favorite stories through book-based games, live author events, and a large community of readers. (Shut down as of 25th November 2025)"],
     urlLinkTitles: ["Homebase Website", "Google Play Store", "Apple App Store",],
     urlLinks:
       [
@@ -111,8 +111,8 @@ export const projects: ProjectDescriptionInformation[] = [
     hasProjectModal: false,
     copyRightText: "An official product of the MotoGP™ logo and related marks are trade marks. All rights reserved. Copyright © 2023 ANIMOCA BRANDS LIMITED, ALL RIGHTS RESERVED. MotoGP™ Ignition © 2023 DORNA",
     technologyList: ["Unity", "C#"],
-    projectDescriptions: ["MotoGP Ignition is a play-to-earn blockchain-based racing management and collectibles game that utilizes the Flow network with its NFT assets and cryptocurrency, REVV."],
-    urlLinkTitles: ["MotoGP Ignition"],
+    projectDescriptions: ["MotoGP Ignition is a play-to-earn blockchain-based racing management and collectibles game that utilizes the Flow network with its NFT assets and cryptocurrency, REVV, "],
+    urlLinkTitles: ["No links for any connected website as it was shut down"],
     urlLinks:
       ["https://motogp-ignition.com/"],
     carouselImageNames: ["Motogp1.png", "Motogp2.jpg", "Motogp3.jpg",],
